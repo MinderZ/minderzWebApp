@@ -1,0 +1,61 @@
+<div id="form-main">
+  <div id="form-div">
+    <form class="form" id="form1">
+
+      <p class="name">
+        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name"
+          id="name" />
+      </p>
+
+      <p class="email">
+        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+      </p>
+
+      <p class="text">
+        <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
+      </p>
+      
+      <div class="submit">
+        <input type="submit" value="SEND" id="button-blue" />
+        <div class="ease"></div>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+
+  <form>
+    <legend>
+      <p>First Name &nbsp
+        <input type="text">
+      </p>
+      <p>Last Name &nbsp
+        <input type="text">
+      </p>
+      <p>Gender &nbsp
+        <input type="radio"> Male
+        <input type="radio"> Female</p>
+      <p>DOB
+        <!--calender thing-->
+        <input type="text">
+      </p>
+      <p>My Address
+        <input type="text">
+        <br> Can't locate your address?
+        <br> Please select your address from the list provided
+      </p>
+      <p>Email
+        <input type="email">
+      </p>
+      <p>Home Phone
+        <input type="text">
+      </p>
+      <p>Mobile
+        <input type="text">
+      </p>
+      <button type="submit">Save</button>
+    </legend>
+  </form>
