@@ -2,23 +2,3 @@
   background-color:#110481;
   color:#fff;
 }
-.img{
-height:200px;
-width:250px;
-}
-
-.foot{
-height: 300px;
-background-color: #1f1e1e;
-color: #8c8c8c;
-font-size: 14px;
-}
-
-.Services{
-  color: #8c8c8c;
-  background-color:#e7e7e7;
-
-}
-.intro-image{
-background:url('../assets/img/puppy.jpg')
-}
