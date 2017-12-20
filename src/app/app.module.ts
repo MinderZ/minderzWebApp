@@ -12,7 +12,7 @@ import { BookServiceComponent } from './components/book-service/book-service.com
     BookServiceComponent
   ],
   imports: [
-    BrowserModule, NgbModule
+    BrowserModule, NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
