@@ -1,7 +1,15 @@
 .foot{
   height: 300px;
-  background-color: #1862ec;
-  /* background-color: #1f1e1e; */
+  /* background-color: #1862ec; */
+  background-color: #1f1e1e;
   color: #8c8c8c;
   font-size: 14px;
   }
+.space{
+  height: 15px;
+}
+.box{
+  height: 35px;
+  border-radius:3px;
+  border-radius:#fff;
+}
