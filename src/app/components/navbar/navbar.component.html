@@ -1,38 +1,4 @@
-<!-- <nav class="navbar navbar-inverse ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle greenie" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand " href="#"> Minderz</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-
-
-      <ul class="nav navbar-nav navbar-item navbar-right">
-        <li class="nav-item">
-          <p class="navbar-link" routerLink="chats"> Search for sitter</p>
-        </li>
-        <li class="nav-item">
-          <p class="navbar-link" routerLink="chats"> Services</p>
-        </li>
-        <li class="nav-item">
-          <p class="navbar-link" routerLink="chats"> Sign in</p>
-        </li>
-        <li class="nav-item">
-          <p class="navbar-link" routerLink="profile">become a sitter</p>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-
-
-
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" id="bar">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -40,29 +6,50 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
-          <img src="../assets/img/minderz_logo_3.png" width="100" height="40" class="d-inline-block align-top" alt="">
+      <a class="navbar-brand" routerLink="home">
+        <img src="../assets/img/minderz_logo_3.png" width="100" height="40" class="d-inline-block align-top" alt="">
       </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a routerLink="profile">Search for sitter</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
+        <li class="active">
+          <a routerLink="profile">Search for sitter</a>
         </li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Services</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign in</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Become a sitter</a></li>
+        <li>
+          <a routerLink="miniDash" class="bSitter">
+            <span class="glyphicon glyphicon-user"></span> Services</a>
+        </li>
+        <li>
+          <a href="#" class="bSitter">
+            <span class="glyphicon glyphicon-user"></span> Sign in</a>
+        </li>
+        <li>
+          <a href="#" class="bSitter">
+            <span class="glyphicon glyphicons-user-add"></span> Sign up</a>
+        </li>
+        <li>
+          <a routerLink="becomeaSitter" class="bSitter" >Become a sitter</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
+<i class="fa fa-user-plus" aria-hidden="true"></i>
+
+
+
+<!-- <script>
+  var navbar = document.getElementById("bar");
+  window.onscroll = function () {
+    if (window.pageYOffset > 100) {
+      navbar.style.background-color === "#fff";
+    } else {
+      navbar.style.background-color === 'transparent';
+    }
+  };
+
+  </script> -->
+

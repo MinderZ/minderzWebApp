@@ -1,0 +1,74 @@
+<div class="csard">
+
+
+
+<div *ngIf="phase1" >
+    <h1>Enter residential information</h1>
+    <label for="addrres">Enter address</label>
+      <input type="text" id="addrres" value=""> <br>
+  <button type="submit" (click)="phase1 =  false; phase2 =  true;">Next</button>
+      <br>
+</div>
+
+<div *ngIf="phase2">
+    <h1>Personal Information</h1>
+    <label for="addrres">Enter picture</label>
+    <input type="text" id="addrres" value="">
+    <br>
+    <label for="addrres">Enter Age</label>
+    <input type="text" id="addrres" value="">
+    <br>
+    <label for="addrres">Enter Gender</label>
+    <input type="text" id="addrres" value="">
+    <br>
+    <label for="addrres">Enter Phone Number</label>
+    <input type="text" id="addrres" value="">
+    <br>
+    <label for="addrres">Enter Identity</label>
+    <input type="text" id="addrres" value="">
+    <br>
+    <label for="addrres">Enter ID copy</label>
+    <input type="text" id="addrres" value="">
+    <br>
+    <label for="addrres">Consent Form</label>
+    <input type="text" id="addrres" value="">
+    <br>
+    <label for="addrres">Emergency name </label>
+    <input type="text" id="addrres" value="">
+    <br>
+    <label for="addrres">Emergency Phone Number </label>
+    <input type="text" id="addrres" value="">
+    <br>
+    <textarea name="" id="" cols="30" rows="10">Personal Information</textarea>
+    <br>
+    <button type="submit" (click)="phase2 = false; phase3 = true;">Next</button>
+
+
+</div>
+
+<div  *ngIf="phase3">
+
+<h1>something that needs to be done here</h1>
+</div>
+</div>
+
+
+
+<div class="pager">
+  <ul class="pagination">
+    <li><a href="">1</a></li>
+    <li><p href="">2</p></li>
+    <li><p>3</p></li>
+    <li><p>4</p></li>
+    <li><p>5</p></li>
+  </ul>
+
+<ul class="pagination">
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+</ul>
+</div>
+

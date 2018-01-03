@@ -8,5 +8,15 @@
     background-color:#e7e7e7;
   }
   .intro-image{
-  /* background:url('../assets/img/puppy.jpg') */
+  overflow: hidden;
+  background-image:url('../../../assets/img/Main_dog_image.jpg') ;
+  background-size: cover;
+  background-attachment:fixed;
+  height: 753px !important;
+  background-position: center;
   }
+.subFont{
+  font-family: 'Poiret One', cursive;
+  font-size:18px;
+
+}

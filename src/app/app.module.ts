@@ -8,6 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BecomeAsitterComponent } from './components/become-asitter/become-asitter.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { AuthService } from './services/auth-service.service';
 
 
 @NgModule({
@@ -16,13 +21,17 @@ import { FooterComponent } from './components/footer/footer.component';
     BookServiceComponent,
     NavbarComponent,
     HomeComponent,
-    FooterComponent
+    BecomeAsitterComponent,
+    FooterComponent,
+    BecomeAsitterComponent,
+    SignInComponent,
+    MiniDashboardComponent
   ],
   imports: [
     BrowserModule, NgbModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
