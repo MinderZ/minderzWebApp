@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BecomeAsitterComponent } from './components/become-asitter/become-asitter.component';
 import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 // import { CanActivate } from '@angular/router/src/interfaces';
 
 const routes: Routes = [
@@ -20,8 +21,8 @@ const routes: Routes = [
 }
 ,
   {
-    path: 'geolocation',
-    component: BookServiceComponent
+    path: 'signIn',
+    component: SignInComponent
   }
   ,
   {
