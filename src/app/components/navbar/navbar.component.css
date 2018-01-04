@@ -3,21 +3,29 @@
   background-color:transparent;
 } */
 
-.navbar-default{
-background-color:#f8f8f8!important;
-border-color:transparent;
-background-image:none;
-/* border-bottom:2px solid #575454; */
-box-shadow:none;
+.navbar-default {
+  background-color: #f0efef !important;
+  border-color: transparent;
+  background-image: none;
+  /* border-bottom:2px solid #575454; */
+  box-shadow: none;
 }
-.navbar-default .navbar-nav > li >a {
-/* font-size: 20px; */
-color:#fff;
+.navbar-default .navbar-nav > li > a {
+  /* font-size: 20px; */
+  color: #666363;
+  line-height: 30px
 }
 
-.bSitter{
-  border-radius: 20px;
-  /* height:50px; */
-  background-color:navy;
-  transition: .5s;
+.navbar-default :hover {
+  color: #ff978f;
+}
+
+.bSitter {
+  border-radius: 5px;
+  /* size: 14px; */
+  height:15px !important;
+  background-color: #008cff;
+  transition: 0.3s;
+  color: #fff;
+  text-transform: uppercase;
 }
