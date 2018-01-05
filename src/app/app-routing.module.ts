@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { BookServiceComponent } from './components/book-service/book-service.component';
 import { HomeComponent } from './components/home/home.component';
-import { ClientRegComponent } from './components/client-reg/client-reg.component';
-import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.component';
-import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.component';
+import { BecomeAsitterComponent } from './components/become-asitter/become-asitter.component';
+import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+// import { CanActivate } from '@angular/router/src/interfaces';
 
 const routes: Routes = [
   {
@@ -15,13 +17,10 @@ const routes: Routes = [
 
   },
   {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'geolocation',
-    component: BookServiceComponent
-  },
+    path: 'signIn',
+    component: SignInComponent
+  }
+  ,
   {
     path: 'ClientReg',
     component: ClientRegComponent
