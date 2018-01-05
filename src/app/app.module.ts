@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ClientRegComponent } from './components/client-reg/client-reg.component';
+// import { ClientRegComponent } from './components/client-reg/client-reg.component';
 
 import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.component';
 import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.component';
@@ -21,7 +21,7 @@ import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.comp
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    ClientRegComponent,
+    // ClientRegComponent,
     SitterReg1Component,
     SitterReg4Component
   ],
