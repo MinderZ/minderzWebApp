@@ -1,46 +1,41 @@
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CanActivate, Routes,  RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { BookServiceComponent } from './components/book-service/book-service.component';
 import { HomeComponent } from './components/home/home.component';
-import { BecomeAsitterComponent } from './components/become-asitter/become-asitter.component';
-import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
-import { AuthGuard } from './services/auth-guard.service';
-// import { CanActivate } from '@angular/router/src/interfaces';
+import { ClientRegComponent } from './components/client-reg/client-reg.component';
+import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.component';
+import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.component';
 
 const routes: Routes = [
- {
-   path: '',
-  redirectTo: 'home',
-  pathMatch: 'full'
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
 
- }, {
-  path: 'home',
-  component: HomeComponent
-}
-,
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'geolocation',
     component: BookServiceComponent
-  }
-  ,
+  },
   {
-    path: 'becomeaSitter',
-    component: BecomeAsitterComponent,
-    // canActivate: [AuthGuard]
-
-  }
-
-  ,
+    path: 'ClientReg',
+    component: ClientRegComponent
+  },
   {
-    path: 'miniDash',
-    component: MiniDashboardComponent
+    path: 'sitterReg1',
+    component: SitterReg1Component
+  },
+  {
+    path: 'sitterReg4',
+    component: SitterReg4Component
   }
 
 
-  // { path: ' ',
-  //  component:
-  // },
   // {
   //   path: ' ',
   //   component:  ,
@@ -58,4 +53,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
