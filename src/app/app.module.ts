@@ -12,6 +12,8 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.component';
 import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
 
 
 @NgModule({
@@ -23,7 +25,10 @@ import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.comp
     FooterComponent,
     // ClientRegComponent,
     SitterReg1Component,
-    SitterReg4Component
+    SitterReg4Component,
+SignInComponent,
+MiniDashboardComponent
+
   ],
   imports: [
     BrowserModule,

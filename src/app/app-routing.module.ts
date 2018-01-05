@@ -8,6 +8,7 @@ import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboa
 import { AuthGuard } from './services/auth-guard.service';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 // import { CanActivate } from '@angular/router/src/interfaces';
+import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.component';
 
 const routes: Routes = [
   {
@@ -21,25 +22,23 @@ const routes: Routes = [
     component: SignInComponent
   }
   ,
-  // {
-  //   path: 'ClientReg',
-  //   component: ClientRegComponent
-  // },
+  {
+    path: 'miniDash',
+    component: MiniDashboardComponent
+  },
   // {
   //   path: 'sitterReg1',
   //   component: SitterReg1Component
   // },
-  // {
-  //   path: 'sitterReg4',
-  //   component: SitterReg4Component
-  // }
-
-
-  // {
-  //   path: ' ',
-  //   component:  ,
-  //    canActivate: [ ]
-  //   }
+  {
+    path: 'sitterReg',
+    component: SitterReg4Component
+  }
+,  {
+    path: 'home',
+    component: HomeComponent ,
+    //  canActivate: [ ]
+    }
 
   // children: [
   //   { path: ' ',
