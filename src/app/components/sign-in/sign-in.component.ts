@@ -1,4 +1,7 @@
+import {ActivatedRoute} from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private route: ActivatedRoute,
 
+  ) { }
+
+  returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
   ngOnInit() {
   }
 
+  login() {
+this.auth.loginWithGoogle();
+  }
+
+
+  logout() {
+this.auth.logout();
+  }
 }
