@@ -40,7 +40,12 @@ const routes: Routes = [
     path: 'sitterReg',
     component: SitterReg1Component
   }
-,  {
+,
+{
+  path: 'sitterReg4',
+  component: SitterReg4Component
+},
+{
     path: 'home',
     component: HomeComponent ,
     //  canActivate: [ ]
