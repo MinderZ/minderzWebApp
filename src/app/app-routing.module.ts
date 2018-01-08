@@ -16,18 +16,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-
   },
   {
     path: 'signIn',
     component: SignInComponent
-  }
-  ,
+  },
   {
     path: 'miniDash',
     component: MiniDashboardComponent
-  }
-  ,
+  },
   {
     path: 'become',
     component: BookServiceComponent
@@ -39,17 +36,16 @@ const routes: Routes = [
   {
     path: 'sitterReg',
     component: SitterReg1Component
-  }
-,
-{
-  path: 'sitterReg4',
-  component: SitterReg4Component
-},
-{
+  },
+  {
+    path: 'sitterReg4',
+    component: SitterReg4Component
+  },
+  {
     path: 'home',
-    component: HomeComponent ,
+    component: HomeComponent
     //  canActivate: [ ]
-    }
+  }
 
   // children: [
   //   { path: ' ',
@@ -62,4 +58,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
