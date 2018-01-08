@@ -1,9 +1,9 @@
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CanActivate, Routes,  RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { BookServiceComponent } from './components/book-service/book-service.component';
 import { HomeComponent } from './components/home/home.component';
-import { BecomeAsitterComponent } from './components/become-asitter/become-asitter.component';
+// import { BecomeAsitterComponent } from './components/become-asitter/become-asitter.component';
 import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -12,30 +12,19 @@ import { SitterReg3Component } from './components/sitter-reg-3/sitter-reg-3.comp
 import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
 import { PetReg2Component } from './components/pet-reg-2/pet-reg-2.component';
 // import { CanActivate } from '@angular/router/src/interfaces';
+import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.component';
 
 const routes: Routes = [
- {
-   path: '',
-  redirectTo: 'home',
-  pathMatch: 'full'
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
 
- }, {
-  path: 'home',
-  component: HomeComponent
-}
-,
+  },
   {
     path: 'signIn',
     component: SignInComponent
   }
-  ,
-  {
-    path: 'becomeaSitter',
-    component: BecomeAsitterComponent,
-    // canActivate: [AuthGuard]
-
-  }
-
   ,
   {
     path: 'miniDash',
@@ -48,7 +37,7 @@ const routes: Routes = [
   }
   ,
   {
-    path:'sitterRegister3',
+    path: 'sitterRegister3',
     component: SitterReg3Component
   }
   ,
@@ -62,10 +51,31 @@ const routes: Routes = [
     component: PetReg2Component
   }
   
+  
+// {
+//   path: 'sitterReg1',
+//   component: SitterReg1Component
+// },
+//{
+//  path: 'sitterReg',
+  //  component: SitterReg4Component
+//}
+,  
+{
+  path: 'home',
+    component: HomeComponent
+  //  canActivate: [ ]
+}
+
+  // children: [
+  //   { path: ' ',
+  //      component:,
+  //      canActivate: [ ]
+  //      } ]
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
