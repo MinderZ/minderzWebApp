@@ -1,1 +1,102 @@
-<p>book service works</p>
+<div class="text-center">
+  <h1>Join our network of trusted pet sitters and dog walkers.</h1>
+  <h3>If you are dedicated to providing safe, loving, reliable pet care, you could be a great fit. </h3>
+</div>
+
+
+<div class="row text-center">
+  <div class="col-md-6">
+<h3><i class="fa fa-check-circle-o" aria-hidden="true"></i> Freedom to choose your schedule, services, and rates.</h3>
+
+<h3><i class="fa fa-check-circle-o" aria-hidden="true"></i> Secure payments.</h3>
+<i class="fa fa-check-circle-o" aria-hidden="true"></i>
+</div>
+<div class=" col-md-6">
+
+  <h3> <i class="fa fa-check-circle-o" aria-hidden="true"></i> You & booked-in pets are covered by insurances.</h3>
+<h3><i class="fa fa-check-circle-o" aria-hidden="true"></i>
+    Customer care support.
+</h3>
+  </div>
+</div>
+
+<button type="submit" class="text-center btn btn-md btn-primary"> <i class="fa fa-check-circle-o" aria-hidden="true"></i> Get started</button>
+
+
+
+
+
+<form #f="ngForm" (ngSubmit)="save(f.value)">
+
+<div class="col-md-6">
+
+  <div class="form-groupl">
+    <label for="endusername" >First Name</label>
+    <input #fname="ngModel" ngModel name="fname"id="name"type="text" class="form-control" required>
+<div  *ngIf="fname.touched && fname.invalid" class="alert alert-danger">Your First name is required</div>
+  </div>
+
+
+<div class="form-groupl">
+  <label for="endusername" >Last Name</label>
+  <input #lname="ngModel" ngModel name="lname"id="name"type="text" class="form-control" required>
+<div  *ngIf="lname.touched && lname.invalid" class="alert alert-danger">Your Last Name is required</div>
+
+</div>
+
+
+<div class="form-groupl">
+  <label for="endusername" >Age</label>
+  <input #age="ngModel" ngModel name="age"id="name"type="text" class="form-control" required>
+<div  *ngIf="age.touched && age.invalid" class="alert alert-danger">Your Age is required</div>
+
+</div>
+
+<div class="form-groupl">
+  <label for="endusername" >Gender</label>
+<select #gender="ngModel" ngModel name="gender" class="form-control" required>
+<div  *ngIf="gender.touched && gender.invalid" class="alert alert-danger">Your Gender is required</div>
+
+  <option value=""></option>
+  <option>Male</option>
+  <option>Female</option>
+</select>
+  <!-- <input ngModel name="genderGender"id="name"type="text" > -->
+</div>
+
+<div class="form-groupl">
+  <label for="endusername" >Identity number</label>
+  <input #identity="ngModel" ngModel name="identity"id="name"type="text" class="form-control" required>
+<div  *ngIf="identity.touched && identity.invalid" class="alert alert-danger">Your Identity number is required</div>
+
+</div>
+
+<div class="form-groupl">
+  <label for="endusername" >Address</label>
+  <input #address="ngModel" ngModel name="address"id="name"type="text" class="form-control" required>
+<div  *ngIf="address.touched && address.invalid" class="alert alert-danger">Your Address is required</div>
+
+</div>
+
+
+<div class="form-groupl">
+  <label for="endusername" >Cell number</label>
+  <input #cell="ngModel" ngModel name="cell"id="name"type="text" class="form-control" required>
+<div  *ngIf="cell.touched && cell.invalid" class="alert alert-danger">Your Cell number is required</div>
+
+</div>
+
+<div class="form-groupl">
+  <label for="endusername" >Emergency Cell number</label>
+  <input #emercell="ngModel" ngModel name="Emercell"id="name"type="text" class="form-control" required>
+<div  *ngIf="emercell.touched && emercell.invalid" class="alert alert-danger">Your Emergency Cell number is required</div>
+
+</div>
+<br>
+<button  class="btn btn-primary" type="submit">Save</button>
+
+</div>
+
+</form>
+
+<!-- <app-footer></app-footer> -->

@@ -9,6 +9,7 @@ import { AuthGuard } from './services/auth-guard.service';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 // import { CanActivate } from '@angular/router/src/interfaces';
 import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.component';
+import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,11 @@ const routes: Routes = [
   {
     path: 'miniDash',
     component: MiniDashboardComponent
+  }
+  ,
+  {
+    path: 'become',
+    component: BookServiceComponent
   },
   // {
   //   path: 'sitterReg1',
@@ -32,7 +38,7 @@ const routes: Routes = [
   // },
   {
     path: 'sitterReg',
-    component: SitterReg4Component
+    component: SitterReg1Component
   }
 ,  {
     path: 'home',

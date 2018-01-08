@@ -1,6 +1,6 @@
 
 import { Observable } from 'rxjs/Observable';
-// import * as firebase from 'firebase/app';
+import * as firebase from 'firebase/app';
 import { Injectable } from '@angular/core';
 
 @Injectable()
