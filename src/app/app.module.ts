@@ -21,6 +21,8 @@ import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboa
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {UserService} from './services/user.service';
+import { AuthService } from './services/auth-service.service';
+import { CacheService } from './services/cache.service';
 
 export const	firbaseConfig = {
     apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -56,7 +58,9 @@ MiniDashboardComponent
 
     AngularFireDatabaseModule, AngularFireDatabase
     , AngularFireAuth,
-     UserService
+     UserService,
+     AuthService,
+     CacheService,
   ],
   // providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
