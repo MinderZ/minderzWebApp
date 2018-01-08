@@ -16,10 +16,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth-service.service';
-import { SitterReg2Component } from './components/sitter-reg-2/sitter-reg-2.component';
-import { SitterReg3Component } from './components/sitter-reg-3/sitter-reg-3.component';
 import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
-import { PetReg2Component } from './components/pet-reg-2/pet-reg-2.component';
 
 
 @NgModule({
@@ -32,10 +29,7 @@ import { PetReg2Component } from './components/pet-reg-2/pet-reg-2.component';
     // BecomeAsitterComponent,
     SignInComponent,
     MiniDashboardComponent,
-    SitterReg2Component,
-    SitterReg3Component,
     PetReg1Component,
-    PetReg2Component,
     // ClientRegComponent,
     SitterReg1Component,
     SitterReg4Component,

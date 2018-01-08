@@ -7,6 +7,7 @@
     color: #8c8c8c;
     background-color:#e7e7e7;
   }
+
   .intro-image{
   overflow: hidden;
   background-image:url('../../../assets/img/Main_dog_image.jpg') ;
@@ -15,8 +16,14 @@
   height: 753px !important;
   background-position: center;
   }
+
 .subFont{
   font-family: 'Poiret One', cursive;
   font-size:18px;
 
+}
+
+.formBackground {
+  background-color: rgba(255,255,255, 0.2);
+  color: inherit;
 }
