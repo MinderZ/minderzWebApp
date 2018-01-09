@@ -8,7 +8,7 @@ import { CacheService } from './cache.service';
 @Injectable()
 export class AuthService {
   public user$: Observable<firebase.User>;
-
+public userUID: string;
   constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
@@ -49,5 +49,8 @@ export class AuthService {
   // what type of user for roles purposes
   getcurrentUser() {
     return firebase.auth().currentUser;
+  }
+  currentUserUID() {
+   return this.userUID = firebase.auth().currentUser.uid;
   }
 }
