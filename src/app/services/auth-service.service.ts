@@ -8,7 +8,7 @@ import { CacheService } from './cache.service';
 @Injectable()
 export class AuthService {
   public user$: Observable<firebase.User>;
-
+public userUID: string;
   constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
@@ -31,6 +31,20 @@ export class AuthService {
     console.log(firebase.auth().currentUser);
   }
 
+  loginWithFacebook() {
+    this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+  }
+
+ loginWithTwitter() {
+    this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+  }
+
+
+
+
+
+
+
   isLoggedIn() {
     const visitor = firebase.auth().currentUser;
     console.log(firebase.auth().currentUser);
@@ -49,5 +63,8 @@ export class AuthService {
   // what type of user for roles purposes
   getcurrentUser() {
     return firebase.auth().currentUser;
+  }
+  currentUserUID() {
+   return this.userUID = firebase.auth().currentUser.uid;
   }
 }
