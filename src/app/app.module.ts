@@ -18,10 +18,12 @@ import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.comp
 import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { AuthService } from './services/auth-service.service';
+import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {UserService} from './services/user.service';
-import { AuthService } from './services/auth-service.service';
 import { CacheService } from './services/cache.service';
 
 export const	firbaseConfig = {
@@ -40,6 +42,10 @@ export const	firbaseConfig = {
     NavbarComponent,
     HomeComponent,
     FooterComponent,
+    // BecomeAsitterComponent,
+    SignInComponent,
+    MiniDashboardComponent,
+    PetReg1Component,
     // ClientRegComponent,
     SitterReg1Component,
     SitterReg4Component,
