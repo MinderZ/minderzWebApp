@@ -15,7 +15,7 @@ export class BookServiceComponent implements OnInit {
 
 
   save(user) {
-this.userservice.create(user);
+this.userservice.createProfile(user);
 
   }
 

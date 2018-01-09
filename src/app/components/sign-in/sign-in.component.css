@@ -42,3 +42,15 @@ color:#fff;
 input:focus{
 border-color:#ff978f;
 }
+.twitter{
+background-color: #52c2ee}
+.facebook{
+text-transform:capitalize;
+}
+.google{
+text-transform:capitalize;
+}
+.custom{
+background-color:#ff978f;
+text-transform:capitalize;
+}
