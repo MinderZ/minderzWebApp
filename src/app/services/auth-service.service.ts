@@ -31,6 +31,20 @@ public userUID: string;
     console.log(firebase.auth().currentUser);
   }
 
+  loginWithFacebook() {
+    this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+  }
+
+ loginWithTwitter() {
+    this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+  }
+
+
+
+
+
+
+
   isLoggedIn() {
     const visitor = firebase.auth().currentUser;
     console.log(firebase.auth().currentUser);

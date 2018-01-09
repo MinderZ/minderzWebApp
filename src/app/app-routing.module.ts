@@ -19,33 +19,30 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
     path: 'signIn',
     component: SignInComponent
   },
   {
-    path: 'miniDash',
-    component: MiniDashboardComponent
-  }
-  ,
-  {
-    path: 'PetRegister1',
-    component: PetReg1Component
-  }
-,  
-{
-  path: 'home',
-    component: HomeComponent
-  //  canActivate: [ ]
-}
-  ,
-  {
-    path: 'become',
-    component: BookServiceComponent
+    path: 'sitterReg',
+    component: SitterReg1Component
   },
   {
-    path: 'home',
-    component: HomeComponent
-    //  canActivate: [ ]
+    path: 'sitterReg4',
+    component: SitterReg4Component
+  },
+  {
+    path: 'profile',
+    component: MiniDashboardComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'become',
+    component: BookServiceComponent,
+    canActivate: [AuthGuard]
   }
 
   // children: [
