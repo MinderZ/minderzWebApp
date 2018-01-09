@@ -10,19 +10,18 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
 // import { CanActivate } from '@angular/router/src/interfaces';
 import { SitterReg4Component } from './components/sitter-reg-4/sitter-reg-4.component';
+import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-
   },
   {
     path: 'signIn',
     component: SignInComponent
-  }
-  ,
+  },
   {
     path: 'miniDash',
     component: MiniDashboardComponent
@@ -32,22 +31,22 @@ const routes: Routes = [
     path: 'PetRegister1',
     component: PetReg1Component
   }
-  
-  
-// {
-//   path: 'sitterReg1',
-//   component: SitterReg1Component
-// },
-//{
-//  path: 'sitterReg',
-  //  component: SitterReg4Component
-//}
 ,  
 {
   path: 'home',
     component: HomeComponent
   //  canActivate: [ ]
 }
+  ,
+  {
+    path: 'become',
+    component: BookServiceComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+    //  canActivate: [ ]
+  }
 
   // children: [
   //   { path: ' ',
@@ -60,4 +59,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

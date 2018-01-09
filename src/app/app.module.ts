@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
+// import {FormsModule}
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {AngularFireModule} from 'angularfire2';
+
 import { AppComponent } from './app.component';
 import { BookServiceComponent } from './components/book-service/book-service.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +21,19 @@ import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboa
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth-service.service';
 import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+import {UserService} from './services/user.service';
+import { CacheService } from './services/cache.service';
 
+export const	firbaseConfig = {
+    apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
+    authDomain: 'minderz-4ecba.firebaseapp.com',
+    databaseURL: 'https://minderz-4ecba.firebaseio.com',
+    projectId: 'minderz-4ecba',
+    storageBucket: 'minderz-4ecba.appspot.com',
+    messagingSenderId: '319003344942'
+};
 
 @NgModule({
   declarations: [
@@ -40,7 +56,17 @@ MiniDashboardComponent
   imports: [
     BrowserModule,
     //  NgbModule.forRoot(),
+    AngularFireModule.initializeApp(firbaseConfig),
+    FormsModule,
     AppRoutingModule
+  ],
+  providers: [
+
+    AngularFireDatabaseModule, AngularFireDatabase
+    , AngularFireAuth,
+     UserService,
+     AuthService,
+     CacheService,
   ],
   // providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
