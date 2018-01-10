@@ -20,16 +20,39 @@
   font-size: 18px;
 }
 .card {
-  margin-top: 80px;
-margin-left:300px;
-  height: 500px;
-  background-color: #000000;
-  opacity: 0.3;
-  width: 900px;
-  columns: #000000;;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+	background-color:rgba(255, 255, 255, 0.4);
+	padding-left:35px;
+	padding-right:35px;
+	padding-top:35px;
+	padding-bottom:50px;
+	width: 40%;
+	float: left;
+	left: 45%;
+	position: absolute;
+  margin-top:80px;
+	margin-left: -260px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
 }
 
-.formBackground {
-  background-color: rgba(255,255,255, 0.2);
-  color: inherit;
+.cardHeader{    
+  font-size: 48px !important;
+  color: #ff978f;
+  text-align: center;
+  line-height: 48px;
+  font-weight: bold;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardSubHeader{
+  font-size: 22px;
+  color: rgb(0,6,69);
+  color: rgba(0,6,69,0.3);
+  line-height: 22px;
+  font-weight: normal;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
