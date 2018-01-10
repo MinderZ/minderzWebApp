@@ -19,7 +19,8 @@
   </div>
   <div class="col-md-5 ">
 
-        <h4><i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i> Freedom to choose your schedule, services, and rates.</h4>
+        <h4><span class="pinkish">
+          <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i></span> Freedom to choose your schedule, services, and rates.</h4>
 
 
 
@@ -46,7 +47,7 @@
 
 
 
-
+<!--
 <form #f="ngForm" (ngSubmit)="save(f.value)">
 <div class="col-md-6">
 
@@ -81,7 +82,6 @@
   <option>Male</option>
   <option>Female</option>
 </select>
-  <!-- <input ngModel name="genderGender"id="name"type="text" > -->
 </div>
 
 <div class="form-groupl">
@@ -117,7 +117,633 @@
 
 </div>
 
-</form>
+</form> -->
 
-<!-- <app-footer></app-footer> -->
+<form class="well form-horizontal" #f="ngForm" (ngSubmit)="save(f.value)">
 
+    <div class="stepOne" *ngIf="step1">
+      <div class="form-group">
+        <label class="col-md-4 control-label">Address</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-home"></i>
+            </span>
+            <input #address="ngModel" ngModel name="address" placeholder="Address" class="form-control" type="text" required>
+          </div>
+          <div *ngIf="address.touched && address.invalid" class="alert alert-danger">
+            <div *ngIf="address.errors.required"> Your
+              <strong>Address</strong> is required!</div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-lg btn-primary" [disabled]="!(address.touched) || address.invalid" (click)="step2 = true; step1 = false;"
+        type="button">
+        <i class="fa fa-arrow-right" aria-hidden="true"></i> Next</button>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="stepTwo" *ngIf="step2">
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Picture</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-camera"></i>
+            </span>
+            <button type="button" class="btn btn-default form-control">Choose File</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Your Age</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-birthday-cake"></i>
+            </span>
+            <input #age="ngModel" ngModel name="age" placeholder="Age" class="form-control" type="text" required [gte]="18" digits>
+          </div>
+          <div *ngIf="age.touched && age.invalid">
+            <div *ngIf="age.errors?.required" class="alert alert-danger">
+              <strong>Age</strong> is required!</div>
+            <div *ngIf="age.errors?.gte" class="alert alert-warning"> At least you must be of age
+              <strong>18</strong>
+            </div>
+            <div *ngIf="age.errors?.digits" class="alert alert-warning">Enter numbers
+              <strong>only</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Your Gender</label>
+        <div class="col-md-4 inline">
+          <div class="radio">
+            <label>
+              <input type="radio" name="gender" value="male" /> Male
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="gender" value="female" /> Female
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Zip Code</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-home"></i>
+            </span>
+            <input #zip="ngModel" ngModel name="zip" placeholder="Zip Code" class="form-control" type="text" required>
+          </div>
+          <div *ngIf="zip.touched && zip.invalid" class="alert alert-danger">Your
+            <strong>Zip Code</strong> is required!</div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Your SA ID Number</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-id-card"></i>
+            </span>
+            <input #IDNum="ngModel" ngModel name="IDNum" placeholder="13 digit SA ID number" class="form-control" type="text" required>
+          </div>
+          <div *ngIf="IDNum.touched && IDNum.invalid" class="alert alert-danger">Your
+            <strong>SA ID number</strong> is required!</div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Upload Copy of ID</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-camera"></i>
+            </span>
+            <button type="button" class="btn btn-default form-control">Choose File</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Upload Signed Consent Form</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-camera"></i>
+            </span>
+            <button type="button" class="btn btn-default form-control">Choose File</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Emergency Contact Name</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-heart-o"></i>
+            </span>
+            <input #emergencyname="ngModel" ngModel name="emergencyname" placeholder="Emergency Contact Name" class="form-control" type="text"
+              required>
+          </div>
+          <div *ngIf="emergencyname.touched && emergencyname.invalid" class="alert alert-warning">An
+            <div *ngIf="emergencyname.errors?.required">
+              <strong>Emergency Contact Name</strong> is required!</div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Emergency Contact Number</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="	fa fa-medkit"></i>
+            </span>
+            <input #emergencynumber="ngModel" ngModel name="emergencynumber" placeholder="Emergency Contact Number" class="form-control"
+              type="text" phone="CN" required>
+          </div>
+          <div *ngIf="emergencynumber.touched && emergencynumber.invalid" class="alert alert-warning">An
+            <div *ngIf="emergencyname.errors?.required">
+              <strong>Emergency Contact Number</strong> is required!</div>
+            <div *ngIf="emergencyname.errors?.phone">Sorry we
+              <strong>Require</strong> a real cell number!</div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-lg btn-primary" (click)="step3 = true; step2 = false;" type="button">Next <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+
+    </div>
+
+    <div class="stepThree" *ngIf="step3">
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Job Distance Radius</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-map-marker"></i>
+            </span>
+            <select #workingdistance="ngModel" ngModel name="workingdistance" class="form-control selectpicker" required>
+              <option>10km</option>
+              <option>20km</option>
+              <option>50km</option>
+            </select>
+            <div *ngIf="workingdistance.touched && workingdistance.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Pet Size Preference</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-map-marker"></i>
+            </span>
+            <select #petPreferredSize="ngModel" ngModel name="petPreferredSize" class="form-control selectpicker" required>
+              <option>small</option>
+              <option>small-medium</option>
+              <option>any size</option>
+            </select>
+            <div *ngIf="petPreferredSize.touched && petPreferredSize.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Pet Type Preference</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <label class="checkbox-inline">
+              <input type="checkbox" value="">Dogs</label>
+            <label class="checkbox-inline">
+              <input type="checkbox" value="">Cats</label>
+            <label class="checkbox-inline">
+              <input type="checkbox" value="">Fish</label>
+            <label class="checkbox-inline">
+              <input type="checkbox" value="">Birds</label>
+            <label class="checkbox-inline">
+              <input type="checkbox" value="">Other</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h3 class="col-md-4 col-sm-4 control-label">Dog Walking</h3>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Price per Walk</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-money"></i>
+            </span>
+            <input #priceperwalk="ngModel" ngModel name="priceperwalk" placeholder="Price" class="form-control" type="text" [lt]="1"
+              required>
+          </div>
+          <div *ngIf="priceperwalk.touched && priceperwalk.invalid">
+            <div class="alert alert-danger" *ngIf="priceperwalk.errors?.required"> Your
+              <strong>own amount</strong> is required!</div>
+            <div class="alert alert-warning" *ngIf="priceperwalk.errors?.lt">Unless you are running
+              <strong>charity work</strong>we reccommend to set a realistic amount!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Pets per Walk</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-paw"></i>
+            </span>
+            <select #petsperwalk="ngModel" ngModel name="petsperwalk" class="form-control selectpicker" required>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+            <div *ngIf="petsperwalk.touched && petsperwalk.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Walks per Day</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-paw"></i>
+            </span>
+            <select #WalkPerDay="ngModel" ngModel name="WalkPerDay" class="form-control selectpicker" required>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+            <div *ngIf="WalkPerDay.touched && WalkPerDay.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h3 class="col-md-4 col-sm-4 control-label">Pet Sitting</h3>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Price per Pet</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-money"></i>
+            </span>
+            <input #priceperpet="ngModel" ngModel name="priceperpet" placeholder="Price" class="form-control" type="text" [lt]="1" required>
+          </div>
+          <div *ngIf="priceperpet.touched && priceperpet.invalid">
+            <div class="alert alert-danger" *ngIf="priceperpet.errors?.required"> Your
+              <strong>own amount</strong> is required!</div>
+            <div class="alert alert-warning" *ngIf="priceperpet.errors?.lt">Unless you are running
+              <strong>charity work</strong>we reccommend to set a realistic amount!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Pets per Day</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-paw"></i>
+            </span>
+            <select #petsperday="ngModel" ngModel name="petsperday" class="form-control selectpicker" required>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+            <div *ngIf="petsperday.touched && petsperday.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h3 class="col-md-4 col-sm-4 control-label">House Sitting</h3>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Price</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-money"></i>
+            </span>
+            <input #HouseSittingPrice="ngModel" ngModel name="HouseSittingPrice" placeholder="Price" class="form-control" type="text"
+              required>
+          </div>
+          <div *ngIf="HouseSittingPrice.touched && HouseSittingPrice.invalid" class="alert alert-warning">Your
+            <strong>House Sitting Price</strong> is required!</div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <h3 class="col-md-4 col-sm-4 control-label">Drop-in Visits</h3>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Price per Visit</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-money"></i>
+            </span>
+            <input #pricepervisit="ngModel" ngModel name="pricepervisit" placeholder="Price" class="form-control" type="text" [lt]="1"
+              required>
+          </div>
+          <div *ngIf="pricepervisit.touched && pricepervisit.invalid">
+            <div class="alert alert-danger" *ngIf="pricepervisit.errors?.required"> Your
+              <strong>own amount</strong> is required!</div>
+            <div class="alert alert-warning" *ngIf="pricepervisit.errors?.lt">Unless you are running
+              <strong>charity work</strong>we reccommend to set a realistic amount!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Visits per Day</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-paw"></i>
+            </span>
+            <select #visitsperday="ngModel" ngModel name="visitsperday" class="form-control selectpicker">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+            <div *ngIf="visitsperday.touched && visitsperday.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-lg btn-primary" (click)="step4 = true; step3 = false;" type="button">Next <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="stepFour" *ngIf="step4">
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">House Type:</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-home"></i>
+            </span>
+            <select #houseType="ngModel" ngModel name="houseType" class="form-control selectpicker">
+              <option value=" ">Flat</option>
+              <option>House without a yard</option>
+              <option>House with a yard</option>
+            </select>
+            <div *ngIf="houseType.touched && houseType.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Children</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-child" aria-hidden="true"></i>
+            </span>
+            <select #children="ngModel" ngModel name="children" class="form-control selectpicker" required>
+              <option value=" ">Yes</option>
+              <option>No</option>
+            </select>
+            <div *ngIf="children.touched && children.invalid" class="alert alert-warning">
+              An <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Experience</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-list"></i>
+            </span>
+            <select #experience="ngModel" ngModel name="experience" class="form-control selectpicker" required>
+              <option value=" ">No Experience</option>
+              <option>1 Year</option>
+              <option>2 Year</option>
+              <option>3 Year</option>
+              <option>4+ Year</option>
+            </select>
+            <div *ngIf="experience.touched && experience.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">HeadLine:</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-home"></i>
+            </span>
+            <input #headline="ngModel" ngModel name="headline" placeholder="Headline" class="form-control" type="text" required>
+          </div>
+          <div *ngIf="headline.touched && headline.invalid" class="alert alert-danger">Your
+            <strong>HeadLine</strong> is required!</div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">About You:</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-pencil"></i>
+            </span>
+            <textarea class="form-control" name="aboutYou"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Done Volunteer work for Pets?</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-paw" aria-hidden="true"></i>
+            </span>
+            <select #volunteerPets="ngModel" ngModel name="volunteerPets" class="form-control selectpicker" required>
+              <option value=" ">Yes</option>
+              <option>No</option>
+            </select>
+            <div *ngIf="volunteerPets.touched && volunteerPets.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Do You Own Pets?</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-paw" aria-hidden="true"></i>
+            </span>
+            <select #ownPets="ngModel" ngModel name="ownPets" class="form-control selectpicker" required>
+              <option value=" ">Yes</option>
+              <option>No</option>
+            </select>
+            <div *ngIf="ownPets.touched && ownPets.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Have You Owned Pets</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-paw" aria-hidden="true"></i>
+            </span>
+            <select #ownedPets="ngModel" ngModel name="ownedPets" class="form-control selectpicker">
+              <option value=" ">Yes</option>
+              <option>No</option>
+            </select>
+            <div *ngIf="ownedPets.touched && ownedPets.invalid" class="alert alert-warning">An
+              <strong>Emergency Contact Number</strong> is required!</div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Reference 1 Name:</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user"></i>
+            </span>
+            <input #ref1Name1="ngModel" ngModel name="ref1Name1" placeholder="Reference 1 Name" class="form-control" type="text" required>
+          </div>
+          <div *ngIf="ref1Name1.touched && ref1Name1.invalid" class="alert alert-danger">Your
+            <strong>Reference 1 Name</strong> is required!</div>
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Reference 1 Phone:</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-earphone"></i>
+            </span>
+            <input #ref1Phone="ngModel" ngModel name="ref1Phone" placeholder="Reference 1 Phone" class="form-control" type="text" required>
+          </div>
+          <div *ngIf="ref1Phone.touched && ref1Phone.invalid" class="alert alert-danger">Your
+            <strong>Reference 1 Phone</strong> is required!</div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Reference 2 Name:</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user"></i>
+            </span>
+            <input #ref2Name="ngModel" ngModel name="ref2Name" placeholder="Reference 2 Name" class="form-control" type="text" required>
+          </div>
+          <div *ngIf="ref2Name.touched && ref2Name.invalid" class="alert alert-danger">Your
+            <strong>Reference 2 Name</strong> is required!</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Reference 2 Phone:</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-earphone"></i>
+            </span>
+            <input #ref2Phone="ngModel" ngModel name="ref2Phone" placeholder="Reference 2 Phone" class="form-control" type="text" required>
+          </div>
+          <div *ngIf="ref2Phone.touched && ref2Phone.invalid" class="alert alert-danger">Your
+            <strong>Reference 2 Phone</strong> is required!</div>
+
+        </div>
+      </div>
+      <button class="btn btn-lg btn-primary" type="submit">Submit <i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+    </div>
+
+
+  </form>
+
+  <div class="row text-center">
+    <ul class="pagination pagination-success">
+      <li class="">
+        <a [ngClass]="step1 ? 'stepin' : 'stepout'">1</a>
+      </li>
+      <li>
+        <a [ngClass]="step2 ? 'stepin' : 'stepout'">2</a>
+      </li>
+      <li>
+        <a [ngClass]="step3 ? 'stepin' : 'stepout'">3</a>
+      </li>
+      <li>
+        <a [ngClass]="step4 ? 'stepin' : 'stepout'">4</a>
+      </li>
+    </ul>
+  </div>

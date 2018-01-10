@@ -7,7 +7,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./book-service.component.css']
 })
 export class BookServiceComponent implements OnInit {
-
+  step1 = true;
   constructor(private userservice: UserService) { }
 
   ngOnInit() {
