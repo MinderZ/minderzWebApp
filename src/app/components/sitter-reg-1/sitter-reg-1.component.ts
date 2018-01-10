@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sitter-reg-1.component.css']
 })
 export class SitterReg1Component implements OnInit {
-
+  step1 = true;
   constructor() { }
 
   ngOnInit() {

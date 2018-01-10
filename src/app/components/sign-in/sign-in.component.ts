@@ -24,15 +24,15 @@ export class SignInComponent implements OnInit {
   loginWithGoogle() {
 this.auth.loginWithGoogle();
   }
+
   loginWithTwitter() {
+    this.auth.loginWithTwitter();
 
   }
+
   loginWithFacebook() {
-
+    this.auth.loginWithFacebook();
   }
 
 
-  logout() {
-this.auth.logout();
-  }
 }
