@@ -1,1 +1,11 @@
 
+.stepin{
+background-color:#337ab7;
+border-color:#337ab7;
+color:#fff;
+cursor: hand;
+}
+.stepout{
+  color:#337ab7;
+background-color:#fff
+}
