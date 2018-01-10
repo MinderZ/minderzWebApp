@@ -26,13 +26,13 @@ const routes: Routes = [
     path: 'signIn',
     component: SignInComponent
   },
+  // {
+  //   path: 'sitterReg',
+  //   component: SitterReg1Component
+  // },
   {
-    path: 'sitterReg',
+    path: 'sit',
     component: SitterReg1Component
-  },
-  {
-    path: 'sitterReg4',
-    component: SitterReg4Component
   },
   {
     path: 'profile',
