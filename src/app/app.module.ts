@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 // import {FormsModule}
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from 'angularfire2';
+import { CustomFormsModule } from 'ng2-validation';
 
 import { AppComponent } from './app.component';
 import { BookServiceComponent } from './components/book-service/book-service.component';
@@ -53,6 +54,7 @@ export const firbaseConfig = {
   ],
   imports: [
     BrowserModule,
+    CustomFormsModule,
     //  NgbModule.forRoot(),
     AngularFireModule.initializeApp(firbaseConfig),
     FormsModule,
