@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'become',
     component: BookServiceComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'petReg',
+    component: PetReg1Component,
   }
 
   // children: [
