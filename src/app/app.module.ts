@@ -25,6 +25,8 @@ import { AuthService } from './services/auth-service.service';
 import { CacheService } from './services/cache.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
+import { UserProfileObjet } from './model/userProfileObj.model';
+import { SitterProfileObject } from './model/sitterProfileObject.model';
 
 export const firbaseConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -67,7 +69,9 @@ export const firbaseConfig = {
     UserService,
     AuthService,
     CacheService,
-    AuthGuard
+    AuthGuard,
+    UserProfileObjet,
+    SitterProfileObject
   ],
   bootstrap: [AppComponent]
 })

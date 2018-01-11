@@ -67,4 +67,5 @@ public userUID: string;
   currentUserUID() {
    return this.userUID = firebase.auth().currentUser.uid;
   }
+
 }

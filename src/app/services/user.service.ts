@@ -4,16 +4,16 @@ import { AuthService } from './auth-service.service';
 
 @Injectable()
 export class UserService{
-  
+
   constructor(
     private db:   AngularFireDatabase,
 private auth: AuthService) {
    }
 
 
-createProfile(user) {
-console.log("user uid: " + this.auth.currentUserUID());
-return this.db.list('users/'+this.auth.currentUserUID() +'/profile').push(user);
+createProfile(profile) {
+console.log('user uid: ' + this.auth.currentUserUID());
+return this.db.list('users/' + this.auth.currentUserUID() + '/profile').push(profile);
 // console.log("not logged in, thus not saved"+ firebase.auth().currentUser.uid );
 }
 
