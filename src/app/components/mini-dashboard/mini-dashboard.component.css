@@ -8,9 +8,50 @@
 .card1:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-.avagtar{
+.avatar{
 background-image:url("../../../assets/img/minderzlogo.png");
 /* background:no-repeat; */
 height: 150px;
 width:100%;
 }
+
+#slideout {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 5%;
+  padding: 12px 0;
+  text-align: center;
+  background: #000000;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0;
+}
+#slideout_inner {
+  position: fixed;
+  top: 40px;
+  right: -50%;
+	background-color:rgba(255, 255, 255, 0.4);
+  width: 50%;
+  padding: 25px;
+  height: 100%;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  text-align: left;
+  -webkit-border-radius: 0 0 5px 0;
+  -moz-border-radius: 0 0 5px 0;
+  border-radius: 0 0 5px 0;
+}
+#slideout:hover {
+  left: 50%;
+}
+#slideout:hover #slideout_inner {
+  right: 0;
+}
+

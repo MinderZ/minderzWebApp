@@ -28,9 +28,9 @@
 	padding-right:35px;
 	padding-top:35px;
 	padding-bottom:50px;
-	width: 40%;
+	width: 50%;
 	float: left;
-	left: 45%;
+	left: 50%;
 	position: absolute;
   margin-top:80px;
 	margin-left: -260px;
@@ -58,11 +58,11 @@
 }
 
 .testimonials{
-  height: 280px;
+  height: 320px;
 }
 
 .placehold{
-  height: 20px;
+  height: 40px;
 }
 
 figure.testimonial {
