@@ -154,9 +154,6 @@
     </form>
 
   </div>
-  <br>
-  <br>
-  <br>
 
   <div class="stepTwo" *ngIf="step2">
 <form class="well form-horizontal" #f="ngForm" (ngSubmit)="persona(f.value)">
@@ -307,12 +304,19 @@
       <i class="fa fa-arrow-right" aria-hidden="true"></i>
     </button>
 
+
+    <button class="btn btn-lg btn-waringn" (click)="step3 = false; step2 = true; " type="button">Back
+      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </button>
+
+
+
 </form>
   </div>
 
 
   <div class="stepThree" *ngIf="step3">
-      <form class="well form-horizontal" #sitter="ngForm" (ngSubmit)="sit(sitter.value)">
+      <form class="well form-horizontal" #sitter="ngForm" (ngSubmit)="sitte(sitter.value)">
     <div class="form-group">
       <label class="col-md-4 control-label">Job Distance Radius</label>
       <div class="col-md-4 selectContainer">
@@ -541,6 +545,13 @@
     <button class="btn btn-lg btn-primary" (click)="step4 = true; " type="submit">Next
       <i class="fa fa-arrow-right" aria-hidden="true"></i>
     </button>
+
+    <button class="btn btn-lg btn-warning" (click)="step4 = false; step3 = true; " type="button">Back
+      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </button>
+
+
+
   </form>
 
   </div>
@@ -550,7 +561,7 @@
 
 
   <div class="stepFour" *ngIf="step4">
-      <form class="well form-horizontal" #sitter2="ngForm" (ngSubmit)="sit(sitter2.value)">
+      <form class="well form-horizontal" #sit="ngForm" (ngSubmit)="sittingdetails(sit.value)">
 
     <div class="form-group">
       <label class="col-md-4 control-label">House Type:</label>
@@ -633,7 +644,7 @@
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-pencil"></i>
           </span>
-          <textarea class="form-control" #bio="ngModel" ngModel name="bio"></textarea>
+          <textarea class="form-control" #bio="ngModel" ngModel name="bio" value=""></textarea>
         </div>
       </div>
     </div>
@@ -750,6 +761,10 @@
       </div>
     </div>
     <button class="btn btn-lg btn-primary" type="submit">Submit
+      <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+    </button>
+
+    <button class="btn btn-lg btn-warning" type="submit" (click)="step4 = false; step3 = true;">Back
       <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
     </button>
 </form>

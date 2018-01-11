@@ -23,7 +23,7 @@ import { UserService } from './services/user.service';
 import { AuthService } from './services/auth-service.service';
 import { CacheService } from './services/cache.service';
 import { AuthGuard } from './services/auth-guard.service';
-import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
+import { PetRegComponent } from './components/pet-reg-1/pet-reg-1.component';
 import { UserProfileObjet } from './model/userProfileObj.model';
 import { SitterProfileObject } from './model/sitterProfileObject.model';
 
@@ -44,7 +44,7 @@ export const firbaseConfig = {
     HomeComponent,
     FooterComponent,
     // BecomeAsitterComponent,
-    PetReg1Component,
+    PetRegComponent,
     // ClientRegComponent,
     SitterReg1Component,
     SignInComponent,

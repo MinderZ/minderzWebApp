@@ -3,26 +3,24 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthService } from './auth-service.service';
 
 @Injectable()
-export class UserService{
+export class UserService {
 
   constructor(
     private db:   AngularFireDatabase,
 private auth: AuthService) {
    }
 
-
+// create user profile
 createProfile(profile) {
-console.log('user uid: ' + this.auth.currentUserUID());
 return this.db.list('users/' + this.auth.currentUserUID() + '/profile').push(profile);
-// console.log("not logged in, thus not saved"+ firebase.auth().currentUser.uid );
 }
-
+// create sitter profile from the user profile above
+createSitterProfile(sitter) {
+return this.db.list('/users/' + this.auth.currentUserUID() + '/sitter').push(sitter);
+}
 
 createPetProfile(user) {
 return this.db.list('/users/${this.userId}/pets').push(user);
-}
-createSitterProfile(user) {
-return this.db.list('/users/${this.userId}/sitter').push(user);
 }
 
 getProfile() {

@@ -52,7 +52,7 @@ console.log(this.userprof);
 }
 
 
-sit(sitter) {
+sitte(sitter) {
 this.sitterObj.jobRadius = sitter.workingdistance;
 this.sitterObj.PetSizePreference = sitter.petPreferredSize;
 this.sitterObj.PetTypePreference = 'still on working all those selected pets';
@@ -64,25 +64,29 @@ this.sitterObj.sittingPetsperDay = sitter.petsperday;
 this.sitterObj.HouseSittingPrice = sitter.HouseSittingPrice;
 this.sitterObj.dropInVisitsPrice = sitter.pricepervisit;
 this.sitterObj.VisitsperDay = sitter.visitsperday;
-this.sitterObj.HouseType = sitter.houseType;
-this.sitterObj.Children = sitter.children;
-this.sitterObj.Experience = sitter.experience;
-this.sitterObj.HeadLine = sitter.headline;
-this.sitterObj.bio = sitter.bio;
-this.sitterObj.DoneVolunter = sitter.volunterPets;
-this.sitterObj.OwnPets = sitter.ownPets;
-this.sitterObj.hadPets = sitter.ownedPets;
-this.sitterObj.Reference1Name = sitter.ref1Name1;
-this.sitterObj.Reference1Phone = sitter.ref1Phone;
-this.sitterObj.Reference2Name = sitter.ref2Name;
-this.sitterObj.Reference2Phone = sitter.ref2Phone;
 console.log(this.sitterObj);
 this.step3 = false;
 }
 
-  save(user) {
-this.userservice.createProfile(user);
-  }
+sittingdetails(sit) {
+  this.sitterObj.HouseType = sit.houseType;
+  this.sitterObj.Children = sit.children;
+  this.sitterObj.Experience = sit.experience;
+  this.sitterObj.HeadLine = sit.headline;
+  this.sitterObj.bio = sit.bio;
+  this.sitterObj.DoneVolunter = sit.volunterPets;
+  this.sitterObj.OwnPets = sit.ownPets;
+  this.sitterObj.hadPets = sit.ownedPets;
+  this.sitterObj.Reference1Name = sit.ref1Name1;
+  this.sitterObj.Reference1Phone = sit.ref1Phone;
+  this.sitterObj.Reference2Name = sit.ref2Name;
+  this.sitterObj.Reference2Phone = sit.ref2Phone;
+  this.userservice.createSitterProfile(this.userprof);
+}
+
+//   save(user) {
+// this.userservice.createProfile(user);
+//   }
 
 
 }
