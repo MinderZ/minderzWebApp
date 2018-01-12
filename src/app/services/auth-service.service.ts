@@ -20,11 +20,11 @@ public userUID: string;
   }
 
   loginWithGoogle() {
-    const returnUrl = this.route.snapshot.queryParamMap.get(returnUrl) || '/';
-   this.cache.navigator = returnUrl;
+  //   const returnUrl = this.route.snapshot.queryParamMap.get(this.returnUrl) || '/';
+  //  this.cache.navigator = returnUrl;
     // localStorage.setItem("returnUrl", returnUrl);
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    //  this.router.navigate(['/']);
+     this.router.navigate(['/']);
   }
 
   loginWithFacebook() {

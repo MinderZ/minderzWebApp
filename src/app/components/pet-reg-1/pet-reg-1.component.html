@@ -39,10 +39,11 @@
           <div class="col-md-4">
             <div class="radio">
               <label>
-                <input type="radio" name="gender" value="Male" /> Male
+                <input type="radio" #pGender="ngModel" ngModel name="gender" value="Male" required > Male
               </label>
+
               <label>
-                <input type="radio" name="gender" value="Female" /> Female
+                <input type="radio" #pGender="ngModel" ngModel name="gender" value="Female" required> Female
               </label>
             </div>
           </div>
@@ -103,10 +104,10 @@
         <div class="form-group">
           <label class="col-md-4 control-label"></label>
           <div class="col-md-4">
-            <button class="btn btn-primary">Back
+            <!-- <button class="btn btn-primary">Back
               <span class="fa fa-arrow-left"></span>
-            </button>
-            <button class="btn btn-warning">Next
+            </button> -->
+            <button class="btn btn-primary" (click)="step2 = true;">Next
               <span class="fa fa-arrow-right"></span>
             </button>
           </div>
@@ -177,10 +178,10 @@
       <div class="form-group">
         <label class="col-md-4 control-label"></label>
         <div class="col-md-4">
-          <button class="btn btn-primary">Back
+          <button class="btn btn-warning">Back
             <span class="fa fa-arrow-left"></span>
           </button>
-          <button class="btn btn-warning">Finish
+          <button class="btn btn-primary">Finish
             <span class="fa fa-thumbs-up"></span>
           </button>
         </div>
