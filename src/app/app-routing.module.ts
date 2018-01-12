@@ -25,14 +25,6 @@ const routes: Routes = [
     path: 'signIn',
     component: SignInComponent
   },
-  // {
-  //   path: 'sitterReg',
-  //   component: SitterReg1Component
-  // },
-  {
-    path: 'sit',
-    component: SitterReg1Component
-  },
   {
     path: 'profile',
     component: MiniDashboardComponent,
@@ -44,7 +36,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'petReg',
+    path: 'addpet',
     component: PetReg1Component,
   }
 

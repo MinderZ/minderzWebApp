@@ -19,12 +19,15 @@ createSitterProfile(sitter) {
 return this.db.list('/users/' + this.auth.currentUserUID() + '/sitter').push(sitter);
 }
 
-createPetProfile(user) {
-return this.db.list('/users/${this.userId}/pets').push(user);
+createPetProfile(pet) {
+return this.db.list('/users/' + this.auth.currentUserUID() + '/pets').push(pet);
 }
 
 getProfile() {
-
 }
 
 }
+
+// getMessage(): AngularFireList<ChatMessage[]> {
+//     return this.fireDb.list('/messages');
+//   }
