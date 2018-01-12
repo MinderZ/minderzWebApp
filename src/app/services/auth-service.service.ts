@@ -17,18 +17,14 @@ public userUID: string;
 
   )  {
     this.user$ = afAuth.authState;
-    // this.user$.subscribe(user =>{console.log(user);
-    //     });
   }
 
   loginWithGoogle() {
-    const returnUrl =
-      this.route.snapshot.queryParamMap.get('returnUrl ') || '/';
+    const returnUrl = this.route.snapshot.queryParamMap.get(returnUrl) || '/';
    this.cache.navigator = returnUrl;
     // localStorage.setItem("returnUrl", returnUrl);
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    //  this.router.navigate(['/chats']);
-    console.log(firebase.auth().currentUser);
+    //  this.router.navigate(['/']);
   }
 
   loginWithFacebook() {
@@ -67,4 +63,5 @@ public userUID: string;
   currentUserUID() {
    return this.userUID = firebase.auth().currentUser.uid;
   }
+
 }
