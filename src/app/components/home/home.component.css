@@ -5,7 +5,7 @@
 
 .Services {
   color: #8c8c8c;
-  background-color: #e7e7e7;
+  background-color: #ff978f56;
 }
 .intro-image {
   overflow: hidden;
@@ -38,7 +38,7 @@
   -webkit-border-radius: 7px;
 }
 
-.cardHeader{    
+.cardHeader{
   font-size: 48px !important;
   color: #ff978f;
   text-align: center;
