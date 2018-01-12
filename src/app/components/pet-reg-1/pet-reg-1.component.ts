@@ -15,6 +15,7 @@ export class PetReg1Component implements OnInit {
 
   pet1Part(part1) {
     this.userservice.createProfile(part1);
+    // this.
   }
 
   pet2Part(part2) {
