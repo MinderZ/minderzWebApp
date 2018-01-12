@@ -29,10 +29,10 @@ const routes: Routes = [
   //   path: 'sitterReg',
   //   component: SitterReg1Component
   // },
-  {
-    path: 'sit',
-    component: SitterReg1Component
-  },
+  // {
+  //   path: 'sit',
+  //   component: SitterReg1Component
+  // },
   {
     path: 'profile',
     component: MiniDashboardComponent,

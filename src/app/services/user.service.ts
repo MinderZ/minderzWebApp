@@ -4,7 +4,7 @@ import { AuthService } from './auth-service.service';
 
 @Injectable()
 export class UserService{
-  
+
   constructor(
     private db:   AngularFireDatabase,
 private auth: AuthService) {
@@ -30,3 +30,7 @@ getProfile() {
 }
 
 }
+
+// getMessage(): AngularFireList<ChatMessage[]> {
+//     return this.fireDb.list('/messages');
+//   }
