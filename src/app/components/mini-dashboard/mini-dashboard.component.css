@@ -1,26 +1,9 @@
 
-.card1 {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
-  border-radius: 5px;
-}
-.card1:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-.avatar{
-background-image:url("../../../assets/img/minderzlogo.png");
-/* background:no-repeat; */
-height: 150px;
-width:100%;
-}
-
 #slideout {
   position: fixed;
-  top: 40px;
   right: 0;
   width: 5%;
-  padding: 12px 0;
+  height: 60px;
   text-align: center;
   background: #ffffff;
   -webkit-transition-duration: 0.3s;
@@ -29,7 +12,7 @@ width:100%;
   -o-transition-duration: 0.3s;
   -webkit-border-radius: 0 5px 5px 0;
   -moz-border-radius: 0 5px 5px 0;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px 0 0 5px;
 }
 #slideout_inner {
   position: fixed;
@@ -49,7 +32,7 @@ width:100%;
   border-radius: 0 0 5px 0;
 }
 #slideout:hover {
-  left: 60%;
+  left: 55%;
 }
 #slideout:hover #slideout_inner {
   right: 0;
@@ -63,8 +46,8 @@ a.nostyle{
 }
 div.portfoliocard{
 	position:relative;
-	height:450px;
-	width:400px;
+	height:85%;
+	width:90%;
 	background:rgba(255,255,255,1);
 	border:1px solid rgba(0,0,0,0.7);
 	box-shadow:0px -1px 3px rgba(0,0,0,0.1),
@@ -96,6 +79,7 @@ div.portfoliocard div.left_col{
 	box-sizing:border-box;
 }
 div.portfoliocard div.right_col{
+	height:100%;
 	width:60%;
 	background:rgba(245,245,245,1);
 	border-left:1px solid rgba(230,230,230,1);
@@ -191,8 +175,8 @@ div.portfoliocard div.follow_count{
 	font-size:25px;
 	color:rgba(140,140,140,1);
 }
+
 .height{
-  height:100%;
+	height:680px;
+	background-color: rgba(255, 192, 204, 0.267);
 }
-
-
