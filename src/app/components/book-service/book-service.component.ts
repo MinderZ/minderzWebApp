@@ -12,7 +12,7 @@ import { SitterProfileObject } from '../../model/sitterProfileObject.model';
   styleUrls: ['./book-service.component.css']
 })
 export class BookServiceComponent implements OnInit {
-  step1 = true;
+  step1 = false;
   step2 = false;
   step3 = false;
   step4 = false;

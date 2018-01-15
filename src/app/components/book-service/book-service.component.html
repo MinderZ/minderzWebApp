@@ -14,7 +14,7 @@
 </div>
 
 
-<div class="row text-center">
+<div class="row text-centder">
   <div class=" col-md-1">
   </div>
   <div class="col-md-5 ">
@@ -25,37 +25,96 @@
       </span> Freedom to choose your schedule, services, and rates.</h4>
 
 
-
+<br>
     <h4>
-      <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i> Secure payments.</h4>
+<span class="pinkish">
+      <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i>
+      </span> Secure payments.</h4>
   </div>
+
   <div class=" col-md-5">
 
-    <h4>
-      <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i> You & booked-in pets are covered by insurances.</h4>
-    <h4>
+    <h4><span class="pinkish">
       <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i>
-      Customer care support.
+    </span>You & booked-in pets are covered by insurances.</h4>
+    <br>
+    <h4>
+      <span class="pinkish">
+      <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i>
+      </span> Customer care support.
     </h4>
   </div>
+
   <div class=" col-md-1">
   </div>
 
 </div>
+<br>
+
+
+<section class="howitworks">
+<h1 class="pinkish text-center">How it works </h1>
+<p class="text-center">Only the best sitters and dog walkers get listed on Minderz. If you have personal or professional
+    experience watching pets or walking dogs, you could be a great fit.</p>
+<br>
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+
+  <h3>  <i class="fa fa-user fa-3x pinkish col-md" aria-hidden="true"></i>       <span> Set up your profile.</span>
+            Tell us what makes you a standout sitter
+            and include details of your pet sitting or
+            dog walking experience.</h3>
+
+    </div>
+     <div class="col-md-3">
+        <div>
+
+
+
+            <h3><i class="fa fa-calendar fa-3x pinkish" aria-hidden="true"></i> Organise your Calendar.</h3>
+
+            Choose your services, rates, and block
+            out the days you're unavailable, eg.
+            going on holiday.
+        </div>
+       </div>
+  </div>
+
+  <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3">
+       <div>
+
+          <i class="fa fa-picture-o fa-3x pinkish" aria-hidden="true"></i>
+
+           <h3>Add Photos</h3>
+
+           Adding photos that portray you as an
+           animal lover with a safe home. Having a
+           clear professional profile image is key as
+           this will display as a thumbnail across the
+           site.
+       </div>
+      </div>
+       <div class="col-md-3">
+          <div>
+
+              <i class="fa fa-money fa-3x pinkish" aria-hidden="true"></i>
+
+              <h3>Respond to jobs & enquiries!</h3>
+
+              Pet Owners will search their local area for
+Sitters and inquire with you directly.
+          </div>
+         </div>
+    </div>
+</section>
+<br>
 <div class="text-center">
-  <button type="submit" class="text-center btn btn-md btn-primary">Get started</button>
+  <button type="button" class="text-center btn btn-md btn-primary" (click)="step1 = true;"> Get started</button>
 </div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 
 
 <!--
@@ -771,7 +830,7 @@
   </div>
 
 
-
+  <div class="stepOne" *ngIf="step1">
 
 <div class="row text-center">
   <ul class="pagination pagination-success">
@@ -788,4 +847,5 @@
       <a [ngClass]="step4 ? 'stepin' : 'stepout'">4</a>
     </li>
   </ul>
+</div>
 </div>
