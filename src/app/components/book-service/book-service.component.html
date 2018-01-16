@@ -61,11 +61,13 @@
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-5">
-
-  <h3>  <i class="fa fa-user fa-3x pinkish col-md" aria-hidden="true"></i>       <span> Set up your profile.</span>
+ <div class="row">
+    <i class="fa fa-user fa-3x pinkish space col-md-1" aria-hidden="true"></i> <span class="col-md-6 mg-top-20">
+  <h3>   Set up your profile. </h3>
             Tell us what makes you a standout sitter
             and include details of your pet sitting or
-            dog walking experience.</h3>
+            dog walking experience.</span>
+  </div>
 
     </div>
      <div class="col-md-3">
@@ -117,77 +119,7 @@ Sitters and inquire with you directly.
 </div>
 
 
-<!--
-<form #f="ngForm" (ngSubmit)="save(f.value)">
-<div class="col-md-6">
 
-  <div class="form-groupl">
-    <label for="endusername" >First Name</label>
-    <input #fname="ngModel" ngModel name="fname"id="name"type="text" class="form-control" required>
-<div  *ngIf="fname.touched && fname.invalid" class="alert alert-danger">Your First name is required</div>
-  </div>
-
-
-<div class="form-groupl">
-  <label for="endusername" >Last Name</label>
-  <input #lname="ngModel" ngModel name="lname"id="name"type="text" class="form-control" required>
-<div  *ngIf="lname.touched && lname.invalid" class="alert alert-danger">Your Last Name is required</div>
-
-</div>
-
-
-<div class="form-groupl">
-  <label for="endusername" >Age</label>
-  <input #age="ngModel" ngModel name="age"id="name"type="text" class="form-control" required>
-<div  *ngIf="age.touched && age.invalid" class="alert alert-danger">Your Age is required</div>
-
-</div>
-
-<div class="form-groupl">
-  <label for="endusername" >Gender</label>
-<select #gender="ngModel" ngModel name="gender" class="form-control" required>
-<div  *ngIf="gender.touched && gender.invalid" class="alert alert-danger">Your Gender is required</div>
-
-  <option value=""></option>
-  <option>Male</option>
-  <option>Female</option>
-</select>
-</div>
-
-<div class="form-groupl">
-  <label for="endusername" >Identity number</label>
-  <input #identity="ngModel" ngModel name="identity"id="name"type="text" class="form-control" required>
-<div  *ngIf="identity.touched && identity.invalid" class="alert alert-danger">Your Identity number is required</div>
-
-</div>
-
-<div class="form-groupl">
-  <label for="endusername" >Address</label>
-  <input #address="ngModel" ngModel name="address"id="name"type="text" class="form-control" required>
-<div  *ngIf="address.touched && address.invalid" class="alert alert-danger">Your Address is required</div>
-
-</div>
-
-
-<div class="form-groupl">
-  <label for="endusername" >Cell number</label>
-  <input #cell="ngModel" ngModel name="cell"id="name"type="text" class="form-control" required>
-<div  *ngIf="cell.touched && cell.invalid" class="alert alert-danger">Your Cell number is required</div>
-
-</div>
-
-<div class="form-groupl">
-  <label for="endusername" >Emergency Cell number</label>
-  <input #emercell="ngModel" ngModel name="Emercell"id="name"type="text" class="form-control" required>
-<div  *ngIf="emercell.touched && emercell.invalid" class="alert alert-danger">Your Emergency Cell number is required</div>
-
-</div>
-<br>
-<button  class="btn btn-primary" type="submit">Save</button>
-
-</div>
-
-</form> -->
 
   <div class="stepOne" *ngIf="step1">
 <form class="well form-horizontal" #p="ngForm" (ngSubmit)="personal(p.value)">
