@@ -3,13 +3,6 @@
   background-color:transparent;
 } */
 
-.navbar-default {
-  background-color: #f0efef !important;
-  border-color: transparent;
-  background-image: none;
-  /* border-bottom:2px solid #575454; */
-  box-shadow: none;
-}
 .navbar-default .navbar-nav > li > a {
   /* font-size: 20px; */
   color: #666363;
@@ -28,4 +21,8 @@
   transition: 0.3s;
   color: #fff;
   text-transform: uppercase;
+}
+.appnav{
+background-color:#fff;
+color:#666363;
 }
