@@ -149,16 +149,17 @@ Sitters and inquire with you directly.
   </div>
 
   <div class="stepTwo" *ngIf="step2">
-<form class="well form-horizontal" #f="ngForm" (ngSubmit)="persona(f.value)">
+<div class="row">
+<form class="well form-horizontal col-md-6" #f="ngForm" (ngSubmit)="persona(f.value)">
 
     <div class="form-group">
-      <label class="col-md-4 control-label">Picture</label>
+      <label class="col-md-4 control-label"> Profile Picture</label>
       <div class="col-md-4 inputGroupContainer">
         <div class="input-group">
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-camera"></i>
           </span>
-          <button type="button" class="btn btn-default form-control">Choose File</button>
+          <input type="button" placeholder="Image URL" class="btn btn-default form-control">
         </div>
       </div>
     </div>
@@ -305,6 +306,17 @@ Sitters and inquire with you directly.
 
 
 </form>
+<div class="col-md-3">
+        <div class="thumbnail">
+          <a href="/w3images/nature.jpg" target="_blank">
+            <img src="/w3images/nature.jpg" alt="Nature" style="width:100%">
+            <div class="caption">
+              <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+            </div>
+          </a>
+        </div>
+   </div>
+</div>
   </div>
 
 
