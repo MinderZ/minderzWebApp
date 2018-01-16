@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css', '../assets/styles/helpers.css']
 })
 export class AppComponent {
-  title = 'Minderz';
+
 }
 
