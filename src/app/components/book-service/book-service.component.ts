@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth-service.service';
 import { UserProfileObjet } from '../../model/userProfileObj.model';
-import { Personal, Address } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
+//import { Personal, Address } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
 import { log } from 'util';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
 

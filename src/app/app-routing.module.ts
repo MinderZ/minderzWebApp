@@ -10,6 +10,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
 // import { CanActivate } from '@angular/router/src/interfaces';
 import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.component';
+import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,9 @@ const routes: Routes = [
   {
     path: 'addpet',
     component: PetReg1Component,
+  }, {
+    path: 'bookingprofile',
+    component: BookingProfileComponent,
   }
 
   // children: [
@@ -51,4 +55,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
