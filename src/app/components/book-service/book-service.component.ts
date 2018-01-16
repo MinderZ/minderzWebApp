@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth-service.service';
 import { UserProfileObjet } from '../../model/userProfileObj.model';
-//import { Personal, Address } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
-import { log } from 'util';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
 
 @Component({
@@ -12,10 +10,11 @@ import { SitterProfileObject } from '../../model/sitterProfileObject.model';
   styleUrls: ['./book-service.component.css']
 })
 export class BookServiceComponent implements OnInit {
-  step1 = true;
+  step1 = false;
   step2 = false;
   step3 = false;
   step4 = false;
+  hide = true;
   constructor(
     private userservice: UserService,
     private userprof: UserProfileObjet,

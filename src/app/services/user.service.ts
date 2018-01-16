@@ -28,6 +28,3 @@ getProfile() {
 
 }
 
-// getMessage(): AngularFireList<ChatMessage[]> {
-//     return this.fireDb.list('/messages');
-//   }
