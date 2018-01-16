@@ -1,3 +1,5 @@
+<div  *ngIf="hide">
+
 <div class="row text-ckenter">
   <div class=" col-md-1">
   </div>
@@ -112,12 +114,12 @@ Sitters and inquire with you directly.
           </div>
          </div>
     </div>
-</section>
+</section></div>
+
 <br>
 <div class="text-center">
-  <button type="button" class="text-center btn btn-md btn-primary" (click)="step1 = true;"> Get started</button>
+  <button type="button" *ngIf="hide" class="text-center btn btn-md btn-primary" (click)="step1 = true; hide = false"> Get started</button>
 </div>
-
 
 
 
@@ -780,4 +782,5 @@ Sitters and inquire with you directly.
     </li>
   </ul>
 </div>
+
 <app-footer></app-footer>
