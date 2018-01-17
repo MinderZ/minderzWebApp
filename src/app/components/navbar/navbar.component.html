@@ -39,7 +39,6 @@
           </a>
         </li>
       </ul>
-
       <div class="nav navbar-nav" *ngIf="auth.user$ | async as user; else anonymousUser">
         <li>
           <a routerLink="profile">
