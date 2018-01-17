@@ -5,11 +5,11 @@ import { UserProfileObjet } from '../../model/userProfileObj.model';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
 
 @Component({
-  selector: 'app-book-service',
-  templateUrl: './book-service.component.html',
-  styleUrls: ['./book-service.component.css']
+  selector: 'app-become-a-sitter',
+  templateUrl: './become-a-sitter.component.html',
+  styleUrls: ['./become-a-sitter.component.css']
 })
-export class BookServiceComponent implements OnInit {
+export class BecomeASitterComponent implements OnInit {
   step1 = false;
   step2 = false;
   step3 = false;

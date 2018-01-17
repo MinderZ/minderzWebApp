@@ -7,7 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { CustomFormsModule } from 'ng2-validation';
 
 import { AppComponent } from './app.component';
-import { BookServiceComponent } from './components/book-service/book-service.component';
+// import { BookServiceComponent } from './components/book-service/book-service.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -29,6 +29,7 @@ import { SitterProfileObject } from './model/sitterProfileObject.model';
 import { UserPetObject } from './model/userPetObject.modal';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
 import { DataRecycleService } from './services/data-recycle.service';
+import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
 
 export const firbaseConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -42,7 +43,7 @@ export const firbaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    BookServiceComponent,
+    BecomeASitterComponent,
     NavbarComponent,
     HomeComponent,
     FooterComponent,
