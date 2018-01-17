@@ -9,7 +9,7 @@
   line-height: 30px
 }
 
-.navbar-default :hover {
+.navbar :hover {
   color: #ff978f;
 }
 
@@ -22,6 +22,7 @@
   color: #fff;
   text-transform: uppercase;
 }
+
 .appnav{
 background-color:#fff;
 color:#666363;
