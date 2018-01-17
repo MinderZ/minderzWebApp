@@ -31,6 +31,11 @@ font-weight:300;
   height: 700px;
   background-color: #008cff6b;
 }
-.space{
-/* height: 75px; */
+input:focus {
+  border-color: #ff978f;
+border:3px solid #ff978f;
+}
+.isSeledcted{
+border:5px solid #ff978f;
+height: 20px;
 }
