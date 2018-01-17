@@ -3,13 +3,14 @@ import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth-service.service';
 import { UserProfileObjet } from '../../model/userProfileObj.model';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
+import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
 
 @Component({
-  selector: 'app-book-service',
-  templateUrl: './book-service.component.html',
-  styleUrls: ['./book-service.component.css']
+  selector: 'app-become-a-sitter',
+  templateUrl: './become-a-sitter.component.html',
+  styleUrls: ['./become-a-sitter.component.css']
 })
-export class BookServiceComponent implements OnInit {
+export class BecomeASitterComponent implements OnInit {
   step1 = false;
   step2 = false;
   step3 = false;
@@ -36,7 +37,7 @@ this.userprof.address = add.address;
 this.step1 = false;
 }
 persona(personal) {
-  this.userprof.profilePicture = 'Profile picture here';
+  this.userprof.profilePicture = personal.profilepicture;
   this.userprof.age = personal.age;
   this.userprof.gender = personal.gender;
   this.userprof.Zipcode = personal.zip;
@@ -54,7 +55,7 @@ console.log(this.userprof);
 sitte(sitter) {
 this.sitterObj.jobRadius = sitter.workingdistance;
 this.sitterObj.PetSizePreference = sitter.petPreferredSize;
-this.sitterObj.PetTypePreference = 'still on working all those selected pets';
+this.sitterObj.PetTypePreference = 'selected pets';
 this.sitterObj.PriceperWalk = sitter.priceperwalk;
 this.sitterObj.PetsperWalk = sitter.petsperwalk;
 this.sitterObj.WalksperDay = sitter.WalkPerDay;

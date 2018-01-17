@@ -1,10 +1,4 @@
-/* #bar{
-  padding:10px;
-  background-color:transparent;
-} */
-
-.navbar-default .navbar-nav > li > a {
-  /* font-size: 20px; */
+.navbar .navbar-nav > li > a {
   color: #666363;
   line-height: 30px
 }
@@ -25,5 +19,5 @@
 
 .appnav{
 background-color:#fff;
-color:#666363;
+/* color:#666363; */
 }

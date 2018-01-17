@@ -7,14 +7,13 @@ import { AngularFireModule } from 'angularfire2';
 import { CustomFormsModule } from 'ng2-validation';
 
 import { AppComponent } from './app.component';
-import { BookServiceComponent } from './components/book-service/book-service.component';
+// import { BookServiceComponent } from './components/book-service/book-service.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 // import { ClientRegComponent } from './components/client-reg/client-reg.component';
 
-import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
@@ -28,6 +27,8 @@ import { UserProfileObjet } from './model/userProfileObj.model';
 import { SitterProfileObject } from './model/sitterProfileObject.model';
 import { UserPetObject } from './model/userPetObject.modal';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
+import { DataRecycleService } from './services/data-recycle.service';
+import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
 
 export const firbaseConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -41,14 +42,11 @@ export const firbaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    BookServiceComponent,
+    BecomeASitterComponent,
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    // BecomeAsitterComponent,
     PetReg1Component,
-    // ClientRegComponent,
-    SitterReg1Component,
     SignInComponent,
     MiniDashboardComponent,
     BookingProfileComponent
@@ -56,7 +54,6 @@ export const firbaseConfig = {
   imports: [
     BrowserModule,
     CustomFormsModule,
-    //  NgbModule.forRoot(),
     AngularFireModule.initializeApp(firbaseConfig),
     FormsModule,
     AppRoutingModule
@@ -69,6 +66,7 @@ export const firbaseConfig = {
     AuthService,
     CacheService,
     AuthGuard,
+    DataRecycleService,
     UserProfileObjet,
     SitterProfileObject,
     UserPetObject
