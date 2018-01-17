@@ -28,6 +28,7 @@ import { UserProfileObjet } from './model/userProfileObj.model';
 import { SitterProfileObject } from './model/sitterProfileObject.model';
 import { UserPetObject } from './model/userPetObject.modal';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
+import { DataRecycleService } from './services/data-recycle.service';
 
 export const firbaseConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -69,6 +70,7 @@ export const firbaseConfig = {
     AuthService,
     CacheService,
     AuthGuard,
+    DataRecycleService,
     UserProfileObjet,
     SitterProfileObject,
     UserPetObject
