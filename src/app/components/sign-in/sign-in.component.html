@@ -1,0 +1,25 @@
+<form class="form-signin">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <!-- <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div> -->
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" name="email" ngModel class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Password" required>
+  <button class="btn btn-lg btn-primary btn-block mt-5 custom" type="submit">Sign in</button>
+  <div class="row">
+    <br>
+    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 ">
+      <button class="btn btn-lg btn-primary btn-block twitter" type="button" (click)="loginWithTwitter()">
+       <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</button>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+      <button class="btn btn-lg btn-primary btn-block facebook" type="button" (click)="loginWithFacebook()">
+       <i class="fa fa-facebook" aria-hidden="true"></i> Facebook</button>
+    </div>
+  </div>
+  <br>
+  <button class="btn btn-lg btn-danger btn-block mt-5 google" type="button" (click)="loginWithGoogle()">
+  <i class="fa fa-google" aria-hidden="true"></i> Google</button>
+
+</form>
+<app-footer></app-footer>

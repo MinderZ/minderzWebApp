@@ -1,0 +1,23 @@
+.navbar .navbar-nav > li > a {
+  color: #666363;
+  line-height: 30px
+}
+
+.navbar :hover {
+  color: #ff978f;
+}
+
+.bSitter {
+  border-radius: 5px;
+  /* size: 14px; */
+  height:15px !important;
+  background-color: #008cff;
+  transition: 0.3s;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.appnav{
+background-color:#fff;
+/* color:#666363; */
+}
