@@ -1,17 +1,18 @@
 <!--Start booking profile-->
 <div class="container-fluid">
   <div class="row">
+    <img id="profile-pic" src="#" />
     <h1 id="fullname">none</h1>
 
     <!--Start rating-->
     <div id="rating">
       <!--Start rating stars-->
-      <span>
-        <i class="fa" [class]="rating > 0.5 ? 'fa-star' : rating > 0 ? 'fa-star-half-o' : 'fa-star-0'"></i>
-        <i class="fa" [class]="rating > 1.5 ? 'fa-star' : rating > 1 ? 'fa-star-half-o' : 'fa-star-0'"></i>
-        <i class="fa" [class]="rating > 2.5 ? 'fa-star' : rating > 2 ? 'fa-star-half-o' : 'fa-star-0'"></i>
-        <i class="fa" [class]="rating > 3.5 ? 'fa-star' : rating > 3 ? 'fa-star-half-o' : 'fa-star-0'"></i>
-        <i class="fa" [class]="rating > 4.5 ? 'fa-star' : rating > 4 ? 'fa-star-half-o' : 'fa-star-0'"></i>
+      <span class="value">
+        <i class="fa" [class]="rating > 0.5 ? 'fa-star' : rating > 0 ? 'fa-star-half-o' : 'fa-star-o'"></i>
+        <i class="fa" [class]="rating > 1.5 ? 'fa-star' : rating > 1 ? 'fa-star-half-o' : 'fa-star-o'"></i>
+        <i class="fa" [class]="rating > 2.5 ? 'fa-star' : rating > 2 ? 'fa-star-half-o' : 'fa-star-o'"></i>
+        <i class="fa" [class]="rating > 3.5 ? 'fa-star' : rating > 3 ? 'fa-star-half-o' : 'fa-star-o'"></i>
+        <i class="fa" [class]="rating > 4.5 ? 'fa-star' : rating > 4 ? 'fa-star-half-o' : 'fa-star-o'"></i>
         <!--End rating stars-->
       </span>
     </div>
@@ -25,12 +26,25 @@
       <h4>Member since (display date), (amount of jobs) complete</h4>
     </div>
 
+    <!--Start job history-->
     <div id="job-history">
       <h3>Jobs</h3>
-      <h3> (amount)</h3>
+      <h3 class="value"> (amount)</h3>
       <h3>Cancelleations</h3>
-      <h3> (amount)</h3>
+      <h3 class="value"> (amount)</h3>
     </div>
+    <!--End job history-->
+
+    <!--Start about-->
+    <div id="about-panel">
+      <h1>About</h1>
+      <p>(About me)</p>
+      <h2>Languages</h2>
+      <h2 class="value">(list)</h2>
+      <h2>Skills</h2>
+      <h2 class="value">(list)</h2>
+    </div>
+    <!--End about-->
 
   </div>
 

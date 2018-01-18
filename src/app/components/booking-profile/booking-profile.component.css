@@ -1,0 +1,9 @@
+.value {
+  color: #337ab7;
+}
+
+#about-panel {
+  background: #f3f3f3;
+  border-top: 1.5px solid#dddddd;
+  padding: 20px;
+}
