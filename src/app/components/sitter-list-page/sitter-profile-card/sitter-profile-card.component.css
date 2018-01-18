@@ -1,0 +1,20 @@
+.sitter-profile-pic{
+    height: 200px;
+    width: 200px;
+}
+
+.large{
+    font-size: 22px;
+}
+
+.medium{
+    font-size: 18px;
+}
+
+.small{
+    font-size: 16px
+}
+
+.xsmall{
+    font-size: 14px
+}
