@@ -1,48 +1,72 @@
 <!--Start booking profile-->
-<div class="container-fluid">
-  <div class="row">
-    <img id="profile-pic" src="#" />
-    <h1 id="fullname">none</h1>
+<div class="container-fluid" id="main-display">
+  <div class="row" id="display-box">
 
-    <!--Start rating-->
-    <div id="rating">
-      <!--Start rating stars-->
-      <span class="value">
-        <i class="fa" [class]="rating > 0.5 ? 'fa-star' : rating > 0 ? 'fa-star-half-o' : 'fa-star-o'"></i>
-        <i class="fa" [class]="rating > 1.5 ? 'fa-star' : rating > 1 ? 'fa-star-half-o' : 'fa-star-o'"></i>
-        <i class="fa" [class]="rating > 2.5 ? 'fa-star' : rating > 2 ? 'fa-star-half-o' : 'fa-star-o'"></i>
-        <i class="fa" [class]="rating > 3.5 ? 'fa-star' : rating > 3 ? 'fa-star-half-o' : 'fa-star-o'"></i>
-        <i class="fa" [class]="rating > 4.5 ? 'fa-star' : rating > 4 ? 'fa-star-half-o' : 'fa-star-o'"></i>
-        <!--End rating stars-->
-      </span>
-    </div>
+    <!--Start overview-->
+    <div id="overview-panel">
+      <div class="col-md-3 col-sm-12" id="profile-pic-panel">
+        <img id="profile-pic" src="#" />
+      </div>
 
-    <div id="reviews">
-      <h2>Based on (reviews) reviews</h2>
-    </div>
-    <!--End rating-->
+      <div class="col-md-9 col-sm-12" id="info">
+        <h1 id="fullname">none</h1>
 
-    <div id="account-details">
-      <h4>Member since (display date), (amount of jobs) complete</h4>
-    </div>
+        <!--Start rating-->
+        <div class="line-spacing-20" id="rating-panel">
+          <!--Start rating stars-->
 
-    <!--Start job history-->
-    <div id="job-history">
-      <h3>Jobs</h3>
-      <h3 class="value"> (amount)</h3>
-      <h3>Cancelleations</h3>
-      <h3 class="value"> (amount)</h3>
+          <div class="col-md-2 col-sm-12 display-flex" id="rating">
+            <span id="stars" class="value col-md-11 col-sm-2 col-xs-2 display-flex">
+              <i [class]="rating > 0.5 ? 'fa fa-star' : rating > 0 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+              <i [class]="rating > 1.5 ? 'fa fa-star' : rating > 1 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+              <i [class]="rating > 2.5 ? 'fa fa-star' : rating > 2 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+              <i [class]="rating > 3.5 ? 'fa fa-star' : rating > 3 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+              <i [class]="rating > 4.5 ? 'fa fa-star' : rating > 4 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+              <!--End rating stars-->
+            </span>
+            <h3 id="rating-number" class="value col-md-1 col-sm-1 col-xs-1">{{rating}}</h3>
+          </div>
+
+          <span class="col-md-1"></span>
+
+          <div class="col-md-4 col-sm-12" id="reviews">
+            <label>Based on (reviews) reviews</label>
+          </div>
+
+          <span class="col-md-5"></span>
+        </div>
+
+
+        <!--End rating-->
+
+        <div class="line-spacing-20 col-md-12" id="account-details">
+          <h4>Member since (display date), (amount of jobs) complete</h4>
+        </div>
+
+        <!--Start job history-->
+        <div class="line-spacing-20" id="job-history">
+
+          <h3 class="seperate-text-40 col-md-3 col-sm-6">Jobs</h3>
+          <h3 class="value seperate-text-40 col-md-3 col-sm-6"> (amount)</h3>
+
+          <h3 class="seperate-text-40 col-md-3 col-sm-6">Cancellations</h3>
+          <h3 class="value seperate-text-40 col-md-3 col-sm-6"> (amount)</h3>
+
+        </div>
+        <!--End job history-->
+      </div>
     </div>
-    <!--End job history-->
+    <!--End overview-->
 
     <!--Start about-->
-    <div id="about-panel">
-      <h1>About</h1>
-      <p>(About me)</p>
-      <h2>Languages</h2>
-      <h2 class="value">(list)</h2>
-      <h2>Skills</h2>
-      <h2 class="value">(list)</h2>
+    <div class="col-md-12 col-sm-12" id="about-panel">
+      <h2 class="line-spacing-20">About</h2>
+      <p class="line-spacing-20">(About me)</p>
+
+      <h4 class="line-spacing-20">Languages</h4>
+      <h4 class="value line-spacing-20">(list)</h4>
+      <h4 class="line-spacing-20">Skills</h4>
+      <h4 class="value line-spacing-20">(list)</h4>
     </div>
     <!--End about-->
 

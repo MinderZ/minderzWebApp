@@ -8,38 +8,32 @@ import { CacheService } from './cache.service';
 @Injectable()
 export class AuthService {
   public user$: Observable<firebase.User>;
-public userUID: string;
+  public userUID: string;
   constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
     private route: ActivatedRoute,
     private cache: CacheService
 
-  )  {
+  ) {
     this.user$ = afAuth.authState;
   }
 
   loginWithGoogle() {
-  //   const returnUrl = this.route.snapshot.queryParamMap.get(this.returnUrl) || '/';
-  //  this.cache.navigator = returnUrl;
+    //   const returnUrl = this.route.snapshot.queryParamMap.get(this.returnUrl) || '/';
+    //  this.cache.navigator = returnUrl;
     // localStorage.setItem("returnUrl", returnUrl);
     this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-     this.router.navigate(['/']);
+    this.router.navigate(['/']);
   }
 
   loginWithFacebook() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
   }
 
- loginWithTwitter() {
+  loginWithTwitter() {
     this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
   }
-
-
-
-
-
-
 
   isLoggedIn() {
     const visitor = firebase.auth().currentUser;
@@ -61,7 +55,7 @@ public userUID: string;
     return firebase.auth().currentUser;
   }
   currentUserUID() {
-   return this.userUID = firebase.auth().currentUser.uid;
+    return this.userUID = firebase.auth().currentUser.uid;
   }
 
 }

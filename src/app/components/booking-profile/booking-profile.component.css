@@ -2,8 +2,105 @@
   color: #337ab7;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+#job-history h3 {
+  padding: 20px 40px 20px 0px;
+}
+
+h4 {
+  color: rgb(199, 196, 196);
+  font-size: 13px;
+  margin: 0px;
+}
+
+label {
+  color: rgb(182, 179, 179);
+  font-size: 13px;
+}
+
+#profile-pic-panel {
+  padding: 0px 0px 20px 0px;
+}
+
+#profile-pic {
+  min-width: 200px;
+  min-height: 200px;
+  border: 1px solid #dddddd;
+  border-radius: 100%;
+}
+
+.display-flex {
+  display: flex;
+}
+
 #about-panel {
   background: #f3f3f3;
   border-top: 1.5px solid#dddddd;
-  padding: 20px;
+  padding: 0 30px 30px 30px;
+}
+
+#main-display {
+  padding: 0px 200px;
+}
+
+#display-box {
+  padding-top: 40px;
+  border-top: 1.5px solid#dddddd;
+  margin-top: 20px;
+}
+
+#overview-panel,
+#about-panel {
+  width: 100%;
+}
+
+#rating,
+#reviews,
+#account-details,
+#stars,
+#rating-number {
+  padding: 0px;
+}
+
+#stars {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.line-spacing-20 {
+  margin: 20px 0px;
+}
+
+.seperate-text-40 {
+  padding-right: 40px;
+}
+
+@media (max-width: 1160px) {
+  #main-display {
+    padding: 100px;
+  }
+}
+
+@media (max-width: 840px) {
+  #main-display {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  #account-details {
+    margin: 0px;
+  }
+  #rating-panel {
+    margin-bottom: 0px;
+  }
 }
