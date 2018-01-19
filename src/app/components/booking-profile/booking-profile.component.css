@@ -1,3 +1,7 @@
+#profile {
+  padding: 0px;
+}
+
 .value {
   color: #337ab7;
 }
@@ -55,6 +59,7 @@ label {
 #display-box {
   padding-top: 40px;
   border-top: 1.5px solid#dddddd;
+  border-bottom: 1.5px solid#dddddd;
   margin-top: 20px;
 }
 
@@ -69,6 +74,11 @@ label {
 #stars,
 #rating-number {
   padding: 0px;
+}
+
+#rating-number {
+  text-align: center;
+  font-size: 15px;
 }
 
 #stars {

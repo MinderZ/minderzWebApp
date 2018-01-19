@@ -16,7 +16,7 @@
           <div class="line-spacing-20" id="rating-panel">
             <!--Start rating stars-->
 
-            <div class="col-md-4 col-sm-12 display-flex" id="rating">
+            <div class="col-md-2 col-sm-12 display-flex" id="rating">
               <span id="stars" class="value col-md-11 col-sm-2 col-xs-2 display-flex">
                 <i [class]="rating > 0.5 ? 'fa fa-star' : rating > 0 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
                 <i [class]="rating > 1.5 ? 'fa fa-star' : rating > 1 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
@@ -25,12 +25,11 @@
                 <i [class]="rating > 4.5 ? 'fa fa-star' : rating > 4 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
                 <!--End rating stars-->
               </span>
-              <h3 id="rating-number" class="value col-md-1 col-sm-1 col-xs-1">{{rating}}</h3>
             </div>
 
-            <span class="col-md-1 col-sm-12"></span>
+            <h3 id="rating-number" class="value col-md-3 col-sm-1 col-xs-1">{{rating}}</h3>
 
-            <div class="col-md-6 col-sm-10" id="reviews">
+            <div class="col-md-7 col-sm-10" id="reviews">
               <label>Based on (reviews) reviews</label>
             </div>
 
@@ -73,6 +72,14 @@
 
     </div>
     <div class="col-md-4 col-sm-12" id="calender">
+
+    </div>
+
+    <div class="col-md-8 col-sm-12" id="pet-list">
+
+    </div>
+
+    <div class="col-md-4 col-sm-12" id="map">
 
     </div>
   </div>
