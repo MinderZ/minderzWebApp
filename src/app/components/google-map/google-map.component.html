@@ -1,0 +1,10 @@
+<agm-map [latitude]="locations[0].lat" [longitude]="locations[0].lng">
+
+  <agm-marker *ngFor="let location of locations" [latitude]="location.lat" [longitude]="location.lng">
+<agm-info-window>
+<h3>{{location.name}}</h3>
+<h4>R{{location.price}}</h4>
+</agm-info-window>
+  </agm-marker> 
+
+</agm-map>

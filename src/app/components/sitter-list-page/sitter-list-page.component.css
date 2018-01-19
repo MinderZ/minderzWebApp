@@ -1,0 +1,13 @@
+.map{
+    position: absolute;
+    right:0;
+    padding:20px;
+}
+
+.cards{
+    margin: 20px
+}
+
+.list{
+    margin-top: 20px;
+}
