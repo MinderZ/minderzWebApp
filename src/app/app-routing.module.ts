@@ -8,6 +8,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
 import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
+import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
 
 const routes: Routes = [
   {
@@ -39,6 +40,9 @@ const routes: Routes = [
   }, {
     path: 'bookingprofile',
     component: BookingProfileComponent,
+  }, {
+    path: 'code',
+    component: CodeComponent,
   }
 
   // children: [

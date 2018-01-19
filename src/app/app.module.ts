@@ -29,6 +29,7 @@ import { UserPetObject } from './model/userPetObject.modal';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
 import { DataRecycleService } from './services/data-recycle.service';
 import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
+import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
 
 export const firbaseConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -49,7 +50,8 @@ export const firbaseConfig = {
     PetReg1Component,
     SignInComponent,
     MiniDashboardComponent,
-    BookingProfileComponent
+    BookingProfileComponent,
+    CodeComponent
   ],
   imports: [
     BrowserModule,
