@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  NgZone, ElementRef} from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth-service.service';
 import { UserProfileObjet } from '../../model/userProfileObj.model';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
-import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
+import { MapsAPILoader } from '@agm/core';
+// import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
+import{} from '@types/googlemaps'
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-become-a-sitter',
@@ -11,6 +14,11 @@ import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/for
   styleUrls: ['./become-a-sitter.component.css']
 })
 export class BecomeASitterComponent implements OnInit {
+
+@ViewChild('address') public addressElementRef:ElementRef;
+latitude;
+longitude;
+
   step1 = false;
   step2 = false;
   step3 = false;
@@ -20,7 +28,9 @@ export class BecomeASitterComponent implements OnInit {
     private userservice: UserService,
     private userprof: UserProfileObjet,
     private sitterObj: SitterProfileObject,
-    private auth: AuthService
+    private auth: AuthService,
+    private mapLoader:MapsAPILoader,
+    private ngZone:NgZone
   ) {
 
    }
@@ -30,6 +40,32 @@ export class BecomeASitterComponent implements OnInit {
    this.userprof.isAsitter = true;
   //  this.userprof.name =
 
+this.mapLoader.load().then(()=>{
+  let autocomplete = new google.maps.places.Autocomplete(
+    this.addressElementRef.nativeElement,{
+      types:["address"]
+    }
+  );
+  autocomplete.addListener("place_changed",()=>{
+      this.ngZone.run(()=>{
+
+        //Gets place result
+    let place:google.maps.places.PlaceResult
+
+    //Verify Result
+
+    if(place.geometry === undefined||place.geometry === null){
+return;
+    }
+
+    this.latitude=place.geometry.location.lat()
+    this.longitude=place.geometry.location.lng()
+
+  });
+  });
+
+});
+  
   }
 
 personal(add) {
