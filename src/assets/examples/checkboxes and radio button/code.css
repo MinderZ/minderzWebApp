@@ -22,3 +22,7 @@
   width: 20px;
   height: 20px;
 }
+
+input:focus {
+  outline-color: rgb(250, 0, 0);
+}
