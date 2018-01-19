@@ -28,6 +28,7 @@ import { UserProfileObjet } from './model/userProfileObj.model';
 import { SitterProfileObject } from './model/sitterProfileObject.model';
 import { UserPetObject } from './model/userPetObject.modal';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
+import { PetProfileComponent } from './pet-profile/pet-profile.component';
 
 export const firbaseConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -51,7 +52,8 @@ export const firbaseConfig = {
     SitterReg1Component,
     SignInComponent,
     MiniDashboardComponent,
-    BookingProfileComponent
+    BookingProfileComponent,
+    PetProfileComponent
   ],
   imports: [
     BrowserModule,
