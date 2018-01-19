@@ -13,7 +13,7 @@ h3 {
 }
 
 #job-history h3 {
-  padding: 20px 40px 20px 0px;
+  padding-left: 0px;
 }
 
 h4 {
@@ -84,6 +84,18 @@ label {
   padding-right: 40px;
 }
 
+@media (max-width:1430px) {
+  #job-history h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width:1330px) {
+  #job-history h3 {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 1160px) {
   #main-display {
     padding: 100px;
@@ -102,5 +114,8 @@ label {
   }
   #rating-panel {
     margin-bottom: 0px;
+  }
+  #job-history h3 {
+    padding: 5px 0px;
   }
 }
