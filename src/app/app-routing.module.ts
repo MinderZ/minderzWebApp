@@ -9,6 +9,7 @@ import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
 import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
 import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
+import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,9 @@ const routes: Routes = [
   }, {
     path: 'code',
     component: CodeComponent,
+  },{
+    path:'sitter-profile-listings',
+    component:SitterListPageComponent
   }
 
   // children: [

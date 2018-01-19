@@ -1,16 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  NgZone, ElementRef} from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth-service.service';
 import { UserProfileObjet } from '../../model/userProfileObj.model';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
 //import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
+import { MapsAPILoader } from '@agm/core';
+import{} from '@types/googlemaps';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-become-a-sitter',
   templateUrl: './become-a-sitter.component.html',
-  styleUrls: ['./become-a-sitter.component.css']
+  styleUrls: ['./become-a-sitter.component.css', '../../../assets/styles/mainstyle.css']
 })
 export class BecomeASitterComponent implements OnInit {
+
+@ViewChild('address') public addressElementRef:ElementRef;
+latitude;
+longitude;
+
   step1 = false;
   step2 = false;
   step3 = false;
@@ -20,7 +28,9 @@ export class BecomeASitterComponent implements OnInit {
     private userservice: UserService,
     private userprof: UserProfileObjet,
     private sitterObj: SitterProfileObject,
-    private auth: AuthService
+    private auth: AuthService,
+    private mapLoader:MapsAPILoader,
+    private ngZone:NgZone
   ) {
 
   }
@@ -30,14 +40,41 @@ export class BecomeASitterComponent implements OnInit {
     this.userprof.isAsitter = true;
     //  this.userprof.name =
 
+this.mapLoader.load().then(()=>{
+  let autocomplete = new google.maps.places.Autocomplete(
+    this.addressElementRef.nativeElement,{
+      types:["address"]
+    }
+  );
+  autocomplete.addListener("place_changed",()=>{
+      this.ngZone.run(()=>{
+
+        //Gets place result
+    let place:google.maps.places.PlaceResult
+
+    //Verify Result
+
+    if(place.geometry === undefined||place.geometry === null){
+return;
+    }
+
+    this.latitude=place.geometry.location.lat()
+    this.longitude=place.geometry.location.lng()
+
+  });
+  });
+
+});
+
   }
 
-  personal(add) {
+  addressfield(add) {
     this.userprof.address = add.address;
     this.step1 = false;
   }
-  persona(personal) {
-    this.userprof.profilePicture = personal.profilepicture;
+
+  personal(personal) {
+    // this.userprof.profilePicture = personal.profilepicture;
     this.userprof.age = personal.age;
     this.userprof.gender = personal.gender;
     this.userprof.Zipcode = personal.zip;
@@ -47,10 +84,10 @@ export class BecomeASitterComponent implements OnInit {
     this.userprof.EmerContactName = personal.emergencyname;
     this.userprof.EmerContactNum = personal.emergencynumber;
     this.step2 = false;
+    // console.log(this.userprof);
     this.userservice.createProfile(this.userprof);
     console.log(this.userprof);
   }
-
 
   sitte(sitter) {
     this.sitterObj.jobRadius = sitter.workingdistance;
@@ -74,19 +111,17 @@ export class BecomeASitterComponent implements OnInit {
     this.sitterObj.Experience = sit.experience;
     this.sitterObj.HeadLine = sit.headline;
     this.sitterObj.bio = sit.bio;
-    this.sitterObj.DoneVolunter = sit.volunterPets;
+    // this.sitterObj.DoneVolunter = sit.volunterPets;
     this.sitterObj.OwnPets = sit.ownPets;
     this.sitterObj.hadPets = sit.ownedPets;
     this.sitterObj.Reference1Name = sit.ref1Name1;
     this.sitterObj.Reference1Phone = sit.ref1Phone;
     this.sitterObj.Reference2Name = sit.ref2Name;
     this.sitterObj.Reference2Phone = sit.ref2Phone;
-    this.userservice.createSitterProfile(this.userprof);
+    this.userservice.createSitterProfile(this.sitterObj);
   }
 
   //   save(user) {
   // this.userservice.createProfile(user);
   //   }
-
-
 }
