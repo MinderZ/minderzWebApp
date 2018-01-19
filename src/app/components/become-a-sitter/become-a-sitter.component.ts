@@ -3,12 +3,11 @@ import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth-service.service';
 import { UserProfileObjet } from '../../model/userProfileObj.model';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
-import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
 
 @Component({
   selector: 'app-become-a-sitter',
   templateUrl: './become-a-sitter.component.html',
-  styleUrls: ['./become-a-sitter.component.css']
+  styleUrls: ['./become-a-sitter.component.css', '../../../assets/styles/mainstyle.css']
 })
 export class BecomeASitterComponent implements OnInit {
   step1 = false;
