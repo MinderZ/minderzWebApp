@@ -4,7 +4,7 @@ name?: string;
 surname?: string;
 age?: string;
 address?: string;
-profilePicture?: any;
+profilePicture?: string;
 gender?: string;
 Zipcode?: string;
 IdNum?: string;
@@ -14,5 +14,4 @@ EmerContactName?: string;
 EmerContactNum?: string;
 isAsitter?: boolean;
 isAPetOwner?: boolean;
-
 }

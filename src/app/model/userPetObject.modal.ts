@@ -8,5 +8,4 @@ export class UserPetObject {
   PetPicture?: any;
   EmergencyContact?: string;
   EmergencyVetSpendLimit?: string;
-
 }

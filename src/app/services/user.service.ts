@@ -4,9 +4,9 @@ import { DataRecycleService } from './data-recycle.service';
 
 @Injectable()
 export class UserService {
-profileroute = '/users/' + this.auth.currentUserUID() + '/profile';
-petroute = '/users/' + this.auth.currentUserUID() + '/pets';
-sitteroute = '/users/' + this.auth.currentUserUID() + '/profile';
+profileroute = 'users/' + this.auth.currentUserUID() + '/personal';
+petroute = 'users/' + this.auth.currentUserUID() + '/pets';
+sitteroute = 'users/' + this.auth.currentUserUID() + '/sitter';
 
 constructor(
 private recycle: DataRecycleService,
