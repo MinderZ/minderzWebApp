@@ -47,6 +47,7 @@ public userUID: string;
       .then((user) => {
         this.notify.update('Welcome to MinderZ!!!', 'success');
         return this.updateUserinfor(user);
+        this.router.navigate(['/']);
       })
       .catch((error) => this.handleError(error) );
   }
@@ -58,16 +59,20 @@ public userUID: string;
   //   const returnUrl = this.route.snapshot.queryParamMap.get(this.returnUrl) || '/';
   //  this.cache.navigator = returnUrl;
     // localStorage.setItem("returnUrl", returnUrl);
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-     this.router.navigate(['/']);
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(() => {
+      this.router.navigate(['/']);
+  });
   }
 
   loginWithFacebook() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
-  }
+    this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(() => {
+      this.router.navigate(['/']);
+  });  }
 
  loginWithTwitter() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+    this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider()).then(() => {
+      this.router.navigate(['/']);
+  });
   }
 
 

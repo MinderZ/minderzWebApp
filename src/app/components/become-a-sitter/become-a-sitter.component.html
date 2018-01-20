@@ -28,8 +28,10 @@
 <div class="stepTwo" *ngIf="step2">
   <div class="row">
     <form class=" form-horizontal col-md-8" #person="ngForm" (ngSubmit)="personal(person.value)">
+
       <div class="form-group">
         <label class="col-md-4 control-label"> Profile Picture</label>
+
         <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
             <span class="input-group-addon">
@@ -37,6 +39,7 @@
             </span>
             <input type="text" #profilepic="ngModel" ngModel name="profilepic" placeholder="Image URL" class="form-control">
           </div>
+
           <div *ngIf="profilepic.touched && profilepic.invalid" class="alert alert-danger">
             please enter an ImageUrl
             <div *ngIf="profilepic.errors.url" class="alert alert-danger">
@@ -47,6 +50,8 @@
 
         </div>
       </div>
+
+
 
 
       <div class="form-group">
