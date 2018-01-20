@@ -1,7 +1,6 @@
 export class UserProfileObjet {
-
-name?: string;
-surname?: string;
+fullname?: string;
+username?: string;
 age?: string;
 address?: string;
 profilePicture?: string;
@@ -12,6 +11,7 @@ IdCopy?: string;
 consentForm?: string;
 EmerContactName?: string;
 EmerContactNum?: string;
+isAserviceProvider?: boolean;
 isAsitter?: boolean;
 isAPetOwner?: boolean;
 }

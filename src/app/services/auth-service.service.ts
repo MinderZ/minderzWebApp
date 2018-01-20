@@ -4,20 +4,55 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CacheService } from './cache.service';
+import { NotificationService } from './notification.service';
+
+interface User {
+  uid: string;
+  email?: string | null;
+  photoURL?: string;
+  displayName?: string;
+}
+
+
 
 @Injectable()
 export class AuthService {
-  public user$: Observable<firebase.User>;
+  public user$: Observable<User>;
 public userUID: string;
   constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
     private route: ActivatedRoute,
-    private cache: CacheService
+    private cache: CacheService,
+    private notify: NotificationService
 
   )  {
     this.user$ = afAuth.authState;
   }
+
+
+  emailSignUp(email: string, password: string) {
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+      .then((user) => {
+        this.notify.update('Welcome to MinderZ!!!', 'success');
+        return this.updateUserinfor(user);
+      })
+      .catch((error) => this.handleError(error));
+  }
+
+
+
+  emailLogin(email: string, password: string) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then((user) => {
+        this.notify.update('Welcome to MinderZ!!!', 'success');
+        return this.updateUserinfor(user);
+      })
+      .catch((error) => this.handleError(error) );
+  }
+
+
+
 
   loginWithGoogle() {
   //   const returnUrl = this.route.snapshot.queryParamMap.get(this.returnUrl) || '/';
@@ -38,7 +73,11 @@ public userUID: string;
 
 
 
-
+ // If any error, console log and notifying the user of such
+ private handleError(error: Error) {
+  console.error(error);
+  this.notify.update(error.message, 'error');
+}
 
 
   isLoggedIn() {
@@ -64,4 +103,16 @@ public userUID: string;
    return this.userUID = firebase.auth().currentUser.uid;
   }
 
+
+    // Sets user data to realtime after succesful login
+    private updateUserinfor(user: User) {
+
+      const userRef = firebase.auth().currentUser;
+
+      userRef.updateProfile({
+        displayName: user.displayName || 'nameless user',
+        photoURL: user.photoURL || 'https://goo.gl/Fz9nrQ',
+      });
+
+    }
 }
