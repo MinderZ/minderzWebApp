@@ -1,33 +1,36 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthService } from './auth-service.service';
+import { DataRecycleService } from './data-recycle.service';
 
 @Injectable()
 export class UserService {
+profileroute = 'users/' + this.auth.currentUserUID() + '/personal';
+petroute = 'users/' + this.auth.currentUserUID() + '/pets';
+sitteroute = 'users/' + this.auth.currentUserUID() + '/sitter';
 
-  constructor(
-    private db:   AngularFireDatabase,
-private auth: AuthService) {
-   }
+constructor(
+private recycle: DataRecycleService,
+private auth: AuthService,
+) {}
 
 // create user profile
 createProfile(profile) {
-return this.db.list('users/' + this.auth.currentUserUID() + '/profile').push(profile);
+this.recycle.create(profile, this.profileroute);
 }
+
 // create sitter profile from the user profile above
 createSitterProfile(sitter) {
-return this.db.list('/users/' + this.auth.currentUserUID() + '/sitter').push(sitter);
+this.recycle.create(sitter, this.sitteroute);
 }
 
 createPetProfile(pet) {
-return this.db.list('/users/' + this.auth.currentUserUID() + '/pets').push(pet);
+  this.recycle.create(pet, this.petroute);
 }
+
+
 
 getProfile() {
 }
 
 }
 
-// getMessage(): AngularFireList<ChatMessage[]> {
-//     return this.fireDb.list('/messages');
-//   }

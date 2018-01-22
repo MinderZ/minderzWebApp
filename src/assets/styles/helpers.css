@@ -1,6 +1,6 @@
 .mg-top-20 {
   margin-top: 20px;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
 }
 .mg-top-30 {
   margin-top: 30px;
@@ -19,4 +19,12 @@
 }
 .pd-top-20 {
   padding-top: 20px;
+}
+
+.p-0{
+  padding: 0px !important;
+}
+
+.m-0{
+  margin: 0px !important;
 }

@@ -1,22 +1,9 @@
-/* #bar{
-  padding:10px;
-  background-color:transparent;
-} */
-
-.navbar-default {
-  background-color: #f0efef !important;
-  border-color: transparent;
-  background-image: none;
-  /* border-bottom:2px solid #575454; */
-  box-shadow: none;
-}
-.navbar-default .navbar-nav > li > a {
-  /* font-size: 20px; */
+.navbar .navbar-nav > li > a {
   color: #666363;
   line-height: 30px
 }
 
-.navbar-default :hover {
+.navbar :hover {
   color: #ff978f;
 }
 
@@ -28,4 +15,9 @@
   transition: 0.3s;
   color: #fff;
   text-transform: uppercase;
+}
+
+.appnav{
+background-color:#fff;
+/* color:#666363; */
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SitterReg1Component } from './sitter-reg-1.component';
+import { SitterListPageComponent } from './sitter-list-page.component';
 
-describe('SitterReg1Component', () => {
-  let component: SitterReg1Component;
-  let fixture: ComponentFixture<SitterReg1Component>;
+describe('SitterListPageComponent', () => {
+  let component: SitterListPageComponent;
+  let fixture: ComponentFixture<SitterListPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SitterReg1Component ]
+      declarations: [ SitterListPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SitterReg1Component);
+    fixture = TestBed.createComponent(SitterListPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
