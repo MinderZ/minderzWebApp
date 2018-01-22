@@ -3,6 +3,7 @@ import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth-service.service';
 import { UserProfileObjet } from '../../model/userProfileObj.model';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
+//import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
 import { MapsAPILoader } from '@agm/core';
 import{} from '@types/googlemaps';
 import { ViewChild } from '@angular/core';
@@ -33,7 +34,7 @@ longitude;
     private ngZone:NgZone
   ) {
 
-   }
+  }
 
   ngOnInit() {
    this.userprof.fullname = this.auth.getcurrentUser().displayName;

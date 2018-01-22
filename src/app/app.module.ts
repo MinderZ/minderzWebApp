@@ -30,6 +30,7 @@ import { UserPetObject } from './model/userPetObject.modal';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
 import { DataRecycleService } from './services/data-recycle.service';
 import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
+import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
 import { SitterProfileCardComponent } from './components/sitter-list-page/sitter-profile-card/sitter-profile-card.component';
@@ -59,6 +60,7 @@ export const firbaseConfig = {
     SignInComponent,
     MiniDashboardComponent,
     BookingProfileComponent,
+    CodeComponent
     GoogleMapComponent,
     SitterListPageComponent,
     SitterProfileCardComponent,
