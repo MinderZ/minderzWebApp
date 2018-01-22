@@ -3,6 +3,7 @@ import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth-service.service';
 import { UserProfileObjet } from '../../model/userProfileObj.model';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
+//import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
 import { MapsAPILoader } from '@agm/core';
 import{} from '@types/googlemaps';
 import { ViewChild } from '@angular/core';
@@ -32,12 +33,12 @@ longitude;
     private ngZone:NgZone
   ) {
 
-   }
+  }
 
   ngOnInit() {
-   this.userprof.name = this.auth.getcurrentUser().displayName;
-   this.userprof.isAsitter = true;
-  //  this.userprof.name =
+    this.userprof.name = this.auth.getcurrentUser().displayName;
+    this.userprof.isAsitter = true;
+    //  this.userprof.name =
 
 this.mapLoader.load().then(()=>{
   let autocomplete = new google.maps.places.Autocomplete(
