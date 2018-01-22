@@ -8,7 +8,7 @@
     height: 100px;
     margin-left: 200px;
     border-radius: 5px;
-    margin-top: 50px
+    margin-top: 20px
 }
 
 .btn-search-pink {
@@ -16,6 +16,10 @@
     color: #fff;
     width: 60px;
     float: right;
+}
+
+.btn-search-pink:hover {
+    background-color: #ff7e75be;
 }
 
 .form-control {
