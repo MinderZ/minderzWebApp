@@ -103,19 +103,7 @@ h2,h1{
 .placehold{
   height: 40px;
 }
-figure.testimonial {
-  font-family: 'Raleway', Arial, sans-serif;
-  position: relative;
-  float: left;
-  overflow: hidden;
-  margin: 10px 1%;
-  min-width: 220px;
-  max-width: 310px;
-  width: 100%;
-  color: #8c8c8cce;
-  text-align: left;
-  box-shadow: none !important;
-}
+
 figure.testimonial * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
