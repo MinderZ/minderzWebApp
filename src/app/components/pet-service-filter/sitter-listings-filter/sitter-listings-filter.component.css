@@ -1,7 +1,8 @@
-.background{
+.background {
     padding: 30px 15px;
     color: #8c8c8c;
-    background-color: #f0f0f0;;
+    background-color: #f0f0f0;
+    ;
     font-size: 14px;
     width: 1143px;
     height: 100px;
@@ -10,9 +11,13 @@
     margin-top: 50px
 }
 
-.btn-search-pink{
+.btn-search-pink {
     background-color: #ff7f75;
     color: #fff;
-    width: 100px;
+    width: 60px;
     float: right;
+}
+
+.form-control {
+    height: 42px;
 }
