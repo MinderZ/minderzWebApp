@@ -1,4 +1,8 @@
 export class UserPetObject {
+
+  constructor() {}
+
+
   petType?: string;
   petName?: string;
   petGender?: string;

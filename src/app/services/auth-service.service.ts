@@ -5,6 +5,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CacheService } from './cache.service';
 import { NotificationService } from './notification.service';
+// import { DataRecycleService } from './data-recycle.service';
+import { AngularFirestoreDocument, AngularFirestore } from 'angularfire2/firestore';
+import { UserProfileObjet } from '../model/userProfileObj.model';
 
 interface User {
   uid: string;
@@ -16,27 +19,33 @@ interface User {
 
 
 @Injectable()
-export class AuthService {
+export class AuthService   {
   public user$: Observable<User>;
 public userUID: string;
 
   constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
+    private afs: AngularFirestore,
     private route: ActivatedRoute,
     private cache: CacheService,
-    private notify: NotificationService
+    private notify: NotificationService,
+      private auth: AuthService,
+
+    // private datarecycle: DataRecycleService
 
   )  {
+
     this.user$ = afAuth.authState;
   }
 
 
-  emailSignUp(email: string, password: string, name2display: string) {
+  emailSignUp(email: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
         this.notify.update('Welcome to MinderZ!!!', 'success');
-        return this.updateUserinfor(name2display);
+        // return this.updateUserinfor(name2display);
+return this.initialiseAUser();
       })
       .catch((error) => this.handleError(error));
   }
@@ -111,14 +120,19 @@ public userUID: string;
 
 
     // Sets user data to realtime after succesful login
-    private updateUserinfor(displayname: string, ) {
+    // private updateUserinfor(displayname: string, ) {
+      // this.datarecycle.initialiseAUser();
+      // const userRef = firebase.auth().currentUser;
+      // userRef.updateProfile({
+        // displayName: displayname || 'namelessuser',
+        // photoURL:  'https://goo.gl/Fz9nrQ',
+      // });
+    // }
 
-      const userRef = firebase.auth().currentUser;
 
-      userRef.updateProfile({
-        displayName: displayname || 'namelessuser',
-        photoURL:  'https://goo.gl/Fz9nrQ',
-      });
-
-    }
+initialiseAUser() {
+  const userProfile: AngularFirestoreDocument<UserProfileObjet> = this.afs.collection('users').doc('' + this.auth.currentUserUID);
+  // const userPets: AngularFirestoreDocument<UserPetObject> = this.afs.collection('users').doc('' + this.auth.currentUserUID);
+  // const userServices: AngularFirestoreDocument<SitterProfileObject> = this.afs.collection('users').doc('' + this.auth.currentUserUID);
+}
 }

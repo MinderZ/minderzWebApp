@@ -18,8 +18,8 @@ type FormErrors = { [u in UserFields]: string };
 export class SignInComponent implements OnInit {
 
   userForm: FormGroup;
+
   newUser = true; // to toggle login or signup form
-  passReset = false; // set to true when password reset is triggered
   formErrors: FormErrors = {
     'email': '',
     'password': '',
@@ -57,11 +57,11 @@ export class SignInComponent implements OnInit {
     this.newUser = !this.newUser;
   }
 
-  signup() {
+  signup(input) {
     this.auth.emailSignUp(
-      this.userForm.value['email'],
-       this.userForm.value['password'],
-       this.userForm.value['fullnames']
+      //  this.userForm.value['fullnames'],
+       this.userForm.value['email'],
+       this.userForm.value['password']
       );
   }
 

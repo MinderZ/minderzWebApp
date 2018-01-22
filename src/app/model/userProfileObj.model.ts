@@ -13,5 +13,7 @@ EmerContactName?: string;
 EmerContactNum?: string;
 isAserviceProvider?: boolean;
 isAsitter?: boolean;
+serviceProvision?: boolean;
 isAPetOwner?: boolean;
+// reviews:reviews[];
 }
