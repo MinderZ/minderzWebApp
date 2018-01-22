@@ -103,7 +103,10 @@ h2,h1{
 .placehold{
   height: 40px;
 }
-
+figure.testimonial {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 120%;
+}
 figure.testimonial * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
