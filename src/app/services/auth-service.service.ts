@@ -19,6 +19,7 @@ interface User {
 export class AuthService {
   public user$: Observable<User>;
 public userUID: string;
+
   constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
@@ -31,11 +32,11 @@ public userUID: string;
   }
 
 
-  emailSignUp(email: string, password: string) {
+  emailSignUp(email: string, password: string, name2display: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
         this.notify.update('Welcome to MinderZ!!!', 'success');
-        return this.updateUserinfor(user);
+        return this.updateUserinfor(name2display);
       })
       .catch((error) => this.handleError(error));
   }
@@ -46,8 +47,8 @@ public userUID: string;
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((user) => {
         this.notify.update('Welcome to MinderZ!!!', 'success');
-        return this.updateUserinfor(user);
-        this.router.navigate(['/']);
+        // return this.updateUserinfor(user);
+        // this.router.navigate(['/']);
       })
       .catch((error) => this.handleError(error) );
   }
@@ -110,13 +111,13 @@ public userUID: string;
 
 
     // Sets user data to realtime after succesful login
-    private updateUserinfor(user: User) {
+    private updateUserinfor(displayname: string, ) {
 
       const userRef = firebase.auth().currentUser;
 
       userRef.updateProfile({
-        displayName: user.displayName || 'nameless user',
-        photoURL: user.photoURL || 'https://goo.gl/Fz9nrQ',
+        displayName: displayname || 'namelessuser',
+        photoURL:  'https://goo.gl/Fz9nrQ',
       });
 
     }

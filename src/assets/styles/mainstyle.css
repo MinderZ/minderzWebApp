@@ -24,6 +24,11 @@ margin-top: 40;
 
 
 @media (min-width: 0px) {
+  .rowfix{
+margin-right: 0px !important;
+padding-left: 20px !important;
+/* inline-size:0ch; */
+  }
 
   .logoImg{
     height: 40px;

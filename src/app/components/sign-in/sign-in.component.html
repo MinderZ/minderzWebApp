@@ -7,8 +7,9 @@
   <div *ngIf="formErrors.email" class="alert alert-danger">
       {{ formErrors.email }}
     </div>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" name="email"  class="form-control" formControlName="email" placeholder="Email address" required autofocus>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" name="email"  class="form-control" formControlName="email" placeholder="Email address" required autofocus>
+
 
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="inputPassword" name="password"  formControlName="password" class="form-control" placeholder="Password" required>
@@ -42,11 +43,16 @@
   <h3>New User Signup</h3>
   <p class="btn btn-small" (click)="toggleForm()">Already Registered?</p>
 
-  <div *ngIf="formErrors.email" class="alert alert-danger">{{ formErrors.email }}</div>
 
+
+  <label for="fullnames" class="sr-only">Fullname  & Surname</label>
+  <input type="text" id="fullnames" name="fullnames"  class="form-control" formControlName="fullnames" placeholder="Jane Doe" required  autofocus>
+
+<br>
   <label for="inputEmail" class="sr-only">Email address</label>
   <input type="email" id="inputEmail" name="email" class="form-control" formControlName="email" placeholder="Email address"
-    required autofocus>
+    required >
+<div *ngIf="formErrors.email" class="alert alert-danger">{{ formErrors.email }}</div>
 
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="inputPassword" name="password" ngModel class="form-control" formControlName="password" placeholder="Password"

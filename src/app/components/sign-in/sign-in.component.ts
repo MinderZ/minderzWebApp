@@ -60,8 +60,9 @@ export class SignInComponent implements OnInit {
   signup() {
     this.auth.emailSignUp(
       this.userForm.value['email'],
-       this.userForm.value['password'])
-       ;
+       this.userForm.value['password'],
+       this.userForm.value['fullnames']
+      );
   }
 
   login() {
