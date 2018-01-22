@@ -1,7 +1,7 @@
 import { AgmCoreModule } from '@agm/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
 // import {FormsModule}
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from 'angularfire2';
@@ -37,6 +37,8 @@ import { SitterProfileCardComponent } from './components/sitter-list-page/sitter
 import { PetServiceFilterComponent } from './components/pet-service-filter/pet-service-filter.component';
 import { HomePageFilterComponent } from './components/pet-service-filter/home-page-filter/home-page-filter.component';
 import { SitterListingsFilterComponent } from './components/pet-service-filter/sitter-listings-filter/sitter-listings-filter.component';
+import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
+import { NotificationService } from './services/notification.service';
 
 export const firbaseConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -64,17 +66,20 @@ export const firbaseConfig = {
     SitterProfileCardComponent,
     PetServiceFilterComponent,
     HomePageFilterComponent,
-    SitterListingsFilterComponent
+    SitterListingsFilterComponent,
+    BeforeAseviceProviderComponent
   ],
   imports: [
     BrowserModule,
     CustomFormsModule,
     AngularFireModule.initializeApp(firbaseConfig),
     FormsModule,
+    ReactiveFormsModule,
+
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCbt0jWTVPaN546r8hq4LFGBN2F7NrMmq0',
-      libraries:["places"]
+      libraries: ['places']
     })
   ],
   providers: [
@@ -88,7 +93,8 @@ export const firbaseConfig = {
     DataRecycleService,
     UserProfileObjet,
     SitterProfileObject,
-    UserPetObject
+    UserPetObject,
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })

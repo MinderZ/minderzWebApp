@@ -10,6 +10,7 @@ import { BookingProfileComponent } from './components/booking-profile/booking-pr
 import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
 import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
 import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
+import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
 
 const routes: Routes = [
   {
@@ -31,8 +32,13 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'become',
+    path: 'newsitter',
     component: BecomeASitterComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'become',
+    component: BeforeAseviceProviderComponent,
     canActivate: [AuthGuard]
   },
   {

@@ -31,7 +31,7 @@ export class PetReg1Component implements OnInit {
   pet2Part(part2) {
     this.userPet.PetPicture = part2.pic;
     this.userPet.EmergencyVetSpendLimit = part2.emergencyvet;
-    this.userservice.createPetProfile(this.userPet);
+    this.userservice.createServiceProviderPets(this.userPet);
 console.log(this.userPet);
 
   }

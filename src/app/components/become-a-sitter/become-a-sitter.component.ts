@@ -11,19 +11,20 @@ import { ViewChild } from '@angular/core';
 @Component({
   selector: 'app-become-a-sitter',
   templateUrl: './become-a-sitter.component.html',
-  styleUrls: ['./become-a-sitter.component.css', '../../../assets/styles/mainstyle.css']
+  styleUrls: ['./become-a-sitter.component.css']
 })
 export class BecomeASitterComponent implements OnInit {
 
-@ViewChild('address') public addressElementRef:ElementRef;
+@ViewChild('address') public addressElementRef: ElementRef;
 latitude;
 longitude;
 
-  step1 = false;
+  step1 = true;
   step2 = false;
   step3 = false;
   step4 = false;
-  hide = true;
+
+
   constructor(
     private userservice: UserService,
     private userprof: UserProfileObjet,
@@ -36,30 +37,30 @@ longitude;
   }
 
   ngOnInit() {
-    this.userprof.name = this.auth.getcurrentUser().displayName;
-    this.userprof.isAsitter = true;
-    //  this.userprof.name =
+   this.userprof.fullname = this.auth.getcurrentUser().displayName;
+   this.userprof.isAsitter = true;
+  //  this.userprof.name =
 
-this.mapLoader.load().then(()=>{
+this.mapLoader.load().then(()=> {
   let autocomplete = new google.maps.places.Autocomplete(
-    this.addressElementRef.nativeElement,{
-      types:["address"]
+    this.addressElementRef.nativeElement, {
+      types:['address']
     }
   );
-  autocomplete.addListener("place_changed",()=>{
+  autocomplete.addListener('place_changed',()=>{
       this.ngZone.run(()=>{
 
-        //Gets place result
+        // Gets place result
     let place:google.maps.places.PlaceResult
 
-    //Verify Result
+    // Verify Result
 
-    if(place.geometry === undefined||place.geometry === null){
+    if(place.geometry === undefined || place.geometry === null) {
 return;
     }
 
-    this.latitude=place.geometry.location.lat()
-    this.longitude=place.geometry.location.lng()
+    this.latitude = place.geometry.location.lat();
+    this.longitude = place.geometry.location.lng();
 
   });
   });
@@ -83,10 +84,10 @@ return;
     this.userprof.consentForm = 'Consent form here';
     this.userprof.EmerContactName = personal.emergencyname;
     this.userprof.EmerContactNum = personal.emergencynumber;
-    this.step2 = false;
-    // console.log(this.userprof);
-    this.userservice.createProfile(this.userprof);
+    this.userprof.isAserviceProvider = true;
+    this.userservice.createProfile(this.userprof, this.userprof.isAserviceProvider );
     console.log(this.userprof);
+    this.step2 = false;
   }
 
   sitte(sitter) {
@@ -118,7 +119,7 @@ return;
     this.sitterObj.Reference1Phone = sit.ref1Phone;
     this.sitterObj.Reference2Name = sit.ref2Name;
     this.sitterObj.Reference2Phone = sit.ref2Phone;
-    this.userservice.createSitterProfile(this.sitterObj);
+    this.userservice.createServiceProviderProfile(this.sitterObj);
   }
 
   //   save(user) {
