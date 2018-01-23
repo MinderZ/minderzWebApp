@@ -1,14 +1,3 @@
-/* Smartphones (portrait) ----------- */
-/* @media only screen and (max-width : 320px) { */
-  /* Styles */
-/* } */
-
-
-.logoImg{
-  /* height: 80px;
-width:80px; */
-}
-
 .mt-10{
 margin-top: -110;
 }
@@ -27,9 +16,20 @@ margin-top: 40;
   .rowfix{
 margin-right: 0px !important;
 padding-left: 20px !important;
-/* inline-size:0ch; */
-  }
 
+}
+
+.foot{
+height: 295px;
+padding-left:12px;
+color:#e5e4e6;
+margin-top: 110px;
+font-size: 11px;
+  }
+  .subscribe{
+    height: 27.5px;
+    color: #ff978f;
+  }
   .logoImg{
     height: 40px;
   width:40px;
@@ -39,10 +39,27 @@ padding-left: 20px !important;
   .logoImg{
     height: 50px;
   width:50px;
+margin-top: 120px;
+
   }
+
+.foot{
+  height: 363px;}
 }
 @media (min-width: 768px) {
+  .foot{
+height: 178px;
+margin-top: 205px;
+font-size: 15px;
+}
+
 }
 @media (min-width: 992px) {
+  .foot {
+    height: 172px;
+    /* margin-top: 405px; */
+
+}
+
 }@media (min-width: 1200px) {
 }

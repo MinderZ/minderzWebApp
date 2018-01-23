@@ -1,6 +1,6 @@
 <form class="form-signin" [formGroup]="userForm" *ngIf="!newUser" (ngSubmit)="login()">
   <h3 class="form-signin-heading">Please sign in</h3>
-  <p class="btn  btn-small" (click)="toggleForm()">New User?</p>
+  <p class="formtoggler"  (click)="toggleForm()">New User?</p>
 
   <div *ngIf="formErrors.email" class="alert alert-danger">{{ formErrors.email }}  </div>
 
@@ -58,8 +58,8 @@
   </div>
 
 
-  <button type="submit" class="btn btn-lg btn-primary btn-block mt-5 custom" [disabled]="!userForm.valid">Register</button>
+  <button type="submit" onclick="myFunction()"  class="btn btn-lg btn-primary btn-block mt-5 custom" [disabled]="!userForm.valid">Register</button>
 
 </form>
-<br>
+<div id="snackbar">Account Created Successfully </div>
 <app-footer></app-footer>

@@ -11,17 +11,18 @@ import {
 } from 'angularfire2/firestore';
 import { UserProfileObjet } from '../model/userProfileObj.model';
 
-interface User {
-  uid: string;
-  email?: string | null;
-  photoURL?: string;
-  displayName?: string;
-}
 
 @Injectable()
 export class AuthService {
-  public user$: Observable<User>;
+  public user$: Observable<firebase.User>;
   public userUID: string;
+User = {
+  uid: this.currentUserUID,
+  email: '',
+  photoURL: '',
+  displayName: '',
+  isAserviceProvider : true
+ };
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -41,7 +42,6 @@ console.log('email');
       .then(user => {
         this.notify.update('Welcome to MinderZ!!!', 'success');
         this.initialiseAUser();
-        // return this.updateUserinfor(name2display);
         this.router.navigate(['/']);
       })
       .catch(error => this.handleError(error));
@@ -59,12 +59,10 @@ console.log('email');
   }
 
   loginWithGoogle() {
-    //   const returnUrl = this.route.snapshot.queryParamMap.get(this.returnUrl) || '/';
-    //  this.cache.navigator = returnUrl;
-    // localStorage.setItem("returnUrl", returnUrl);
-    this.afAuth.auth
+      this.afAuth.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(() => {
+        this.initialiseAUser();
         this.router.navigate(['/']);
       });
   }
@@ -73,6 +71,7 @@ console.log('email');
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then(() => {
+        this.initialiseAUser();
         this.router.navigate(['/']);
       });
   }
@@ -81,6 +80,7 @@ console.log('email');
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.TwitterAuthProvider())
       .then(() => {
+        this.initialiseAUser();
         this.router.navigate(['/']);
       });
   }
@@ -115,10 +115,13 @@ console.log('email');
   }
 
   initialiseAUser() {
-    console.log('initialise');
-    let userProfile: AngularFirestoreDocument<UserProfileObjet>;
-    return userProfile = this.afs.collection('users').doc('' + this.currentUserUID());
+      const userProfile = this.afs.collection('users').doc('clients');
+      userProfile.set(this.User, { merge: true });
+
+//  userProfile
     // const userPets: AngularFirestoreDocument<UserPetObject> = this.afs.collection('users').doc('' + this.auth.currentUserUID);
     // const userServices: AngularFirestoreDocument<SitterProfileObject> = this.afs.collection('users').doc('' + this.auth.currentUserUID);
+  
   }
+
 }
