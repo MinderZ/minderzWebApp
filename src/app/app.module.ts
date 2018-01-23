@@ -60,7 +60,7 @@ export const firbaseConfig = {
     SignInComponent,
     MiniDashboardComponent,
     BookingProfileComponent,
-    CodeComponent
+    CodeComponent,
     GoogleMapComponent,
     SitterListPageComponent,
     SitterProfileCardComponent,
