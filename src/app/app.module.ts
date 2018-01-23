@@ -2,6 +2,7 @@ import { AgmCoreModule } from '@agm/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 // import {FormsModule}
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from 'angularfire2';
@@ -18,7 +19,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth-service.service';
 import { CacheService } from './services/cache.service';
@@ -37,7 +39,7 @@ import { PetServiceFilterComponent } from './components/pet-service-filter/pet-s
 import { HomePageFilterComponent } from './components/pet-service-filter/home-page-filter/home-page-filter.component';
 import { SitterListingsFilterComponent } from './components/pet-service-filter/sitter-listings-filter/sitter-listings-filter.component';
 
-export const firbaseConfig = {
+export const firestoreConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
   authDomain: 'minderz-4ecba.firebaseapp.com',
   databaseURL: 'https://minderz-4ecba.firebaseio.com',
@@ -62,23 +64,22 @@ export const firbaseConfig = {
     SitterProfileCardComponent,
     PetServiceFilterComponent,
     HomePageFilterComponent,
-    SitterListingsFilterComponent
+    SitterListingsFilterComponent,
   ],
   imports: [
     BrowserModule,
     CustomFormsModule,
-    AngularFireModule.initializeApp(firbaseConfig),
     FormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCbt0jWTVPaN546r8hq4LFGBN2F7NrMmq0',
-      libraries:["places"]
-    })
+      libraries: ["places"]
+    }),
+    AngularFireModule.initializeApp(firestoreConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [
-    AngularFireDatabaseModule,
-    AngularFireDatabase,
-    AngularFireAuth,
     UserService,
     AuthService,
     CacheService,
@@ -90,4 +91,5 @@ export const firbaseConfig = {
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
