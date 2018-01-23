@@ -1,13 +1,13 @@
 <div class="container-fluid">
-    <div class="row">
-        <app-pet-service-filter></app-pet-service-filter>
+  <div class="row">
+    <app-pet-service-filter></app-pet-service-filter>
+  </div>
+  <div class="row list">
+    <div class="col-md-6 p-0 cards">
+      <app-sitter-profile-card *ngFor="let sitter of mock"></app-sitter-profile-card>
     </div>
-    <div class="row ">
-        <div class="col-md-6 p-0 list">
-            <app-sitter-profile-card class="cards" *ngFor="let sitter of mock"></app-sitter-profile-card>
-        </div>
-        <div class="col-md-6 map">
-            <app-google-map [locations]="mock"></app-google-map>
-        </div>
+    <div class="col-md-6 map">
+      <app-google-map  [locations]="mock"></app-google-map>
     </div>
+  </div>
 </div>
