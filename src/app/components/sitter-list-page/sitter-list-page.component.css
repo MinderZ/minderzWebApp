@@ -1,19 +1,13 @@
-.map {
+.map{
     position: absolute;
-    right: 0;
-    padding: 20px;
-    margin-right: 10px;
+    right:0;
+    padding:20px;
 }
 
+.cards{
+    margin: 20px
+}
 
-/* .cards {
-    margin: 20px;
-} */
-
-.list {
+.list{
     margin-top: 20px;
-    margin-left: 20px;
-    height: 522px;
-    overflow-y: scroll;
-    width: 710px;
 }

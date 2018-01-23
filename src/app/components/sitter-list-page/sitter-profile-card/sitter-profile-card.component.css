@@ -1,45 +1,28 @@
-.sitter-profile-pic {
+.sitter-profile-pic{
     height: 200px;
     width: 200px;
     margin: 24px 10px;
 }
 
-.large {
+.large{
     font-size: 24px;
 }
 
-.medium {
+.medium{
     font-size: 18px;
 }
 
-.small {
+.small{
     font-size: 16px
 }
 
-.xsmall {
+.xsmall{
     font-size: 14px
 }
 
-.card {
-    height: 250px;
-    border: 1px solid rgba(0, 0, 0, 0.541);
-    width: 650px;
-    margin: 0px 20px 20px 35px;
-}
-
-.fa-map-marker {
-    color: #008cff;
-    font-size: 16px;
-}
-
-.stars {
-    margin-right: 10px;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.reviews {
-    margin-left: 10px;
-    margin-top: auto;
-    margin-bottom: auto;
+.card{
+    height:250px; 
+    border:1px solid rgba(0, 0, 0, 0.541);
+    width:650px;
+    margin:0px 20px 20px 35px;
 }

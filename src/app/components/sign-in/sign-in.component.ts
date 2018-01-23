@@ -46,7 +46,7 @@ export class SignInComponent implements OnInit {
 
   ) { }
 
-  returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+  // returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
 
 
   ngOnInit() {
@@ -59,7 +59,6 @@ export class SignInComponent implements OnInit {
 
   signup(input) {
     this.auth.emailSignUp(
-      //  this.userForm.value['fullnames'],
        this.userForm.value['email'],
        this.userForm.value['password']
       );
@@ -70,7 +69,6 @@ export class SignInComponent implements OnInit {
       this.userForm.value['email'],
       this.userForm.value['password']
     );
-
   }
 
 
