@@ -37,8 +37,10 @@ import { SitterProfileCardComponent } from './components/sitter-list-page/sitter
 import { PetServiceFilterComponent } from './components/pet-service-filter/pet-service-filter.component';
 import { HomePageFilterComponent } from './components/pet-service-filter/home-page-filter/home-page-filter.component';
 import { SitterListingsFilterComponent } from './components/pet-service-filter/sitter-listings-filter/sitter-listings-filter.component';
+import { SummaryPipe } from './pipes/summary.pipe';
 import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
 import { NotificationService } from './services/notification.service';
+
 
 export const firbaseConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -67,7 +69,9 @@ export const firbaseConfig = {
     PetServiceFilterComponent,
     HomePageFilterComponent,
     SitterListingsFilterComponent,
+    SummaryPipe
     BeforeAseviceProviderComponent
+
   ],
   imports: [
     BrowserModule,
