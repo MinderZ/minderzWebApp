@@ -1,7 +1,7 @@
 import { AgmCoreModule } from '@agm/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
 // import {FormsModule}
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from 'angularfire2';
@@ -30,6 +30,7 @@ import { UserPetObject } from './model/userPetObject.modal';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
 import { DataRecycleService } from './services/data-recycle.service';
 import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
+import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
 import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
 import { SitterProfileCardComponent } from './components/sitter-list-page/sitter-profile-card/sitter-profile-card.component';
@@ -37,6 +38,9 @@ import { PetServiceFilterComponent } from './components/pet-service-filter/pet-s
 import { HomePageFilterComponent } from './components/pet-service-filter/home-page-filter/home-page-filter.component';
 import { SitterListingsFilterComponent } from './components/pet-service-filter/sitter-listings-filter/sitter-listings-filter.component';
 import { SummaryPipe } from './pipes/summary.pipe';
+import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
+import { NotificationService } from './services/notification.service';
+
 
 export const firbaseConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -58,6 +62,7 @@ export const firbaseConfig = {
     SignInComponent,
     MiniDashboardComponent,
     BookingProfileComponent,
+    CodeComponent
     GoogleMapComponent,
     SitterListPageComponent,
     SitterProfileCardComponent,
@@ -65,16 +70,20 @@ export const firbaseConfig = {
     HomePageFilterComponent,
     SitterListingsFilterComponent,
     SummaryPipe
+    BeforeAseviceProviderComponent
+
   ],
   imports: [
     BrowserModule,
     CustomFormsModule,
     AngularFireModule.initializeApp(firbaseConfig),
     FormsModule,
+    ReactiveFormsModule,
+
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCbt0jWTVPaN546r8hq4LFGBN2F7NrMmq0',
-      libraries:["places"]
+      libraries: ['places']
     })
   ],
   providers: [
@@ -88,7 +97,8 @@ export const firbaseConfig = {
     DataRecycleService,
     UserProfileObjet,
     SitterProfileObject,
-    UserPetObject
+    UserPetObject,
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })

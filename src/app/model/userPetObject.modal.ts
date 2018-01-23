@@ -1,4 +1,8 @@
 export class UserPetObject {
+
+  constructor() {}
+
+
   petType?: string;
   petName?: string;
   petGender?: string;
@@ -8,5 +12,4 @@ export class UserPetObject {
   PetPicture?: any;
   EmergencyContact?: string;
   EmergencyVetSpendLimit?: string;
-
 }
