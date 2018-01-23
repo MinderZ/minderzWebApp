@@ -11,6 +11,8 @@ import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
 // import { CanActivate } from '@angular/router/src/interfaces';
 import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.component';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
+import { PetProfileComponent } from "./components/pet-profile/pet-profile.component";
+// import ;
 
 const routes: Routes = [
   {
@@ -25,6 +27,10 @@ const routes: Routes = [
   {
     path: 'signIn',
     component: SignInComponent
+  },
+  {
+    path: 'petProfile',
+    component: PetProfileComponent
   },
   {
     path: 'profile',
