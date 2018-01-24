@@ -10,6 +10,7 @@ import {
   AngularFirestore
 } from 'angularfire2/firestore';
 import { UserProfileObjet } from '../model/userProfileObj.model';
+// import { User } from 'app/model/user.model';
 
 
 @Injectable()
@@ -17,7 +18,7 @@ export class AuthService {
   public user$: Observable<firebase.User>;
   public userUID: string;
 User = {
-  uid: this.currentUserUID,
+  uid: '',
   email: '',
   photoURL: '',
   displayName: '',
@@ -116,12 +117,8 @@ console.log('email');
 
   initialiseAUser() {
       const userProfile = this.afs.collection('users').doc('clients');
-      userProfile.set(this.User, { merge: true });
-
-//  userProfile
-    // const userPets: AngularFirestoreDocument<UserPetObject> = this.afs.collection('users').doc('' + this.auth.currentUserUID);
-    // const userServices: AngularFirestoreDocument<SitterProfileObject> = this.afs.collection('users').doc('' + this.auth.currentUserUID);
-  
-  }
+    this.User.uid =   this.currentUserUID();
+     return userProfile.set(this.User);
+ }
 
 }
