@@ -1,3 +1,123 @@
-<p>
-  step-4-sitter-details works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+
+    <!--Start house type-->
+    <div class="form-inline" id="house-type">
+      <label>House Type:</label>
+      <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+        <option selected>Flat</option>
+        <option>House with yard</option>
+        <option>House without yard</option>
+      </select>
+    </div>
+    <!--End house type-->
+
+    <!--Start children-->
+    <div class="form-inline" id="children">
+      <label>Children:</label>
+      <!-- Yes -->
+      <div class="radio" [ngClass]="children && !childrenPristine ? 'selected' : 'unselected'" (click)="children=true; childrenPristine=false"></div>
+      <label>Yes</label>
+
+      <!-- No -->
+      <div class="radio" [ngClass]="!children && !childrenPristine ? 'selected' : 'unselected'" (click)="children=false; childrenPristine=false"></div>
+      <label>No</label>
+    </div>
+    <!--End cheldren-->
+
+    <!--Experience-->
+    <div class="form-inline" id="experience">
+      <label>Experience:</label>
+      <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+        <option selected>No experience</option>
+        <option>1 year</option>
+        <option>2 years</option>
+        <option>3 years</option>
+        <option>4+ years</option>
+      </select>
+    </div>
+    <!--End house type-->
+
+    <!--Start about you-->
+    <div class="form-inline" id="about-me">
+      <label>About me:</label>
+      <input class="form-control" type="text" />
+    </div>
+    <!--End about you-->
+
+    <!--Start volunteer-->
+    <div class="form-inline" id="volunteer">
+      <label>Done volunteer work with pets:</label>
+
+      <!-- Yes -->
+      <div class="radio" [ngClass]="volunteer && !volunteerPristine ? 'selected' : 'unselected'" (click)="volunteer=true; volunteerPristine=false"></div>
+      <label>Yes</label>
+
+      <!-- No -->
+      <div class="radio" [ngClass]="!volunteer && !volunteerPristine ? 'selected' : 'unselected'" (click)="volunteer=false; volunteerPristine=false"></div>
+      <label>No</label>
+
+    </div>
+    <!--End volunteer-->
+
+    <!--Start own pet-->
+    <div class="form-inline" id="own-pet">
+      <label>Currently own any pets:</label>
+
+      <!-- Yes -->
+      <div class="radio" [ngClass]="ownPets && !ownPetsPristine ? 'selected' : 'unselected'" (click)="ownPets=true; ownPetsPristine=false"></div>
+      <label>Yes</label>
+
+      <!-- No -->
+      <div class="radio" [ngClass]="!ownPets && !ownPetsPristine ? 'selected' : 'unselected'" (click)="ownPets=false; ownPetsPristine=false"></div>
+      <label>No</label>
+
+    </div>
+    <!--End own pet-->
+
+    <!--Start pet history-->
+    <div class="form-inline" id="pet-history" [style.display]="!ownPets && !ownPetsPristine ? 'block' : 'none'">
+      <label>Has owned pets:</label>
+
+      <!-- Yes -->
+      <div class="radio" [ngClass]="ownedPets && !ownedPetsPristine ? 'selected' : 'unselected'" (click)="ownedPets=true; ownedPetsPristine=false"></div>
+      <label>Yes</label>
+
+      <!-- No -->
+      <div class="radio" [ngClass]="!ownedPets && !ownedPetsPristine ? 'selected' : 'unselected'" (click)="ownedPets=false; ownedPetsPristine=false"></div>
+      <label>No</label>
+
+    </div>
+    <!--End pet history-->
+
+    <!--Start references-->
+    <div id="reference">
+
+      <div id="reference-list" *ngFor="let reference of references">
+        <label>{{reference}}</label>
+      </div>
+
+      <a id="add-reference" (click)="creatingReference = !creatingReference" [style.display]="creatingReference ? 'none' : 'block'">
+        <i class="fa fa-plus">Add reference</i>
+      </a>
+
+      <div [style.display]="creatingReference ? 'block' : 'none'">
+        <div class="form-inline">
+          <label>Reference name:</label>
+          <input id="reference-name" class="form-control" type="text" [(ngModel)]="referencePhone" />
+        </div>
+
+        <div class="form-inline">
+          <label>Reference phone:</label>
+          <input id="reference-phone" class="form-control" type="text" [(ngModel)]="referenceName" />
+        </div>
+
+        <button class="btn btn-primary" (click)="addReference()">Submit</button>
+        <button class="btn btn-primary" (click)="creatingReference = !creatingReference">Cancel</button>
+
+      </div>
+    </div>
+    <!--Add references-->
+
+  </div>
+</div>
