@@ -12,6 +12,25 @@
       margin: 0px;
     }
 
+    #fullname {
+      font-size: 24px;
+      border: none;
+    }
+
+    #fullname:hover {
+      cursor: default;
+    }
+
+    #about-me {
+      font-size: 18px;
+      background: none;
+      border: none;
+    }
+
+    #about-me:hover {
+      cursor: default;
+    }
+
     h3 {
       font-size: 20px;
     }
@@ -76,6 +95,76 @@
     #rating-panel,
     #job-history {
       padding: 0px;
+    }
+
+    #add-language {
+      min-height: 34.4px;
+      display: flex;
+    }
+
+    #add-skill {
+      min-height: 34.4px;
+      display: flex;
+    }
+
+    #add-language a {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    #add-skill a {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    #add-language-button {
+      background: #337ab7;
+      color: #FFFFFF;
+    }
+
+    #add-skill-button {
+      background: #337ab7;
+      color: #FFFFFF;
+    }
+
+    #add-language-button:hover {
+      background: #2f6fa7;
+      cursor: pointer;
+    }
+
+    #add-skill-button:hover {
+      background: #2f6fa7;
+      cursor: pointer;
+    }
+
+    .cancel {
+      padding-left: 10px;
+    }
+
+    .add,
+    .cancel {
+      text-decoration: none;
+    }
+
+    .add:hover,
+    .cancel:hover {
+      cursor: pointer;
+    }
+
+    .form-control {
+      max-width: 150px;
+    }
+
+    .input-group-addon {
+      width: 0px;
+    }
+
+    .cancel i {
+      padding-right: 5px
+    }
+
+    .add i {
+      padding-left: 5px;
     }
 
     #rating-number {
@@ -159,6 +248,16 @@
       }
       #overview-panel {
         height: 470px;
+      }
+    }
+
+    @media (max-width: 406px) {
+      #add-skill,
+      #add-language {
+        display: block
+      }
+      .cancel {
+        padding: 10px 0px;
       }
     }
     /* @media (max-width: 560px) {

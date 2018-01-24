@@ -10,7 +10,7 @@
         </div>
 
         <div class="col-lg-7 col-md-7 col-sm-12" id="info">
-          <h1 class="line-spacing-5" id="fullname">none</h1>
+          <input [(ngModel)]="fullname" class="line-spacing-5" id="fullname" [readonly]="!editing" />
 
           <!--Start rating-->
           <div class="line-spacing-5 col-md-12 col-sm-12 col-xs-12" id="rating-panel">
@@ -29,27 +29,25 @@
             </div>
 
             <div class="col-md-9 col-sm-12 col-xs-12" id="reviews">
-              <label>Based on (reviews) reviews</label>
+              <label>Based on {{reviews}} reviews</label>
             </div>
-
-
           </div>
 
 
           <!--End rating-->
 
           <div class="line-spacing-5 col-md-12 col-sm-12 col-xs-12" id="account-details">
-            <h4>Member since (display date), (amount of jobs) complete</h4>
+            <h4>Member since {{accountCreated}}, {{jobsComplete}} complete</h4>
           </div>
 
           <!--Start job history-->
           <div class="line-spacing-5 col-md-12 col-sm-12 col-xs-12" id="job-history">
 
             <h3 class="col-lg-2 col-md-6 col-sm-6 col-xs-12">Jobs</h3>
-            <h3 class="value col-lg-3 col-md-6 col-sm-6 col-xs-12"> (amount)</h3>
+            <h3 class="value col-lg-3 col-md-6 col-sm-6 col-xs-12"> {{jobs}}</h3>
 
             <h3 class="col-lg-4 col-md-6 col-sm-6 col-xs-12">Cancellations</h3>
-            <h3 class="value col-lg-3 col-md-6 col-sm-6 col-xs-12"> (amount)</h3>
+            <h3 class="value col-lg-3 col-md-6 col-sm-6 col-xs-12"> {{cancellations}}</h3>
 
           </div>
           <!--End job history-->
@@ -59,17 +57,55 @@
 
       <!--Start about-->
       <div class="col-md-12 col-sm-12" id="about-panel">
-        <h2 class="line-spacing-20">About</h2>
-        <p class="line-spacing-20">(About me)</p>
+        <h2 class="line-spacing-20">About me</h2>
+        <!-- <p class="line-spacing-20">{{aboutMe}}</p> -->
+        <input id="about-me" class="line-spacing-20" [(ngModel)]="aboutMe" [readonly]="!editing" />
 
         <h4 class="line-spacing-20">Languages</h4>
-        <h4 class="value line-spacing-20">(list)</h4>
+        <h4 class="value line-spacing-20" *ngFor="let language of languages">{{language}}</h4>
+
+        <!-- Start editing language -->
+        <div [style.min-height]="editing ? '34.4px' : '0px'" id="add-language" class="display-flex">
+          <a class="add" [style.display]="editing && !addingLanguage ? 'block' : 'none'" (click)="addLanguage()">Add
+            <i class="fa fa-plus"></i>
+          </a>
+          <div class="input-group">
+            <input class="form-control" [style.display]="editing && addingLanguage ? 'block' : 'none'" [(ngModel)]="newLanguage" />
+            <div id="add-language-button" class="input-group-addon" [style.display]="editing && addingLanguage ? 'table-cell' : 'none'"
+              (click)="pushLanguage()">
+              <i class="fa fa-check"></i>
+            </div>
+          </div>
+          <a class="cancel" [style.display]="editing && addingLanguage ? 'block' : 'none'" (click)="addLanguage()">
+            <i class="fa fa-chevron-left"></i>Cancel</a>
+        </div>
+        <!-- End editing language -->
+
+
         <h4 class="line-spacing-20">Skills</h4>
-        <h4 class="value line-spacing-20">(list)</h4>
+        <h4 class="value line-spacing-20" *ngFor="let skill of skills">{{skill}}</h4>
+
+        <!-- Start editing skill -->
+        <div [style.min-height]="editing ? '34.4px' : '0px'" id="add-skill" class="display-flex">
+          <a class="add" [style.display]="editing && !addingSkill ? 'block' : 'none'" (click)="addSkill()">Add
+            <i class="fa fa-plus"></i>
+          </a>
+          <div class="input-group">
+            <input class="form-control" [style.display]="editing && addingSkill ? 'block' : 'none'" [(ngModel)]="newSkill" />
+            <div id="add-skill-button" class="input-group-addon" [style.display]="editing && addingSkill ? 'block' : 'none'" (click)="pushSkill()">
+              <i class="fa fa-check"></i>
+            </div>
+          </div>
+          <a class="cancel" [style.display]="editing && addingSkill ? 'block' : 'none'" (click)="addSkill()">
+            <i class="fa fa-chevron-left"></i>Cancel</a>
+        </div>
+        <!-- Start editing skill -->
+
       </div>
       <!--End about-->
 
     </div>
+
     <div class="col-md-4 col-sm-12" id="calender">
 
     </div>
@@ -81,6 +117,9 @@
     <div class="col-md-4 col-sm-12" id="map">
 
     </div>
+
+    <a (click)="edit()">{{editing}}</a>
+
   </div>
 </div>
 <!--End booking profile-->
