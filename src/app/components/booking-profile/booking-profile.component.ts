@@ -11,6 +11,6 @@ export class BookingProfileComponent {
     rating: number;
 
     constructor() {
-        this.rating = 4.0;
+        this.rating = 3.0;
     }
 }
