@@ -3,9 +3,9 @@ import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth-service.service';
 import { UserProfileObjet } from '../../model/userProfileObj.model';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
-//import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
+// import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
 import { MapsAPILoader } from '@agm/core';
-import{} from '@types/googlemaps';
+import {} from '@types/googlemaps';
 import { ViewChild } from '@angular/core';
 
 @Component({
@@ -41,21 +41,21 @@ longitude;
    this.userprof.isAsitter = true;
   //  this.userprof.name =
 
-this.mapLoader.load().then(()=> {
-  let autocomplete = new google.maps.places.Autocomplete(
+this.mapLoader.load().then(() => {
+  const autocomplete = new google.maps.places.Autocomplete(
     this.addressElementRef.nativeElement, {
-      types:['address']
+      types: ['address']
     }
   );
-  autocomplete.addListener('place_changed',()=>{
-      this.ngZone.run(()=>{
+  autocomplete.addListener('place_changed', () => {
+      this.ngZone.run(() => {
 
         // Gets place result
-    let place:google.maps.places.PlaceResult
+    let place: google.maps.places.PlaceResult;
 
     // Verify Result
 
-    if(place.geometry === undefined || place.geometry === null) {
+    if (place.geometry === undefined || place.geometry === null) {
 return;
     }
 
@@ -85,7 +85,7 @@ return;
     this.userprof.EmerContactName = personal.emergencyname;
     this.userprof.EmerContactNum = personal.emergencynumber;
     this.userprof.isAserviceProvider = true;
-    this.userservice.createProfile(this.userprof, this.userprof.isAserviceProvider );
+    // this.userservice.createProfile(this.userprof, this.userprof.isAserviceProvider );
     console.log(this.userprof);
     this.step2 = false;
   }
@@ -119,7 +119,7 @@ return;
     this.sitterObj.Reference1Phone = sit.ref1Phone;
     this.sitterObj.Reference2Name = sit.ref2Name;
     this.sitterObj.Reference2Phone = sit.ref2Phone;
-    this.userservice.createServiceProviderProfile(this.sitterObj);
+    // this.userservice.createServiceProviderProfile(this.sitterObj);
   }
 
   //   save(user) {

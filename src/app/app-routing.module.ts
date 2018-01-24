@@ -50,9 +50,10 @@ const routes: Routes = [
   }, {
     path: 'code',
     component: CodeComponent,
-  },{
-    path:'sitter-profile-listings',
-    component:SitterListPageComponent
+  },
+  {
+    path: 'sitter-profile-listings',
+    component: SitterListPageComponent
   }
 
   // children: [
