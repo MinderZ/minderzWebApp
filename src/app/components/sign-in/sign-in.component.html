@@ -39,7 +39,7 @@
 <form [formGroup]="userForm" *ngIf="newUser" #f="ngForm" (ngSubmit)="signup()" class="form-signin">
 
   <h3>New User Signup</h3>
-  <p class="btn btn-small" (click)="toggleForm()">Already Registered?</p>
+  <p class="formtoggler" (click)="toggleForm()">Already Registered?</p>
   <!-- <label for="fullnames" class="sr-only">Fullname  & Surname</label> -->
   <!-- <input type="text" id="fullnames"  name="fullnames"  class="form-control"  formGroupName="fullnames" formControlName="fullnames" placeholder="Jane Doe" required  autofocus> -->
   <br>

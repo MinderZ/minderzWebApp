@@ -46,6 +46,7 @@ input:focus {
   background-color: #4267b2;
   text-transform: capitalize;
 }
+
 .google {
   text-transform: capitalize;
 }
@@ -55,7 +56,7 @@ input:focus {
 }
 .formtoggler{
   color: #1da1f2;
-  cursor: default;
+  cursor: pointer;
 }
 /* -------------------------------------------------------------------------------------------------- */
 #snackbar {
