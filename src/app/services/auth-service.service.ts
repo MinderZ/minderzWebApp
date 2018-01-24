@@ -116,7 +116,7 @@ console.log('email');
   }
 
   initialiseAUser() {
-      const userProfile = this.afs.collection('users').doc('clients');
+      const userProfile = this.afs.collection('users').doc('' + this.currentUserUID());
     this.User.uid =   this.currentUserUID();
      return userProfile.set(this.User);
  }
