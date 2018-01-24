@@ -12,7 +12,6 @@ import { BecomeASitterComponent } from './components/become-a-sitter/become-a-si
 import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
 import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
 import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
-import { PetProfileComponent } from './components/pet-profile/pet-profile.component';
 
 const routes: Routes = [
   {
