@@ -1,25 +1,65 @@
-<form class="form-signin">
-  <h2 class="form-signin-heading">Please sign in</h2>
-  <!-- <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div> -->
+<form class="form-signin" [formGroup]="userForm" *ngIf="!newUser" (ngSubmit)="login()">
+  <h3 class="form-signin-heading">Please sign in</h3>
+  <p class="formtoggler"  (click)="toggleForm()">New User?</p>
+
+  <div *ngIf="formErrors.email" class="alert alert-danger">{{ formErrors.email }}  </div>
+
   <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" name="email" ngModel class="form-control" placeholder="Email address" required autofocus>
+  <input type="email" id="inputEmail" name="email" class="form-control" formControlName="email" placeholder="Email address"
+    required autofocus>
+
+
   <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Password" required>
-  <button class="btn btn-lg btn-primary btn-block mt-5 custom" type="submit">Sign in</button>
+  <input type="password" id="inputPassword" name="password" formControlName="password" class="form-control" placeholder="Password"
+    required>
+  <div *ngIf="formErrors.password" class="alert alert-danger">    {{ formErrors.password }}  </div>
+
+
+
+  <button class="btn btn-lg btn-primary btn-block mt-5 custom" [disabled]="!userForm.valid" type="submit">Sign in</button>
   <div class="row">
-    <br>
+    <hr>
     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 ">
       <button class="btn btn-lg btn-primary btn-block twitter" type="button" (click)="loginWithTwitter()">
-       <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</button>
+        <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</button>
     </div>
     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
       <button class="btn btn-lg btn-primary btn-block facebook" type="button" (click)="loginWithFacebook()">
-       <i class="fa fa-facebook" aria-hidden="true"></i> Facebook</button>
+        <i class="fa fa-facebook" aria-hidden="true"></i> Facebook</button>
     </div>
   </div>
   <br>
   <button class="btn btn-lg btn-danger btn-block mt-5 google" type="button" (click)="loginWithGoogle()">
-  <i class="fa fa-google" aria-hidden="true"></i> Google</button>
+    <i class="fa fa-google" aria-hidden="true"></i> Google</button>
 
 </form>
+
+
+
+<form [formGroup]="userForm" *ngIf="newUser" #f="ngForm" (ngSubmit)="signup()" class="form-signin">
+
+  <h3>New User Signup</h3>
+  <p class="formtoggler" (click)="toggleForm()">Already Registered?</p>
+  <!-- <label for="fullnames" class="sr-only">Fullname  & Surname</label> -->
+  <!-- <input type="text" id="fullnames"  name="fullnames"  class="form-control"  formGroupName="fullnames" formControlName="fullnames" placeholder="Jane Doe" required  autofocus> -->
+  <br>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" name="email" class="form-control" formControlName="email" placeholder="Email address"
+    required>
+  <div *ngIf="formErrors.email" class="alert alert-danger">{{ formErrors.email }}</div>
+
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" name="password" ngModel class="form-control" formControlName="password" placeholder="Password"
+    required>
+
+
+  <div *ngIf="formErrors.password" class="alert alert-danger">
+    {{ formErrors.password }}
+  </div>
+
+
+  <button type="submit" onclick="myFunction()"  class="btn btn-lg btn-primary btn-block mt-5 custom" [disabled]="!userForm.valid">Register</button>
+
+</form>
+<div id="snackbar">Account Created Successfully </div>
 <app-footer></app-footer>

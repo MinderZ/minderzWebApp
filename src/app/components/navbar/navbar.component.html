@@ -19,7 +19,7 @@
               </a>
             </li>
             <li>
-                <a>
+                <a routerLink="sitter-profile-listings">
                   <span>
                     <i class="fa fa-search" aria-hidden="true"></i> Search for sitter</span>
                 </a>
@@ -39,7 +39,6 @@
           </a>
         </li>
       </ul>
-
       <div class="nav navbar-nav" *ngIf="auth.user$ | async as user; else anonymousUser">
         <li>
           <a routerLink="profile">
