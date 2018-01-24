@@ -1,7 +1,7 @@
 import { AgmCoreModule } from "@agm/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule, FormGroup } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from "@angular/forms";
 // import {FormsModule}
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from "angularfire2";
@@ -46,6 +46,7 @@ import { NotificationService } from "./services/notification.service";
 import { AngularFirestore } from "angularfire2/firestore";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { SummaryPipe } from './pipes/summary.pipe';
+import { TestimonialFormComponent } from './component/testimonial-form/testimonial-form.component';
 
 export const firestoreConfig = {
   apiKey: "AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4",
@@ -75,7 +76,8 @@ export const firestoreConfig = {
     HomePageFilterComponent,
     SitterListingsFilterComponent,
     BeforeAseviceProviderComponent,
-    SummaryPipe
+    SummaryPipe,
+    TestimonialFormComponent,ReactiveFormsModule
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),
