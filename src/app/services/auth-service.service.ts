@@ -10,7 +10,7 @@ import {
   AngularFirestore
 } from 'angularfire2/firestore';
 import { UserProfileObjet } from '../model/userProfileObj.model';
-import { User } from 'app/model/user.model';
+// import { User } from 'app/model/user.model';
 
 
 @Injectable()
