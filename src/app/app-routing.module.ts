@@ -1,18 +1,18 @@
+import { PetProfileComponent } from './components/pet-profile/pet-profile.component';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { BookServiceComponent } from './components/book-service/book-service.component';
 import { HomeComponent } from './components/home/home.component';
-// import { BecomeAsitterComponent } from './components/become-asitter/become-asitter.component';
 import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
-// import { CanActivate } from '@angular/router/src/interfaces';
-import { SitterReg1Component } from './components/sitter-reg-1/sitter-reg-1.component';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
-import { PetProfileComponent } from "./components/pet-profile/pet-profile.component";
-// import ;
+import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
+import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
+import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
+import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
+import { PetProfileComponent } from './components/pet-profile/pet-profile.component';
 
 const routes: Routes = [
   {
@@ -38,8 +38,13 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'newsitter',
+    component: BecomeASitterComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'become',
-    component: BookServiceComponent,
+    component: BeforeAseviceProviderComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -48,6 +53,13 @@ const routes: Routes = [
   }, {
     path: 'bookingprofile',
     component: BookingProfileComponent,
+  }, {
+    path: 'code',
+    component: CodeComponent,
+  },
+  {
+    path: 'sitter-profile-listings',
+    component: SitterListPageComponent
   }
 
   // children: [
