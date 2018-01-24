@@ -19,7 +19,7 @@ export class SitterListingsFilterComponent implements OnInit {
     this.mapLoader.load().then(()=>{
       let autocomplete = new google.maps.places.Autocomplete(
         this.addressElementRef.nativeElement,{
-          types:["(cities)"],
+          types:["geocode"],
           componentRestrictions: {'country': 'za'}
         }
       );
