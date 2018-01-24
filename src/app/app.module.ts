@@ -45,6 +45,7 @@ import { BeforeAseviceProviderComponent } from "./components/before-asevice-prov
 import { NotificationService } from "./services/notification.service";
 import { AngularFirestore } from "angularfire2/firestore";
 import { AngularFirestoreModule } from "angularfire2/firestore";
+import { SummaryPipe } from './pipes/summary.pipe';
 
 export const firestoreConfig = {
   apiKey: "AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4",
@@ -73,7 +74,8 @@ export const firestoreConfig = {
     PetServiceFilterComponent,
     HomePageFilterComponent,
     SitterListingsFilterComponent,
-    BeforeAseviceProviderComponent
+    BeforeAseviceProviderComponent,
+    SummaryPipe
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),

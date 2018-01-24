@@ -1,56 +1,52 @@
-<section class="home">
-    <div class="intro-image">
-  
-      <div class="content">
+<div class="intro-image">
+
+    <div class="content">
         <div class="card">
-          <div class="col-md-12">
-            <div class="form-group cardHeader">
-              Find trusted care for your fur-kid
+            <div class="col-md-12">
+                <div class="form-group cardHeader">
+                    Find trusted care for your fur-kid
+                </div>
             </div>
-          </div>
-  
-          <div class="col-md-12">
-            <div class="form-group cardSubHeader">
-              Providing vetted and trusted pet care 24/7
+
+            <div class="col-md-12">
+                <div class="form-group cardSubHeader">
+                    Providing vetted and trusted pet care 24/7
+                </div>
             </div>
-          </div>
-  
-          <div class="col-md-12">
-            <div class="form-group">
-              <select name="service" class="form-control selectpicker">
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <select name="service" class="form-control selectpicker">
                 <option>House Sitting</option>
                 <option>Pet Boarding</option>
                 <option>Drop-in Visit</option>
                 <option>Dog Walk</option>
               </select>
+                </div>
             </div>
-          </div>
-  
-          <div class="col-md-12">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your location" id="location">
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="text" class="form-control" autocorrect="off" autocapitalize="off" spellcheck="off" #address placeholder="Your location" id="location">
+                </div>
             </div>
-          </div>
-  
-          <div class="col-md-6">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Start Date" id="startDate">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" onfocus="(this.type='date')" placeholder="Start Date" id="startDate">
+                </div>
             </div>
-          </div>
-  
-          <div class="col-md-6">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="End Date" id="endDate">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" onfocus="(this.type='date')" placeholder="End Date" id="endDate">
+                </div>
             </div>
-          </div>
-  
-          <div class="col-md-5"></div>
-  
-          <div class="col-md-5">
-            <button type="button" class="btn btn-primary">Search</button>
-          </div>
-  
+
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" (click)="search()">Search</button>
+            </div>
+
         </div>
-      </div>
     </div>
-  </section>
+</div>
