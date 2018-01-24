@@ -1,3 +1,4 @@
+import { RegisterSitterComponent } from './components/register-sitter/register-sitter.component';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
     path: 'sitter-profile-listings',
     component: SitterListPageComponent
+  },
+  {
+    path: 'register-sitter',
+    component: RegisterSitterComponent
   }
 
   // children: [
