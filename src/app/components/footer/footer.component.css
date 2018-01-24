@@ -1,15 +1,14 @@
 .foot{
-  height: 300px;
-  /* background-color: #1862ec; */
+  height: 241px;
   background-color: #1f1e1e;
   color: #8c8c8c;
-  font-size: 14px;
-  /* position: relative;; */
+  font-size: 17px;
+  padding-top: 30px;
+  margin-top: 130px;
+  width: 100%;
   }
-.space{
-  height: 15px;
-}
-.box{
+
+.footerbox{
   height: 35px;
   border-radius:3px;
   border-radius:#fff;
