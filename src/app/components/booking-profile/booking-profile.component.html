@@ -4,20 +4,20 @@
     <div class="col-md-8 col-sm-12" id="profile">
 
       <!--Start overview-->
-      <div id="overview-panel">
+      <div class="col-md-12" id="overview-panel">
         <div class="col-lg-4 col-md-5 col-sm-12" id="profile-pic-panel">
           <img id="profile-pic" src="#" />
         </div>
 
         <div class="col-lg-7 col-md-7 col-sm-12" id="info">
-          <h1 id="fullname">none</h1>
+          <h1 class="line-spacing-5" id="fullname">none</h1>
 
           <!--Start rating-->
-          <div class="line-spacing-20" id="rating-panel">
+          <div class="line-spacing-5 col-md-12 col-sm-12 col-xs-12" id="rating-panel">
             <!--Start rating stars-->
 
-            <div class="col-md-2 col-sm-12 display-flex" id="rating">
-              <span id="stars" class="value col-md-11 col-sm-2 col-xs-2 display-flex">
+            <div class="col-md-3 col-sm-12 col-xs-12 display-flex" id="rating">
+              <span id="stars" class="value display-flex">
                 <i [class]="rating > 0.5 ? 'fa fa-star' : rating > 0 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
                 <i [class]="rating > 1.5 ? 'fa fa-star' : rating > 1 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
                 <i [class]="rating > 2.5 ? 'fa fa-star' : rating > 2 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
@@ -25,11 +25,10 @@
                 <i [class]="rating > 4.5 ? 'fa fa-star' : rating > 4 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
                 <!--End rating stars-->
               </span>
+              <h3 id="rating-number" class="value">{{rating}}</h3>
             </div>
 
-            <h3 id="rating-number" class="value col-md-3 col-sm-1 col-xs-1">{{rating}}</h3>
-
-            <div class="col-md-7 col-sm-10" id="reviews">
+            <div class="col-md-9 col-sm-12 col-xs-12" id="reviews">
               <label>Based on (reviews) reviews</label>
             </div>
 
@@ -39,18 +38,18 @@
 
           <!--End rating-->
 
-          <div class="line-spacing-20 col-md-12 col-sm-12" id="account-details">
+          <div class="line-spacing-5 col-md-12 col-sm-12 col-xs-12" id="account-details">
             <h4>Member since (display date), (amount of jobs) complete</h4>
           </div>
 
           <!--Start job history-->
-          <div class="line-spacing-20" id="job-history">
+          <div class="line-spacing-5 col-md-12 col-sm-12 col-xs-12" id="job-history">
 
-            <h3 class="col-lg-2 col-md-6 col-sm-6">Jobs</h3>
-            <h3 class="value col-lg-3 col-md-6 col-sm-6"> (amount)</h3>
+            <h3 class="col-lg-2 col-md-6 col-sm-6 col-xs-12">Jobs</h3>
+            <h3 class="value col-lg-3 col-md-6 col-sm-6 col-xs-12"> (amount)</h3>
 
-            <h3 class="col-lg-4 col-md-6 col-sm-6">Cancellations</h3>
-            <h3 class="value col-lg-3 col-md-6 col-sm-6"> (amount)</h3>
+            <h3 class="col-lg-4 col-md-6 col-sm-6 col-xs-12">Cancellations</h3>
+            <h3 class="value col-lg-3 col-md-6 col-sm-6 col-xs-12"> (amount)</h3>
 
           </div>
           <!--End job history-->
