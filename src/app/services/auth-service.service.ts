@@ -25,6 +25,9 @@ User = {
   isAserviceProvider : true
  };
 
+
+ firestoreUsersRef: any;
+
   constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
@@ -34,27 +37,39 @@ User = {
     private notify: NotificationService
   ) {
     this.user$ = afAuth.authState;
+    this.firestoreUsersRef = this.afs.collection('users').valueChanges();
   }
 
   emailSignUp(email: string, password: string) {
-console.log('email');
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then(user => {
-        this.notify.update('Welcome to MinderZ!!!', 'success');
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        if (this.checkUserExistance()) {
+               this.router.navigate(['/']);
+        } else {
+               this.initialiseAUser();
+               this.router.navigate(['/']);
+        }
       })
-      .catch(error => this.handleError(error));
+      .catch(error => {
+        if (error.message === 'The email address is already in use by another account.') {
+            alert(error.message);
+        } else {
+            console.log(error.message);
+        }
+    });
   }
 
   emailLogin(email: string, password: string) {
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
-      .then(user => {
-        this.notify.update('Welcome to MinderZ!!!', 'success');
-        // return this.updateUserinfor(user);
-        this.router.navigate(['/']);
+      .then((user) => {
+        if (this.checkUserExistance()) {
+          this.router.navigate(['/']);
+   } else {
+          this.initialiseAUser();
+          this.router.navigate(['/']);
+   }
       })
       .catch(error => this.handleError(error));
   }
@@ -63,8 +78,12 @@ console.log('email');
       this.afAuth.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(() => {
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        if (this.checkUserExistance()) {
+          this.router.navigate(['/']);
+   } else {
+          this.initialiseAUser();
+          this.router.navigate(['/']);
+   }
       });
   }
 
@@ -72,8 +91,12 @@ console.log('email');
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then(() => {
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        if (this.checkUserExistance()) {
+          this.router.navigate(['/']);
+   } else {
+          this.initialiseAUser();
+          this.router.navigate(['/']);
+   }
       });
   }
 
@@ -81,8 +104,12 @@ console.log('email');
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.TwitterAuthProvider())
       .then(() => {
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        if (this.checkUserExistance()) {
+          this.router.navigate(['/']);
+   } else {
+          this.initialiseAUser();
+          this.router.navigate(['/']);
+   }
       });
   }
 
@@ -103,7 +130,6 @@ console.log('email');
   }
 
   logout() {
-    //  localStorage.removeItem('token');
     this.afAuth.auth.signOut().then(res => this.router.navigate(['/']));
   }
 
@@ -113,6 +139,22 @@ console.log('email');
 
   currentUserUID() {
     return (this.userUID = firebase.auth().currentUser.uid);
+  }
+  checkUserExistance() {
+    this.firestoreUsersRef.forEach(element => {
+      let flag: Boolean;
+      for (let i = 0; i < element.length; i++) {
+          if (element[i].user === this.afAuth.auth.currentUser.uid) {
+               flag = false;
+              break;
+          }
+      }
+      if (flag === undefined) {
+        return false;
+      } else {
+        return true;
+      }
+  });
   }
 
   initialiseAUser() {
