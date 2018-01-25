@@ -3,8 +3,8 @@
 
     <!--Start job distance-->
     <div class="job-distance-radius">
-      <div class="col-md-2">
-        <label>Job Distance Radius:</label>
+      <div class="col-md-2 height-46 display-flex">
+        <label class="text-line-middle">Job Distance Radius:</label>
       </div>
       <div class="col-md-10">
         <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
@@ -17,10 +17,12 @@
     <!--End job distance-->
 
     <!--Start pet size-->
-    <div class="pet-size-preference:">
-      <div class="col-md-2">
-        <label>Pet Size Preference:</label>
+    <div class="pet-size-preference">
+
+      <div class="col-md-2 height-46 display-flex">
+        <label class="text-line-middle">Pet Size Preference:</label>
       </div>
+
       <div class="col-md-10">
         <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
           <option selected>Small</option>
@@ -32,27 +34,46 @@
     <!--End pet size-->
 
     <div class="pet-type-reference">
-      <div class="checkbox-container">
-        <div class="checkbox" (click)="checkPet('dogs')">
-          <i [ngClass]="petMap['dogs'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+
+      <div class="col-md-2 height-46 display-flex">
+        <label class="text-line-middle">Pet type preference:</label>
+      </div>
+
+      <div class="col-md-10">
+        <div class="checkbox-container display-flex col-md-2">
+          <div class="checkbox" (click)="checkPet('dogs')">
+            <i [ngClass]="petMap['dogs'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle">Dogs</label>
         </div>
-        <label>Dogs</label>
-      </div>
-      <div class="checkbox" (click)="checkPet('cats')">
-        <i class="fa fa-check"></i>
-        Cats
-      </div>
-      <div class="checkbox" (click)="checkPet('birds')">
-        <i class="fa fa-check"></i>
-        Birds
-      </div>
-      <div class="checkbox" (click)="checkPet('fish')">
-        <i class="fa fa-check"></i>
-        Fish
-      </div>
-      <div class="checkbox" (click)="checkPet('other')">
-        <i class="fa fa-check"></i>
-        Other
+
+        <div class="checkbox-container display-flex col-md-2">
+          <div class="checkbox" (click)="checkPet('cats')">
+            <i [ngClass]="petMap['cats'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle">Cats</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-2">
+          <div class="checkbox" (click)="checkPet('birds')">
+            <i [ngClass]="petMap['birds'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle">Birds</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-2">
+          <div class="checkbox" (click)="checkPet('fish')">
+            <i [ngClass]="petMap['fish'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle">Fish</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-4">
+          <div class="checkbox" (click)="checkPet('other')">
+            <i [ngClass]="petMap['other'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle">Other</label>
+        </div>
       </div>
     </div>
 

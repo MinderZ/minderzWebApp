@@ -6,6 +6,7 @@ import { SitterReferenceObject } from '../model/sitterReferenceObject.model';
 export class RegisterSitterService {
 
     step: number = 1;
+    
     formName: string = 'Location';
 
     sitter = new SitterProfileObject;

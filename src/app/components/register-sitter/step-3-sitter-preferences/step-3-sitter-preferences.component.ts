@@ -19,7 +19,10 @@ export class Step3SitterPreferencesComponent implements OnInit {
   pricePerWalk?: Number;
   pricePerVisit?: Number;
 
-  constructor(protected registerService: RegisterSitterService) { }
+  constructor(protected registerService: RegisterSitterService) {
+    this.form = new FormGroup({
+    });
+  }
 
   ngOnInit() { }
 

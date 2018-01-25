@@ -52,6 +52,7 @@ import { Step3SitterPreferencesComponent } from './components/register-sitter/st
 import { Step4SitterDetailsComponent } from "./components/register-sitter/step-4-sitter-details/step-4-sitter-details.component";
 import { RegisterSitterComponent } from './components/register-sitter/register-sitter.component';
 import { RegisterSitterService } from "./services/register-sitter.service";
+import { ValidationService } from "./services/validation.service";
 
 
 
@@ -115,7 +116,8 @@ export const firestoreConfig = {
     SitterProfileObject,
     UserPetObject,
     NotificationService,
-    RegisterSitterService
+    RegisterSitterService,
+    ValidationService
   ],
   bootstrap: [AppComponent]
 })
