@@ -11,7 +11,7 @@ export class RegisterSitterComponent implements OnInit {
   step: number = 1;
   formName: string = 'Location';
 
-  constructor(registerService: RegisterSitterService) { }
+  constructor(private registerService: RegisterSitterService) { }
 
   ngOnInit() {
   }

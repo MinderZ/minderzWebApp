@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterSitterComponent } from '../register-sitter.component';
+import { RegisterSitterService } from '../../../services/register-sitter.service';
+import { SitterReferenceObject } from '../../../model/sitterReferenceObject.model';
 
 @Component({
   selector: 'app-step-4-sitter-details',
@@ -25,20 +28,32 @@ export class Step4SitterDetailsComponent implements OnInit {
 
   //Refernces
   creatingReference = false;
+  reference: SitterReferenceObject;
   referenceName: string;
   referencePhone: string;
   references = new Array();
 
-  constructor() { }
+  constructor(private registerService: RegisterSitterService) { }
 
   ngOnInit() {
   }
 
   addReference() {
     if (this.referenceName !== undefined && this.referencePhone !== undefined) {
-      this.references.push(this.referenceName, this.referenceName);
-      console.log(this.references[0]);
+      this.reference = new SitterReferenceObject;
+
+      this.reference.referenceName = this.referenceName;
+      this.reference.referencePhone = this.referencePhone;
+
+      this.registerService.sitter.references.push(this.reference);
     }
+  }
+
+  update() {
+    this.registerService.sitter.children = this.children;
+    this.registerService.sitter.doneVolunteer = this.volunteer;
+    this.registerService.sitter.ownPets = this.ownPets;
+    this.registerService.sitter.hadPets = this.ownedPets;
   }
 
 }

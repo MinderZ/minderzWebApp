@@ -1,11 +1,11 @@
-import { Component, OnInit,  NgZone, ElementRef} from '@angular/core';
+import { Component, OnInit, NgZone, ElementRef } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth-service.service';
 import { UserProfileObjet } from '../../model/userProfileObj.model';
 import { SitterProfileObject } from '../../model/sitterProfileObject.model';
 // import { Personal } from '../../../../../../../Documents/GitLab/src/app/data/formData.model';
 import { MapsAPILoader } from '@agm/core';
-import {} from '@types/googlemaps';
+import { } from '@types/googlemaps';
 import { ViewChild } from '@angular/core';
 
 @Component({
@@ -15,9 +15,9 @@ import { ViewChild } from '@angular/core';
 })
 export class BecomeASitterComponent implements OnInit {
 
-@ViewChild('address') public addressElementRef: ElementRef;
-latitude;
-longitude;
+  @ViewChild('address') public addressElementRef: ElementRef;
+  latitude;
+  longitude;
 
   step1 = true;
   step2 = false;
@@ -30,42 +30,42 @@ longitude;
     private userprof: UserProfileObjet,
     private sitterObj: SitterProfileObject,
     private auth: AuthService,
-    private mapLoader:MapsAPILoader,
-    private ngZone:NgZone
+    private mapLoader: MapsAPILoader,
+    private ngZone: NgZone
   ) {
 
   }
 
   ngOnInit() {
-   this.userprof.fullname = this.auth.getcurrentUser().displayName;
-   this.userprof.isAsitter = true;
-  //  this.userprof.name =
+    this.userprof.fullname = this.auth.getcurrentUser().displayName;
+    this.userprof.isAsitter = true;
+    //  this.userprof.name =
 
-this.mapLoader.load().then(() => {
-  const autocomplete = new google.maps.places.Autocomplete(
-    this.addressElementRef.nativeElement, {
-      types: ['address']
-    }
-  );
-  autocomplete.addListener('place_changed', () => {
-      this.ngZone.run(() => {
+    this.mapLoader.load().then(() => {
+      const autocomplete = new google.maps.places.Autocomplete(
+        this.addressElementRef.nativeElement, {
+          types: ['address']
+        }
+      );
+      autocomplete.addListener('place_changed', () => {
+        this.ngZone.run(() => {
 
-        // Gets place result
-    let place: google.maps.places.PlaceResult;
+          // Gets place result
+          let place: google.maps.places.PlaceResult;
 
-    // Verify Result
+          // Verify Result
 
-    if (place.geometry === undefined || place.geometry === null) {
-return;
-    }
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
 
-    this.latitude = place.geometry.location.lat();
-    this.longitude = place.geometry.location.lng();
+          this.latitude = place.geometry.location.lat();
+          this.longitude = place.geometry.location.lng();
 
-  });
-  });
+        });
+      });
 
-});
+    });
 
   }
 
@@ -92,33 +92,33 @@ return;
 
   sitte(sitter) {
     this.sitterObj.jobRadius = sitter.workingdistance;
-    this.sitterObj.PetSizePreference = sitter.petPreferredSize;
-    this.sitterObj.PetTypePreference = 'selected pets';
-    this.sitterObj.PriceperWalk = sitter.priceperwalk;
-    this.sitterObj.PetsperWalk = sitter.petsperwalk;
-    this.sitterObj.WalksperDay = sitter.WalkPerDay;
+    this.sitterObj.petSizePreference = sitter.petPreferredSize;
+    this.sitterObj.petTypePreference = 'selected pets';
+    this.sitterObj.pricePerWalk = sitter.priceperwalk;
+    this.sitterObj.petsPerWalk = sitter.petsperwalk;
+    this.sitterObj.walksPerDay = sitter.WalkPerDay;
     this.sitterObj.sittingPriceperPet = sitter.priceperpet;
     this.sitterObj.sittingPetsperDay = sitter.petsperday;
-    this.sitterObj.HouseSittingPrice = sitter.HouseSittingPrice;
+    this.sitterObj.houseSittingPrice = sitter.HouseSittingPrice;
     this.sitterObj.dropInVisitsPrice = sitter.pricepervisit;
-    this.sitterObj.VisitsperDay = sitter.visitsperday;
+    this.sitterObj.visitsPerDay = sitter.visitsperday;
     console.log(this.sitterObj);
     this.step3 = false;
   }
 
   sittingdetails(sit) {
-    this.sitterObj.HouseType = sit.houseType;
-    this.sitterObj.Children = sit.children;
-    this.sitterObj.Experience = sit.experience;
-    this.sitterObj.HeadLine = sit.headline;
+    this.sitterObj.houseType = sit.houseType;
+    this.sitterObj.children = sit.children;
+    this.sitterObj.experience = sit.experience;
+    this.sitterObj.headline = sit.headline;
     this.sitterObj.bio = sit.bio;
     // this.sitterObj.DoneVolunter = sit.volunterPets;
-    this.sitterObj.OwnPets = sit.ownPets;
+    this.sitterObj.ownPets = sit.ownPets;
     this.sitterObj.hadPets = sit.ownedPets;
-    this.sitterObj.Reference1Name = sit.ref1Name1;
-    this.sitterObj.Reference1Phone = sit.ref1Phone;
-    this.sitterObj.Reference2Name = sit.ref2Name;
-    this.sitterObj.Reference2Phone = sit.ref2Phone;
+    // this.sitterObj.Reference1Name = sit.ref1Name1;
+    // this.sitterObj.Reference1Phone = sit.ref1Phone;
+    // this.sitterObj.Reference2Name = sit.ref2Name;
+    // this.sitterObj.Reference2Phone = sit.ref2Phone;
     // this.userservice.createServiceProviderProfile(this.sitterObj);
   }
 

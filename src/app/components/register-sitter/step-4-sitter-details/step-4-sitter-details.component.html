@@ -93,8 +93,8 @@
     <!--Start references-->
     <div id="reference">
 
-      <div id="reference-list" *ngFor="let reference of references">
-        <label>{{reference}}</label>
+      <div id="reference-list" *ngFor="let reference of registerService.sitter.references">
+        <label>{{reference.referenceName}} {{reference.referencePhone}}</label>
       </div>
 
       <a id="add-reference" (click)="creatingReference = !creatingReference" [style.display]="creatingReference ? 'none' : 'block'">
@@ -104,12 +104,12 @@
       <div [style.display]="creatingReference ? 'block' : 'none'">
         <div class="form-inline">
           <label>Reference name:</label>
-          <input id="reference-name" class="form-control" type="text" [(ngModel)]="referencePhone" />
+          <input id="reference-name" class="form-control" type="text" [(ngModel)]="referenceName" />
         </div>
 
         <div class="form-inline">
           <label>Reference phone:</label>
-          <input id="reference-phone" class="form-control" type="text" [(ngModel)]="referenceName" />
+          <input id="reference-phone" class="form-control" type="text" [(ngModel)]="referencePhone" />
         </div>
 
         <button class="btn btn-primary" (click)="addReference()">Submit</button>
