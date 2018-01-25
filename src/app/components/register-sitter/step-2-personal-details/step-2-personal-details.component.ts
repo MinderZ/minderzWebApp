@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms/src/model';
 
 @Component({
   selector: 'app-step-2-personal-details',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Step2PersonalDetailsComponent implements OnInit {
 
+  form: FormGroup;
+  
   constructor() { }
 
   ngOnInit() {

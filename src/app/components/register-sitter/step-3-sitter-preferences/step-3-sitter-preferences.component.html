@@ -1,3 +1,137 @@
-<p>
-  step-3-sitter-preferences works!
-</p>
+<div [formGroup]="form" >
+    <div class="job-distance-radius">
+        <label>Job Distance Radius</label>
+        <select class="combo-box">
+          <option>10KM</option>
+          <option>20KM</option>
+          <option>50KM</option>
+        </select>
+    </div>
+    <div class="pet-size-preference:">
+        <label>Pet Size Preference:</label>
+        <select class="combo-box">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+    </div>
+
+    <!-- servicesMap['dogs'] is what you would bind to if you want to check if it is selected -->
+    <div class="pet-type-reference row">
+        <div class="checkbox" (click)="check('dogs')">
+            <i class="fa fa-check"></i>
+            Dogs
+        </div>
+        <div class="checkbox" (click)="check('cats')">
+            <i class="fa fa-check"></i>
+            Cats
+        </div>
+        <div class="checkbox" (click)="check('birds')">
+            <i class="fa fa-check"></i>
+            Birds
+        </div>
+        <div class="checkbox" (click)="check('fish')">
+            <i class="fa fa-check"></i>
+            Fish
+        </div>
+        <div class="checkbox" (click)="check('other')">
+            <i class="fa fa-check"></i>
+            Other
+        </div>
+    </div>
+
+
+    <div class="pet-type-reference row">
+        <div class="checkbox" (click)="check('dogs')">
+            <i class="fa fa-check"></i>
+            Dog Walking
+        </div>
+        <div class="checkbox" (click)="check('cats')">
+            <i class="fa fa-check"></i>
+            Pet Sitting
+        </div>
+        <div class="checkbox" (click)="check('birds')">
+            <i class="fa fa-check"></i>
+            House Sitting
+        </div>
+        <div class="checkbox" (click)="check('fish')">
+            <i class="fa fa-check"></i>
+            Drop in Visits
+        </div>
+    </div>
+
+    <div *ngIf= "servicesMap['dogs']" class="dog-walking">
+      <h3>Dog Walking</h3>
+        <div class="price-per-walk">
+            <label>Price per walk</label>
+            <input type="text">
+        </div>
+        <div class="pets-per-walk">
+            <label>Pets Per walk:</label>
+            <select class="combo-box">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+        </div>
+
+        <div class="walks-per-day">
+            <label>Walks Per Day</label>
+            <select class="combo-box">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div  class="pet-setting ">
+        <h3>Pet Sitting</h3>
+        <div class="price-per-pet">
+            <label>Price per pet</label>
+            <input type="text" (keyup)="checkInput($event)">
+        </div>
+        <div class="pets-per-day">
+            <label>Pets Per Day:</label>
+            <select class="combo-box">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+        </div>
+    </div>
+
+
+
+    <div class="house-sitting">
+        <h3>House Sitting</h3>
+        <div class="price-per-walk">
+            <label>Price per walk</label>
+            <input type="text">
+        </div>
+    </div>
+
+
+    <div class="drop-in-vists">
+        <h3>Drop-in Visits</h3>
+        <div class="price-per-visit">
+            <label>Price per visit</label>
+            <input type="text">
+        </div>
+        <div class="pets-per-day">
+            <label>Visits Per Day</label>
+            <select class="combo-box">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+        </div>
+    </div>
+   
+  </div>
+  

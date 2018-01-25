@@ -25,7 +25,7 @@ export class RegisterSitterComponent implements OnInit {
   }
 
   submit(){
-
+    this.registerService.sitterObject
   }
 
   changeFormName(step:number){
