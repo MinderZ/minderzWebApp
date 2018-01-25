@@ -29,6 +29,8 @@ import { UserPetObject } from './model/userPetObject.modal';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
 import { DataRecycleService } from './services/data-recycle.service';
 import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
+import { FormRvwComponent } from './form-rvw/form-rvw.component';
+import { StarService } from './star.service';
 
 export const firbaseConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -49,7 +51,9 @@ export const firbaseConfig = {
     PetReg1Component,
     SignInComponent,
     MiniDashboardComponent,
-    BookingProfileComponent
+    BookingProfileComponent,
+    FormRvwComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,8 @@ export const firbaseConfig = {
     DataRecycleService,
     UserProfileObjet,
     SitterProfileObject,
-    UserPetObject
+    UserPetObject,
+    StarService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,4 @@
+import { FormRvwComponent } from './form-rvw/form-rvw.component';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -36,9 +37,14 @@ const routes: Routes = [
   {
     path: 'addpet',
     component: PetReg1Component,
-  }, {
+  },
+   {
     path: 'bookingprofile',
     component: BookingProfileComponent,
+  }
+  , {
+    path: 'review',
+    component: FormRvwComponent,
   }
 
   // children: [
