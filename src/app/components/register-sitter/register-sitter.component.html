@@ -1,12 +1,16 @@
 <div class="container-fluid">
-    <h2 class="heading">Step {{step}} of 4: {{formName}}</h2>
+
+  <div id="display">
+    <h2 class="heading">Step {{registerService.step}} of 4: {{registerService.formName}}</h2>
     <div class="steps">
-        <app-step-1-location *ngIf="step==1"></app-step-1-location>
-        <app-step-2-personal-details *ngIf="step==2"></app-step-2-personal-details>
-        <app-step-3-sitter-preferences *ngIf="step==3"></app-step-3-sitter-preferences>
-        <app-step-4-sitter-details *ngIf="step==4"></app-step-4-sitter-details>
+      <app-step-1-location *ngIf="registerService.step==1"></app-step-1-location>
+      <app-step-2-personal-details *ngIf="registerService.step==2"></app-step-2-personal-details>
+      <app-step-3-sitter-preferences *ngIf="registerService.step==3"></app-step-3-sitter-preferences>
+      <app-step-4-sitter-details *ngIf="registerService.step==4"></app-step-4-sitter-details>
     </div>
-    <button *ngIf="step>1" class="btn btn-default" (click)="back()">Back</button>
-    <button *ngIf="step<4" class="btn btn-primary" (click)="next()">Next</button>
-    <button *ngIf="step==4" class="btn btn-primary" (click)="submit()">Submit</button>
+  </div>
+
+  <!-- <button *ngIf="step>1" class="btn btn-default" (click)="back()">Back</button>
+  <button *ngIf="step<4" class="btn btn-primary" (click)="next()">Next</button>
+  <button *ngIf="step==4" class="btn btn-primary" (click)="submit()">Submit</button> -->
 </div>
