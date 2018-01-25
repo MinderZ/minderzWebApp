@@ -18,23 +18,23 @@
 
     <!-- servicesMap['dogs'] is what you would bind to if you want to check if it is selected -->
     <div class="pet-type-reference row">
-        <div class="checkbox" (click)="check('dogs')">
+        <div class="checkbox" (click)="checkPet('dogs')">
             <i class="fa fa-check"></i>
             Dogs
         </div>
-        <div class="checkbox" (click)="check('cats')">
+        <div class="checkbox" (click)="checkPet('cats')">
             <i class="fa fa-check"></i>
             Cats
         </div>
-        <div class="checkbox" (click)="check('birds')">
+        <div class="checkbox" (click)="checkPet('birds')">
             <i class="fa fa-check"></i>
             Birds
         </div>
-        <div class="checkbox" (click)="check('fish')">
+        <div class="checkbox" (click)="checkPet('fish')">
             <i class="fa fa-check"></i>
             Fish
         </div>
-        <div class="checkbox" (click)="check('other')">
+        <div class="checkbox" (click)="checkPet('other')">
             <i class="fa fa-check"></i>
             Other
         </div>
@@ -42,25 +42,25 @@
 
 
     <div class="pet-type-reference row">
-        <div class="checkbox" (click)="check('dogs')">
+        <div class="checkbox" (click)="checkService('Dog Walking')">
             <i class="fa fa-check"></i>
             Dog Walking
         </div>
-        <div class="checkbox" (click)="check('cats')">
+        <div class="checkbox" (click)="checkService('Pet Sitting')">
             <i class="fa fa-check"></i>
             Pet Sitting
         </div>
-        <div class="checkbox" (click)="check('birds')">
+        <div class="checkbox" (click)="checkService('House Sitting')">
             <i class="fa fa-check"></i>
             House Sitting
         </div>
-        <div class="checkbox" (click)="check('fish')">
+        <div class="checkbox" (click)="checkService('Drop in Visits')">
             <i class="fa fa-check"></i>
             Drop in Visits
         </div>
     </div>
 
-    <div *ngIf= "servicesMap['dogs']" class="dog-walking">
+    <div *ngIf= "petMap['dogs'] && serviceMap['Dog Walking']" class="dog-walking">
       <h3>Dog Walking</h3>
         <div class="price-per-walk">
             <label>Price per walk</label>
@@ -88,11 +88,11 @@
     </div>
 
 
-    <div  class="pet-setting ">
+    <div *ngIf="serviceMap['Pet Sitting']" class="pet-setting ">
         <h3>Pet Sitting</h3>
         <div class="price-per-pet">
             <label>Price per pet</label>
-            <input type="text" (keyup)="checkInput($event)">
+            <input type="text">
         </div>
         <div class="pets-per-day">
             <label>Pets Per Day:</label>
@@ -107,7 +107,7 @@
 
 
 
-    <div class="house-sitting">
+    <div *ngIf="serviceMap['House Sitting']" class="house-sitting">
         <h3>House Sitting</h3>
         <div class="price-per-walk">
             <label>Price per walk</label>
@@ -116,7 +116,7 @@
     </div>
 
 
-    <div class="drop-in-vists">
+    <div  *ngIf="serviceMap['Drop in Visits']" class="drop-in-vists">
         <h3>Drop-in Visits</h3>
         <div class="price-per-visit">
             <label>Price per visit</label>

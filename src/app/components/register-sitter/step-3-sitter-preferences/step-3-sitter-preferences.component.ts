@@ -8,28 +8,24 @@ import { FormGroup } from "@angular/forms/src/model";
 })
 export class Step3SitterPreferencesComponent implements OnInit {
   form: FormGroup;
-  servicesMap: Map<string, boolean> = new Map<string, boolean>();
+  
+  serviceMap: Map<string, boolean> = new Map<string, boolean>();
+  petMap: Map<string, boolean> = new Map<string, boolean>();
+  
 
   pricePerPet?:Number;
   pricePerWalk?:Number;
   pricePerVisit?:Number;
 
-
-  
   constructor() {}
 
-  ngOnInit() {
-    
+  ngOnInit() {}
+
+  checkPet(pet: string) {
+    this.petMap[pet] = !this.petMap[pet];
   }
 
-  check(service: string) {
-    this.servicesMap[service] = !this.servicesMap[service];
+  checkService(service: string) {
+    this.serviceMap[service] = ! this.serviceMap[service];
   }
-
-  checkInput(event:any,priceToCheck:number) {
-
-  }
-
-
-  
 }
