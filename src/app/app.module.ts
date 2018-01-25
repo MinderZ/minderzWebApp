@@ -54,6 +54,7 @@ import { RegisterSitterComponent } from './components/register-sitter/register-s
 import { RegisterSitterService } from "./services/register-sitter.service";
 import { UploadListComponent } from './components/upload-list/upload-list.component';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
+import { ValidationService } from "./services/validation.service";
 
 
 
@@ -118,7 +119,8 @@ export const firestoreConfig = {
     SitterProfileObject,
     UserPetObject,
     NotificationService,
-    RegisterSitterService
+    RegisterSitterService,
+    ValidationService
   ],
   bootstrap: [AppComponent]
 })
