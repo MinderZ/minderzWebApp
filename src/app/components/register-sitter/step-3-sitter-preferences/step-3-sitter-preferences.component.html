@@ -119,75 +119,117 @@
     </div>
 
     <div *ngIf="petMap['dogs'] && serviceMap['Dog Walking']" class="dog-walking">
-      <h3>Dog Walking</h3>
-      <div class="price-per-walk">
-        <label>Price per walk</label>
-        <input type="text">
-      </div>
-      <div class="pets-per-walk">
-        <label>Pets Per walk:</label>
-        <select class="combo-box">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
+      <h2 class="heading">Dog Walking</h2>
+
+      <div class="line col-md-12" id="price-per-walk">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Price per walk:</label>
+        </div>
+
+        <div class="col-md-10">
+          <input class="form-control" type="text">
+        </div>
       </div>
 
-      <div class="walks-per-day">
-        <label>Walks Per Day</label>
-        <select class="combo-box">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
+      <div class="line col-md-12" id="pets-per-walk">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Pets Per walk:</label>
+        </div>
+        <div class="col-md-10">
+          <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
       </div>
-    </div>
 
+      <div class="line col-md-12" id="walks-per-day">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Walks Per Day</label>
+        </div>
 
-    <div *ngIf="serviceMap['Pet Sitting']" class="pet-setting ">
-      <h3>Pet Sitting</h3>
-      <div class="price-per-pet">
-        <label>Price per pet</label>
-        <input type="text">
-      </div>
-      <div class="pets-per-day">
-        <label>Pets Per Day:</label>
-        <select class="combo-box">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
+        <div class="col-md-10">
+          <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
       </div>
     </div>
 
 
+    <div class="line col-md-12" *ngIf="serviceMap['Pet Sitting']" id="pet-setting ">
+      <h2 class="heading">Pet Sitting</h2>
+      <div class="line col-md-12" id="price-per-pet">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Price per pet</label>
+        </div>
+        <div class="col-md-10">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+      <div class="line col-md-12" id="pets-per-day">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Pets Per Day:</label>
+        </div>
 
-    <div *ngIf="serviceMap['House Sitting']" class="house-sitting">
-      <h3>House Sitting</h3>
-      <div class="price-per-walk">
-        <label>Price per walk</label>
-        <input type="text">
+        <div class="col-md-10">
+          <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
       </div>
     </div>
 
 
-    <div *ngIf="serviceMap['Drop in Visits']" class="drop-in-vists">
-      <h3>Drop-in Visits</h3>
-      <div class="price-per-visit">
-        <label>Price per visit</label>
-        <input type="text">
+
+    <div *ngIf="serviceMap['House Sitting']" id="house-sitting">
+      <h2 class="heading">House Sitting</h2>
+
+      <div class="line col-md-12" id="price-per-walk">
+
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Price per walk:</label>
+        </div>
+        <div class="col-md-10">
+          <input class="form-control" type="text">
+        </div>
       </div>
-      <div class="pets-per-day">
-        <label>Visits Per Day</label>
-        <select class="combo-box">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
+    </div>
+
+
+    <div *ngIf="serviceMap['Drop in Visits']" id="drop-in-vists">
+      <h2 class="heading">Drop-in Visits</h2>
+
+      <div class="line col-md-12" id="price-per-visit">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Price per visit:</label>
+        </div>
+        <div class="col-md-10">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+
+      <div class="line col-md-12" id="pets-per-day">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Visits Per Day:</label>
+        </div>
+
+        <div class="col-md-10">
+          <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
       </div>
     </div>
 

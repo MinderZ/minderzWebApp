@@ -15,9 +15,9 @@ export class Step2PersonalDetailsComponent implements OnInit {
   idCopyUrl;
   consentFormUrl;
 
-
-
-
+  male: boolean;
+  female: boolean;
+  genderPristine = false;
 
   constructor(fb: FormBuilder, protected registerService: RegisterSitterService) {
     this.personForm = fb.group({
