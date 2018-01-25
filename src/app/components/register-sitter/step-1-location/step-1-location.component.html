@@ -1,4 +1,15 @@
-<div class="input-group">
-    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-home" aria-hidden="true"></i></span>
-    <input type="text" #address autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" placeholder="Your address" aria-describedby="basic-addon1">
+<div [formGroup]="locationForm">
+    <div>
+        <div class="col-md-2">
+            <label for="address">Your Address</label>
+        </div>
+        <div class="col-md-10">
+            <input id="address" type="text" #googleAddress autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" placeholder="Your address" formControlName="address" aria-describedby="basic-addon1">
+            <div *ngIf="address.touched && address.invalid">
+                <div *ngIf="address.errors.required">
+                    Address is a <strong>required</strong> field.
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

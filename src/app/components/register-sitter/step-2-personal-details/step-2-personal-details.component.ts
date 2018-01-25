@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./step-2-personal-details.component.css']
 })
 export class Step2PersonalDetailsComponent implements OnInit {
+  personForm:FormGroup;
+  pfp:File;
 
-  constructor() { }
+  constructor(fb:FormBuilder) {
+    this.personForm = fb.group({
+      profilePic:null
+    })
+   }
+
+   test(){
+     console.log(this.personForm.get('profilePic'))
+   }
+
+   onFileChange(event){
+    let reader = new FileReader();
+    if(event.target.files && event.target.files.length>0){
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = ()=>{
+        this.personForm.get('profilePic').setValue({
+          filename:file.name,
+          filetype:file.type,
+          // value: reader.result.split(',')[1]
+        })
+      }
+    }
+   }
 
   ngOnInit() {
   }
