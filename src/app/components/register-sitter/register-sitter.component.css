@@ -21,6 +21,10 @@
   display: none;
 }
 
+input {
+  height: 46px;
+}
+
 .heading {
   font-size: 21px;
   border-bottom: 1px solid #e5e5e5;
@@ -32,4 +36,17 @@
 
 #display {
   padding: 30px 200px;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.text-line-middle {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.height-46 {
+  height: 46px
 }
