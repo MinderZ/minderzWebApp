@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CacheService } from './cache.service';
@@ -14,9 +14,10 @@ import { UserProfileObjet } from '../model/userProfileObj.model';
 
 
 @Injectable()
-export class AuthService {
+export class AuthService implements OnInit {
   public user$: Observable<firebase.User>;
   public userUID: string;
+  returnUrl?: string;
 User = {
   uid: '',
   email: '',
@@ -24,11 +25,16 @@ User = {
   displayName: '',
   isAserviceProvider : true
  };
-
-
  firestoreUsersRef: any;
 
-  constructor(
+
+
+ ngOnInit() {
+
+}
+
+
+constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
     private afs: AngularFirestore,
@@ -45,10 +51,14 @@ User = {
       .createUserWithEmailAndPassword(email, password)
       .then(user => {
         if (this.checkUserExistance()) {
-               this.router.navigate(['/']);
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
         } else {
                this.initialiseAUser();
-               this.router.navigate(['/']);
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
         }
       })
       .catch(error => {
@@ -65,10 +75,14 @@ User = {
       .signInWithEmailAndPassword(email, password)
       .then((user) => {
         if (this.checkUserExistance()) {
-          this.router.navigate(['/']);
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
    } else {
           this.initialiseAUser();
-          this.router.navigate(['/']);
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+          this.router.navigateByUrl(this.returnUrl);
+
    }
       })
       .catch(error => this.handleError(error));
@@ -79,10 +93,13 @@ User = {
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(() => {
         if (this.checkUserExistance()) {
-          this.router.navigate(['/']);
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
    } else {
           this.initialiseAUser();
-          this.router.navigate(['/']);
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
    }
       });
   }
@@ -92,11 +109,14 @@ User = {
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then(() => {
         if (this.checkUserExistance()) {
-          this.router.navigate(['/']);
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
    } else {
           this.initialiseAUser();
-          this.router.navigate(['/']);
-   }
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+       }
       });
   }
 
@@ -105,10 +125,13 @@ User = {
       .signInWithPopup(new firebase.auth.TwitterAuthProvider())
       .then(() => {
         if (this.checkUserExistance()) {
-          this.router.navigate(['/']);
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
    } else {
           this.initialiseAUser();
-          this.router.navigate(['/']);
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
    }
       });
   }
@@ -160,6 +183,7 @@ User = {
   initialiseAUser() {
       const userProfile = this.afs.collection('users').doc('' + this.currentUserUID());
     this.User.uid =   this.currentUserUID();
+    this.User.displayName =   this.getcurrentUser().displayName;
      return userProfile.set(this.User);
  }
 
