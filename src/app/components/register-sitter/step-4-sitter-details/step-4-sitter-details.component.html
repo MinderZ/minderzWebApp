@@ -90,7 +90,7 @@
     </div>
     <!--End pet history-->
 
-    <!--Start references-->
+    <!--Start add references-->
     <div id="reference">
 
       <div id="reference-list" *ngFor="let reference of registerService.sitter.references">
@@ -119,7 +119,11 @@
 
       </div>
     </div>
-    <!--Add references-->
+    <!--End add references-->
+
+    <!--Navigate-->
+    <button class="btn btn-default" (click)="registerService.back()">Back</button>
+    <button class="btn btn-primary" (click)="registerService.submit()">Submit</button>
 
   </div>
 </div>

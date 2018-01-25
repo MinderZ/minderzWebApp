@@ -1,31 +1,33 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup } from "@angular/forms/src/model";
+import { FormGroup } from "@angular/forms";
+import { RegisterSitterService } from "../../../services/register-sitter.service";
 
 @Component({
   selector: "app-step-3-sitter-preferences",
   templateUrl: "./step-3-sitter-preferences.component.html",
-  styleUrls: ["./step-3-sitter-preferences.component.css"]
+  styleUrls: ["./step-3-sitter-preferences.component.css",
+    '../register-sitter.component.css']
 })
 export class Step3SitterPreferencesComponent implements OnInit {
   form: FormGroup;
-  
+
   serviceMap: Map<string, boolean> = new Map<string, boolean>();
   petMap: Map<string, boolean> = new Map<string, boolean>();
-  
 
-  pricePerPet?:Number;
-  pricePerWalk?:Number;
-  pricePerVisit?:Number;
 
-  constructor() {}
+  pricePerPet?: Number;
+  pricePerWalk?: Number;
+  pricePerVisit?: Number;
 
-  ngOnInit() {}
+  constructor(protected registerService: RegisterSitterService) { }
+
+  ngOnInit() { }
 
   checkPet(pet: string) {
     this.petMap[pet] = !this.petMap[pet];
   }
 
   checkService(service: string) {
-    this.serviceMap[service] = ! this.serviceMap[service];
+    this.serviceMap[service] = !this.serviceMap[service];
   }
 }

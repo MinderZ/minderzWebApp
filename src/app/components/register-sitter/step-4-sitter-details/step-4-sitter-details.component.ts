@@ -6,7 +6,8 @@ import { SitterReferenceObject } from '../../../model/sitterReferenceObject.mode
 @Component({
   selector: 'app-step-4-sitter-details',
   templateUrl: './step-4-sitter-details.component.html',
-  styleUrls: ['./step-4-sitter-details.component.css']
+  styleUrls: ['./step-4-sitter-details.component.css',
+  '../register-sitter.component.css']
 })
 export class Step4SitterDetailsComponent implements OnInit {
 

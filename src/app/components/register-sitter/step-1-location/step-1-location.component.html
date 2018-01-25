@@ -1,15 +1,21 @@
-<div [formGroup]="locationForm">
-    <div>
-        <div class="col-md-2">
-            <label for="address">Your Address</label>
-        </div>
-        <div class="col-md-10">
-            <input id="address" type="text" #googleAddress autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" placeholder="Your address" formControlName="address" aria-describedby="basic-addon1">
-            <div *ngIf="address.touched && address.invalid">
-                <div *ngIf="address.errors.required">
-                    Address is a <strong>required</strong> field.
-                </div>
-            </div>
-        </div>
+<div [formGroup]="locationForm" class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <label for="address">Your Address:</label>
     </div>
+    <div class="col-md-10">
+      <input id="address" type="text" #googleAddress autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control"
+        placeholder="Your address" formControlName="address" aria-describedby="basic-addon1">
+      <div *ngIf="address.touched && address.invalid">
+        <div *ngIf="address.errors.required">
+          Address is a
+          <strong>required</strong> field.
+        </div>
+      </div>
+    </div>
+
+    <!--Navigate-->
+    <button class="btn btn-primary" (click)="registerService.next()">Next</button>
+
+  </div>
 </div>
