@@ -2,10 +2,12 @@
   <div class="row">
 
     <!--Start job distance-->
-    <div class="job-distance-radius">
-      <div class="col-md-2 height-46 display-flex">
+    <div class="line col-md-12" id="job-distance-radius">
+
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
         <label class="text-line-middle">Job Distance Radius:</label>
       </div>
+
       <div class="col-md-10">
         <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
           <option selected>10KM</option>
@@ -17,9 +19,9 @@
     <!--End job distance-->
 
     <!--Start pet size-->
-    <div class="pet-size-preference">
+    <div class="line col-md-12" id="pet-size-preference">
 
-      <div class="col-md-2 height-46 display-flex">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
         <label class="text-line-middle">Pet Size Preference:</label>
       </div>
 
@@ -33,67 +35,86 @@
     </div>
     <!--End pet size-->
 
-    <div class="pet-type-reference">
+    <div class="line col-md-12" id="pet-type-reference">
 
-      <div class="col-md-2 height-46 display-flex">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
         <label class="text-line-middle">Pet type preference:</label>
       </div>
 
-      <div class="col-md-10">
-        <div class="checkbox-container display-flex col-md-2">
+      <div class="col-md-10 col-sm-12 height-46">
+        <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
           <div class="checkbox" (click)="checkPet('dogs')">
             <i [ngClass]="petMap['dogs'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
           </div>
-          <label class="text-line-middle">Dogs</label>
+          <label class="text-line-middle checkbox-label">Dogs</label>
         </div>
 
-        <div class="checkbox-container display-flex col-md-2">
+        <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
           <div class="checkbox" (click)="checkPet('cats')">
             <i [ngClass]="petMap['cats'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
           </div>
-          <label class="text-line-middle">Cats</label>
+          <label class="text-line-middle checkbox-label">Cats</label>
         </div>
 
-        <div class="checkbox-container display-flex col-md-2">
+        <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
           <div class="checkbox" (click)="checkPet('birds')">
             <i [ngClass]="petMap['birds'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
           </div>
-          <label class="text-line-middle">Birds</label>
+          <label class="text-line-middle checkbox-label">Birds</label>
         </div>
 
-        <div class="checkbox-container display-flex col-md-2">
+        <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
           <div class="checkbox" (click)="checkPet('fish')">
             <i [ngClass]="petMap['fish'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
           </div>
-          <label class="text-line-middle">Fish</label>
+          <label class="text-line-middle checkbox-label">Fish</label>
         </div>
 
-        <div class="checkbox-container display-flex col-md-4">
+        <div class="checkbox-container display-flex col-md-4 col-sm-4 col-xs-12">
           <div class="checkbox" (click)="checkPet('other')">
             <i [ngClass]="petMap['other'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
           </div>
-          <label class="text-line-middle">Other</label>
+          <label class="text-line-middle checkbox-label">Other</label>
         </div>
       </div>
     </div>
 
 
-    <div class="pet-type-reference row">
-      <div class="checkbox" (click)="checkService('Dog Walking')">
-        <i class="fa fa-check"></i>
-        Dog Walking
+    <div class="line col-md-12" id="service-type-reference">
+
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">Service preference:</label>
       </div>
-      <div class="checkbox" (click)="checkService('Pet Sitting')">
-        <i class="fa fa-check"></i>
-        Pet Sitting
-      </div>
-      <div class="checkbox" (click)="checkService('House Sitting')">
-        <i class="fa fa-check"></i>
-        House Sitting
-      </div>
-      <div class="checkbox" (click)="checkService('Drop in Visits')">
-        <i class="fa fa-check"></i>
-        Drop in Visits
+
+      <div class="col-md-10 col-sm-12 height-46">
+        <div class="checkbox-container display-flex col-md-3 col-sm-3 col-xs-12">
+          <div class="checkbox" (click)="checkService('Dog Walking')">
+            <i [ngClass]="serviceMap['Dog Walking'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Dog Walking</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-3 col-sm-3 col-xs-12">
+          <div class="checkbox" (click)="checkService('Pet Sitting')">
+            <i [ngClass]="serviceMap['Pet Sitting'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Pet Sitting</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-3 col-sm-3 col-xs-12">
+          <div class="checkbox" (click)="checkService('House Sitting')">
+            <i [ngClass]="serviceMap['House Sitting'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">House Sitting</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-3 col-sm-3 col-xs-12">
+          <div class="checkbox" (click)="checkService('Drop in Visits')">
+            <i [ngClass]="serviceMap['Drop in Visits'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Drop in Visits</label>
+        </div>
+
       </div>
     </div>
 
@@ -171,8 +192,14 @@
     </div>
 
     <!--Navigate-->
-    <button class="btn btn-default" (click)="registerService.back()">Back</button>
-    <button class="btn btn-primary" (click)="registerService.next()">Next</button>
+    <div class="col-md-12 col-sm-12 navigate">
+      <button class="back btn btn-default" (click)="registerService.back()">
+        <i class="fa fa-arrow-left"></i>Back</button>
+      <button class="next btn btn-primary" (click)="registerService.next()">
+        Next
+        <i class="fa fa-arrow-right"></i>
+      </button>
+    </div>
 
   </div>
 </div>

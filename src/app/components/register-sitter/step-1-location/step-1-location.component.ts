@@ -12,14 +12,19 @@ import { ValidationService } from '../../../services/validation.service';
 })
 export class Step1LocationComponent implements OnInit {
 
-  isValid:boolean;
+  isValid: boolean;
 
-  @ViewChild('googleAddress') public addressElementRef:ElementRef;
+  @ViewChild('googleAddress') public addressElementRef: ElementRef;
   locationForm: FormGroup;
   latitude;
   longitude;
 
-  constructor(private mapLoader:MapsAPILoader, private ngZone:NgZone,fb:FormBuilder, validationService:ValidationService) {
+  constructor(
+    private mapLoader: MapsAPILoader,
+    private ngZone: NgZone,
+    fb: FormBuilder,
+    validationService: ValidationService,
+    protected registerService: RegisterSitterService) {
     this.locationForm = fb.group({
       address: ["", Validators.required]
     })
@@ -52,7 +57,7 @@ export class Step1LocationComponent implements OnInit {
     });
 
 
-    
+
   }
 
 

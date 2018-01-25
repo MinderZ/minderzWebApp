@@ -52,6 +52,8 @@ import { Step3SitterPreferencesComponent } from './components/register-sitter/st
 import { Step4SitterDetailsComponent } from "./components/register-sitter/step-4-sitter-details/step-4-sitter-details.component";
 import { RegisterSitterComponent } from './components/register-sitter/register-sitter.component';
 import { RegisterSitterService } from "./services/register-sitter.service";
+import { UploadListComponent } from './components/upload-list/upload-list.component';
+import { UploadFormComponent } from './components/upload-form/upload-form.component';
 import { ValidationService } from "./services/validation.service";
 
 
