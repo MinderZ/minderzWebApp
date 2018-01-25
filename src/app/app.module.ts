@@ -51,6 +51,10 @@ import { Step2PersonalDetailsComponent } from './components/register-sitter/step
 import { Step3SitterPreferencesComponent } from './components/register-sitter/step-3-sitter-preferences/step-3-sitter-preferences.component';
 import { Step4SitterDetailsComponent } from "./components/register-sitter/step-4-sitter-details/step-4-sitter-details.component";
 import { RegisterSitterComponent } from './components/register-sitter/register-sitter.component';
+import { RegisterSitterService } from "./services/register-sitter.service";
+import { UploadListComponent } from './components/upload-list/upload-list.component';
+import { UploadFormComponent } from './components/upload-form/upload-form.component';
+
 
 
 export const firestoreConfig = {
@@ -87,6 +91,8 @@ export const firestoreConfig = {
     Step3SitterPreferencesComponent,
     Step4SitterDetailsComponent,
     RegisterSitterComponent,
+    UploadListComponent,
+    UploadFormComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),
@@ -111,8 +117,9 @@ export const firestoreConfig = {
     UserProfileObjet,
     SitterProfileObject,
     UserPetObject,
-    NotificationService
+    NotificationService,
+    RegisterSitterService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
