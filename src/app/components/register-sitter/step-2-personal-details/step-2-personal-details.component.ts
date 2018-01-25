@@ -1,3 +1,4 @@
+import { UploadFiles } from './../../../model/upload-files';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { RegisterSitterService } from '../../../services/register-sitter.service';
@@ -10,7 +11,13 @@ import { RegisterSitterService } from '../../../services/register-sitter.service
 })
 export class Step2PersonalDetailsComponent implements OnInit {
   personForm: FormGroup;
-  pfp: File;
+  profilePicUrl;
+  idCopyUrl;
+  consentFormUrl;
+
+
+
+
 
   constructor(fb: FormBuilder, protected registerService: RegisterSitterService) {
     this.personForm = fb.group({
@@ -18,23 +25,55 @@ export class Step2PersonalDetailsComponent implements OnInit {
     })
   }
 
-  test() {
-    console.log(this.personForm.get('profilePic'))
+  profileUpload(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      let file = event.target.files[0];
+      let profilePicture = new UploadFiles(file);
+      this.filePreview(event, 'profile-pic');
+    }
+
   }
 
-  onFileChange(event) {
-    let reader = new FileReader();
-    if (event.target.files && event.target.files.length > 0) {
+  idCopyUpload(event: any) {
+    if (event.target.files && event.target.files[0]) {
       let file = event.target.files[0];
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        this.personForm.get('profilePic').setValue({
-          filename: file.name,
-          filetype: file.type,
-          // value: reader.result.split(',')[1]
-        })
-      }
+      let idCopy = new UploadFiles(file);
+      this.filePreview(event, 'copy-of-ID');
     }
+
+  }
+
+  consentFormUpload(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      let file = event.target.files[0];
+      let consentForm = new UploadFiles(file);
+      this.filePreview(event, 'consent-form');
+    }
+
+  }
+
+  filePreview(event: any, fileType: string) {
+    var reader = new FileReader();
+    console.log(fileType)
+
+    reader.onload = (event: any) => {
+      switch (fileType) {
+        case "profile-pic": this.profilePicUrl = event.target.result;
+          break;
+
+        case "copy-of-ID": this.idCopyUrl = event.target.result;
+          break;
+
+        case "consent-form": this.consentFormUrl = event.target.result;
+          break;
+
+        default:
+          break;
+      }
+
+    }
+
+    reader.readAsDataURL(event.target.files[0]);
   }
 
   ngOnInit() {
