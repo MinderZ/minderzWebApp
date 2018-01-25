@@ -10,8 +10,8 @@
 .text-muted subFont{
   padding-top: 50px;
 
+} 
 
-}
 .Service-content{
   padding-top: 50px;
 
@@ -19,7 +19,7 @@
 .Sitter-subHeading{
     padding-top: 10px;
 }
-.SitterRow{
+.SitterRow{ 
   padding-top:60px;
 }
 .Content-heading{
@@ -67,7 +67,7 @@ h2,h1{
 	padding-bottom:50px;
 	width: 50%;
 	float: left;
-	left: 50%;
+	left: 42%;
 	position: absolute;
   margin-top:80px;
 	margin-left: -260px;

@@ -12,7 +12,7 @@ h1,h4{
 
 .pinkish{
   color: #FF9999;
-  font-weight:100;
+  /* font-weight:100; */
 }
 .stepin{
 background-color:#337ab7;
@@ -33,9 +33,18 @@ font-weight:300;
 }
 input:focus {
   border-color: #ff978f;
-border:3px solid #ff978f;
+border:2px solid  #ff978f;
 }
 .isSeledcted{
 border:5px solid #ff978f;
 height: 20px;
+}
+.well{
+height: 350px;
+}
+.btn-getStarted{
+  padding-top: 140;
+}
+.section{
+  height: 350px;
 }

@@ -9,6 +9,9 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
 import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
+import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
+import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
+import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
 
 const routes: Routes = [
   {
@@ -30,8 +33,13 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'become',
+    path: 'newsitter',
     component: BecomeASitterComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'become',
+    component: BeforeAseviceProviderComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -41,6 +49,13 @@ const routes: Routes = [
    {
     path: 'bookingprofile',
     component: BookingProfileComponent,
+  }, {
+    path: 'code',
+    component: CodeComponent,
+  },
+  {
+    path: 'sitter-profile-listings',
+    component: SitterListPageComponent
   }
   , {
     path: 'review',

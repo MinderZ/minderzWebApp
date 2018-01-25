@@ -1,0 +1,10 @@
+<!--Checkbox-->
+<div class="checkbox" (click)="check()">
+  <i [style.display]="checked ? 'block' : 'none'" class="fa fa-check"></i>
+</div>
+
+<!--Radio button-->
+<div class="radio" [style.background]="selected ? 'rgb(0, 0, 255)' : '#FFFFFF'" (click)="select()"></div>
+
+<!--Input-->
+<input type="text" placeholder="Test..." />
