@@ -11,6 +11,7 @@ import { BookingProfileComponent } from './components/booking-profile/booking-pr
 import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
 import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
 import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
+import { FileNotFoundComponent } from './components/file-not-found/file-not-found.component';
 
 const routes: Routes = [
   {
@@ -39,21 +40,29 @@ const routes: Routes = [
   {
     path: 'addpet',
     component: PetReg1Component,
-  }, {
-    path: 'bookingprofile',
-    component: BookingProfileComponent,
-  }, {
-    path: 'code',
-    component: CodeComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'sitter-profile-listings',
-    component: SitterListPageComponent
+    path: 'bookingprofile',
+    component: BookingProfileComponent,
+    canActivate: [AuthGuard]
   },
+  {
+    path: 'code',
+    component: CodeComponent
+  },
+
+  {
+    path: 'sitter-profile-listings',
+    component: SitterListPageComponent,
+    canActivate: [AuthGuard]
+  },
+  { path: '**', component: FileNotFoundComponent },
   {
     path: 'register-sitter',
     component: RegisterSitterComponent
   }
+
 
   // children: [
   //   { path: ' ',
@@ -66,4 +75,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
