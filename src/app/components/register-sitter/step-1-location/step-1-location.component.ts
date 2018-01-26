@@ -44,7 +44,7 @@ export class Step1LocationComponent implements OnInit {
       );
       autocomplete.addListener("place_changed", () => {
         this.ngZone.run(() => {
-          let place: google.maps.places.PlaceResult
+          let place: google.maps.places.PlaceResult=autocomplete.getPlace();
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
