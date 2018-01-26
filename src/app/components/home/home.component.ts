@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReviewTestimonialService } from '../../services/review-testimonial.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+    private testimonials:any[];
+  constructor(private TestimonialServ: ReviewTestimonialService) { 
+     this.TestimonialServ.get_Testimonials().subscribe( data =>{
+    console.log(data);
+    this.testimonials = data;
+  })}
 
   ngOnInit() {
+   
   }
+
 
 
 

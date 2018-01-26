@@ -42,11 +42,14 @@ import { PetServiceFilterComponent } from "./components/pet-service-filter/pet-s
 import { HomePageFilterComponent } from "./components/pet-service-filter/home-page-filter/home-page-filter.component";
 import { SitterListingsFilterComponent } from "./components/pet-service-filter/sitter-listings-filter/sitter-listings-filter.component";
 import { BeforeAseviceProviderComponent } from "./components/before-asevice-provider/before-asevice-provider.component";
+import { TestimonialFormComponent } from './components/testimonial-form/testimonial-form.component';
 import { NotificationService } from "./services/notification.service";
 import { AngularFirestore } from "angularfire2/firestore";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { SummaryPipe } from './pipes/summary.pipe';
-import { TestimonialFormComponent } from './component/testimonial-form/testimonial-form.component';
+import { ReviewTestimonialService } from "./services/review-testimonial.service";
+import { RatingServiceService } from "./services/rating-service.service";
+
 
 export const firestoreConfig = {
   apiKey: "AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4",
@@ -76,17 +79,18 @@ export const firestoreConfig = {
     HomePageFilterComponent,
     SitterListingsFilterComponent,
     BeforeAseviceProviderComponent,
-    SummaryPipe,
-    TestimonialFormComponent,ReactiveFormsModule
+    TestimonialFormComponent,
+    SummaryPipe
+    
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
     BrowserModule,
     CustomFormsModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,ReactiveFormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyCbt0jWTVPaN546r8hq4LFGBN2F7NrMmq0",
@@ -102,7 +106,8 @@ export const firestoreConfig = {
     UserProfileObjet,
     SitterProfileObject,
     UserPetObject,
-    NotificationService
+    NotificationService,
+    ReviewTestimonialService,RatingServiceService
   ],
   bootstrap: [AppComponent]
 })

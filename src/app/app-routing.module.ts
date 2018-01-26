@@ -11,6 +11,7 @@ import { BecomeASitterComponent } from './components/become-a-sitter/become-a-si
 import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
 import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
 import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
+import { TestimonialFormComponent } from './components/testimonial-form/testimonial-form.component';
 
 const routes: Routes = [
   {
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
     path: 'sitter-profile-listings',
     component: SitterListPageComponent
+  },
+  {
+    path: 'testimonial',
+    component: TestimonialFormComponent
   }
 
   // children: [
