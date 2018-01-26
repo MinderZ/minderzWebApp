@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-before-asevice-provider',
   templateUrl: './before-asevice-provider.component.html',
-  styleUrls: ['./before-asevice-provider.component.css', '../../../assets/styles/mainstyle.css']
+  styleUrls: ['./before-asevice-provider.component.css']
 })
+// , '../../../assets/styles/mainstyle.css'
 export class BeforeAseviceProviderComponent implements OnInit {
   hide = true;
   from = false;
