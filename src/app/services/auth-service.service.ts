@@ -31,7 +31,7 @@ User = {
  ngOnInit() {
 
 }
-  
+
 constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
@@ -42,15 +42,6 @@ constructor(
   ) {
     this.user$ = afAuth.authState;
     this.firestoreUsersRef = this.afs.collection('users').valueChanges();
-  }
-
-
-  loginWithGoogle() {
-    //   const returnUrl = this.route.snapshot.queryParamMap.get(this.returnUrl) || '/';
-    //  this.cache.navigator = returnUrl;
-    // localStorage.setItem("returnUrl", returnUrl);
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    this.router.navigate(['/']);
   }
 
   emailSignUp(email: string, password: string) {
@@ -168,7 +159,6 @@ constructor(
   }
 
   currentUserUID() {
-    
     return (this.userUID = firebase.auth().currentUser.uid);
   }
   checkUserExistance() {

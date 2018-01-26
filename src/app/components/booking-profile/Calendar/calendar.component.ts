@@ -3,7 +3,7 @@ import * as moment from "moment";
 
 @Component({
   selector: "app-calendar",
-  templateUrl: "./calendar.component.html",
+  templateUrl: "./calender.component.html",
   styleUrls: ["./calendar.component.css"]
 })
 export class CalendarComponent {
@@ -90,7 +90,7 @@ export class CalendarComponent {
         this.calendarIndex++;
         this.displayArrows(this.calendarIndex);
         this.setMonth(this.calendarIndex)
-        
+
     }
   }
 
@@ -112,7 +112,7 @@ export class CalendarComponent {
   getSelectedCalendar(){
       console.log(this.selectedCalendar);
     return this.selectedCalendar;
-  }   
+  }
 
   setMonth(monthToUse: number) {
     this.selectedCalendar = this.serviceMap[this.calendarToUse][monthToUse];
@@ -128,7 +128,7 @@ export class CalendarComponent {
   select(Day: CalendarDate) {
     this.selectedCalendar[Day.date].isSelected = !this.selectedCalendar[Day.date].isSelected;
   }
- 
+
 
   saveSelectedDates(){
 
