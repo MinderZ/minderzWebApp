@@ -44,15 +44,6 @@ constructor(
     this.firestoreUsersRef = this.afs.collection('users').valueChanges();
   }
 
-
-  loginWithGoogle() {
-    //   const returnUrl = this.route.snapshot.queryParamMap.get(this.returnUrl) || '/';
-    //  this.cache.navigator = returnUrl;
-    // localStorage.setItem("returnUrl", returnUrl);
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    this.router.navigate(['/']);
-  }
-
   emailSignUp(email: string, password: string) {
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)
