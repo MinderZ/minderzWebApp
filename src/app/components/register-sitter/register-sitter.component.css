@@ -203,6 +203,10 @@ img {
   cursor: pointer
 }
 
+#about-me {
+  height: 200px;
+}
+
 @media (max-width: 1160px) {
   #display {
     padding: 30px 10px;

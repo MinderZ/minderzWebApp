@@ -12,12 +12,12 @@ import { SitterReferenceObject } from '../../../model/sitterReferenceObject.mode
 export class Step4SitterDetailsComponent implements OnInit {
 
 
-  houseTypeOption: string[] = ["Flat","House with Yard","House without Yard"];
+  houseTypeOption: string[] = ["Flat", "House with Yard", "House without Yard"];
   houseType: string;
 
-  experienceOption: string[] = ["No experience","1+","2+", "3+", "4+"];
-  experience:string;
-  aboutMe:string;
+  experienceOption: string[] = ["No experience", "1+", "2+", "3+", "4+"];
+  experience: string;
+  aboutMe: string;
 
   //Children button group
   children = false;
@@ -53,18 +53,19 @@ export class Step4SitterDetailsComponent implements OnInit {
   }
 
 
-  setChildren(value: boolean){
+  setChildren(value: boolean) {
     this.children = value;
+    this.childrenPristine = false;
   }
 
-  setVolunteer(value:boolean){
+  setVolunteer(value: boolean) {
     this.volunteer = value;
   }
 
-  setOwnsPets(value:boolean){
+  setOwnsPets(value: boolean) {
     this.ownPets = value;
   }
-  setHasOwnedPets(value:boolean){
+  setHasOwnedPets(value: boolean) {
     this.ownedPets = value;
   }
 
@@ -122,7 +123,7 @@ export class Step4SitterDetailsComponent implements OnInit {
     }
   }
 
-  submit(){
+  submit() {
     this.registerService.sitter.aboutMe = this.aboutMe;
     this.registerService.sitter.houseType = this.houseType;
     this.registerService.sitter.experience = this.experience;
@@ -134,6 +135,6 @@ export class Step4SitterDetailsComponent implements OnInit {
 
     console.table(this.registerService.sitter);
 
-    
+
   }
 }

@@ -22,7 +22,7 @@
       </div>
       <!-- Yes -->
       <div class="col-md-2 col-sm-12 display-flex">
-        <div class="radio" [ngClass]="children && !childrenPristine ? 'selected' : 'unselected'" (click)="setChildren(true)"></div>
+        <div class="radio" [ngClass]="children && !childrenPristine ? 'selected' : 'unselected'" (click)="setChildren(true);"></div>
         <label class="text-line-middle radio-label">Yes</label>
       </div>
 
@@ -54,7 +54,7 @@
         <label class="text-line-middle">About me:</label>
       </div>
       <div class="col-md-10 col-sm-12">
-        <input [(ngModel)]='aboutMe' class="form-control" type="text" />
+        <input id="about-me" [(ngModel)]='aboutMe' class="form-control" type="text" />
       </div>
     </div>
     <!--End about you-->
