@@ -8,8 +8,8 @@
       </div>
 
       <div class="col-md-10 col-sm-12">
-        <select [(ngModel)] = 'houseType' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-          <option *ngFor = 'let option of houseTypeOption'>{{option}}</option>
+        <select [(ngModel)]='houseType' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+          <option *ngFor='let option of houseTypeOption'>{{option}}</option>
         </select>
       </div>
     </div>
@@ -41,9 +41,9 @@
       </div>
 
       <div class="col-md-10 col-sm-12">
-        <select [(ngModel)] = 'experience' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-          <option *ngFor = 'let option of experienceOption'>{{option}}</option>
-        </select> 
+        <select [(ngModel)]='experience' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+          <option *ngFor='let option of experienceOption'>{{option}}</option>
+        </select>
       </div>
     </div>
     <!--End house type-->
@@ -54,7 +54,7 @@
         <label class="text-line-middle">About me:</label>
       </div>
       <div class="col-md-10 col-sm-12">
-        <input [(ngModel)] = 'aboutMe'class="form-control" type="text" />
+        <input [(ngModel)]='aboutMe' class="form-control" type="text" />
       </div>
     </div>
     <!--End about you-->
@@ -108,12 +108,16 @@
       </div>
 
       <!-- Yes -->
-      <div class="radio" [ngClass]="ownedPets && !ownedPetsPristine ? 'selected' : 'unselected'" (click)="setHasOwnedPets(true); ownedPetsPristine=false; validate()"></div>
-      <label class="text-line-middle radio-label">Yes</label>
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="ownedPets && !ownedPetsPristine ? 'selected' : 'unselected'" (click)="setHasOwnedPets(true); ownedPetsPristine=false; validate()"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
 
       <!-- No -->
-      <div class="radio" [ngClass]="!ownedPets && !ownedPetsPristine ? 'selected' : 'unselected'" (click)="setHasOwnedPets(false); ownedPetsPristine=false; validate()"></div>
-      <label class="text-line-middle radio-label">No</label>
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!ownedPets && !ownedPetsPristine ? 'selected' : 'unselected'" (click)="setHasOwnedPets(false); ownedPetsPristine=false; validate()"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
 
     </div>
     <!--End pet history-->

@@ -8,7 +8,6 @@ import { AuthGuard } from './services/auth-guard.service';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
-import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
 import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
 import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
 import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
@@ -30,11 +29,6 @@ const routes: Routes = [
   {
     path: 'profile',
     component: MiniDashboardComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'newsitter',
-    component: BecomeASitterComponent,
     canActivate: [AuthGuard]
   },
   {
