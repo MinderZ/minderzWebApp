@@ -1,3 +1,4 @@
+import { PetProfileComponent } from './components/pet-profile/pet-profile.component';
 import { AgmCoreModule } from "@agm/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -75,7 +76,8 @@ export const firestoreConfig = {
     HomePageFilterComponent,
     SitterListingsFilterComponent,
     BeforeAseviceProviderComponent,
-    SummaryPipe
+    SummaryPipe,
+    PetProfileComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),

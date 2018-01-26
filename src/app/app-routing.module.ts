@@ -59,6 +59,10 @@ const routes: Routes = [
   {
     path: 'sitter-profile-listings',
     component: SitterListPageComponent
+  },
+  {
+    path:'petProf',
+    component: PetProfileComponent
   }
 
   // children: [
