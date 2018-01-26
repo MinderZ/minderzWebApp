@@ -119,10 +119,15 @@
     <!--End pet history-->
 
     <!--Start add references-->
-    <div class="line col-md-12" id="reference">
+    <div class="line  col-md-12" id="reference">
 
-      <div id="reference-list" *ngFor="let reference of registerService.sitter.references">
-        <label>{{reference.referenceName}} {{reference.referencePhone}}</label>
+      <div class="padded-line col-md-12 col-sm-12">
+        <div class="display-grid" id="reference-list" *ngFor="let reference of registerService.sitter.references; let i = index "
+          [attr.data-index]="i">
+          <label>Reference {{i+1}}:</label>
+          <label>Reference name: {{reference.referenceName}}</label>
+          <label>Phone: {{reference.referencePhone}}</label>
+        </div>
       </div>
 
       <div class="col-md-12 col-sm-12 navigate">

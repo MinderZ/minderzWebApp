@@ -7,7 +7,7 @@ import { SitterReferenceObject } from '../../../model/sitterReferenceObject.mode
   selector: 'app-step-4-sitter-details',
   templateUrl: './step-4-sitter-details.component.html',
   styleUrls: ['./step-4-sitter-details.component.css',
-  '../register-sitter.component.css']
+    '../register-sitter.component.css']
 })
 export class Step4SitterDetailsComponent implements OnInit {
 
@@ -77,6 +77,10 @@ export class Step4SitterDetailsComponent implements OnInit {
       this.reference.referencePhone = this.referencePhone;
 
       this.registerService.sitter.references.push(this.reference);
+
+      this.creatingReference = false;
+      this.referenceName = '';
+      this.referencePhone = '';
     }
   }
 
