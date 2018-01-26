@@ -10,25 +10,31 @@ import { RegisterSitterService } from '../../../services/register-sitter.service
     '../register-sitter.component.css']
 })
 export class Step2PersonalDetailsComponent implements OnInit {
-  personForm: FormGroup;
-  profilePicUrl;
-  idCopyUrl;
-  consentFormUrl;
+  profilePicUrl: any;
+  idCopyUrl:any;
+  consentFormUrl:any;
 
+  cellphoneNum:string;
+  age: string;
+  idNum: string;
+  emergencyContactName: string;
+  emergencyContactNr: string
   male: boolean;
   female: boolean;
+  profilePicture: UploadFiles;
+  consentForm: UploadFiles;
+  idCopy:UploadFiles;
+  gender:string;
+
   genderPristine = false;
 
   constructor(fb: FormBuilder, protected registerService: RegisterSitterService) {
-    this.personForm = fb.group({
-      profilePic: null
-    })
   }
 
   profileUpload(event: any) {
     if (event.target.files && event.target.files[0]) {
       let file = event.target.files[0];
-      let profilePicture = new UploadFiles(file);
+      this.profilePicture = new UploadFiles(file);
       this.filePreview(event, 'profile-pic');
     }
 
@@ -37,7 +43,7 @@ export class Step2PersonalDetailsComponent implements OnInit {
   idCopyUpload(event: any) {
     if (event.target.files && event.target.files[0]) {
       let file = event.target.files[0];
-      let idCopy = new UploadFiles(file);
+      this.idCopy = new UploadFiles(file);
       this.filePreview(event, 'copy-of-ID');
     }
 
@@ -46,7 +52,7 @@ export class Step2PersonalDetailsComponent implements OnInit {
   consentFormUpload(event: any) {
     if (event.target.files && event.target.files[0]) {
       let file = event.target.files[0];
-      let consentForm = new UploadFiles(file);
+      this.consentForm = new UploadFiles(file);
       this.filePreview(event, 'consent-form');
     }
 
@@ -76,7 +82,27 @@ export class Step2PersonalDetailsComponent implements OnInit {
     reader.readAsDataURL(event.target.files[0]);
   }
 
+  setGender(gender:string){
+    this.gender = gender;
+  }
+
   ngOnInit() {
   }
 
+  next(){
+
+    this.registerService.sitter.profilePicture = this.profilePicture;
+    this.registerService.sitter.age = Number(this.age);
+    this.registerService.sitter.gender = this.gender;
+    this.registerService.sitter.copyOfId = this.idCopy;
+    this.registerService.sitter.cellphoneNumber = this.cellphoneNum ;
+    this.registerService.sitter.consentForm = this.consentForm;
+    this.registerService.sitter.id = this.idNum;
+    this.registerService.sitter.emergencyContactName = this.emergencyContactName;
+    this.registerService.sitter.emergencyContactNr = this.emergencyContactNr;
+    
+    console.table(this.registerService.sitter);
+    
+    this.registerService.next()
+  }
 }

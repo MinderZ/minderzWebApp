@@ -11,6 +11,14 @@ import { SitterReferenceObject } from '../../../model/sitterReferenceObject.mode
 })
 export class Step4SitterDetailsComponent implements OnInit {
 
+
+  houseTypeOption: string[] = ["Flat","House with Yard","House without Yard"];
+  houseType: string;
+
+  experienceOption: string[] = ["No experience","1+","2+", "3+", "4+"];
+  experience:string;
+  aboutMe:string;
+
   //Children button group
   children = false;
   childrenPristine = true;
@@ -42,6 +50,22 @@ export class Step4SitterDetailsComponent implements OnInit {
   constructor(protected registerService: RegisterSitterService) { }
 
   ngOnInit() {
+  }
+
+
+  setChildren(value: boolean){
+    this.children = value;
+  }
+
+  setVolunteer(value:boolean){
+    this.volunteer = value;
+  }
+
+  setOwnsPets(value:boolean){
+    this.ownPets = value;
+  }
+  setHasOwnedPets(value:boolean){
+    this.ownedPets = value;
   }
 
   addReference() {
@@ -78,19 +102,13 @@ export class Step4SitterDetailsComponent implements OnInit {
     }
   }
 
-  update() {
-    this.registerService.sitter.children = this.children;
-    this.registerService.sitter.doneVolunteer = this.volunteer;
-    this.registerService.sitter.ownPets = this.ownPets;
-    this.registerService.sitter.hadPets = this.ownedPets;
-  }
+
 
   validate() {
     if (!this.childrenPristine && !this.ownPetsPristine && !this.volunteer) {
 
       if (!this.ownPets && !this.ownedPetsPristine) {
         this.valid = true;
-        this.update();
       } else {
         this.valid = false;
       }
@@ -100,4 +118,18 @@ export class Step4SitterDetailsComponent implements OnInit {
     }
   }
 
+  submit(){
+    this.registerService.sitter.aboutMe = this.aboutMe;
+    this.registerService.sitter.houseType = this.houseType;
+    this.registerService.sitter.experience = this.experience;
+    this.registerService.sitter.children = this.children;
+    this.registerService.sitter.doneVolunteer = this.volunteer;
+    this.registerService.sitter.ownPets = this.ownPets;
+    this.registerService.sitter.hadPets = this.ownedPets;
+    this.registerService.sitter.references = this.references;
+
+    console.table(this.registerService.sitter);
+
+    
+  }
 }

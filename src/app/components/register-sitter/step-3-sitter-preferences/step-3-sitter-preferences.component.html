@@ -1,4 +1,4 @@
-<div [formGroup]="form" class="container-fluid">
+<div class="container-fluid">
   <div class="row">
 
     <!--Start job distance-->
@@ -9,10 +9,8 @@
       </div>
 
       <div class="col-md-10">
-        <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
-          <option selected>10KM</option>
-          <option>20KM</option>
-          <option>50KM</option>
+        <select [(ngModel)] = 'jobDistanceRadius' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <option *ngFor = 'let option of jobDistanceRadiusOption'>{{option}}</option>
         </select>
       </div>
     </div>
@@ -26,10 +24,8 @@
       </div>
 
       <div class="col-md-10">
-        <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
-          <option selected>Small</option>
-          <option>Medium</option>
-          <option>Large</option>
+        <select  [(ngModel)] = 'petSizePreference' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <option *ngFor = 'let option of petPreferenceOption'>{{option}}</option>
         </select>
       </div>
     </div>
@@ -136,11 +132,8 @@
           <label class="text-line-middle">Pets Per walk:</label>
         </div>
         <div class="col-md-10">
-          <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
-            <option selected>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+          <select [ngModel] = 'dogWalking.petsPerWalk' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option *ngFor = 'let option of numberOption'>{{option}}</option>
           </select>
         </div>
       </div>
@@ -151,11 +144,8 @@
         </div>
 
         <div class="col-md-10">
-          <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
-            <option selected>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+          <select [ngModel] = 'dogWalking.walksPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option *ngFor = 'let option of numberOption'>{{option}}</option>
           </select>
         </div>
       </div>
@@ -178,11 +168,8 @@
         </div>
 
         <div class="col-md-10">
-          <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
-            <option selected>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+          <select [ngModel] = 'petSitting.petsPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option *ngFor = 'let option of numberOption'>{{option}}</option>
           </select>
         </div>
       </div>
@@ -223,11 +210,8 @@
         </div>
 
         <div class="col-md-10">
-          <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
-            <option selected>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+          <select [ngModel] = 'dropInVist.visitsPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option *ngFor = 'let option of numberOption'>{{option}}</option>
           </select>
         </div>
       </div>
@@ -237,7 +221,7 @@
     <div class="col-md-12 col-sm-12 navigate">
       <button class="back btn btn-default" (click)="registerService.back()">
         <i class="fa fa-arrow-left"></i>Back</button>
-      <button class="next btn btn-primary" (click)="registerService.next()">
+      <button class="next btn btn-primary" (click)="next()">
         Next
         <i class="fa fa-arrow-right"></i>
       </button>

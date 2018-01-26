@@ -13,6 +13,7 @@ import { ValidationService } from '../../../services/validation.service';
 export class Step1LocationComponent implements OnInit {
 
   isValid: boolean;
+  location: string = this.registerService.sitter.location;
 
   @ViewChild('googleAddress') public addressElementRef: ElementRef;
   locationForm: FormGroup;
@@ -51,18 +52,21 @@ export class Step1LocationComponent implements OnInit {
 
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
+          this.location = place.formatted_address;
 
         });
       });
     });
-
-
-
   }
 
 
-
-
-
-
+  next(){
+    this.registerService.sitter.location = this.location;
+    this.registerService.sitter.coordinates = {
+      lat: this.latitude,
+      lng: this.longitude
+    }
+    
+    this.registerService.next()
+  }
 }

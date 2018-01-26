@@ -1,4 +1,4 @@
-<div [formGroup]='personForm' class="container-fluid">
+<div class="container-fluid">
   <div class="row">
 
     <div class="line col-md-12">
@@ -24,7 +24,7 @@
         <label class="text-line-middle" for="age">Your Age:</label>
       </div>
       <div class="col-md-10">
-        <input class="form-control" id="age" placeholder="Your Age" type="text">
+        <input [(ngModel)] = 'age' class="form-control" id="age" placeholder="Your Age" type="text">
       </div>
     </div>
 
@@ -36,13 +36,13 @@
 
         <!-- Yes -->
         <div class="col-md-2 col-sm-12 display-flex">
-          <div class="radio" [ngClass]="male && !genderPristine ? 'selected' : 'unselected'" (click)="male=true; female=false; genderPristine=false"></div>
+          <div class="radio" [ngClass]="gender == 'male' && !genderPristine ? 'selected' : 'unselected'" (click)="setGender('male'); genderPristine=false"></div>
           <label class="text-line-middle radio-label">Male</label>
         </div>
 
         <!-- No -->
         <div class="col-md-2 col-sm-12 display-flex">
-          <div class="radio" [ngClass]="female && !genderPristine ? 'selected' : 'unselected'" (click)="male=false; female=true; genderPristine=false"></div>
+          <div class="radio" [ngClass]="gender == 'female' && !genderPristine ? 'selected' : 'unselected'" (click)="setGender('female'); genderPristine=false"></div>
           <label class="text-line-middle radio-label">Female</label>
         </div>
       </div>
@@ -53,7 +53,7 @@
         <label class="text-line-middle" for="phoneNr">Your Phone Number:</label>
       </div>
       <div class="col-md-10">
-        <input class="form-control" id="phoneNr" placeholder="Your Phone Number" type="text">
+        <input [(ngModel)] = 'cellphoneNum' class="form-control" id="phoneNr" placeholder="Your Phone Number" type="text">
       </div>
     </div>
 
@@ -62,7 +62,7 @@
         <label class="text-line-middle" for="idNr">Your SA ID Number:</label>
       </div>
       <div class="col-md-10">
-        <input class="form-control" id="idNr" placeholder="Your SA ID Number" type="text">
+        <input [(ngModel)] = 'idNum' class="form-control" id="idNr" placeholder="Your SA ID Number" type="text">
       </div>
     </div>
 
@@ -108,7 +108,7 @@
         <label class="text-line-middle" for="emergency-contact-person">Emergency Contact Name:</label>
       </div>
       <div class="col-md-10">
-        <input class="form-control" id="emergency-contact-person" placeholder="Emergency Contact Name" type="text">
+        <input [(ngModel)] = 'emergencyContactName' class="form-control" id="emergency-contact-person" placeholder="Emergency Contact Name" type="text">
       </div>
     </div>
 
@@ -117,7 +117,7 @@
         <label class="text-line-middle" for="emergency-phoneNr">Emergency Contact Number:</label>
       </div>
       <div class="col-md-10">
-        <input class="form-control" id="emergency-phoneNr" placeholder="Emergency Contact Number" type="text">
+        <input [(ngModel)] = 'emergencyContactNr' class="form-control" id="emergency-phoneNr" placeholder="Emergency Contact Number" type="text">
       </div>
     </div>
 
@@ -125,7 +125,7 @@
     <div class="col-md-12 col-sm-12 navigate">
       <button class="back btn btn-default" (click)="registerService.back()">
         <i class="fa fa-arrow-left"></i>Back</button>
-      <button class="next btn btn-primary" (click)="registerService.next()">Next
+      <button class="next btn btn-primary" (click)="next()">Next
         <i class="fa fa-arrow-right"></i>
       </button>
     </div>

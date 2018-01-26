@@ -22,7 +22,7 @@ export class DataRecycleService {
 
 
 create( input, route) {
-return this.db.list(route).push(input);
+  return this.db.list(route).push(input);
 }
 
 
