@@ -22,7 +22,6 @@ import {
   AngularFireDatabase
 } from 'angularfire2/database';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
-
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth-service.service';
 import { CacheService } from './services/cache.service';
@@ -48,6 +47,14 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { FileNotFoundComponent } from './components/file-not-found/file-not-found.component';
+import { Step1LocationComponent } from './components/register-sitter/step-1-location/step-1-location.component';
+import { Step2PersonalDetailsComponent } from './components/register-sitter/step-2-personal-details/step-2-personal-details.component';
+import { Step3SitterPreferencesComponent } from './components/register-sitter/step-3-sitter-preferences/step-3-sitter-preferences.component';
+import { Step4SitterDetailsComponent } from "./components/register-sitter/step-4-sitter-details/step-4-sitter-details.component";
+import { RegisterSitterComponent } from './components/register-sitter/register-sitter.component';
+import { RegisterSitterService } from "./services/register-sitter.service";
+import { ValidationService } from "./services/validation.service";
+
 
 export const firestoreConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -61,7 +68,6 @@ export const firestoreConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    BecomeASitterComponent,
     NavbarComponent,
     HomeComponent,
     FooterComponent,
@@ -79,6 +85,11 @@ export const firestoreConfig = {
     SitterListingsFilterComponent,
     BeforeAseviceProviderComponent,
     SummaryPipe,
+    Step1LocationComponent,
+    Step2PersonalDetailsComponent,
+    Step3SitterPreferencesComponent,
+    Step4SitterDetailsComponent,
+    RegisterSitterComponent,
     FileNotFoundComponent
   ],
   imports: [
@@ -104,8 +115,10 @@ export const firestoreConfig = {
     UserProfileObjet,
     SitterProfileObject,
     UserPetObject,
-    NotificationService
+    NotificationService,
+    RegisterSitterService,
+    ValidationService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
