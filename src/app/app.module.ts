@@ -4,19 +4,19 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from "@angular/forms";
 // import {FormsModule}
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { AngularFireModule } from "angularfire2";
-import { CustomFormsModule } from "ng2-validation";
+import { AngularFireModule } from 'angularfire2';
+import { CustomFormsModule } from 'ng2-validation';
 
-import { AppComponent } from "./app.component";
+import { AppComponent } from './app.component';
 // import { BookServiceComponent } from './components/book-service/book-service.component';
-import { AppRoutingModule } from "./app-routing.module";
-import { NavbarComponent } from "./components/navbar/navbar.component";
-import { HomeComponent } from "./components/home/home.component";
-import { FooterComponent } from "./components/footer/footer.component";
+import { AppRoutingModule } from './app-routing.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
 // import { ClientRegComponent } from './components/client-reg/client-reg.component';
 
-import { SignInComponent } from "./components/sign-in/sign-in.component";
-import { MiniDashboardComponent } from "./components/mini-dashboard/mini-dashboard.component";
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
 import {
   AngularFireDatabaseModule,
   AngularFireDatabase
@@ -42,28 +42,24 @@ import { PetServiceFilterComponent } from "./components/pet-service-filter/pet-s
 import { HomePageFilterComponent } from "./components/pet-service-filter/home-page-filter/home-page-filter.component";
 import { SitterListingsFilterComponent } from "./components/pet-service-filter/sitter-listings-filter/sitter-listings-filter.component";
 import { BeforeAseviceProviderComponent } from "./components/before-asevice-provider/before-asevice-provider.component";
-import { TestimonialFormComponent } from './components/testimonial-form/testimonial-form.component';
 import { NotificationService } from "./services/notification.service";
 import { AngularFirestore } from "angularfire2/firestore";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { SummaryPipe } from './pipes/summary.pipe';
-import { ReviewTestimonialService } from "./services/review-testimonial.service";
-import { RatingServiceService } from "./services/rating-service.service";
 
 
 export const firestoreConfig = {
-  apiKey: "AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4",
-  authDomain: "minderz-4ecba.firebaseapp.com",
-  databaseURL: "https://minderz-4ecba.firebaseio.com",
-  projectId: "minderz-4ecba",
-  storageBucket: "minderz-4ecba.appspot.com",
-  messagingSenderId: "319003344942"
+  apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
+  authDomain: 'minderz-4ecba.firebaseapp.com',
+  databaseURL: 'https://minderz-4ecba.firebaseio.com',
+  projectId: 'minderz-4ecba',
+  storageBucket: 'minderz-4ecba.appspot.com',
+  messagingSenderId: '319003344942'
 };
 
 @NgModule({
   declarations: [
     AppComponent,
-    BecomeASitterComponent,
     NavbarComponent,
     HomeComponent,
     FooterComponent,
@@ -71,6 +67,7 @@ export const firestoreConfig = {
     SignInComponent,
     MiniDashboardComponent,
     BookingProfileComponent,
+    CalendarComponent,
     CodeComponent,
     GoogleMapComponent,
     SitterListPageComponent,
@@ -79,9 +76,7 @@ export const firestoreConfig = {
     HomePageFilterComponent,
     SitterListingsFilterComponent,
     BeforeAseviceProviderComponent,
-    TestimonialFormComponent,
     SummaryPipe
-    
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),
@@ -93,8 +88,8 @@ export const firestoreConfig = {
     ReactiveFormsModule,ReactiveFormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: "AIzaSyCbt0jWTVPaN546r8hq4LFGBN2F7NrMmq0",
-      libraries: ["places"]
+      apiKey: 'AIzaSyCbt0jWTVPaN546r8hq4LFGBN2F7NrMmq0',
+      libraries: ['places']
     })
   ],
   providers: [
@@ -106,9 +101,8 @@ export const firestoreConfig = {
     UserProfileObjet,
     SitterProfileObject,
     UserPetObject,
-    NotificationService,
-    ReviewTestimonialService,RatingServiceService
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

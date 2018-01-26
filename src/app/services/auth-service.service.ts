@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CacheService } from './cache.service';
@@ -14,9 +14,11 @@ import { UserProfileObjet } from '../model/userProfileObj.model';
 
 
 @Injectable()
-export class AuthService {
+export class AuthService implements OnInit {
   public user$: Observable<firebase.User>;
   public userUID: string;
+
+  returnUrl?: string;
 User = {
   uid: '',
   email: '',
@@ -24,8 +26,13 @@ User = {
   displayName: '',
   isAserviceProvider : true
  };
+ firestoreUsersRef: any;
 
-  constructor(
+ ngOnInit() {
+
+}
+  
+constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
     private afs: AngularFirestore,
@@ -34,27 +41,47 @@ User = {
     private notify: NotificationService
   ) {
     this.user$ = afAuth.authState;
+    this.firestoreUsersRef = this.afs.collection('users').valueChanges();
   }
 
   emailSignUp(email: string, password: string) {
-console.log('email');
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then(user => {
-        this.notify.update('Welcome to MinderZ!!!', 'success');
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        if (this.checkUserExistance()) {
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
+        } else {
+               this.initialiseAUser();
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
+        }
       })
-      .catch(error => this.handleError(error));
+      .catch(error => {
+        if (error.message === 'The email address is already in use by another account.') {
+            alert(error.message);
+        } else {
+            console.log(error.message);
+        }
+    });
   }
 
   emailLogin(email: string, password: string) {
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
-      .then(user => {
-        this.notify.update('Welcome to MinderZ!!!', 'success');
-        // return this.updateUserinfor(user);
-        this.router.navigate(['/']);
+      .then((user) => {
+        if (this.checkUserExistance()) {
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
+   } else {
+          this.initialiseAUser();
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+          this.router.navigateByUrl(this.returnUrl);
+
+   }
       })
       .catch(error => this.handleError(error));
   }
@@ -63,8 +90,15 @@ console.log('email');
       this.afAuth.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(() => {
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        if (this.checkUserExistance()) {
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
+   } else {
+          this.initialiseAUser();
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+   }
       });
   }
 
@@ -72,8 +106,15 @@ console.log('email');
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then(() => {
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        if (this.checkUserExistance()) {
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
+   } else {
+          this.initialiseAUser();
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+       }
       });
   }
 
@@ -81,8 +122,15 @@ console.log('email');
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.TwitterAuthProvider())
       .then(() => {
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        if (this.checkUserExistance()) {
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+
+   } else {
+          this.initialiseAUser();
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/' ;
+    this.router.navigateByUrl(this.returnUrl);
+   }
       });
   }
 
@@ -103,7 +151,6 @@ console.log('email');
   }
 
   logout() {
-    //  localStorage.removeItem('token');
     this.afAuth.auth.signOut().then(res => this.router.navigate(['/']));
   }
 
@@ -112,12 +159,30 @@ console.log('email');
   }
 
   currentUserUID() {
+    
     return (this.userUID = firebase.auth().currentUser.uid);
+  }
+  checkUserExistance() {
+    this.firestoreUsersRef.forEach(element => {
+      let flag: Boolean;
+      for (let i = 0; i < element.length; i++) {
+          if (element[i].user === this.afAuth.auth.currentUser.uid) {
+               flag = false;
+              break;
+          }
+      }
+      if (flag === undefined) {
+        return false;
+      } else {
+        return true;
+      }
+  });
   }
 
   initialiseAUser() {
       const userProfile = this.afs.collection('users').doc('' + this.currentUserUID());
     this.User.uid =   this.currentUserUID();
+    this.User.displayName =   this.getcurrentUser().displayName;
      return userProfile.set(this.User);
  }
 
