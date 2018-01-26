@@ -1,130 +1,7 @@
-<div  *ngIf="hide">
-
-<div class="row text-ckenter">
-  <div class=" col-md-1">
-  </div>
-  <div class=" col-md-10 " id="colourBlock">
-  </div>
-  <div class=" col-md-1">
-  </div>
-</div>
 
 
-<div class="text-center">
-
-  <h1>Why you'll love working with Minderz!</h1>
-</div>
-
-
-<div class="row text-centder">
-  <div class=" col-md-1">
-  </div>
-  <div class="col-md-5 ">
-
-    <h4>
-      <span class="pinkish">
-        <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i>
-      </span> Freedom to choose your schedule, services, and rates.</h4>
-
-
-<br>
-    <h4>
-<span class="pinkish">
-      <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i>
-      </span> Secure payments.</h4>
-  </div>
-
-  <div class=" col-md-5">
-
-    <h4><span class="pinkish">
-      <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i>
-    </span>You & booked-in pets are covered by insurances.</h4>
-    <br>
-    <h4>
-      <span class="pinkish">
-      <i class="fa fa-check-circle-o fa-3x" aria-hidden="true"></i>
-      </span> Customer care support.
-    </h4>
-  </div>
-
-  <div class=" col-md-1">
-  </div>
-
-</div>
-<br>
-
-
-<section class="howitworks">
-<h1 class="pinkish text-center">How it works </h1>
-<p class="text-center">Only the best sitters and dog walkers get listed on Minderz. If you have personal or professional
-    experience watching pets or walking dogs, you could be a great fit.</p>
-<br>
-
-<div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-5">
- <div class="row">
-    <i class="fa fa-user fa-3x pinkish space col-md-1" aria-hidden="true"></i> <span class="col-md-6 mg-top-20">
-  <h3>   Set up your profile. </h3>
-            Tell us what makes you a standout sitter
-            and include details of your pet sitting or
-            dog walking experience.</span>
-  </div>
-
-    </div>
-     <div class="col-md-3">
-        <div>
-
-
-
-            <h3><i class="fa fa-calendar fa-3x pinkish" aria-hidden="true"></i> Organise your Calendar.</h3>
-
-            Choose your services, rates, and block
-            out the days you're unavailable, eg.
-            going on holiday.
-        </div>
-       </div>
-  </div>
-
-  <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-3">
-       <div>
-
-          <i class="fa fa-picture-o fa-3x pinkish" aria-hidden="true"></i>
-
-           <h3>Add Photos</h3>
-
-           Adding photos that portray you as an
-           animal lover with a safe home. Having a
-           clear professional profile image is key as
-           this will display as a thumbnail across the
-           site.
-       </div>
-      </div>
-       <div class="col-md-3">
-          <div>
-
-              <i class="fa fa-money fa-3x pinkish" aria-hidden="true"></i>
-
-              <h3>Respond to jobs & enquiries!</h3>
-
-              Pet Owners will search their local area for
-Sitters and inquire with you directly.
-          </div>
-         </div>
-    </div>
-</section></div>
-
-<br>
-<div class="text-center">
-  <button type="button" *ngIf="hide" class="text-center btn btn-md btn-primary" (click)="step1 = true; hide = false"> Get started</button>
-</div>
-
-
-
-  <div class="stepOne" *ngIf="step1">
-<form class="well form-horizontal" #p="ngForm" (ngSubmit)="personal(p.value)">
+<div class="stepOne" *ngIf="step1">
+  <form class="well form-horizontal" #f="ngForm" (ngSubmit)="addressfield(f.value)">
 
     <div class="form-group">
       <label class="col-md-4 control-label">Address</label>
@@ -144,190 +21,200 @@ Sitters and inquire with you directly.
     <button class="btn btn-lg btn-primary" [disabled]="!(address.touched) &&   address.invalid || (address.touched) &&  address.invalid"
       (click)="step2 = true; " type="submit">
       <i class="fa fa-arrow-right" aria-hidden="true"></i> Next</button>
-    </form>
+  </form>
 
-  </div>
-
-  <div class="stepTwo" *ngIf="step2">
-<div class="row">
-<form class="welxl form-horizontal col-md-8" #f="ngForm" (ngSubmit)="persona(f.value)">
-
-    <div class="form-group">
-      <label class="col-md-4 control-label"> Profile Picture</label>
-      <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="glyphicon glyphicon-camera"></i>
-          </span>
-          <input type="text" #profilepicture="ngModel" ngModel name="profilepic" placeholder="Image URL" class="form-control" url required>
-        </div>
-        <div *ngIf="profilepicture.touched && age.invalid"  class="alert alert-danger">
-please enter an ImageUrl
-        <div *ngIf="profilepicture.url"  class="alert alert-danger">
-please enter a valid <strong>Url</strong> in order to update profile
-        </div> </div>
-
-      </div>
-    </div>
-
-
-    <div class="form-group">
-      <label class="col-md-4 control-label">Your Age</label>
-      <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="fa fa-birthday-cake"></i>
-          </span>
-          <input #age="ngModel" ngModel name="age" placeholder="Age" class="form-control" type="text" required [gte]="18" digits>
-        </div>
-        <div *ngIf="age.touched && age.invalid">
-          <div *ngIf="age.errors?.required" class="alert alert-danger">
-            <strong>Age</strong> is required!</div>
-          <div *ngIf="age.errors?.gte" class="alert alert-warning"> At least you must be of age
-            <strong>18</strong>
-          </div>
-          <div *ngIf="age.errors?.digits" class="alert alert-warning">Enter numbers
-            <strong>only</strong>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label">Your Gender</label>
-      <div class="col-md-4 inline">
-        <div class="radio">
-          <label >
-            <input class="isSelected" type="radio" #gender="ngModel"  ngModel name="gender" value="male" required> Male
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" #gender="ngModel" ngModel name="gender" value="female" required> Female
-          </label>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label">Zip Code</label>
-      <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="glyphicon glyphicon-home"></i>
-          </span>
-          <input #zip="ngModel" ngModel name="zip" placeholder="Zip Code" class="form-control" type="text" required>
-        </div>
-        <div *ngIf="zip.touched && zip.invalid" class="alert alert-danger">Your
-          <strong>Zip Code</strong> is required!</div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label">Your SA ID Number</label>
-      <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="fa fa-id-card"></i>
-          </span>
-          <input #IDNum="ngModel" ngModel name="IDNum" placeholder="13 digit SA ID number" class="form-control" type="text" required>
-        </div>
-        <div *ngIf="IDNum.touched && IDNum.invalid" class="alert alert-danger">Your
-          <strong>SA ID number</strong> is required!</div>
-
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label">Upload Copy of ID</label>
-      <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="glyphicon glyphicon-camera"></i>
-          </span>
-          <button type="button" class="btn btn-default form-control">Choose File</button>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label">Upload Signed Consent Form</label>
-      <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="glyphicon glyphicon-camera"></i>
-          </span>
-          <button type="button" class="btn btn-default form-control">Choose File</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label">Emergency Contact Name</label>
-      <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="fa fa-heart-o"></i>
-          </span>
-          <input #emergencyname="ngModel" ngModel name="emergencyname" placeholder="Emergency Contact Name" class="form-control" type="text"
-            required>
-        </div>
-        <div *ngIf="emergencyname.touched && emergencyname.invalid" class="alert alert-warning">An
-          <div *ngIf="emergencyname.errors?.required">
-            <strong>Emergency Contact Name</strong> is required!</div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label">Emergency Contact Number</label>
-      <div class="col-md-4 inputGroupContainer">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="	fa fa-medkit"></i>
-          </span>
-          <input #emergencynumber="ngModel" ngModel name="emergencynumber" placeholder="Emergency Contact Number" class="form-control"
-            type="text" phone="CN" required>
-        </div>
-        <div *ngIf="emergencynumber.touched && emergencynumber.invalid" class="alert alert-warning">An
-          <div *ngIf="emergencyname.errors?.required">
-            <strong>Emergency Contact Number</strong> is required!</div>
-          <div *ngIf="emergencyname.errors?.phone">Sorry we
-            <strong>Require</strong> a real cell number!</div>
-        </div>
-      </div>
-    </div>
-    <button class="btn btn-lg btn-primary" (click)="step3 = true; " type="submit">Next
-      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-    </button>
-
-
-    <button class="btn btn-lg btn-waringn" (click)="step3 = false; step2 = true; " type="button">Back
-      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-    </button>
-
-
-
-</form>
-<div class="col-md-3">
-        <div class="card" style="width: 20rem;">
-            <img class="card-img-top" [src]="profilepicture.value" alt="Profile Picture" style="width:100%">
-            <div class="card-body">
-              <h4>Something goes here</h4>
-            </div>
-
-        </div>
-   </div>
 </div>
+
+<div class="stepTwo" *ngIf="step2">
+  <div class="row">
+    <form class=" form-horizontal col-md-8" #person="ngForm" (ngSubmit)="personal(person.value)">
+
+      <div class="form-group">
+        <label class="col-md-4 control-label"> Profile Picture</label>
+
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-camera"></i>
+            </span>
+            <input type="text" #profilepic="ngModel" ngModel name="profilepic" placeholder="Image URL" class="form-control">
+          </div>
+
+          <div *ngIf="profilepic.touched && profilepic.invalid" class="alert alert-danger">
+            please enter an ImageUrl
+            <div *ngIf="profilepic.errors.url" class="alert alert-danger">
+              please enter a valid
+              <strong>Url</strong> in order to update profile
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Your Age</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-birthday-cake"></i>
+            </span>
+            <input #age="ngModel" ngModel name="age" placeholder="Age" class="form-control" type="text" required [gte]="18" digits>
+          </div>
+          <div *ngIf="age.touched && age.invalid">
+            <div *ngIf="age.errors?.required" class="alert alert-danger">
+              <strong>Age</strong> is required!</div>
+            <div *ngIf="age.errors?.gte" class="alert alert-warning"> At least you must be of age
+              <strong>18</strong>
+            </div>
+            <div *ngIf="age.errors?.digits" class="alert alert-warning">Enter numbers
+              <strong>only</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Your Gender</label>
+        <div class="col-md-4 inline">
+          <div class="radio">
+            <label>
+              <input class="isSelected" type="radio" #gender="ngModel" ngModel name="gender" value="male" required> Male
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" #gender="ngModel" ngModel name="gender" value="female" required> Female
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Zip Code</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-home"></i>
+            </span>
+            <input #zip="ngModel" ngModel name="zip" placeholder="Zip Code" class="form-control" type="text" required>
+          </div>
+          <div *ngIf="zip.touched && zip.invalid" class="alert alert-danger">
+            Your
+            <strong>Zip Code</strong> is required!</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Your SA ID Number</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-id-card"></i>
+            </span>
+            <input #IDNum="ngModel" ngModel name="IDNum" placeholder="13 digit SA ID number" class="form-control" type="text" required>
+          </div>
+          <div *ngIf="IDNum.touched && IDNum.invalid" class="alert alert-danger">Your
+            <strong>SA ID number</strong> is required!</div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Upload Copy of ID</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-camera"></i>
+            </span>
+            <button type="button" class="btn btn-default form-control">Choose File</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Upload Signed Consent Form</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-camera"></i>
+            </span>
+            <button type="button" class="btn btn-default form-control">Choose File</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Emergency Contact Name</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-heart-o"></i>
+            </span>
+            <input #emergencyname="ngModel" ngModel name="emergencyname" placeholder="Emergency Contact Name" class="form-control" type="text"
+              required>
+          </div>
+          <div *ngIf="emergencyname.touched && emergencyname.invalid" class="alert alert-warning">An
+            <div *ngIf="emergencyname.errors?.required">
+              <strong>Emergency Contact Name</strong> is required!</div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Emergency Contact Number</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="	fa fa-medkit"></i>
+            </span>
+            <input #emergencynumber="ngModel" ngModel name="emergencynumber" placeholder="Emergency Contact Number" class="form-control"
+              type="text" phone="CN" required>
+          </div>
+          <div *ngIf="emergencynumber.touched && emergencynumber.invalid" class="alert alert-warning">An
+            <div *ngIf="emergencyname.errors?.required">
+              <strong>Emergency Contact Number</strong> is required!</div>
+            <div *ngIf="emergencyname.errors?.phone">Sorry we
+              <strong>Require</strong> a real cell number!</div>
+          </div>
+        </div>
+      </div>
+
+
+      <button class="btn btn-lg btn-warning" (click)="step3 = false; step2 = true; " type="button">Back
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+
+      <button class="btn btn-lg btn-primary" (click)="step3 = true; " type="submit">Next
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+      </button>
+
+
+
+
+
+    </form>
+    <div class="col-md-3">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" [src]="profilepic.value" alt="Profile Picture" style="width:100%">
+        <div class="card-body">
+          <h4>Something goes here</h4>
+        </div>
+
+      </div>
+    </div>
   </div>
+</div>
 
 
-  <div class="stepThree" *ngIf="step3">
-      <form class="well form-horizontal" #sitter="ngForm" (ngSubmit)="sitte(sitter.value)">
+<div class="stepThree" *ngIf="step3">
+  <form class="well form-horizontal" #sitter="ngForm" (ngSubmit)="sitte(sitter.value)">
     <div class="form-group">
       <label class="col-md-4 control-label">Job Distance Radius</label>
       <div class="col-md-4 selectContainer">
@@ -553,26 +440,28 @@ please enter a valid <strong>Url</strong> in order to update profile
         </div>
       </div>
     </div>
-    <button class="btn btn-lg btn-primary" (click)="step4 = true; " type="submit">Next
+
+     <button class="btn btn-lg btn-warning" (click)="step4 = false; step3 = true; " type="button">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+    </button>
+
+<button class="btn btn-lg btn-primary" (click)="step4 = true; " type="submit">Next
       <i class="fa fa-arrow-right" aria-hidden="true"></i>
     </button>
 
-    <button class="btn btn-lg btn-warning" (click)="step4 = false; step3 = true; " type="button">Back
-      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-    </button>
 
 
 
   </form>
 
-  </div>
+</div>
 
 
 
 
 
-  <div class="stepFour" *ngIf="step4">
-      <form class="well form-horizontal" #sit="ngForm" (ngSubmit)="sittingdetails(sit.value)">
+<div class="stepFour" *ngIf="step4">
+  <form class="well form-horizontal" #sit="ngForm" (ngSubmit)="sittingdetails(sit.value)">
 
     <div class="form-group">
       <label class="col-md-4 control-label">House Type:</label>
@@ -606,7 +495,8 @@ please enter a valid <strong>Url</strong> in order to update profile
           </select>
           <div *ngIf="children.touched && children.invalid" class="alert alert-warning">
             An
-            <strong>Do you have Children?</strong></div>
+            <strong>Do you have Children?</strong>
+          </div>
 
         </div>
       </div>
@@ -627,7 +517,9 @@ please enter a valid <strong>Url</strong> in order to update profile
             <option value="1 Years">4+ Years</option>
           </select>
           <div *ngIf="experience.touched && experience.invalid" class="alert alert-warning">
-            Please specify your<strong> Experience!</strong></div>
+            Please specify your
+            <strong> Experience!</strong>
+          </div>
 
         </div>
       </div>
@@ -672,7 +564,8 @@ please enter a valid <strong>Url</strong> in order to update profile
             <option value="No">No</option>
           </select>
           <div *ngIf="volunterPets.touched && volunterPets.invalid" class="alert alert-warning">
-            <strong>have you worked with Pets before?</strong> </div>
+            <strong>have you worked with Pets before?</strong>
+          </div>
         </div>
       </div>
     </div>
@@ -689,7 +582,8 @@ please enter a valid <strong>Url</strong> in order to update profile
             <option>No</option>
           </select>
           <div *ngIf="ownPets.touched && ownPets.invalid" class="alert alert-warning">
-            <strong>Do you have any pet?</strong></div>
+            <strong>Do you have any pet?</strong>
+          </div>
 
         </div>
       </div>
@@ -778,27 +672,27 @@ please enter a valid <strong>Url</strong> in order to update profile
     <button class="btn btn-lg btn-warning" type="submit" (click)="step4 = false; step3 = true;">Back
       <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
     </button>
-</form>
-  </div>
-
-
-  <div class="stepOne" *ngIf="step1">
-
-<div class="row text-center">
-  <ul class="pagination pagination-success">
-    <li class="">
-      <a [ngClass]="step1 ? 'stepin' : 'stepout'">1</a>
-    </li>
-    <li>
-      <a [ngClass]="step2 ? 'stepin' : 'stepout'">2</a>
-    </li>
-    <li>
-      <a [ngClass]="step3 ? 'stepin' : 'stepout'">3</a>
-    </li>
-    <li>
-      <a [ngClass]="step4 ? 'stepin' : 'stepout'">4</a>
-    </li>
-  </ul>
+  </form>
 </div>
 
-<app-footer></app-footer>
+
+<div class="stepOne" *ngIf="step1">
+
+  <div class="row text-center">
+    <ul class="pagination pagination-success">
+      <li class="">
+        <a [ngClass]="step1 ? 'stepin' : 'stepout'">1</a>
+      </li>
+      <li>
+        <a [ngClass]="step2 ? 'stepin' : 'stepout'">2</a>
+      </li>
+      <li>
+        <a [ngClass]="step3 ? 'stepin' : 'stepout'">3</a>
+      </li>
+      <li>
+        <a [ngClass]="step4 ? 'stepin' : 'stepout'">4</a>
+      </li>
+    </ul>
+  </div>
+
+  <app-footer></app-footer>

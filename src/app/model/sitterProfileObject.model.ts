@@ -1,4 +1,7 @@
 export class SitterProfileObject {
+
+// constructor() {}
+
 jobRadius?: string;
 PetSizePreference?: string;
 PetTypePreference?: string;
