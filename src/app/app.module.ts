@@ -33,7 +33,7 @@ import { SitterProfileObject } from "./model/sitterProfileObject.model";
 import { UserPetObject } from "./model/userPetObject.modal";
 import { BookingProfileComponent } from "./components/booking-profile/booking-profile.component";
 import { DataRecycleService } from "./services/data-recycle.service";
-import { BecomeASitterComponent } from "./components/become-a-sitter/become-a-sitter.component";
+//import { BecomeASitterComponent } from "./components/become-a-sitter/become-a-sitter.component";
 import { CodeComponent } from "../assets/examples/checkboxes and radio button/code";
 import { GoogleMapComponent } from "./components/google-map/google-map.component";
 import { SitterListPageComponent } from "./components/sitter-list-page/sitter-list-page.component";
@@ -46,6 +46,9 @@ import { NotificationService } from "./services/notification.service";
 import { AngularFirestore } from "angularfire2/firestore";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { SummaryPipe } from './pipes/summary.pipe';
+import { CalendarComponent } from "./components/booking-profile/Calendar/calendar.component";
+import { ReviewTestimonialService } from "./services/review-testimonial.service";
+import { RatingServiceService } from "./services/rating-service.service";
 
 
 export const firestoreConfig = {
@@ -101,7 +104,8 @@ export const firestoreConfig = {
     UserProfileObjet,
     SitterProfileObject,
     UserPetObject,
-    NotificationService
+    NotificationService,
+    ReviewTestimonialService,RatingServiceService
   ],
   bootstrap: [AppComponent]
 })

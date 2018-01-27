@@ -38,7 +38,7 @@ export class ReviewTestimonialService {
 
   create_review(currentUser,reviwedUser,description,value){
 
-    const review:Review={userId:currentUser,reviewdUser:reviwedUser,description}
+    const review:Review={userId:currentUser,reviewdUser:reviwedUser,description:description}
 
     const path= `reviews/${this.afs.createId()}`
       
