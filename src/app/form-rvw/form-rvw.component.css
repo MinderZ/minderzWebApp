@@ -14,6 +14,12 @@
      margin: 10px;
  }
  
+ .reviews {
+     width: 413px;
+     height: 50px;
+     align-self: auto;
+ }
+ 
  .rating {
      border: none;
      float: left;
@@ -58,7 +64,7 @@
      height: 20px;
      width: 60px;
      background-color: lightskyblue;
-     align-content: center;
+     text-align: center;
  }
  
  .star_container {

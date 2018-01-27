@@ -1,3 +1,4 @@
+import { FormRvwComponent } from './form-rvw/form-rvw.component';
 import { AgmCoreModule } from "@agm/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -15,25 +16,6 @@ import { HomeComponent } from "./components/home/home.component";
 import { FooterComponent } from "./components/footer/footer.component";
 // import { ClientRegComponent } from './components/client-reg/client-reg.component';
 
-<<<<<<< HEAD
-import { SignInComponent } from './components/sign-in/sign-in.component';
-import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { UserService } from './services/user.service';
-import { AuthService } from './services/auth-service.service';
-import { CacheService } from './services/cache.service';
-import { AuthGuard } from './services/auth-guard.service';
-import { PetReg1Component } from './components/pet-reg-1/pet-reg-1.component';
-import { UserProfileObjet } from './model/userProfileObj.model';
-import { SitterProfileObject } from './model/sitterProfileObject.model';
-import { UserPetObject } from './model/userPetObject.modal';
-import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
-import { DataRecycleService } from './services/data-recycle.service';
-import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
-import { FormRvwComponent } from './form-rvw/form-rvw.component';
-import { StarService } from './star.service';
-=======
 import { SignInComponent } from "./components/sign-in/sign-in.component";
 import { MiniDashboardComponent } from "./components/mini-dashboard/mini-dashboard.component";
 import {
@@ -41,7 +23,6 @@ import {
   AngularFireDatabase
 } from "angularfire2/database";
 import { AngularFireAuth, AngularFireAuthModule } from "angularfire2/auth";
->>>>>>> 666bdbf5acb48230469875b3993d8ae96283f42b
 
 import { UserService } from "./services/user.service";
 import { AuthService } from "./services/auth-service.service";
@@ -87,10 +68,6 @@ export const firestoreConfig = {
     SignInComponent,
     MiniDashboardComponent,
     BookingProfileComponent,
-<<<<<<< HEAD
-    FormRvwComponent,
-
-=======
     CodeComponent,
     GoogleMapComponent,
     SitterListPageComponent,
@@ -99,8 +76,8 @@ export const firestoreConfig = {
     HomePageFilterComponent,
     SitterListingsFilterComponent,
     BeforeAseviceProviderComponent,
-    SummaryPipe
->>>>>>> 666bdbf5acb48230469875b3993d8ae96283f42b
+    SummaryPipe,
+    FormRvwComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),
@@ -125,11 +102,7 @@ export const firestoreConfig = {
     UserProfileObjet,
     SitterProfileObject,
     UserPetObject,
-<<<<<<< HEAD
-    StarService
-=======
     NotificationService
->>>>>>> 666bdbf5acb48230469875b3993d8ae96283f42b
   ],
   bootstrap: [AppComponent]
 })

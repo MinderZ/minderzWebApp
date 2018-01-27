@@ -1,12 +1,10 @@
-<form #reviews="ngForm" (ngSubmit)="person(reviews.value)">
-    <br> Submit your review <br><br>
-    <div class="rating">
-        Name: <input type="text" placeholder="name" /><br><br> Rating:
+<form action="onSubmit()">
+    <div class="rating"> <br> Submit your review <br><br> Rating:
         <ng-container *ngFor="let num of [5, 4, 3, 2, 1]">
-            <!-- full star  -->
+
             <input #starRates="ngModel" ngModel name="review" (click)="setRating(num)" [id]="'star'+num" [value]="num" name="rating" type="radio" />
             <label class="full" [for]="'star'+num"></label>
-            <!-- half star  -->
+
             <input #starRates="ngModel" ngModel name="review" (click)="setRating(num-0.5)" [id]="'halfstar'+num" [value]="num-0.5" name="rating" type="radio" />
             <label class="half" [for]="'halfstar'+num"></label>
         </ng-container><br>
@@ -15,6 +13,6 @@
         <textarea id="reviews" #review="ngModel" ngModel name="review"> </textarea>
         <br><br>
 
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>

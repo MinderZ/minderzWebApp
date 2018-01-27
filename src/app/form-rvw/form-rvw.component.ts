@@ -6,9 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-rvw.component.css']
 })
 export class FormRvwComponent implements OnInit {
-rating:number;
+  myForm: any;
+  rating: number;
   constructor() { 
     this.rating =0;
+    }
+
+    onSubmit() {
+      if (this.myForm.valid) {  
+        console.log("Form Submitted!");
+        // This resets the form back to it's initial state  
+        this.myForm.reset();
+      }
     }
 
   ngOnInit() {
