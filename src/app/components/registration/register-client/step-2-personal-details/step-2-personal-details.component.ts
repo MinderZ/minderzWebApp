@@ -1,13 +1,17 @@
-import { UploadFiles } from './../../../model/upload-files';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { RegisterSitterService } from '../../../services/register-sitter.service';
+import { UploadFiles } from '../../../../model/upload-files';
+import { ClientRegisterService } from '../../../../services/client-register.service';
+import { RegisterService } from '../../../../services/register.service';
+import { Router } from '@angular/router';
+import { DataRecycleService } from '../../../../services/data-recycle.service';
+
+
 
 @Component({
   selector: 'app-step-2-personal-details',
   templateUrl: './step-2-personal-details.component.html',
-  styleUrls: ['./step-2-personal-details.component.css',
-    '../register-sitter.component.css']
+  styleUrls: ['./step-2-personal-details.component.css','../../register.component.css']
 })
 export class Step2PersonalDetailsComponent implements OnInit {
   profilePicUrl: any;
@@ -25,10 +29,13 @@ export class Step2PersonalDetailsComponent implements OnInit {
   consentForm: UploadFiles;
   idCopy:UploadFiles;
   gender:string;
+  
 
   genderPristine = false;
 
-  constructor(fb: FormBuilder, protected registerService: RegisterSitterService) {
+  constructor(private dataRecycleService:DataRecycleService, private router :Router, fb: FormBuilder, protected clientRegisterService: ClientRegisterService, private registerService:RegisterService) {
+    
+
   }
 
   profileUpload(event: any) {
@@ -89,20 +96,26 @@ export class Step2PersonalDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
-  next(){
+  submit(){
 
-    this.registerService.sitter.profilePicture = this.profilePicture;
-    this.registerService.sitter.age = Number(this.age);
-    this.registerService.sitter.gender = this.gender;
-    this.registerService.sitter.copyOfId = this.idCopy;
-    this.registerService.sitter.cellphoneNumber = this.cellphoneNum ;
-    this.registerService.sitter.consentForm = this.consentForm;
-    this.registerService.sitter.id = this.idNum;
-    this.registerService.sitter.emergencyContactName = this.emergencyContactName;
-    this.registerService.sitter.emergencyContactNr = this.emergencyContactNr;
+    this.profilePicture.url = this.clientRegisterService.client.profilePicture;
+    this.idCopy.url = this.clientRegisterService.client.copyOfId;
+    this.consentForm.url = this.clientRegisterService.client.consentForm;
+
+    this.clientRegisterService.client.profilePicture = this.profilePicture.url;
+    this.clientRegisterService.client.age = Number(this.age);
+    this.clientRegisterService.client.gender = this.gender;
+    this.clientRegisterService.client.copyOfId = this.idCopy.url;
+    this.clientRegisterService.client.cellphoneNumber = this.cellphoneNum ;
+    this.clientRegisterService.client.consentForm = this.consentForm.url;
+    this.clientRegisterService.client.id = this.idNum;
+    this.clientRegisterService.client.emergencyContactName = this.emergencyContactName;
+    this.clientRegisterService.client.emergencyContactNr = this.emergencyContactNr;
     
-    console.table(this.registerService.sitter);
+    console.table(this.clientRegisterService.client);
     
-    this.registerService.next()
+    this.dataRecycleService.registerUser(this.clientRegisterService.client);
+    this.registerService.next();
+    this.router.navigate(['home']);
   }
 }
