@@ -11,8 +11,10 @@ import { AuthService } from '../../services/auth-service.service';
 export class HomeComponent implements OnInit {
 
     private testimonials:any[];
+
   constructor(private TestimonialServ: ReviewTestimonialService,private auth:AuthService) { 
-     this.TestimonialServ.get_Testimonials().subscribe( data =>{
+     
+    this.TestimonialServ.get_Testimonials().subscribe( data =>{
     console.log(data);
     this.testimonials = data;
     console.log(this.auth.getcurrentUser())

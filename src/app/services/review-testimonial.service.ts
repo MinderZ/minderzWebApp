@@ -34,7 +34,7 @@ export class ReviewTestimonialService {
 
 
   get_Testimonials(){
-    return this.afs.collection('testimonials' ,ref => ref.orderBy('date','desc')).valueChanges();
+    return this.afs.collection('testimonials').valueChanges();
   }
 
   create_review(currentUser,reviwedUser,description,value){
