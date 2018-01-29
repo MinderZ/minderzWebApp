@@ -1,0 +1,17 @@
+
+    <div class="container Test-form">
+      <div class="row">
+        <h3>Write Your Own Testimonial</h3>
+    <form [formGroup]="TestimonialForm"  (ngSubmit)="addTestimonial(TestimonialForm.value)">
+
+      <div class="form-group">
+        <label for="description"></label>
+        <div class="clearfix"></div>
+        <textarea name="description" class="message form-control" placeholder="Description"formControlName='description' id="" cols="30" rows="10"></textarea>
+      </div>
+     
+      <button  type="submit" class="form-control" value="Submit " [disabled]='!TestimonialForm.valid'>Submit<i class="fa fa-paper-plane"></i> </button>
+     
+    </form>  
+  </div>  
+  </div>

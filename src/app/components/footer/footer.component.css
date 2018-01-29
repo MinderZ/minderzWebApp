@@ -1,15 +1,33 @@
-.foot{
-  height: 241px;
+.row {
+  margin: 0;
+}
+
+.foot {
+  min-height: 200px;
   background-color: #1f1e1e;
   color: #8c8c8c;
   font-size: 17px;
-  padding-top: 30px;
-  margin-top: 130px;
+  padding: 30px 8px;
+  margin-top: 20px;
   width: 100%;
-  }
+}
 
-.footerbox{
-  height: 35px;
-  border-radius:3px;
-  border-radius:#fff;
+.footerbox {
+  display: flex;
+}
+
+.form-control {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.btn {
+  border-radius: 0px 4px 4px 0px;
+}
+
+@media (max-width: 768px) {
+  #adress,
+  #contact {
+    border-bottom: 1px solid #8c8c8c;
+    margin-bottom: 10px;
+  }
 }

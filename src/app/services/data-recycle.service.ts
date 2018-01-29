@@ -5,9 +5,15 @@ import { UserPetObject } from '../model/userPetObject.modal';
 import { UserProfileObjet } from '../model/userProfileObj.model';
 import { SitterProfileObject } from '../model/sitterProfileObject.model';
 import { AuthService } from './auth-service.service';
+import { Client } from '../model/client';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataRecycleService {
+
+  client:Client;
+  collectionRef = this.afs.collection("users");
+  username:string;
 
   constructor(
     private db:   AngularFireDatabase,
@@ -20,11 +26,30 @@ export class DataRecycleService {
   ) { }
 
 
+  setUsername(email:string){
+    this.username = email;
+  }
 
-create( input, route) {
-return this.db.list(route).push(input);
-}
+  // create( input, route) {
+  //   return this.db.list(route).push(input);
+  // }
 
 
+  registerUser(client: Client) {
 
+    this.client = client;
+
+
+   ((obj) => {return Object.assign(),obj})
+
+    this.collectionRef
+      .doc(this.auth.afAuth.auth.currentUser.uid)
+      .set(Object.assign({},client))
+      .then(function(docRef) {
+        console.log("Client registered!");
+      })
+      .catch(function(error) {
+        console.error("Error adding document: ", error);
+      });
+  }
 }
