@@ -3,79 +3,98 @@
   width: 250px;
 }
 .sitter{
-  height: 753px !important;
-   padding-top: 100px;
-  
+  height:90vh !important;
+   /*padding-top: 100px;
+  */
 }
-.text-muted subFont{
+
+.panel {
+  width: 320px;
+  margin: auto;
+  box-shadow: none;
+}
+
+.text-muted subFont {
   padding-top: 50px;
+}
 
+.Sitter-subHeading {
+  padding-top: 10px;
+}
 
+.SitterRow {
+  display: flex;
+  -webkit-justify-content: space-around;
+  /* Safari */
+  justify-content: space-around;
+  padding-top: 60px;
 }
-.Service-content{
-  padding-top: 50px;
 
-}
-.Sitter-subHeading{
-    padding-top: 10px;
-}
-.SitterRow{
-  padding-top:60px;
-}
-.Content-heading{
+.Content-heading {
   font-size: 50px;
   font-family: "Poiret One", cursive;
 }
-h2,h1{
+
+h2,
+h1 {
   font-family: "Poiret One", cursive;
 }
 
 .Services {
   color: #8c8c8c;
   background-color: #ff978f56;
-  height: 753px !important;
+  height:  90vh!important;
  padding-top: 100px;
 }
 
-.testimonials row {
-   height: 753px !important;
+.testimonials  {
+   height: 90vh!important;
 
+.service-image {
+  margin-top: auto;
+  margin-bottom: auto;
+  max-height: 140px;
+  min-height: 140px;
+  max-width: 143px;
+  min-width: 143px;
+  padding: 0;
 }
-  
-
 
 .intro-image {
   overflow: hidden;
   background-image: url("../../../assets/img/Main_dog_image.jpg");
   background-size: cover;
+  background-size: cover;
   background-attachment: fixed;
-  height: 753px !important;
+  height: 100% !important;
   background-position: center;
 }
+
 .subFont {
   font-family: "Poiret One", cursive;
   font-size: 20px;
 }
+
 .card {
   border-style: solid;
   border-width: 1px;
   border-color: white;
-	background-color:rgba(255, 255, 255, 0.4);
-	padding-left:35px;
-	padding-right:35px;
-	padding-top:35px;
-	padding-bottom:50px;
-	width: 50%;
-	float: left;
-	left: 50%;
-	position: absolute;
-  margin-top:80px;
-	margin-left: -260px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 35px;
+  padding-bottom: 50px;
+  width: 50%;
+  float: left;
+  left: 42%;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: -260px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
 }
 
-.cardHeader{
+.cardHeader {
   font-size: 48px !important;
   color: #ff978f;
   text-align: center;
@@ -84,10 +103,10 @@ h2,h1{
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-.cardSubHeader{
+.cardSubHeader {
   font-size: 22px;
-  color: rgb(0,6,69);
-  color: rgba(0,6,69,0.3);
+  color: rgb(0, 6, 69);
+  color: rgba(0, 6, 69, 0.3);
   line-height: 22px;
   font-weight: normal;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
@@ -100,10 +119,18 @@ h2,h1{
    height: 753px !important;
 }
 
-
-.placehold{
-  height: 40px;
+.testimonial-panel {
+  //max-width: 261px;
+  margin: auto;
 }
+
+#testimonials-container {
+  display: flex;
+  -webkit-justify-content: space-around;
+  /* Safari */
+  justify-content: space-around;
+}
+
 figure.testimonial {
   font-family: 'Raleway', Arial, sans-serif;
   position: relative;
@@ -117,10 +144,12 @@ figure.testimonial {
   text-align: left;
   box-shadow: none !important;
 }
+
 figure.testimonial * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 figure.testimonial img {
   max-width: 100%;
   height: 80px;
@@ -132,20 +161,23 @@ figure.testimonial img {
   position: absolute;
   right: 50%;
 }
+
 figure.testimonial blockquote {
   margin: 0;
   display: block;
   border-radius: 8px;
   border-color: #ff978f8e;
   position: relative;
+  height: 30vh;
   background-color: #ffffff;
   padding: 30px 50px 65px 50px;
   font-size: 0.8em;
   font-weight: 500;
   margin: 0 0 -40px;
   line-height: 1.6em;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow:20 20 20px black;
 }
+
 figure.testimonial blockquote:before,
 figure.testimonial blockquote:after {
   font-family: 'FontAwesome';
@@ -155,15 +187,18 @@ figure.testimonial blockquote:after {
   opacity: 0.3;
   font-style: normal;
 }
+
 figure.testimonial blockquote:before {
   top: 35px;
   left: 20px;
 }
+
 figure.testimonial blockquote:after {
   content: "\201D";
   right: 20px;
   bottom: 35px;
 }
+
 figure.testimonial .author {
   margin: 0;
   height: 80px;
@@ -173,6 +208,7 @@ figure.testimonial .author {
   padding: 0 35px;
   position: relative;
 }
+
 figure.testimonial .author h5,
 figure.testimonial .author span {
   left: 50%;
@@ -180,6 +216,7 @@ figure.testimonial .author span {
   opacity: 0.8;
   padding: 3px 5px;
 }
+
 figure.testimonial .author h5 {
   text-transform: uppercase;
   bottom: 50%;
@@ -187,9 +224,31 @@ figure.testimonial .author h5 {
   font-weight: 800;
   color: #ff978f;
 }
+
 figure.testimonial .author span {
   font-size: 0.8em;
   color: #8c8c8c;
   top: 50%;
 }
 
+@media (max-width:900px) {
+  .SitterRow {
+    -webkit-flex-direction: column;
+    /* Safari */
+    flex-direction: column;
+    -webkit-justify-content: center;
+    /* Safari */
+    justify-content: center;
+  }
+}
+
+@media (max-width:920px) {
+  #testimonials-container {
+    -webkit-flex-direction: column;
+    /* Safari */
+    flex-direction: column;
+    -webkit-justify-content: center;
+    /* Safari */
+    justify-content: center;
+  }
+}

@@ -1,0 +1,23 @@
+<!-- This goes underneath the Description label -->
+    <div class="containe Test-form">
+      <div class="row"></div>
+    <form [formGroup]="TestimonialForm"  (ngSubmit)="addTestimonial(TestimonialForm.value)">
+
+      <div class="form-group">
+        <label for="description"></label>
+        <div class="clearfix"></div>
+        <textarea name="description" class="message form-control" placeholder="Description"formControlName='description' id="" cols="30" rows="10"></textarea>
+      </div>
+     
+      <button  type="submit" class="form-control" value="Submit " [disabled]='!TestimonialForm.valid'>Submit<i class="fa fa-paper-plane"></i> </button>
+     
+    </form>
+<!-- *ngIf="!message?.length > 0 "
+    <div *ngIf="message?.length > 0" class="alert alert-success">
+      <div class="success-block">    
+      <i class="fa fa-check-circle-o fa-5x"></i>
+        <h3>{{message}}</h3>
+    </div>
+    </div> -->
+    
+  </div>
