@@ -54,14 +54,14 @@
 
       <div class="row rowfix">
         <div class="col-md-5 col-sm-5">
-            <p class="">
+            <p class="details">
               <img src="../../../assets/img/resume.png" class="logoImg" alt="formLogo"><h3> Set up your profile.
               </h3> Tell us what makes you a standout sitter and include details of your pet sitting or dog walking experience.
             </p>
    </div>
 
         <div class="col-md-5 col-sm-5">
-            <p class="">
+            <p class="details">
                 <img src="../../../assets/img/calendar.png" class="logoImg" alt="calenderLogo"><h3> Organise your Calendar.
                 </h3>Choose your services, rates, and block out the days you're unavailable, eg. going on holiday.
               </p>
@@ -79,7 +79,7 @@
   <br>
       <div class="row rowfix">
         <div class="col-md-5 col-sm-5">
-   <p class="">
+   <p class="details">
                 <img src="../../../assets/img/image.png" class="logoImg" alt="imagelogo"><h3> Add Photos
                 </h3> Adding photos that portray you as an animal lover with a safe home. Having a clear professional profile image is key as this
                 will display as a thumbnail across the site.
@@ -87,147 +87,104 @@
         </div>
 
 
-        <!-- <div class="col-md-5 col-sm-5">
-          <div class="row">
 
-            <i class="col-md-2 col-sm-2">
-                <img src="../../../assets/img/coin.png" class="logoImg" alt="coinlogo" >
-            </i>
-            <span class="col-md-6 col-sm-6 mt-10">
 
-            <h3>Respond to jobs & enquiries!</h3>
+        <div class="col-md-5 col-sm-5">
+          <p class="details">
 
-            Pet Owners will search their local area for Sitters and inquire with you directly. </span>
-          </div>
-        </div> -->
+            <img src="../../../assets/img/coin.png" class="logoImg" alt="coinlogo" ><h3> Respond to jobs & enquiries!
+                       </h3>  Pet Owners will search their local area for Sitters and inquire with you directly.
+                     </p>
+               </div>
+
       </div>
 
-  <!-- <div class="text-center">
+  <div class="text-center">
     <button type="button" *ngIf="hide" class="text-center btn btn-md btn-primary mt-40" (click)="step1 = true; from = true; hide = false"> Get started</button>
-  </div> -->
+  </div>
 
     </div>
   </section>
 </div>
 
 
-<form class="form-horizontal" *ngIf="from" >
+<form class="form" *ngIf="from" >
 
-  <div class="form-group">
-    <label class="col-md-4 control-label">Have you ever volunteered at an animal rescue
+  <div class="form-group row">
+    <label class="col-md-5 control-label">Have you ever volunteered at an animal rescue
       organization or taken care of pets?</label>
-    <div class="col-md-4 inline">
-      <div class="radio">
         <label>
-          <input  type="radio" #havebeenaVolunteer="ngModel" ngModel name="havebeenaVolunteer" value="Yes" required> Yes
+          <input  type="radio" #havebeenaVolunteer="ngModel" ngModel name="havebeenaVolunteer" value="Yes"  (click)="question.everVolunteeredpetetCare = true;" required> Yes
         </label>
-      </div>
-      <div class="radio">
+
         <label>
-          <input type="radio" #havebeenaVolunteer="ngModel" ngModel name="havebeenaVolunteer" value="No" required> No
+          <input type="radio" #havebeenaVolunteer="ngModel" ngModel name="havebeenaVolunteer" value="No" (click)="question.everVolunteeredpetetCare = false;"  required> No
         </label>
-      </div>
-    </div>
   </div>
 
-  <div class="form-group">
-    <label class="col-md-4 control-label">Have you had pets of your own?</label>
-    <div class="col-md-4 inline">
-      <div class="radio">
+  <div class="form-group row">
+    <label class="col-md-5 control-label">Have you had pets of your own?</label>
         <label>
-          <input  type="radio" #hadPetb4="ngModel" ngModel name="hadPetb4" value="Yes" required> Yes
+          <input  type="radio" #hadPetb4="ngModel" ngModel name="hadPetb4" value="Yes"(click)="question.everhadPetsBefore = true;"  required> Yes
         </label>
-      </div>
-      <div class="radio">
         <label>
-          <input type="radio" #hadPetb4="ngModel" ngModel name="hadPetb4" value="No" required> No
+          <input type="radio" #hadPetb4="ngModel" ngModel name="hadPetb4" value="No"(click)="question.everhadPetsBefore = false;"  required> No
         </label>
-      </div>
-    </div>
+<!-- <label >      <div class="radio" [style.background]="selected ? 'rgb(0, 0, 255)' : '#FFFFFF'" (click)="select()"></div></label> -->
   </div>
 
-  <div class="form-group">
-    <label class="col-md-4 control-label">Do you currently have a pet?</label>
-    <div class="col-md-4 inline">
-      <div class="radio">
+  <div class="form-group row">
+    <label class="col-md-5 control-label">Do you currently have a pet?</label>
         <label>
-          <input  type="radio" #HavePetsCurrently="ngModel" ngModel name="HavePetsCurrently" value="Yes" required> Yes
+          <input  type="radio" #HavePetsCurrently="ngModel" ngModel name="HavePetsCurrently" value="Yes" (click)="question.isCurrentlyOwningPets = true;"  required> Yes
         </label>
-      </div>
-      <div class="radio">
         <label>
-          <input type="radio" #HavePetsCurrently="ngModel" ngModel name="HavePetsCurrently" value="No" required> No
+          <input type="radio" #HavePetsCurrently="ngModel" ngModel name="HavePetsCurrently" value="No" (click)="question.isCurrentlyOwningPets = false;"   required> No
         </label>
-      </div>
-    </div>
   </div>
 
 
 
 
-  <div class="form-group">
-    <label class="col-md-4 control-label">Do you feel competent to look after baby animals?</label>
-    <div class="col-md-4 inline">
-      <div class="radio">
+  <div class="form-group row">
+    <label class="col-md-5 control-label">Do you feel competent to look after baby animals?</label>
         <label>
-          <input type="radio" #isCompetentToAnimals="ngModel" ngModel name="isCompetentToAnimals" value="Yes" required> Yes
+          <input type="radio" #isCompetentToAnimals="ngModel" ngModel name="isCompetentToAnimals" value="Yes" (click)="question.competentForpets = true;"  required> Yes
         </label>
-      </div>
-      <div class="radio">
         <label>
-          <input type="radio" #isCompetentToAnimals="ngModel" ngModel name="isCompetentToAnimals" value="No" required> No
+          <input type="radio" #isCompetentToAnimals="ngModel" ngModel name="isCompetentToAnimals" value="No" (click)="question.competentForpets = false;"  required> No
         </label>
-      </div>
-    </div>
   </div>
 
-  <div class="form-group">
-    <label class="col-md-4 control-label">Can you provide two current references with phone
+  <div class="form-group row">
+    <label class="col-md-5 control-label">Can you provide two current references with phone
       numbers?</label>
-    <div class="col-md-4 inline">
-      <div class="radio">
         <label>
-          <input type="radio" #HaveRefNumber="ngModel" ngModel name="HaveRefNumber" value="Yes" required> Yes
+          <input type="radio" #HaveRefNumber="ngModel" ngModel name="HaveRefNumber" value="Yes" (click)="question.havetwoRefToCall = true;"  required> Yes
         </label>
-      </div>
-      <div class="radio">
         <label>
-          <input type="radio" #HaveRefNumber="ngModel" ngModel name="HaveRefNumber" value="No" required> No
+          <input type="radio" #HaveRefNumber="ngModel" ngModel name="HaveRefNumber" value="No" (click)="question.havetwoRefToCall = false;"   required> No
         </label>
-      </div>
-    </div>
   </div>
 
-  <div class="form-group">
-    <label class="col-md-4 control-label">Do you have a clear criminal history?</label>
-    <div class="col-md-4 inline">
-      <div class="radio">
+  <div class="form-group row">
+    <label class="col-md-5 control-label">Do you have a clear criminal history?</label>
         <label>
-          <input type="radio" #HasacriminalRecord="ngModel" ngModel name="HasacriminalRecord" value="Yes" required> Yes
+          <input type="radio" #HasacriminalRecord="ngModel" ngModel name="HasacriminalRecord" value="Yes" (click)="question.haveACriminalRecord = true;"  required> Yes
         </label>
-      </div>
-      <div class="radio">
         <label>
-          <input type="radio" #HasacriminalRecord="ngModel" ngModel name="HasacriminalRecord" value="No" required> No
+          <input type="radio" #HasacriminalRecord="ngModel" ngModel name="HasacriminalRecord" value="No" (click)="question.haveACriminalRecord = false;"   required> No
         </label>
-      </div>
-    </div>
   </div>
 
-  <div class="form-group">
-    <label class="col-md-4 control-label">Would you agree to a background check?</label>
-    <div class="col-md-4 inline">
-      <div class="radio">
+  <div class="form-group row">
+    <label class="col-md-5 control-label">Would you agree to a background check?</label>
         <label>
-          <input type="radio" #agreeToBackgroundCheck="ngModel" ngModel name="agreeToBackgroundCheck" value="Yes" required> Yes
+          <input type="radio" #agreeToBackgroundCheck="ngModel" ngModel name="agreeToBackgroundCheck" value="Yes" (click)="question.agreeingForBackgroundCheck = true;"  required> Yes
         </label>
-      </div>
-      <div class="radio">
         <label>
-          <input type="radio" #agreeToBackgroundCheck="ngModel" ngModel name="agreeToBackgroundCheck" value="No" required> No
+          <input type="radio" #agreeToBackgroundCheck="ngModel" ngModel name="agreeToBackgroundCheck" value="No" (click)="question.agreeingForBackgroundCheck = false;"  required> No
         </label>
-      </div>
-    </div>
   </div>
 
 

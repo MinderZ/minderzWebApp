@@ -48,6 +48,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { FileNotFoundComponent } from './components/file-not-found/file-not-found.component';
+import { Questions } from './model/question.model';
 
 export const firestoreConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -104,6 +105,7 @@ export const firestoreConfig = {
     UserProfileObjet,
     SitterProfileObject,
     UserPetObject,
+    Questions,
     NotificationService
   ],
   bootstrap: [AppComponent]
