@@ -38,14 +38,9 @@ export class TestimonialFormComponent implements OnInit {
 
 addTestimonial(post){
   console.log(post)
-  if(this.TestimonialForm.valid){
-    this.message= 'Testimonial Sent'
-  }
- 
   //
   setTimeout(() => {
    this.TestimonialServ.create_Testimonial(this.afAuth.currentUserUID(),post.description)
-    this.location.back()
   }, 1000);
  
 }
