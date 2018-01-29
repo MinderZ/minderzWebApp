@@ -129,10 +129,12 @@ export class SignInComponent implements OnInit {
       }
     }
   }
-
-
+  
   navigate(){
     this.dataRecycleService.setUsername(this.userForm.value);
-    this.router.navigate(['/registration'])
+  }
+
+  signIn(){
+    
   }
 }

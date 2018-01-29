@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataRecycleService } from '../../services/data-recycle.service';
 
 @Component({
     selector: 'app-booking-profile',
@@ -27,7 +28,11 @@ export class BookingProfileComponent {
     addingLanguage = false;
     addingSkill = false;
 
-    constructor() {
+    constructor(private dataRecycleService: DataRecycleService) {
+
+        
+
+        
         this.fullname = "Test"
         this.rating = 4.0;
         this.reviews = 10;
@@ -74,4 +79,7 @@ export class BookingProfileComponent {
         }
 
     }
+
+
+    
 }

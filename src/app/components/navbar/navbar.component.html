@@ -21,7 +21,19 @@
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul id="left-content" class="nav navbar-nav">
+      <ul class="nav navbar-nav">
+          <li>
+              <a routerLink="become">
+                <span>
+                    <i class="fa fa-plus" aria-hidden="true"></i> Become a sitter</span>
+              </a>
+            </li>
+            <li>
+                <a>
+                  <span>
+                    <i class="fa fa-search" aria-hidden="true" (click)='becomeASitter()'></i> Search for sitter</span>
+                </a>
+              </li>
         <li>
           <a routerLink="become">
             <span>
