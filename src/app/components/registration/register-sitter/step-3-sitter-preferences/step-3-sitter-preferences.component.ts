@@ -17,8 +17,11 @@ export class Step3SitterPreferencesComponent implements OnInit {
   jobDistanceRadius: number = this.jobDistanceRadiusOption[0];
   petSizePreference: string = this.petPreferenceOption[0];
 
-  serviceMap: Map<string, boolean> = new Map<string, boolean>();
-  petMap: Map<string, boolean> = new Map<string, boolean>();
+
+  serviceMap: {[key:string]: boolean} = {};
+  petMap: {[key:string]: boolean} = {};
+  // serviceMap: Map<string, boolean> = new Map<string, boolean>();
+  // petMap: Map<string, boolean> = new Map<string, boolean>();
 
   dogWalking= {
     pricePerWalk:0,

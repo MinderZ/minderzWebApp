@@ -6,10 +6,12 @@ import { UserProfileObjet } from '../model/userProfileObj.model';
 import { SitterProfileObject } from '../model/sitterProfileObject.model';
 import { AuthService } from './auth-service.service';
 import { Client } from '../model/client';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataRecycleService {
 
+  client:Client;
   collectionRef = this.afs.collection("users");
   username:string;
 
@@ -34,9 +36,15 @@ export class DataRecycleService {
 
 
   registerUser(client: Client) {
+
+    this.client = client;
+
+
+   ((obj) => {return Object.assign(),obj})
+
     this.collectionRef
       .doc(this.auth.afAuth.auth.currentUser.uid)
-      .set(client)
+      .set(Object.assign({},client))
       .then(function(docRef) {
         console.log("Client registered!");
       })

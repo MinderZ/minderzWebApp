@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SitterReferenceObject } from '../../../../model/sitterReferenceObject.model';
 import { RegisterService } from '../../../../services/register.service';
+import { ClientRegisterService } from '../../../../services/client-register.service';
+import { DataRecycleService } from '../../../../services/data-recycle.service';
 
 
 @Component({
@@ -46,7 +48,7 @@ export class Step4SitterDetailsComponent implements OnInit {
   //Valid form
   valid = false;
 
-  constructor(protected registerService: RegisterService) { }
+  constructor(private dataRecycle: DataRecycleService, protected registerService: RegisterService, private clientRegisterService: ClientRegisterService ) { }
 
   ngOnInit() {
   }
@@ -132,8 +134,12 @@ export class Step4SitterDetailsComponent implements OnInit {
     this.registerService.sitter.hadPets = this.ownedPets;
     this.registerService.sitter.references = this.references;
 
-    console.table(this.registerService.sitter);
+    this.clientRegisterService.client.isServiceProvider = true;
+    this.clientRegisterService.client.serviceProvider = this.registerService.sitter;
 
 
+    console.table(this.clientRegisterService.client);
+    this.dataRecycle.registerUser(this.clientRegisterService.client);
+    
   }
 }

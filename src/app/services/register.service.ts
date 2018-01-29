@@ -15,8 +15,8 @@ export class RegisterService {
         age: 0,
         id: "",
         gender:"",
-        serviceMap:  new Map<string, boolean>(),
-        petsMap:  new Map<string, boolean>(),
+        serviceMap: null,
+        petsMap: null,
         dogWalking: {
             pricePerWalk: 0,
             petsPerWalk: 0,
@@ -44,9 +44,7 @@ export class RegisterService {
         doneVolunteer: false,
         ownPets: false,
         hadPets: false,
-        profilePicture: null,
-        copyOfId: null,
-        consentForm:  null,
+
         references: new Array<SitterReferenceObject>(),
         location: "",
         emergencyContactName: "",

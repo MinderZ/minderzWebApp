@@ -28,8 +28,8 @@ export class SitterProfileObject {
         visitsPerDay: number;
     }
 
-    serviceMap: Map<string, boolean>;
-    petsMap: Map<string, boolean>;
+    serviceMap: any;
+    petsMap: any;
     houseType?: string;
     children?: boolean;
     experience?: string;
@@ -38,11 +38,7 @@ export class SitterProfileObject {
     hadPets?: boolean;
     gender:string;
     cellphoneNumber: string;
-
     references?: Array<SitterReferenceObject>
-    profilePicture: UploadFiles;
-    copyOfId: UploadFiles;
-    consentForm: UploadFiles;
     location?:string;
     emergencyContactName: string;
     emergencyContactNr: string;

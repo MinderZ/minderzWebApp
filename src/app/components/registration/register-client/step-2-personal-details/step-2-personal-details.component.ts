@@ -115,6 +115,7 @@ export class Step2PersonalDetailsComponent implements OnInit {
     console.table(this.clientRegisterService.client);
     
     this.dataRecycleService.registerUser(this.clientRegisterService.client);
+    this.registerService.next();
     this.router.navigate(['home']);
   }
 }

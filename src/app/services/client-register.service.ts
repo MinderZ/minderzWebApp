@@ -22,7 +22,8 @@ export class ClientRegisterService {
       coordinates: {
         lat: 0,
         lng: 0
-      }
+      },
+      isServiceProvider: false,
     };
   }
 
