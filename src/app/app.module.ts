@@ -32,7 +32,6 @@ import { SitterProfileObject } from './model/sitterProfileObject.model';
 import { UserPetObject } from './model/userPetObject.modal';
 import { BookingProfileComponent } from './components/booking-profile/booking-profile.component';
 import { DataRecycleService } from './services/data-recycle.service';
-import { BecomeASitterComponent } from './components/become-a-sitter/become-a-sitter.component';
 import { CalendarComponent } from './components/booking-profile/Calendar/calendar.component';
 import { CodeComponent } from '../assets/examples/checkboxes and radio button/code';
 import { GoogleMapComponent } from './components/google-map/google-map.component';
@@ -54,7 +53,7 @@ import { Step4SitterDetailsComponent } from "./components/registration/register-
 import { ClientRegisterService } from "./services/client-register.service";
 import { RegisterService } from "./services/register.service";
 import { RegisterComponent } from "./components/registration/register.component";
-
+import { FileNotFoundComponent } from './components/file-not-found/file-not-found.component';
 
 export const firestoreConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -89,7 +88,7 @@ export const firestoreConfig = {
     Step2PersonalDetailsComponent,
     Step3SitterPreferencesComponent,
     Step4SitterDetailsComponent,
-    RegisterComponent
+    RegisterComponent,
     FileNotFoundComponent
   ],
   imports: [

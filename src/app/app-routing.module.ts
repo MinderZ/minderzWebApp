@@ -61,7 +61,7 @@ const routes: Routes = [
   {
     path: 'registration',
     component: RegisterComponent,
-  }
+  },
   { path: '**', component: FileNotFoundComponent }
 
 
