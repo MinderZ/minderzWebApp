@@ -38,10 +38,7 @@ export class SitterProfileObject {
     hadPets?: boolean;
     gender:string;
     cellphoneNumber: string;
-    coordinates: {
-        lat:number;
-        lng:number;
-    }
+
     references?: Array<SitterReferenceObject>
     profilePicture: UploadFiles;
     copyOfId: UploadFiles;

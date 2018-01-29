@@ -1,12 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { RegisterSitterService } from "../../../services/register-sitter.service";
+import { RegisterService } from "../../../../services/register.service";
+
+
 
 @Component({
   selector: "app-step-3-sitter-preferences",
   templateUrl: "./step-3-sitter-preferences.component.html",
-  styleUrls: ["./step-3-sitter-preferences.component.css",
-    '../register-sitter.component.css']
+  styleUrls: ["./step-3-sitter-preferences.component.css",'../../register.component.css']
 })
 export class Step3SitterPreferencesComponent implements OnInit {
 
@@ -39,7 +40,7 @@ export class Step3SitterPreferencesComponent implements OnInit {
     visitsPerDay:this.numberOption[0],
   }
 
-  constructor(protected registerService: RegisterSitterService) {
+  constructor(protected registerService: RegisterService) {
 
     console.log('pets per walk',this.dogWalking.petsPerWalk);
   }

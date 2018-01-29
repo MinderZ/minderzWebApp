@@ -45,13 +45,15 @@ import { NotificationService } from "./services/notification.service";
 import { AngularFirestore } from "angularfire2/firestore";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { SummaryPipe } from './pipes/summary.pipe';
-import { Step1LocationComponent } from './components/register-sitter/step-1-location/step-1-location.component';
-import { Step2PersonalDetailsComponent } from './components/register-sitter/step-2-personal-details/step-2-personal-details.component';
-import { Step3SitterPreferencesComponent } from './components/register-sitter/step-3-sitter-preferences/step-3-sitter-preferences.component';
-import { Step4SitterDetailsComponent } from "./components/register-sitter/step-4-sitter-details/step-4-sitter-details.component";
-import { RegisterSitterComponent } from './components/register-sitter/register-sitter.component';
-import { RegisterSitterService } from "./services/register-sitter.service";
 import { ValidationService } from "./services/validation.service";
+import { Step1LocationComponent } from "./components/registration/register-client/step-1-location/step-1-location.component";
+import { Step2PersonalDetailsComponent } from "./components/registration/register-client/step-2-personal-details/step-2-personal-details.component";
+import { Step3SitterPreferencesComponent } from "./components/registration/register-sitter/step-3-sitter-preferences/step-3-sitter-preferences.component";
+import { Step4SitterDetailsComponent } from "./components/registration/register-sitter/step-4-sitter-details/step-4-sitter-details.component";
+import { ClientRegisterService } from "./services/client-register.service";
+import { RegisterService } from "./services/register.service";
+import { RegisterComponent } from "./components/registration/register.component";
+
 
 export const firestoreConfig = {
   apiKey: "AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4",
@@ -85,7 +87,7 @@ export const firestoreConfig = {
     Step2PersonalDetailsComponent,
     Step3SitterPreferencesComponent,
     Step4SitterDetailsComponent,
-    RegisterSitterComponent,
+    RegisterComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),
@@ -111,8 +113,10 @@ export const firestoreConfig = {
     SitterProfileObject,
     UserPetObject,
     NotificationService,
-    RegisterSitterService,
-    ValidationService
+    RegisterService,
+    ClientRegisterService,
+    ValidationService,
+    AngularFireDatabase
   ],
   bootstrap: [AppComponent]
 })

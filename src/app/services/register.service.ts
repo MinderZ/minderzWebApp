@@ -3,7 +3,7 @@ import { SitterProfileObject } from "../model/sitterProfileObject.model";
 import { SitterReferenceObject } from "../model/sitterReferenceObject.model";
 
 @Injectable()
-export class RegisterSitterService {
+export class RegisterService {
   step: number = 1;
   formName: string = "Location";
   sitter: SitterProfileObject;
@@ -44,10 +44,6 @@ export class RegisterSitterService {
         doneVolunteer: false,
         ownPets: false,
         hadPets: false,
-        coordinates: {
-            lat: 0,
-            lng: 0
-        },
         profilePicture: null,
         copyOfId: null,
         consentForm:  null,

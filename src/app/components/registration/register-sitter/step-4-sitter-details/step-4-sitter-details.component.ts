@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterSitterComponent } from '../register-sitter.component';
-import { RegisterSitterService } from '../../../services/register-sitter.service';
-import { SitterReferenceObject } from '../../../model/sitterReferenceObject.model';
+import { SitterReferenceObject } from '../../../../model/sitterReferenceObject.model';
+import { RegisterService } from '../../../../services/register.service';
+
 
 @Component({
   selector: 'app-step-4-sitter-details',
   templateUrl: './step-4-sitter-details.component.html',
-  styleUrls: ['./step-4-sitter-details.component.css',
-    '../register-sitter.component.css']
+  styleUrls: ['./step-4-sitter-details.component.css','../../register.component.css']
 })
 export class Step4SitterDetailsComponent implements OnInit {
 
@@ -47,7 +46,7 @@ export class Step4SitterDetailsComponent implements OnInit {
   //Valid form
   valid = false;
 
-  constructor(protected registerService: RegisterSitterService) { }
+  constructor(protected registerService: RegisterService) { }
 
   ngOnInit() {
   }
