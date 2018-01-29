@@ -66,4 +66,13 @@ html, body {
     height: 415px;
     transition: all 0.6s ease;
   }
+
+  #pet{
+    font-size: 14px;
+    border: none;
+  }
+
+  #pet:hover {
+    cursor: default;
+  }
   

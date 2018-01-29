@@ -9,11 +9,26 @@ import { UserPetObject } from '../../model/userPetObject.modal';
 })
 export class PetProfileComponent implements OnInit {
 
-  constructor() { }
+  
+  editing = false;
 
+  petName: string;
+  rating: number;
+  reviews: number;
+  age: number;
+  petType: string;
+
+  constructor() {
+      this.petName = "Test"
+      this.rating = 4.0;
+      this.reviews = 10;
+      this.age= 6;
+      this.petType="Dog";
+  }
   ngOnInit() { }
-
-  editPetInfo(editpart) { }
-
+  
+   edit() {
+     this.editing = !this.editing;
+   }
 
 }
