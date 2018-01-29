@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { UserPetObject } from '../model/userPetObject.modal';
 import { UserProfileObjet } from '../model/userProfileObj.model';
 import { SitterProfileObject } from '../model/sitterProfileObject.model';
@@ -15,6 +15,8 @@ export class DataRecycleService {
   collectionRef = this.afs.collection("users");
   username:string;
 
+  users: Array<Client>;
+
   constructor(
     private db:   AngularFireDatabase,
     private afs: AngularFirestore,
@@ -22,7 +24,6 @@ export class DataRecycleService {
     private personalDetails: UserProfileObjet,
     private serviceprovider: SitterProfileObject,
     private auth: AuthService,
-
   ) { }
 
 
@@ -36,12 +37,7 @@ export class DataRecycleService {
 
 
   registerUser(client: Client) {
-
     this.client = client;
-
-
-   ((obj) => {return Object.assign(),obj})
-
     this.collectionRef
       .doc(this.auth.afAuth.auth.currentUser.uid)
       .set(Object.assign({},client))
@@ -51,5 +47,14 @@ export class DataRecycleService {
       .catch(function(error) {
         console.error("Error adding document: ", error);
       });
+  }
+
+  //this.afs.collection('users', ref => ref.where('isServiceProvider', '==', true))
+  getData(collection: string,  variable:string, operator: any, value: any){
+    return  this.afs.collection(collection, ref => ref.where(variable, operator, value))
+    .valueChanges().map(response =>{
+      console.log(response);
+      return response;
+    });
   }
 }

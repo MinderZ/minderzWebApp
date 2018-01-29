@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataRecycleService } from '../../services/data-recycle.service';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataRecycleService: DataRecycleService) { }
 
   ngOnInit() {
   }
 
 
 
-
+  sitterListPage(){
+    this.dataRecycleService.getUsers();
+  }
 }
