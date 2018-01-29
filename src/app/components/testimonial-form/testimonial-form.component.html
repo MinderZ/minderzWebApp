@@ -1,6 +1,7 @@
-<!-- This goes underneath the Description label -->
-    <div class="containe Test-form">
-      <div class="row"></div>
+
+    <div class="container Test-form">
+      <div class="row">
+        <h3>Write Your Own Testimonial</h3>
     <form [formGroup]="TestimonialForm"  (ngSubmit)="addTestimonial(TestimonialForm.value)">
 
       <div class="form-group">
@@ -11,13 +12,6 @@
      
       <button  type="submit" class="form-control" value="Submit " [disabled]='!TestimonialForm.valid'>Submit<i class="fa fa-paper-plane"></i> </button>
      
-    </form>
-<!-- *ngIf="!message?.length > 0 "
-    <div *ngIf="message?.length > 0" class="alert alert-success">
-      <div class="success-block">    
-      <i class="fa fa-check-circle-o fa-5x"></i>
-        <h3>{{message}}</h3>
-    </div>
-    </div> -->
-    
+    </form>  
+  </div>  
   </div>

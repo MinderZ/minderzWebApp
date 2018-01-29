@@ -4,6 +4,8 @@
     top:20%;
     width:50%;
     height:70vh;
+    color: #ff978f;
+    text-align: center;
 }
 #upload {
     background: #39D2B4;
@@ -37,7 +39,7 @@
 button[type=submit]:hover,
 button[type=submit]:focus
 {
-    background: rgb(44, 215, 233);
+    background:  #ff978f;
     color:white;
 }
 
@@ -45,7 +47,6 @@ button[type=submit]:focus
 .success-block{
     position: inherit;
     top: 2%;
-    height: 70vh;
     font-weight: bold;
     color: green;
     text-align: center;
