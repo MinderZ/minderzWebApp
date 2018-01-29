@@ -1,35 +1,29 @@
 <div class="container-fluid">
   <div class="row">
-
-    <section class="home">
+    <div class="home">
       <app-home-page-filter></app-home-page-filter>
-    </section>
+    </div>
 
     <div class="sitter">
-      <div class="row text-center">
-
+      <div class="text-center">
         <p Class="Content-heading">Find your sitter</p>
         <div Class="Sitter-subHeading">
           <h1>We connect you to well-vetted animal lovers in your area.</h1>
         </div>
       </div>
-
       <div class="SitterRow">
-
         <div class="panel">
           <div class="group">
             <img src="../assets/img/170612_Minder_Social_30maySearch-8.png" class="img" alt="">
             <h4 class="text-muted subFont">Read reviews from other pet parents and pick the perfect sitter.</h4>
           </div>
         </div>
-
         <div class="panel">
           <div class="group">
             <img src="../assets/img/170612_Minder_Social_30mayBook-8.png" class="img" alt="">
             <h4 class="text-muted subFont">Book and pay for your services online.</h4>
           </div>
         </div>
-
         <div class="panel">
           <div class="group">
             <img src="../assets/img/Car_selected.png" class="img" alt="missing car image">
@@ -37,22 +31,20 @@
           </div>
         </div>
       </div>
-
       <!-- </div> -->
     </div>
 
-    <div class="Services ">
+
+    <div class="Services col-md-12">
 
       <div class="text-center">
         <p class="Content-heading">Services</p>
       </div>
 
-      <div class="Service-content row">
-
+      <div class="Service-content">
         <div id="row-1" class="col-md-12">
           <span class="col-md-2 col-sm-12">
           </span>
-
           <div class="service col-md-4 col-sm-12">
             <img class="service-image col-md-4" src="../assets/img/170612_Minder_Social_30mayHousitting_selected-8.png" alt="">
             <div class="row-description mg-tsop-75">
@@ -60,7 +52,6 @@
               <h5 class="text-muted subFont">A sitter stays overnight at your home, taking care of your pets and home</h5>
             </div>
           </div>
-
           <div class="service col-md-4 col-sm-12">
             <img class="service-image col-md-4" src="../assets/img/170612_Minder_Social_30mayBoarding_Selected-8.png" alt="">
             <div class="row-description mg-top-75">
@@ -68,13 +59,10 @@
               <h5 class="text-muted subFont">Your pets stay overnight at the sitter’s home</h5>
             </div>
           </div>
-
           <span class="col-md-2 col-sm-12"></span>
         </div>
-
         <div id="row-2" class="col-md-12">
           <span class="col-md-2 col-sm-12"></span>
-
           <div class="service col-md-4 col-sm-12">
             <img class="service-image col-md-4" src="../assets/img/170612_Minder_Social_30maydogwalking_select-8.png" alt="">
             <div class="row-description mg-top-75">
@@ -82,7 +70,6 @@
               <h5 class="text-muted subFont">Your pet gets a walk from a pet walker</h5>
             </div>
           </div>
-
           <div class="service col-md-4 col-sm-12">
             <img class="service-image col-md-4" src="../assets/img/170612_Minder_Social_30mayDropin visits_logo lockup-8.png" alt="">
             <div class="row-description mg-top-75">
@@ -90,24 +77,20 @@
               <h5 class="text-muted subFont">A sitter checks in on your pets during the day for feeding and some play time.</h5>
             </div>
           </div>
-
           <span class="col-md-2 col-sm-12"></span>
-
         </div>
       </div>
     </div>
 
-    <div class="testimonials row">
-
+    <div class="testimonials">
       <div class="text-center">
         <p class="Content-heading">Testimonials</p>
       </div>
-
       <div id="testimonials-container">
-        <div class="testimonial-panel">
+       
+        <div class="testimonial-panel" *ngFor="let testimonial of testimonials" >
           <figure class=" testimonial hover">
-            <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nulla incidunt velit, molestiae numquam fugit, suscipit,
-              unde odit repudiandae eligendi minus. Tempora adipisci voluptatem non debitis magni eveniet itaque aut.\
+            <blockquote>{{testimonial.description}}
             </blockquote>
             <div class="author">
               <img src="https://qa.minderz.co.za/wp-content/uploads/job-manager-uploads/company_gallery/2017/09/484433611-64x64.jpg" alt="">
@@ -117,37 +100,16 @@
           </figure>
         </div>
 
-        <div class="testimonial-panel">
-          <figure class="testimonial">
-            <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nulla incidunt velit, molestiae numquam fugit, suscipit,
-              unde odit repudiandae eligendi minus. Tempora adipisci voluptatem non debitis magni eveniet itaque aut.\
-            </blockquote>
-            <div class="author">
-              <img src="https://i.pinimg.com/564x/46/2e/f0/462ef0603fb676d32419976dca8686ca.jpg" alt="sq-sample12" />
-              <h5>Eleanor Faint</h5>
-              <span>LittleSnippets</span>
-            </div>
-          </figure>
-        </div>
+   
+        </div> -->
 
-        <div class="testimonial-panel">
-          <figure class="testimonial">
-            <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nulla incidunt velit, molestiae numquam fugit, suscipit,
-              unde odit repudiandae eligendi minus. Tempora adipisci voluptatem non debitis magni eveniet itaque aut.\
-            </blockquote>
-            <div class="author">
-              <img src="https://qa.minderz.co.za/wp-content/uploads/job-manager-uploads/company_gallery/2017/09/20140531123809-2_dogs_girl_113951887-64x64.jpg"
-                alt="sq-sample12" />
-              <h5>Eleanor Faint</h5>
-              <span>LittleSnippets</span>
-            </div>
-          </figure>
-        </div>
       </div>
-
     </div>
 
-    <app-footer></app-footer>
 
+    <div id="footer">
+      <app-footer></app-footer>
+    </div>
   </div>
 </div>
+
