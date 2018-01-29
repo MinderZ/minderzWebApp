@@ -1,3 +1,7 @@
+/* .row {
+  margin: 0;
+} */
+
 .img {
   height: 200px;
   width: 250px;
@@ -113,6 +117,7 @@ h1 {
 
 .testimonials {
   padding-top: 30px;
+  margin: 0;
 }
 
 .testimonial-panel {
