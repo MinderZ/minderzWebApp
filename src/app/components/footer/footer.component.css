@@ -1,3 +1,7 @@
+.row {
+  margin: 0;
+}
+
 .foot {
   min-height: 200px;
   background-color: #1f1e1e;

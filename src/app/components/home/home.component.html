@@ -1,12 +1,12 @@
 <div class="container-fluid">
   <div class="row">
 
-    <section class="home">
+    <div class="home">
       <app-home-page-filter></app-home-page-filter>
-    </section>
+    </div>
 
     <div class="sitter">
-      <div class="row text-center">
+      <div class="text-center">
 
         <p Class="Content-heading">Find your sitter</p>
         <div Class="Sitter-subHeading">
@@ -41,13 +41,13 @@
       <!-- </div> -->
     </div>
 
-    <div class="Services ">
+    <div class="Services col-md-12">
 
       <div class="text-center">
         <p class="Content-heading">Services</p>
       </div>
 
-      <div class="Service-content row">
+      <div class="Service-content">
 
         <div id="row-1" class="col-md-12">
           <span class="col-md-2 col-sm-12">
@@ -97,7 +97,7 @@
       </div>
     </div>
 
-    <div class="testimonials row">
+    <div class="testimonials">
 
       <div class="text-center">
         <p class="Content-heading">Testimonials</p>
@@ -147,7 +147,9 @@
 
     </div>
 
-    <app-footer></app-footer>
+    <div id="footer">
+      <app-footer></app-footer>
+    </div>
 
   </div>
 </div>
