@@ -45,10 +45,7 @@ addTestimonial(post){
   //
   setTimeout(() => {
    this.TestimonialServ.create_Testimonial(this.afAuth.currentUserUID(),post.description)
-    this.location.subscribe(data =>{
-      console.log(data.url)
-    })
-    // })back()
+    this.location.back()
   }, 1000);
  
 }
