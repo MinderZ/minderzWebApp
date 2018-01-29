@@ -17,7 +17,7 @@ public router: Router
   }
 
 newsitter() {
-  this.router.navigate(['newsitter']);
+  this.router.navigate(['/registration']);
 }
 
 }

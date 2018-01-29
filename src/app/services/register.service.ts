@@ -3,7 +3,7 @@ import { SitterProfileObject } from "../model/sitterProfileObject.model";
 import { SitterReferenceObject } from "../model/sitterReferenceObject.model";
 
 @Injectable()
-export class RegisterSitterService {
+export class RegisterService {
   step: number = 1;
   formName: string = "Location";
   sitter: SitterProfileObject;
@@ -15,8 +15,8 @@ export class RegisterSitterService {
         age: 0,
         id: "",
         gender:"",
-        serviceMap:  new Map<string, boolean>(),
-        petsMap:  new Map<string, boolean>(),
+        serviceMap: null,
+        petsMap: null,
         dogWalking: {
             pricePerWalk: 0,
             petsPerWalk: 0,
@@ -44,13 +44,7 @@ export class RegisterSitterService {
         doneVolunteer: false,
         ownPets: false,
         hadPets: false,
-        coordinates: {
-            lat: 0,
-            lng: 0
-        },
-        profilePicture: null,
-        copyOfId: null,
-        consentForm:  null,
+
         references: new Array<SitterReferenceObject>(),
         location: "",
         emergencyContactName: "",

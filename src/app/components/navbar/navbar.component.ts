@@ -13,13 +13,18 @@ export class NavbarComponent implements OnInit {
   constructor(
     public router: Router,
     public auth: AuthService,
-  ) { }
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(){
+    
   }
 
   logout() {
-this.auth.logout();
+    this.auth.logout();
   }
 
+
+  becomeASitter(){
+    this.router.navigate(['registration']);
+  }
 }

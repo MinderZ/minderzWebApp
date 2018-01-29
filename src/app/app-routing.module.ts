@@ -1,4 +1,3 @@
-import { RegisterSitterComponent } from './components/register-sitter/register-sitter.component';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,6 +11,9 @@ import { CodeComponent } from '../assets/examples/checkboxes and radio button/co
 import { SitterListPageComponent } from './components/sitter-list-page/sitter-list-page.component';
 import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
 import { FileNotFoundComponent } from './components/file-not-found/file-not-found.component';
+import { RegisterComponent } from './components/registration/register.component';
+
+
 
 const routes: Routes = [
   {
@@ -57,12 +59,8 @@ const routes: Routes = [
     component: SitterListPageComponent
   },
   {
-    path: 'register-sitter',
-    component: RegisterSitterComponent
-  },
-  {
-    component: SitterListPageComponent,
-    canActivate: [AuthGuard]
+    path: 'registration',
+    component: RegisterComponent,
   },
   { path: '**', component: FileNotFoundComponent }
 

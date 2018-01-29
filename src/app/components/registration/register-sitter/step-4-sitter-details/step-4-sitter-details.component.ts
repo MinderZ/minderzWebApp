@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterSitterComponent } from '../register-sitter.component';
-import { RegisterSitterService } from '../../../services/register-sitter.service';
-import { SitterReferenceObject } from '../../../model/sitterReferenceObject.model';
+import { SitterReferenceObject } from '../../../../model/sitterReferenceObject.model';
+import { RegisterService } from '../../../../services/register.service';
+import { ClientRegisterService } from '../../../../services/client-register.service';
+import { DataRecycleService } from '../../../../services/data-recycle.service';
+
 
 @Component({
   selector: 'app-step-4-sitter-details',
   templateUrl: './step-4-sitter-details.component.html',
-  styleUrls: ['./step-4-sitter-details.component.css',
-    '../register-sitter.component.css']
+  styleUrls: ['./step-4-sitter-details.component.css','../../register.component.css']
 })
 export class Step4SitterDetailsComponent implements OnInit {
 
@@ -47,7 +48,7 @@ export class Step4SitterDetailsComponent implements OnInit {
   //Valid form
   valid = false;
 
-  constructor(protected registerService: RegisterSitterService) { }
+  constructor(private dataRecycle: DataRecycleService, protected registerService: RegisterService, private clientRegisterService: ClientRegisterService ) { }
 
   ngOnInit() {
   }
@@ -133,8 +134,12 @@ export class Step4SitterDetailsComponent implements OnInit {
     this.registerService.sitter.hadPets = this.ownedPets;
     this.registerService.sitter.references = this.references;
 
-    console.table(this.registerService.sitter);
+    this.clientRegisterService.client.isServiceProvider = true;
+    this.clientRegisterService.client.serviceProvider = this.registerService.sitter;
 
 
+    console.table(this.clientRegisterService.client);
+    this.dataRecycle.registerUser(this.clientRegisterService.client);
+    
   }
 }
