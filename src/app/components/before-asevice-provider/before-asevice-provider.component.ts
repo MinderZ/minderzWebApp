@@ -37,11 +37,6 @@ check() {
 // if(this.question.competentForpets ==== false) {
 //   window.warn('You are required to answer all questions, in order to procced');
 // }
-
-
-this.router.navigate(['newsitter']);
+  this.router.navigate(['/registration']);
 }
-
-
-
 }

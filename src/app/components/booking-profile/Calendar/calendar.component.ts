@@ -3,7 +3,7 @@ import * as moment from "moment";
 
 @Component({
   selector: "app-calendar",
-  templateUrl: "./calender.component.html",
+  templateUrl: "./calendar.component.html",
   styleUrls: ["./calendar.component.css"]
 })
 export class CalendarComponent {
