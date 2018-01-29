@@ -42,6 +42,7 @@ import { PetServiceFilterComponent } from "./components/pet-service-filter/pet-s
 import { HomePageFilterComponent } from "./components/pet-service-filter/home-page-filter/home-page-filter.component";
 import { SitterListingsFilterComponent } from "./components/pet-service-filter/sitter-listings-filter/sitter-listings-filter.component";
 import { BeforeAseviceProviderComponent } from "./components/before-asevice-provider/before-asevice-provider.component";
+import { TestimonialFormComponent } from "./components/testimonial-form/testimonial-form.component";
 import { NotificationService } from "./services/notification.service";
 import { AngularFirestore } from "angularfire2/firestore";
 import { AngularFirestoreModule } from "angularfire2/firestore";
@@ -49,6 +50,7 @@ import { SummaryPipe } from './pipes/summary.pipe';
 import { CalendarComponent } from "./components/booking-profile/Calendar/calendar.component";
 import { ReviewTestimonialService } from "./services/review-testimonial.service";
 import { RatingServiceService } from "./services/rating-service.service";
+
 
 
 export const firestoreConfig = {
@@ -78,6 +80,7 @@ export const firestoreConfig = {
     PetServiceFilterComponent,
     HomePageFilterComponent,
     SitterListingsFilterComponent,
+   TestimonialFormComponent,
     BeforeAseviceProviderComponent,
     SummaryPipe
   ],
@@ -105,7 +108,8 @@ export const firestoreConfig = {
     SitterProfileObject,
     UserPetObject,
     NotificationService,
-    ReviewTestimonialService,RatingServiceService
+    ReviewTestimonialService,
+    RatingServiceService
   ],
   bootstrap: [AppComponent]
 })

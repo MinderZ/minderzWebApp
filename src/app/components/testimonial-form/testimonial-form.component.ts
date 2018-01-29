@@ -4,6 +4,7 @@ import { ReviewTestimonialService } from '../../services/review-testimonial.serv
 import { CacheService } from '../../services/cache.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { AuthService } from '../../services/auth-service.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class TestimonialFormComponent implements OnInit {
   constructor(
     private fBuilder: FormBuilder,
     private TestimonialServ:ReviewTestimonialService,
-    private cacheService:CacheService,
+    private afAuth: AuthService,
     private route:Router,
     private location:Location
   ) {
@@ -41,9 +42,9 @@ addTestimonial(post){
     this.message= 'Testimonial Sent'
   }
  
-  //const current user =this.cacheService.currentUser
+  //
   setTimeout(() => {
-   // this.TestimonialServ.create_Testimonial(' ',post.description)
+   this.TestimonialServ.create_Testimonial(this.afAuth.currentUserUID(),post.description)
     this.location.subscribe(data =>{
       console.log(data.url)
     })
