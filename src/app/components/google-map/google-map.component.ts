@@ -15,10 +15,3 @@ export class GoogleMapComponent implements OnInit {
   }
 
 }
-
-// export interface Locations{
-//   name:string;
-//   price:number;
-//   lat:number;
-//   lng:number;
-// }
