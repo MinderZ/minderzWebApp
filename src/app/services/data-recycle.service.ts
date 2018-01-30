@@ -49,6 +49,10 @@ export class DataRecycleService {
       });
   }
 
+  getCurrentUser(){
+    return this.collectionRef.doc(this.auth.afAuth.auth.currentUser.uid).valueChanges();
+  }
+
   //this.afs.collection('users', ref => ref.where('isServiceProvider', '==', true))
   getData(collection: string,  variable:string, operator: any, value: any){
     return  this.afs.collection(collection, ref => ref.where(variable, operator, value))
