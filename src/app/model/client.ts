@@ -2,12 +2,11 @@ import { UploadFiles } from "./upload-files";
 import { SitterProfileObject } from "./sitterProfileObject.model";
 
 export class Client {
-    firstName?:string;
-    lastName?:string;
-    location?:string;
+    fullName?: string;
+    location?: string;
     profilePicture: string;
-    age:number;
-    gender:string;
+    age: number;
+    gender: string;
     cellphoneNumber: string;
     id: string;
     copyOfId: string;
@@ -15,9 +14,9 @@ export class Client {
     emergencyContactName: string;
     emergencyContactNr: string;
     coordinates: {
-        lat:number;
-        lng:number;
+        lat: number;
+        lng: number;
     }
-    isServiceProvider:boolean;
+    isServiceProvider: boolean;
     serviceProvider?: SitterProfileObject;
 }

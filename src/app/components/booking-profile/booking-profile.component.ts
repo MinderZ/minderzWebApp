@@ -12,6 +12,8 @@ import { Client } from '../../model/client';
 export class BookingProfileComponent {
 
     client: Client;
+    uneditedProfile: Client;
+
 
     sitterID: string;
     userID: string;
@@ -36,25 +38,28 @@ export class BookingProfileComponent {
     addingLanguage = false;
     addingSkill = false;
 
-    constructor(private dataRecycleService: DataRecycleService, private cacheService: CacheService) {
+    constructor(
+        private dataRecycleService: DataRecycleService,
+        private cacheService: CacheService, ) {
 
         if (this.cacheService.myProfile) {
             this.client = this.cacheService.currentSitter;
+            this.uneditedProfile = this.client;
             this.editable = true;
         } else {
             this.client = this.cacheService.selectedSitter;
             this.editable = false;
         }
 
-        this.profilePic = this.client.profilePicture;
-        this.fullname = this.client.firstName + " " + this.client.lastName;
+        // this.profilePic = this.client.profilePicture;
+        // this.fullname = this.client.firstName + " " + this.client.lastName;
         this.rating = 4; //Unlinked
         this.reviews = 10; //Unlinked
         this.jobsComplete = 15; //Unlinked
         this.accountCreated = new Date; //Unlinked
         this.jobs = 15; //Unlinked
         this.cancellations = 2; //Unlinked
-        this.aboutMe = this.client.serviceProvider.aboutMe;
+        // this.aboutMe = this.client.serviceProvider.aboutMe;
         this.languages.push('English');
         this.skills.push('Walking');
     }
@@ -95,7 +100,11 @@ export class BookingProfileComponent {
     }
 
     editCommit() {
+        this.dataRecycleService.registerUser(this.client);
+    }
 
+    cancelEdit() {
+        this.client = this.uneditedProfile;
     }
 
 
