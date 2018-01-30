@@ -4,6 +4,7 @@ import { AuthService } from "../../services/auth-service.service";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { DataRecycleService } from "../../services/data-recycle.service";
+import { CacheService } from "../../services/cache.service";
 
 type UserFields = "email" | "password";
 type FormErrors = { [u in UserFields]: string };
@@ -40,6 +41,7 @@ export class SignInComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private dataRecycleService:DataRecycleService,
+    private cacheService:CacheService,
   ) {}
 
   // returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
@@ -65,6 +67,7 @@ export class SignInComponent implements OnInit {
       this.userForm.value["email"],
       this.userForm.value["password"]
     );
+    console.log(this.dataRecycleService.getCurrentUser());
     this.navigate()
   }
 
@@ -133,6 +136,7 @@ export class SignInComponent implements OnInit {
   navigate(){
     this.dataRecycleService.setUsername(this.userForm.value);
   }
+
 
   signIn(){
     
