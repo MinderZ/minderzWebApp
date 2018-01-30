@@ -27,7 +27,7 @@ export class SitterListingsFilterComponent implements OnInit {
           this.ngZone.run(()=>{
     
             //Gets place result
-        let place:google.maps.places.PlaceResult
+        let place:google.maps.places.PlaceResult=autocomplete.getPlace();
     
         //Verify Result
     

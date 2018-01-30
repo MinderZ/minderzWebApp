@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CacheService } from './cache.service';
@@ -10,50 +10,63 @@ import {
   AngularFirestore
 } from 'angularfire2/firestore';
 import { UserProfileObjet } from '../model/userProfileObj.model';
+import { RegisterService } from './register.service';
+// import { User } from 'app/model/user.model';
 
 
 @Injectable()
-export class AuthService {
+export class AuthService implements OnInit {
   public user$: Observable<firebase.User>;
   public userUID: string;
-User = {
-  uid: this.currentUserUID,
-  email: '',
-  photoURL: '',
-  displayName: '',
-  isAserviceProvider : true
- };
 
-  constructor(
+  returnUrl?: string;
+// User = {
+//   uid: '',
+//   email: '',
+//   photoURL: '',
+//   displayName: '',
+//   isAserviceProvider : true
+//  };
+ firestoreUsersRef: any;
+
+ ngOnInit() {
+
+}
+  
+constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
     private afs: AngularFirestore,
     private route: ActivatedRoute,
     private cache: CacheService,
-    private notify: NotificationService
+    private notify: NotificationService,
+    private registerService: RegisterService,
   ) {
     this.user$ = afAuth.authState;
+    this.firestoreUsersRef = this.afs.collection('users').valueChanges();
   }
 
   emailSignUp(email: string, password: string) {
-console.log('email');
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)
-      .then(user => {
-        this.notify.update('Welcome to MinderZ!!!', 'success');
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+      .then(success => {
+        this.router.navigate(['/registration'])
       })
-      .catch(error => this.handleError(error));
+      .catch(error => {
+        if (error.message === 'The email address is already in use by another account.') {
+            alert(error.message);
+        } else {
+            console.log(error.message);
+        }
+    });
   }
 
   emailLogin(email: string, password: string) {
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
-      .then(user => {
-        this.notify.update('Welcome to MinderZ!!!', 'success');
-        // return this.updateUserinfor(user);
-        this.router.navigate(['/']);
+      .then((user) => {
+        this.router.navigate(['/home'])
+        this.registerService.step = 3;
       })
       .catch(error => this.handleError(error));
   }
@@ -62,8 +75,7 @@ console.log('email');
       this.afAuth.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(() => {
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        this.router.navigate(['/home'])
       });
   }
 
@@ -71,8 +83,7 @@ console.log('email');
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then(() => {
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        this.router.navigate(['/home'])
       });
   }
 
@@ -80,8 +91,7 @@ console.log('email');
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.TwitterAuthProvider())
       .then(() => {
-        this.initialiseAUser();
-        this.router.navigate(['/']);
+        this.router.navigate(['/home'])
       });
   }
 
@@ -102,7 +112,6 @@ console.log('email');
   }
 
   logout() {
-    //  localStorage.removeItem('token');
     this.afAuth.auth.signOut().then(res => this.router.navigate(['/']));
   }
 
@@ -111,17 +120,15 @@ console.log('email');
   }
 
   currentUserUID() {
-    return (this.userUID = firebase.auth().currentUser.uid);
+    
+    return this.userUID = firebase.auth().currentUser.uid;
   }
 
-  initialiseAUser() {
-      const userProfile = this.afs.collection('users').doc('clients');
-      userProfile.set(this.User, { merge: true });
-
-//  userProfile
-    // const userPets: AngularFirestoreDocument<UserPetObject> = this.afs.collection('users').doc('' + this.auth.currentUserUID);
-    // const userServices: AngularFirestoreDocument<SitterProfileObject> = this.afs.collection('users').doc('' + this.auth.currentUserUID);
-  
-  }
+//   initialiseAUser() {
+//       const userProfile = this.afs.collection('users').doc('' + this.currentUserUID());
+//     this.User.uid =   this.currentUserUID();
+//     this.User.displayName =   this.getcurrentUser().displayName;
+//      return userProfile.set(this.User);
+//  }
 
 }
