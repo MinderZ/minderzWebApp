@@ -1,0 +1,18 @@
+<form action="onSubmit()">
+    <div class="rating"> <br> Submit your review <br><br> Rating:
+        <ng-container *ngFor="let num of [5, 4, 3, 2, 1]">
+
+            <input #starRates="ngModel" ngModel name="review" (click)="setRating(num)" [id]="'star'+num" [value]="num" name="rating" type="radio" />
+            <label class="full" [for]="'star'+num"></label>
+
+            <input #starRates="ngModel" ngModel name="review" (click)="setRating(num-0.5)" [id]="'halfstar'+num" [value]="num-0.5" name="rating" type="radio" />
+            <label class="half" [for]="'halfstar'+num"></label>
+        </ng-container><br>
+        <br><br>
+        <p>Review:</p>
+        <textarea id="reviews" #review="ngModel" ngModel name="review"> </textarea>
+        <br><br>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
