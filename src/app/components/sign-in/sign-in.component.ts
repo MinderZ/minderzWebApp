@@ -4,9 +4,11 @@ import { AuthService } from "../../services/auth-service.service";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { DataRecycleService } from "../../services/data-recycle.service";
+import { CacheService } from "../../services/cache.service";
+import { Client } from "../../model/client";
 
 type UserFields = "email" | "password";
-type FormErrors = { [u in UserFields]: string };
+type FormErrors = {[u in UserFields]: string };
 
 @Component({
   selector: "app-sign-in",
@@ -39,8 +41,9 @@ export class SignInComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private fb: FormBuilder,
-    private dataRecycleService:DataRecycleService,
-  ) {}
+    private dataRecycleService: DataRecycleService,
+    private cacheService: CacheService,
+  ) { }
 
   // returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
 
@@ -64,8 +67,12 @@ export class SignInComponent implements OnInit {
     this.auth.emailLogin(
       this.userForm.value["email"],
       this.userForm.value["password"]
-    );
-    this.navigate()
+    ).then(success => {
+     this.dataRecycleService.getCurrentUser().subscribe(response =>{
+      this.cacheService.currentSitter = response as Client;
+     })
+      this.navigate()
+    });
   }
 
   loginWithGoogle() {
@@ -121,7 +128,7 @@ export class SignInComponent implements OnInit {
               if (Object.prototype.hasOwnProperty.call(control.errors, key)) {
                 this.formErrors[field] += `${
                   (messages as { [key: string]: string })[key]
-                } `;
+                  } `;
               }
             }
           }
@@ -129,12 +136,13 @@ export class SignInComponent implements OnInit {
       }
     }
   }
-  
-  navigate(){
+
+  navigate() {
     this.dataRecycleService.setUsername(this.userForm.value);
   }
 
-  signIn(){
-    
+
+  signIn() {
+
   }
 }

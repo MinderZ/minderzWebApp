@@ -6,11 +6,11 @@
       <!--Start overview-->
       <div class="col-md-12" id="overview-panel">
         <div class="col-lg-4 col-md-5 col-sm-12" id="profile-pic-panel">
-          <img id="profile-pic" src="#" />
+          <img id="profile-pic" src="this.client.profilePic" />
         </div>
 
         <div class="col-lg-7 col-md-7 col-sm-12" id="info">
-          <input [(ngModel)]="fullname" class="line-spacing-5" id="fullname" [readonly]="!editing" />
+          <input [(ngModel)]="this.client.fullName" class="line-spacing-5" id="fullname" [readonly]="!editing" />
 
           <!--Start rating-->
           <div class="line-spacing-5 col-md-12 col-sm-12 col-xs-12" id="rating-panel">
@@ -59,7 +59,7 @@
       <div class="col-md-12 col-sm-12" id="about-panel">
         <h2 class="line-spacing-20">About me</h2>
         <!-- <p class="line-spacing-20">{{aboutMe}}</p> -->
-        <input id="about-me" class="line-spacing-20" [(ngModel)]="aboutMe" [readonly]="!editing" />
+        <input id="about-me" class="line-spacing-20" [(ngModel)]="this.client.serviceProvider.aboutMe" [readonly]="!editing" />
 
         <h4 class="line-spacing-20">Languages</h4>
         <h4 class="value line-spacing-20" *ngFor="let language of languages">{{language}}</h4>
@@ -107,7 +107,7 @@
     </div>
 
     <div class="col-md-4 col-sm-12" id="calender">
-        <app-calendar></app-calendar>
+      <app-calendar></app-calendar>
     </div>
 
     <div class="col-md-8 col-sm-12" id="pet-list">
@@ -118,7 +118,9 @@
 
     </div>
 
-    <a (click)="edit()">{{editing}}</a>
+    <a *ngIf="editable" (click)="edit()">{{editing}}</a>
+    <a *ngIf="editing" (click)="editCommit()">Submit</a>
+    <a *ngIf="editing" (click)="cancelEdit()">Cancel</a>
 
   </div>
 </div>

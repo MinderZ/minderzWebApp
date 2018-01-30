@@ -55,6 +55,7 @@ import { RegisterComponent } from "./components/registration/register.component"
 import { FileNotFoundComponent } from './components/file-not-found/file-not-found.component';
 import { ReviewTestimonialService } from "./services/review-testimonial.service";
 import { RatingServiceService } from "./services/rating-service.service";
+import { FilterService } from './services/filter.service';
 
 export const firestoreConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -118,11 +119,12 @@ export const firestoreConfig = {
     UserPetObject,
     NotificationService,
     ReviewTestimonialService,
-    RatingServiceService
+    RatingServiceService,
     RegisterService,
     ClientRegisterService,
     ValidationService,
-    AngularFireDatabase
+    AngularFireDatabase,
+    FilterService
   ],
   bootstrap: [AppComponent]
 })

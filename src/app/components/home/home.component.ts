@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
    
   }
   sitterListPage(){
-    this.dataRecycleService.getUsers();
+    // this.dataRecycleService.getUsers();
   }
 
 }
