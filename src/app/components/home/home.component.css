@@ -80,23 +80,22 @@ h1 {
   border-style: solid;
   border-width: 1px;
   border-color: white;
-
-	background-color:rgba(255, 255, 255, 0.4);
-	padding-left:35px;
-	padding-right:35px;
-	padding-top:35px;
-	padding-bottom:50px;
-	width: 50%;
-	float: left;
-	left: 45%;
-	position: absolute;
-  margin-top:80px;
-	margin-left: -260px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 35px;
+  padding-bottom: 50px;
+  width: 50%;
+  float: left;
+  left: 42%;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: -260px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
 }
-.cardHeader{
 
+.cardHeader {
   font-size: 48px !important;
   color: #ff978f;
   text-align: center;
@@ -105,7 +104,7 @@ h1 {
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-.cardSubHeader{
+.cardSubHeader {
   font-size: 22px;
   color: rgb(0, 6, 69);
   color: rgba(0, 6, 69, 0.3);
@@ -135,7 +134,16 @@ h1 {
 
 figure.testimonial {
   font-family: 'Raleway', Arial, sans-serif;
-  font-size: 120%;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 220px;
+  max-width: 310px;
+  width: 100%;
+  color: #8c8c8cce;
+  text-align: left;
+  box-shadow: none !important;
 }
 
 figure.testimonial * {
@@ -197,7 +205,7 @@ figure.testimonial .author {
   height: 80px;
   display: block;
   text-align: left;
-  color: #8c8c8c;
+  color: yellow;
   padding: 0 35px;
   position: relative;
 }
