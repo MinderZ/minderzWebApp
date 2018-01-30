@@ -10,11 +10,16 @@ import { Client } from '../../model/client';
   styleUrls: ['./sitter-list-page.component.css']
 })
 export class SitterListPageComponent implements OnInit {
+  value;
 
   constructor(private filter: FilterService, private route: Router, private cache: CacheService) { }
 
+  // sitterList:Client[] = this.filter.filteredList;
+  
+constructor(private filter:FilterService,private route:Router,private cache:CacheService) { }
   ngOnInit() {
-    this.filter.getbyService('House Sitting')
+    this.filter.getbyService(this.filter.serviceTerm)
+
   }
 
   sitterInfo(sitter: Client) {
