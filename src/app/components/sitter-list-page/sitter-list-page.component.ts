@@ -21,10 +21,11 @@ export class SitterListPageComponent implements OnInit {
   // ]
 
   // sitterList:Client[] = this.filter.filteredList;
-
+  
+constructor(private filter:FilterService,private route:Router,private cache:CacheService) { }
   ngOnInit() {
     this.filter.getbyService(this.filter.serviceTerm)
-  constructor(private filter:FilterService,private route:Router,private cache:CacheService) { }
+  
   }
 
   sitterInfo(sitter:Client){
