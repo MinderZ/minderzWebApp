@@ -2,11 +2,12 @@
     <div class="background">
         <div class="col-md-2 col-xs-2">
             <div class="form-group">
-                <select name="service" class="form-control selectpicker">
-          <option>House Sitting</option>
+                <select  [(ngModel)] ="serviceSearch"  name="service" class="form-control selectpicker">
+                        <option *ngFor="let item of servicesProvided" (click)="sendParam(item)" >{{item}}</option>
+          <!-- <option>House Sitting</option>
           <option>Pet Boarding</option>
           <option>Drop-in Visit</option>
-          <option>Dog Walk</option>
+          <option>Dog Walk</option> -->
         </select>
             </div>
         </div>
@@ -32,7 +33,7 @@
             </div>
 
             <div class="col-md-2 col-xs-2">
-                <button type="button" class="btn btn-search-pink form-control"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <button type="button" (click)="search()" class="btn btn-search-pink form-control"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
         </div>
 

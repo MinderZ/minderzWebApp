@@ -3,33 +3,19 @@ import { DataRecycleService } from './data-recycle.service';
 import { SitterProfileObject } from '../model/sitterProfileObject.model';
 import { Client } from '../model/client';
 import { NgIf } from '@angular/common/src/directives/ng_if';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class FilterService {
   filteredList
+
+   serviceTerm;
+
+
   constructor(private dataService: DataRecycleService) { }
 
-  // sortByRating(){
-  //   this.dataService.getData('users', 'isServiceProvider', '==', true)
-  //   .subscribe(
-  //   (res: Client[]) => {
-  //     this.filteredList = res.sort((a:Client,b:Client)=>{
-  //       if (a.serviceProvider < lastPaxB) {
-  //         return -1;
-  //       } else if (lastPaxA > lastPaxB) {
-  //         return 1;
-  //       } else {
-  //         return 0;
-  //       }
-  //     })
-  //     console.log(this.filteredList);
-  //   }
-
-  //   );
-
-
-  // }
-
+  
   getbyService(job) {
     this.dataService.getData('users', 'isServiceProvider', '==', true)
       .subscribe(
