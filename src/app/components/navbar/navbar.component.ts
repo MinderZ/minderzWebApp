@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
 
 
   becomeASitter(){
-    this.dataRecycleService.getUsers();
+    // this.dataRecycleService.getUsers();
     // this.router.navigate(['registration']);
   }
 }

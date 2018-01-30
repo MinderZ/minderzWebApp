@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Locations } from '../google-map/google-map.component';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-sitter-list-page',
@@ -16,9 +17,9 @@ export class SitterListPageComponent implements OnInit {
     {name:"Frikkie",lat:-33.92868,lng:18.411189999999933,price:300}
   ]
 
-  constructor() { }
+  constructor(private filter:FilterService) { }
 
-  ngOnInit() {
+  ngOnInit() {this.filter.getbyService('House Sitting')
   }
 
 }
