@@ -31,9 +31,9 @@ export class DataRecycleService {
     this.username = email;
   }
 
-  // create( input, route) {
-  //   return this.db.list(route).push(input);
-  // }
+  create( input, route) {
+    return this.db.list(route).push(input);
+  }
 
 
   registerUser(client: Client) {
@@ -53,7 +53,7 @@ export class DataRecycleService {
   getData(collection: string,  variable:string, operator: any, value: any){
     return  this.afs.collection(collection, ref => ref.where(variable, operator, value))
     .valueChanges().map(response =>{
-      console.log(response);
+      // console.log(response);
       return response;
     });
   }
