@@ -28,7 +28,7 @@ export class HomePageFilterComponent implements OnInit {
         this.ngZone.run(() => {
 
           //gets place result
-          let place: google.maps.places.PlaceResult=autocomplete.getPlace();
+          let place: google.maps.places.PlaceResult;
 
           //verify results
           if (place.geometry === undefined || place.geometry === null) {
