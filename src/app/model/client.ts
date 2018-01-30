@@ -2,6 +2,8 @@ import { UploadFiles } from "./upload-files";
 import { SitterProfileObject } from "./sitterProfileObject.model";
 
 export class Client {
+    firstName?:string;
+    lastName?:string;
     location?:string;
     profilePicture: string;
     age:number;
