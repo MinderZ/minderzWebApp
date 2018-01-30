@@ -1,0 +1,231 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!--Start job distance-->
+    <div class="line col-md-12" id="job-distance-radius">
+
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">Job Distance Radius:</label>
+      </div>
+
+      <div class="col-md-10">
+        <select [(ngModel)] = 'jobDistanceRadius' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <option *ngFor = 'let option of jobDistanceRadiusOption'>{{option}}</option>
+        </select>
+      </div>
+    </div>
+    <!--End job distance-->
+
+    <!--Start pet size-->
+    <div class="line col-md-12" id="pet-size-preference">
+
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">Pet Size Preference:</label>
+      </div>
+
+      <div class="col-md-10">
+        <select  [(ngModel)] = 'petSizePreference' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <option *ngFor = 'let option of petPreferenceOption'>{{option}}</option>
+        </select>
+      </div>
+    </div>
+    <!--End pet size-->
+
+    <div class="line col-md-12" id="pet-type-reference">
+
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">Pet type preference:</label>
+      </div>
+
+      <div class="col-md-10 col-sm-12 height-46">
+        <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
+          <div class="checkbox" (click)="checkPet('dogs')">
+            <i [ngClass]="petMap['dogs'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Dogs</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
+          <div class="checkbox" (click)="checkPet('cats')">
+            <i [ngClass]="petMap['cats'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Cats</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
+          <div class="checkbox" (click)="checkPet('birds')">
+            <i [ngClass]="petMap['birds'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Birds</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
+          <div class="checkbox" (click)="checkPet('fish')">
+            <i [ngClass]="petMap['fish'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Fish</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-4 col-sm-4 col-xs-12">
+          <div class="checkbox" (click)="checkPet('other')">
+            <i [ngClass]="petMap['other'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Other</label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="line col-md-12" id="service-type-reference">
+
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">Service preference:</label>
+      </div>
+
+      <div class="col-md-10 col-sm-12 height-46">
+        <div class="checkbox-container display-flex col-md-3 col-sm-3 col-xs-12">
+          <div class="checkbox" (click)="checkService('Dog Walking')">
+            <i [ngClass]="serviceMap['Dog Walking'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Dog Walking</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-3 col-sm-3 col-xs-12">
+          <div class="checkbox" (click)="checkService('Pet Sitting')">
+            <i [ngClass]="serviceMap['Pet Sitting'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Pet Sitting</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-3 col-sm-3 col-xs-12">
+          <div class="checkbox" (click)="checkService('House Sitting')">
+            <i [ngClass]="serviceMap['House Sitting'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">House Sitting</label>
+        </div>
+
+        <div class="checkbox-container display-flex col-md-3 col-sm-3 col-xs-12">
+          <div class="checkbox" (click)="checkService('Drop in Visits')">
+            <i [ngClass]="serviceMap['Drop in Visits'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+          </div>
+          <label class="text-line-middle checkbox-label">Drop in Visits</label>
+        </div>
+
+      </div>
+    </div>
+
+    <div *ngIf="petMap['dogs'] && serviceMap['Dog Walking']" class="dog-walking">
+      <h2 class="heading">Dog Walking</h2>
+
+      <div class="line col-md-12" id="price-per-walk">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Price per walk:</label>
+        </div>
+
+        <div class="col-md-10">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+
+      <div class="line col-md-12" id="pets-per-walk">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Pets Per walk:</label>
+        </div>
+        <div class="col-md-10">
+          <select [ngModel] = 'dogWalking.petsPerWalk' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option *ngFor = 'let option of numberOption'>{{option}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="line col-md-12" id="walks-per-day">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Walks Per Day</label>
+        </div>
+
+        <div class="col-md-10">
+          <select [ngModel] = 'dogWalking.walksPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option *ngFor = 'let option of numberOption'>{{option}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="line col-md-12" *ngIf="serviceMap['Pet Sitting']" id="pet-setting ">
+      <h2 class="heading">Pet Sitting</h2>
+      <div class="line col-md-12" id="price-per-pet">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Price per pet</label>
+        </div>
+        <div class="col-md-10">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+      <div class="line col-md-12" id="pets-per-day">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Pets Per Day:</label>
+        </div>
+
+        <div class="col-md-10">
+          <select [ngModel] = 'petSitting.petsPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option *ngFor = 'let option of numberOption'>{{option}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div *ngIf="serviceMap['House Sitting']" id="house-sitting">
+      <h2 class="heading">House Sitting</h2>
+
+      <div class="line col-md-12" id="price-per-walk">
+
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Price per walk:</label>
+        </div>
+        <div class="col-md-10">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="serviceMap['Drop in Visits']" id="drop-in-vists">
+      <h2 class="heading">Drop-in Visits</h2>
+
+      <div class="line col-md-12" id="price-per-visit">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Price per visit:</label>
+        </div>
+        <div class="col-md-10">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+
+      <div class="line col-md-12" id="pets-per-day">
+        <div class="col-md-2 col-sm-12 height-46 display-flex">
+          <label class="text-line-middle">Visits Per Day:</label>
+        </div>
+
+        <div class="col-md-10">
+          <select [ngModel] = 'dropInVist.visitsPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+            <option *ngFor = 'let option of numberOption'>{{option}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!--Navigate-->
+    <div class="col-md-12 col-sm-12 navigate">
+      <button class="back btn btn-default" (click)="registerService.back()">
+        <i class="fa fa-arrow-left"></i>Back</button>
+      <button class="next btn btn-primary" (click)="next()">
+        Next
+        <i class="fa fa-arrow-right"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
