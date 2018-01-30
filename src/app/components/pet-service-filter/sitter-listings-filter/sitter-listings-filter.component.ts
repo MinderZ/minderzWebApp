@@ -19,7 +19,7 @@ export class SitterListingsFilterComponent implements OnInit {
     this.mapLoader.load().then(()=>{
       let autocomplete = new google.maps.places.Autocomplete(
         this.addressElementRef.nativeElement,{
-          types:["(cities)"],
+          types:["geocode"],
           componentRestrictions: {'country': 'za'}
         }
       );
@@ -27,7 +27,7 @@ export class SitterListingsFilterComponent implements OnInit {
           this.ngZone.run(()=>{
     
             //Gets place result
-        let place:google.maps.places.PlaceResult
+        let place:google.maps.places.PlaceResult=autocomplete.getPlace();
     
         //Verify Result
     

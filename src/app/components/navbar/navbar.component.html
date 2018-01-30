@@ -1,15 +1,25 @@
 <nav class="navbar navbar-inverse navbar-fixed-top appnav">
-  <div class="container-fluid">
+  <div id="main-container" class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+
+      <!--Start hamburger-->
+      <div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <!--End hamburger-->
+
+      <!--Start logo-->
       <a class="navbar-brand" routerLink="home">
-        <img src="../assets/img/minderz_logo_3.png" width="100" height="45" class="d-inline-block align-top" alt="MinderZ">
+        <img id="logo" src="../assets/img/minderz_logo_3.png" width="100" height="40" class="d-inline-block align-top" alt="MinderZ">
       </a>
+      <!--End logo-->
+
     </div>
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
           <li>
@@ -21,9 +31,21 @@
             <li>
                 <a>
                   <span>
-                    <i class="fa fa-search" aria-hidden="true"></i> Search for sitter</span>
+                    <i class="fa fa-search" aria-hidden="true" (click)='becomeASitter()'></i> Search for sitter</span>
                 </a>
               </li>
+        <li>
+          <a routerLink="become">
+            <span>
+              <i class="fa fa-plus" aria-hidden="true"></i> Become a sitter</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="sitter-profile-listings">
+            <span>
+              <i class="fa fa-search" aria-hidden="true"></i> Search for sitter</span>
+          </a>
+        </li>
         <li>
           <a href="#service">
             <span>
@@ -39,7 +61,8 @@
           </a>
         </li>
       </ul>
-      <div class="nav navbar-nav" *ngIf="auth.user$ | async as user; else anonymousUser">
+
+      <div id="right-content" class="nav navbar-nav" *ngIf="auth.user$ | async as user; else anonymousUser">
         <li>
           <a routerLink="profile">
             <span>
@@ -55,7 +78,7 @@
         </li>
       </div>
       <ng-template #anonymousUser>
-        <ul class="nav navbar-nav navbar-right">
+        <ul id="right-content" class="nav navbar-nav navbar-right">
           <li>
             <a routerLink="signIn">
               <span>
