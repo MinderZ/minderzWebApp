@@ -119,6 +119,8 @@
     </div>
 
     <a *ngIf="editable" (click)="edit()">{{editing}}</a>
+    <a *ngIf="editing" (click)="editCommit()">Submit</a>
+    <a *ngIf="editing" (click)="cancelEdit()">Cancel</a>
 
   </div>
 </div>
