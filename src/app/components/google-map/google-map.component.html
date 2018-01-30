@@ -1,4 +1,4 @@
-<agm-map *ngIf="locations.length  >0" [latitude]="locations[0].coordinates.lat" [longitude]="locations[0].coordinates.lng">
+<agm-map *ngIf="locations.length > 0" [latitude]="locations[0].coordinates.lat" [longitude]="locations[0].coordinates.lng">
 
   <agm-marker *ngFor="let location of locations" [latitude]="location.coordinates.lat" [longitude]="location.coordinates.lng">
     <agm-info-window>
