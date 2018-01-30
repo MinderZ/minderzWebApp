@@ -27,7 +27,7 @@ export class DataRecycleService {
   ) { }
 
 
-  setUsername(email:string){
+  setUsername(email: string){
     this.username = email;
   }
 

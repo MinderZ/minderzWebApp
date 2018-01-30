@@ -28,18 +28,13 @@
                     <i class="fa fa-plus" aria-hidden="true"></i> Become a sitter</span>
               </a>
             </li>
-            <li>
+            <!-- <li>
                 <a>
                   <span>
                     <i class="fa fa-search" aria-hidden="true" (click)='becomeASitter()'></i> Search for sitter</span>
                 </a>
-              </li>
-        <li>
-          <a routerLink="become">
-            <span>
-              <i class="fa fa-plus" aria-hidden="true"></i> Become a sitter</span>
-          </a>
-        </li>
+              </li> -->
+
         <li>
           <a routerLink="sitter-profile-listings">
             <span>
@@ -63,12 +58,12 @@
       </ul>
 
       <div id="right-content" class="nav navbar-nav" *ngIf="auth.user$ | async as user; else anonymousUser">
-        <li>
+        <!-- <li>
           <a routerLink="profile">
             <span>
               <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</span>
           </a>
-        </li>
+        </li> -->
 
         <li>
           <a>

@@ -12,8 +12,8 @@ import { AuthService } from '../../services/auth-service.service';
 export class HomeComponent implements OnInit {
     private testimonials:any[];
 
-  constructor(private TestimonialServ: ReviewTestimonialService,private auth:AuthService,private dataRecycleService: DataRecycleService) { 
-     
+  constructor(private TestimonialServ: ReviewTestimonialService,private auth:AuthService,private dataRecycleService: DataRecycleService) {
+
     this.TestimonialServ.get_Testimonials().subscribe( data =>{
     console.log(data);
     this.testimonials = data;
@@ -22,11 +22,11 @@ export class HomeComponent implements OnInit {
   })}
 
   ngOnInit() {
-   
-   
+
+
   }
   sitterListPage(){
-    this.dataRecycleService.getUsers();
+    // this.dataRecycleService.getUsers();
   }
 
 }

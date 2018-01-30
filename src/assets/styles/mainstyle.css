@@ -48,7 +48,7 @@ font-size: 11px;
 /* ----------------------------------------- */
 @media (min-width: 488px) {
   .logoImg{
-    height: 150px; 
+    height: 150px;
   width:150px;
 margin-top: 120px;
 
@@ -68,6 +68,12 @@ margin-top: 120px;
 height: 178px;
 margin-top: 205px;
 font-size: 15px;
+}
+.logoImg{
+  height: 100px;
+width:100px;
+margin-top: 0px;
+
 }
 
 }

@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit(){
-    
+
   }
 
   logout() {
@@ -26,8 +26,8 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  becomeASitter(){
-    this.dataRecycleService.getUsers();
+  // becomeASitter(){
+    // this.dataRecycleService.getUsers();
     // this.router.navigate(['registration']);
-  }
+  // }
 }

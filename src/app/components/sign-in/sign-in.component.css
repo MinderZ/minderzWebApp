@@ -100,3 +100,10 @@ input:focus {
   from {right: 30px; opacity: 1;}
   to {right: 0; opacity: 0;}
 }
+.Or{
+  position: relative;
+  margin-left: 145px;
+    margin-top: -32px;
+    height: 50px;
+
+}

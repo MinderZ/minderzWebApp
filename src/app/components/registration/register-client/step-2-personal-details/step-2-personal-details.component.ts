@@ -29,12 +29,12 @@ export class Step2PersonalDetailsComponent implements OnInit {
   consentForm: UploadFiles;
   idCopy:UploadFiles;
   gender:string;
-  
+
 
   genderPristine = false;
 
   constructor(private dataRecycleService:DataRecycleService, private router :Router, fb: FormBuilder, protected clientRegisterService: ClientRegisterService, private registerService:RegisterService) {
-    
+
 
   }
 
@@ -111,9 +111,9 @@ export class Step2PersonalDetailsComponent implements OnInit {
     this.clientRegisterService.client.id = this.idNum;
     this.clientRegisterService.client.emergencyContactName = this.emergencyContactName;
     this.clientRegisterService.client.emergencyContactNr = this.emergencyContactNr;
-    
+
     console.table(this.clientRegisterService.client);
-    
+
     this.dataRecycleService.registerUser(this.clientRegisterService.client);
     this.registerService.next();
     this.router.navigate(['home']);

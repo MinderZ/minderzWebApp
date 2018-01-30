@@ -18,7 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
-import {AngularFireDatabaseModule,AngularFireDatabase} from 'angularfire2/database';
+import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth-service.service';
