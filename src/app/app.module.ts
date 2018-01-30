@@ -57,6 +57,7 @@ import { RegisterComponent } from './components/registration/register.component'
 import { FileNotFoundComponent } from './components/file-not-found/file-not-found.component';
 import { ReviewTestimonialService } from './services/review-testimonial.service';
 import { RatingServiceService } from './services/rating-service.service';
+import { FilterService } from './services/filter.service';
 import { Questions } from './model/question.model';
 
 export const firestoreConfig = {
@@ -126,7 +127,8 @@ export const firestoreConfig = {
     Questions,
     ClientRegisterService,
     ValidationService,
-    AngularFireDatabase
+    AngularFireDatabase,
+    FilterService
   ],
   bootstrap: [AppComponent]
 })

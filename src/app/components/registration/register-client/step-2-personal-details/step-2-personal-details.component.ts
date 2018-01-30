@@ -11,14 +11,18 @@ import { DataRecycleService } from '../../../../services/data-recycle.service';
 @Component({
   selector: 'app-step-2-personal-details',
   templateUrl: './step-2-personal-details.component.html',
-  styleUrls: ['./step-2-personal-details.component.css','../../register.component.css']
+  styleUrls: ['./step-2-personal-details.component.css', '../../register.component.css']
 })
 export class Step2PersonalDetailsComponent implements OnInit {
   profilePicUrl: any;
-  idCopyUrl:any;
-  consentFormUrl:any;
 
-  cellphoneNum:string;
+  firstname: string;
+  lastname: string;
+
+  idCopyUrl: any;
+  consentFormUrl: any;
+
+  cellphoneNum: string;
   age: string;
   idNum: string;
   emergencyContactName: string;
@@ -27,13 +31,13 @@ export class Step2PersonalDetailsComponent implements OnInit {
   female: boolean;
   profilePicture: UploadFiles;
   consentForm: UploadFiles;
-  idCopy:UploadFiles;
-  gender:string;
+  idCopy: UploadFiles;
+  gender: string;
 
 
   genderPristine = false;
 
-  constructor(private dataRecycleService:DataRecycleService, private router :Router, fb: FormBuilder, protected clientRegisterService: ClientRegisterService, private registerService:RegisterService) {
+  constructor(private dataRecycleService: DataRecycleService, private router: Router, fb: FormBuilder, protected clientRegisterService: ClientRegisterService, private registerService: RegisterService) {
 
 
   }
@@ -89,24 +93,28 @@ export class Step2PersonalDetailsComponent implements OnInit {
     reader.readAsDataURL(event.target.files[0]);
   }
 
-  setGender(gender:string){
+  setGender(gender: string) {
     this.gender = gender;
   }
 
   ngOnInit() {
   }
 
-  submit(){
+  submit() {
 
     this.profilePicture.url = this.clientRegisterService.client.profilePicture;
+
+
+
     this.idCopy.url = this.clientRegisterService.client.copyOfId;
     this.consentForm.url = this.clientRegisterService.client.consentForm;
 
     this.clientRegisterService.client.profilePicture = this.profilePicture.url;
+    this.clientRegisterService.client.fullName = this.firstname + " " + this.lastname;
     this.clientRegisterService.client.age = Number(this.age);
     this.clientRegisterService.client.gender = this.gender;
     this.clientRegisterService.client.copyOfId = this.idCopy.url;
-    this.clientRegisterService.client.cellphoneNumber = this.cellphoneNum ;
+    this.clientRegisterService.client.cellphoneNumber = this.cellphoneNum;
     this.clientRegisterService.client.consentForm = this.consentForm.url;
     this.clientRegisterService.client.id = this.idNum;
     this.clientRegisterService.client.emergencyContactName = this.emergencyContactName;

@@ -11,14 +11,14 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataRecycleService {
 
-  client:Client;
+  client: Client;
   collectionRef = this.afs.collection("users");
-  username:string;
+  username: string;
 
   users: Array<Client>;
 
   constructor(
-    private db:   AngularFireDatabase,
+    private db: AngularFireDatabase,
     private afs: AngularFirestore,
     private pet: UserPetObject,
     private personalDetails: UserProfileObjet,
@@ -27,34 +27,38 @@ export class DataRecycleService {
   ) { }
 
 
-  setUsername(email: string){
+  setUsername(email: string) {
     this.username = email;
   }
 
-  // create( input, route) {
-  //   return this.db.list(route).push(input);
-  // }
+  create(input, route) {
+    return this.db.list(route).push(input);
+  }
 
 
   registerUser(client: Client) {
     this.client = client;
     this.collectionRef
       .doc(this.auth.afAuth.auth.currentUser.uid)
-      .set(Object.assign({},client))
-      .then(function(docRef) {
+      .set(Object.assign({}, client))
+      .then(function (docRef) {
         console.log("Client registered!");
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.error("Error adding document: ", error);
       });
   }
 
+  getCurrentUser() {
+    return this.collectionRef.doc(this.auth.afAuth.auth.currentUser.uid).valueChanges();
+  }
+
   //this.afs.collection('users', ref => ref.where('isServiceProvider', '==', true))
-  getData(collection: string,  variable:string, operator: any, value: any){
-    return  this.afs.collection(collection, ref => ref.where(variable, operator, value))
-    .valueChanges().map(response =>{
-      console.log(response);
-      return response;
-    });
+  getData(collection: string, variable: string, operator: any, value: any) {
+    return this.afs.collection(collection, ref => ref.where(variable, operator, value))
+      .valueChanges().map(response => {
+        // console.log(response);
+        return response;
+      });
   }
 }

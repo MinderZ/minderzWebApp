@@ -9,6 +9,7 @@ export class ClientRegisterService {
 
   constructor() {
     this.client = {
+      fullName: "",
       location: "",
       profilePicture: "https://i.redd.it/bmkgfea4tvc01.png",
       age: 0,
