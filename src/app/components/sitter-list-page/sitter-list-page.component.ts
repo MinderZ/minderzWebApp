@@ -1,7 +1,6 @@
 import { CacheService } from './../../services/cache.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Locations } from '../google-map/google-map.component';
 import { FilterService } from '../../services/filter.service';
 import { Client } from '../../model/client';
 

@@ -6,32 +6,31 @@
 
     <div class="col-md-8">
 
-        <div class="row">
+        <div class="row" style="margin-left: 15px">
             <div class="col-md-6 p-0">
-                <h2 class="large">{{petSitter.firstName}} {{petSitter.lastName}}</h2>
-                <h4 class="small">{{petSitter.serviceProvider.petsMap}}</h4>
+                <h2 class="large">Name{{petSitter.firstName}} {{petSitter.lastName}}</h2>
                 <p class="xsmall"><i class="fa fa-map-marker" aria-hidden="true"></i> {{petSitter.location}}</p>
             </div>
 
-            <div *ngIf="true" class="col-md-6">
+            <div *ngIf="jobFilter == 'dog walking'" class="col-md-6">
                 <h2 class="large">R{{petSitter.serviceProvider.dogWalking.pricePerWalk}}</h2>
                 <p class="medium">Per Walk</p>
             </div>
-            <div *ngIf="false" class="col-md-6">
+            <div *ngIf="jobFilter == 'pet sitting'" class="col-md-6">
                 <h2 class="large">R{{petSitter.serviceProvider.petSitting.pricePerPet}}</h2>
                 <p class="medium">Per Pet</p>
             </div>
-            <div *ngIf="false" class="col-md-6">
+            <div *ngIf="jobFilter == 'house sitting'" class="col-md-6">
                 <h2 class="large">R{{petSitter.serviceProvider.houseSitting.pricePerDay}}</h2>
                 <p class="medium">Per Day</p>
             </div>
-            <div *ngIf="false" class="col-md-6">
+            <div *ngIf="jobFilter == 'drop in visit'" class="col-md-6">
                 <h2 class="large">R{{petSitter.serviceProvider.dropInVist.pricePerVisit}}</h2>
                 <p class="medium">Per Visit</p>
             </div>
         </div>
 
-        <div class="row p-0" style="margin-right:20px;">
+        <div class="row p-0" style="margin-right:20px; margin-left: 15px">
             <div style="display: flex">
                 <div class="stars">
                     <i class="fa fa-star-o" aria-hidden="true"></i>
@@ -49,7 +48,7 @@
             <p class="small">
                 <strong>About</strong>
             </p>
-            <p class="xsmall">{{petSitter.serviceProvider.aboutMe|summary:100}} <a href="">Read more</a></p>
+            <p class="xsmall">{{petSitter.serviceProvider.aboutMe|summary:100}} <a style="cursor: pointer">Read more</a></p>
 
 
 
