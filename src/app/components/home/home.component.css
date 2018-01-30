@@ -2,10 +2,9 @@
   height: 200px;
   width: 250px;
 }
-.sitter{
-  height:90vh !important;
-   /*padding-top: 100px;
-  */
+
+.sitter {
+  padding: 30px 0;
 }
 
 .panel {
@@ -45,12 +44,12 @@ h1 {
   background-color: #ff978f56;
   padding: 30px 0;
   margin-bottom: 30px;
-
 }
 
-.testimonials  {
-   height: 90vh!important;
+.service {
+  display: flex;
 }
+
 .service-image {
   margin-top: auto;
   margin-bottom: auto;
@@ -65,9 +64,8 @@ h1 {
   overflow: hidden;
   background-image: url("../../../assets/img/Main_dog_image.jpg");
   background-size: cover;
-  background-size: cover;
   background-attachment: fixed;
-  height: 100% !important;
+  height: 753px !important;
   background-position: center;
 }
 
@@ -114,14 +112,13 @@ h1 {
   text-align: center;
 }
 
-
 .testimonials {
   padding-top: 30px;
   margin: 0;
 }
 
 .testimonial-panel {
-  max-width: 261px;
+  //max-width: 261px;
   margin: auto;
 }
 
@@ -169,14 +166,13 @@ figure.testimonial blockquote {
   border-radius: 8px;
   border-color: #ff978f8e;
   position: relative;
-  height: 30vh;
   background-color: #ffffff;
   padding: 30px 50px 65px 50px;
   font-size: 0.8em;
   font-weight: 500;
   margin: 0 0 -40px;
   line-height: 1.6em;
-  box-shadow:20 20 20px black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
 figure.testimonial blockquote:before,
