@@ -5,13 +5,16 @@
   background-color: #fff;
   border-radius: 10px;
 }
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
 }
+
 .form-signin .checkbox {
   font-weight: normal;
 }
+
 .form-signin .form-control {
   position: relative;
   height: auto;
@@ -21,23 +24,28 @@
   padding: 10px;
   font-size: 16px;
 }
+
 .form-signin .form-control:focus {
   z-index: 2;
 }
+
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
 .twitter {
   background-color: #1da1f2;
   color: #fff;
 }
+
 input:focus {
   border-color: #ff978f;
 }
@@ -50,15 +58,19 @@ input:focus {
 .google {
   text-transform: capitalize;
 }
+
 .custom {
   background-color: #ff978f;
   text-transform: capitalize;
 }
-.formtoggler{
+
+.formtoggler {
   color: #1da1f2;
   cursor: pointer;
 }
+
 /* -------------------------------------------------------------------------------------------------- */
+
 #snackbar {
   visibility: hidden;
   min-width: 250px;
@@ -82,21 +94,53 @@ input:focus {
 }
 
 @-webkit-keyframes fadein {
-  from {right: 0; opacity: 0;}
-  to {right: 30px; opacity: 1;}
+  from {
+    right: 0;
+    opacity: 0;
+  }
+  to {
+    right: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-  from {right: 0; opacity: 0;}
-  to {right: 30px; opacity: 1;}
+  from {
+    right: 0;
+    opacity: 0;
+  }
+  to {
+    right: 30px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-  from {right: 30px; opacity: 1;}
-  to {right: 0; opacity: 0;}
+  from {
+    right: 30px;
+    opacity: 1;
+  }
+  to {
+    right: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-  from {right: 30px; opacity: 1;}
-  to {right: 0; opacity: 0;}
+  from {
+    right: 30px;
+    opacity: 1;
+  }
+  to {
+    right: 0;
+    opacity: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  #footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
 }
