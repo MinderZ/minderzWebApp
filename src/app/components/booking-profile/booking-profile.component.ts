@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataRecycleService } from '../../services/data-recycle.service';
+import { CacheService } from '../../services/cache.service';
 
 @Component({
     selector: 'app-booking-profile',
@@ -9,8 +10,10 @@ import { DataRecycleService } from '../../services/data-recycle.service';
 
 export class BookingProfileComponent {
 
+    sitterID: string;
     editing = false;
 
+    profilePic: any;
     fullname: string;
     rating: number;
     reviews: number;
@@ -28,19 +31,19 @@ export class BookingProfileComponent {
     addingLanguage = false;
     addingSkill = false;
 
-    constructor(private dataRecycleService: DataRecycleService) {
+    constructor(private dataRecycleService: DataRecycleService, private cacheService: CacheService) {
 
-        
+        this.sitterID = this.cacheService.selectedSitter.serviceProvider.id;
 
-        
-        this.fullname = "Test"
-        this.rating = 4.0;
-        this.reviews = 10;
-        this.jobsComplete = 15;
-        this.accountCreated = new Date;
-        this.jobs = 15;
-        this.cancellations = 2;
-        this.aboutMe = "I am a sitter";
+        this.profilePic = this.cacheService.selectedSitter.profilePicture;
+        this.fullname = this.cacheService.selectedSitter.firstName + " " + this.cacheService.selectedSitter.lastName;
+        this.rating = 4; //Unlinked
+        this.reviews = 10; //Unlinked
+        this.jobsComplete = 15; //Unlinked
+        this.accountCreated = new Date; //Unlinked
+        this.jobs = 15; //Unlinked
+        this.cancellations = 2; //Unlinked
+        this.aboutMe = this.cacheService.selectedSitter.serviceProvider.aboutMe;
         this.languages.push('English');
         this.skills.push('Walking');
     }
@@ -80,6 +83,10 @@ export class BookingProfileComponent {
 
     }
 
+    editCommit() {
 
-    
+    }
+
+
+
 }
