@@ -9,7 +9,8 @@ import { Client } from '../../../model/client';
   styleUrls: ['./sitter-profile-card.component.css']
 })
 export class SitterProfileCardComponent implements OnInit {
-@Input() petSitter:Client
+@Input() petSitter:Client;
+jobFilter;
 
 // ={name:"Piet",
 // surname:"Plaasmuis",

@@ -1,7 +1,7 @@
 .sitter-profile-pic {
     height: 200px;
     width: 200px;
-    margin: 24px 10px;
+    margin: 24px 24px 24px 10px;
 }
 
 .large {
@@ -22,9 +22,14 @@
 
 .card {
     height: 250px;
-    border: 1px solid rgba(0, 0, 0, 0.541);
+    border: 1px solid rgba(0, 0, 0, 0.329);
+    border-radius: 5px;
     width: 650px;
     margin: 0px 20px 20px 35px;
+}
+
+.card:hover {
+    background-color: rgba(0, 0, 0, 0.048);
 }
 
 .fa-map-marker {

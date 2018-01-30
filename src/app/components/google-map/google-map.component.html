@@ -1,9 +1,9 @@
-<agm-map [latitude]="locations[0].lat" [longitude]="locations[0].lng">
+<agm-map [latitude]="locations[0].coordinates.lat" [longitude]="locations[0].coordinates.lng">
 
-    <agm-marker *ngFor="let location of locations" [latitude]="location.lat" [longitude]="location.lng">
+    <agm-marker *ngFor="let location of locations" [latitude]="location.coordinates.lat" [longitude]="location.coordinates.lng">
         <agm-info-window>
-            <h3>{{location.name}}</h3>
-            <h4>R{{location.price}}</h4>
+            <h3>{{location.firstName}}</h3>
+            <!-- <h4>{{location.serviceProvider.experience}}</h4> -->
         </agm-info-window>
     </agm-marker>
 
