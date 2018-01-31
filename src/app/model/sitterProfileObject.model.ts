@@ -1,5 +1,6 @@
 import { SitterReferenceObject } from "./sitterReferenceObject.model";
 import { UploadFiles } from "./upload-files";
+import { Questions } from "./question.model";
 
 export class SitterProfileObject {
 
@@ -42,5 +43,6 @@ export class SitterProfileObject {
     location?:string;
     emergencyContactName: string;
     emergencyContactNr: string;
+    SitterQuestionair?: Array<Questions>;
 
 }
