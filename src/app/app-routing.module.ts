@@ -63,6 +63,10 @@ const routes: Routes = [
     path: 'registration',
     component: RegisterComponent,
   },
+  {
+    path: 'review',
+    component: FormRvwComponent,
+  },
   { path: '**', component: FileNotFoundComponent }
 
 

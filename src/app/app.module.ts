@@ -88,6 +88,7 @@ export const firestoreConfig = {
     HomePageFilterComponent,
     SitterListingsFilterComponent,
    TestimonialFormComponent,
+   FormRvwComponent,
     BeforeAseviceProviderComponent,
     SummaryPipe,
     Step1LocationComponent,

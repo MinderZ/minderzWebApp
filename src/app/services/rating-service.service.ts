@@ -3,7 +3,7 @@ import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} fr
 @Injectable()
 export class RatingServiceService {
 
-  
+
   constructor(private afs: AngularFirestore) { }
 
   get_UserStars(uID){
@@ -14,12 +14,21 @@ export class RatingServiceService {
   setStarRating(reviwedUser,value){
     const rating:star={reviwedUser:reviwedUser,value:value}
     const path= `/stars/${this.afs.createId()}`
-    return this.afs.doc(path).set(rating)    
+    return this.afs.doc(path).set(rating)
   }
+
+  get_AverageRating(user:string){
+    return this.get_UserStars(user).map( arr =>{
+       const ratings = arr.map( res => res.value)
+       return ratings.length ?ratings.reduce((total,val)=> total +val)/ratings.length :0
+     })
+   }
+
+   
 }
 
 export interface star{
-  
+
   reviwedUser?:string;
   value?:number;
 
