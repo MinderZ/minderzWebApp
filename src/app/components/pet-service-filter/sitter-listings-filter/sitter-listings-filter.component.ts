@@ -46,6 +46,7 @@ export class SitterListingsFilterComponent implements OnInit {
           this.longitude = place.geometry.location.lng();
 
         });
+        
       });
     });
   }
