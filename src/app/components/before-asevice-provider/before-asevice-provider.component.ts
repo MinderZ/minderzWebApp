@@ -15,7 +15,7 @@ export class BeforeAseviceProviderComponent implements OnInit {
   checked = false;
   selected = false;
 
-  havebeenaVolunteerselected= true;
+  havebeenaVolunteerselected= false;
   hadPetb4selected= false;
   HavePetsCurrentlyselected= false;
   isCompetentToAnimalsselected= false;
