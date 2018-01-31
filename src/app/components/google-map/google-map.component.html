@@ -2,7 +2,7 @@
 
   <agm-marker *ngFor="let location of locations" [latitude]="location.coordinates.lat" [longitude]="location.coordinates.lng">
     <agm-info-window>
-      <h3>{{location.firstName}}</h3>
+      <h6>{{location.fullName}}</h6>
       <!-- <h4>{{location.serviceProvider.experience}}</h4> -->
     </agm-info-window>
   </agm-marker>
