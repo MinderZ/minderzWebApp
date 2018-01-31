@@ -11,7 +11,7 @@ import { FilterService } from '../../../services/filter.service';
   styleUrls: ['./home-page-filter.component.css']
 })
 export class HomePageFilterComponent implements OnInit {
-servicesProvided=['House Sitting','Pet Sitting','Drop-in Visit','Dog Walk']
+servicesProvided=['House Sitting','Pet Sitting','Drop-in Visit','Dog Walking']
 
   @ViewChild('address') public addressElementRef: ElementRef;
   latitude;

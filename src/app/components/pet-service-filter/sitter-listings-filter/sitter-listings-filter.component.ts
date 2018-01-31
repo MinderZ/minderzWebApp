@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sitter-listings-filter.component.css']
 })
 export class SitterListingsFilterComponent implements OnInit {
-  servicesProvided = ['House Sitting', 'Pet Sitting', 'Drop-in Visit', 'Dog Walk']
+  servicesProvided = ['House Sitting', 'Pet Sitting', 'Drop-in Visit', 'Dog Walking']
 
   @ViewChild('address') public addressElementRef: ElementRef;
   latitude;
@@ -55,3 +55,4 @@ export class SitterListingsFilterComponent implements OnInit {
     this.filterService.getbyService(this.serviceSearch);
   }
 }
+ 
