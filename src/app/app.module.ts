@@ -61,6 +61,7 @@ import { ReviewTestimonialService } from './services/review-testimonial.service'
 import { RatingServiceService } from './services/rating-service.service';
 import { FilterService } from './services/filter.service';
 import { Questions } from './model/question.model';
+import { ReviewCardComponent } from './components/review-card/review-card.component';
 
 export const firestoreConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -99,7 +100,8 @@ export const firestoreConfig = {
     Step3SitterPreferencesComponent,
     Step4SitterDetailsComponent,
     RegisterComponent,
-    FileNotFoundComponent
+    FileNotFoundComponent,
+    ReviewCardComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),

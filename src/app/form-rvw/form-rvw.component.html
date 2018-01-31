@@ -1,21 +1,29 @@
+<<<<<<< HEAD
+Form
+<form [formGroup]="reviewForm" (ngSubmit)="addReview(reviewForm.value)">
+    <div class="rating form-group"> <br> Submit your review <br><br> Rating:
+=======
 <form [formGroup]="reviewForm" (ngSubmit)="addReview(reviewForm.value)">
   <div class="rating form-group"> <br> Submit your review <br><br> Rating:
+>>>>>>> 5411c954e63639537da767ff5539089ea564b4c2
 
-      <ng-container *ngFor="let num of [5, 4, 3, 2, 1]">
+        <ng-container *ngFor="let num of [5, 4, 3, 2, 1]">
 
-          <input name="star" formControlName="star" [id]="'star'+num" [value]="num"  type="radio" />
-          <label class="full" [for]="'star'+num"></label>
+            <input name="star" formControlName="star" [id]="'star'+num" [value]="num" type="radio" />
+            <label class="full" [for]="'star'+num"></label>
 
-          <input name="star" formControlName="star"  [id]="'halfstar'+num" [value]="num-0.5"  type="radio" />
-          <label class="half" [for]="'halfstar'+num"></label>
-      </ng-container>
-      <div class="alert" *ngIf="!reviewForm.controls['star'].valid && reviewForm.controls['star'].touched">Please Specify a rating for the user</div>
-          <div class="clear-fix"></div>
-      <br><br>
-      <p>Review:</p>
-      <textarea  class="form-control" formControlName="review" cols="30" rows="10"></textarea>
-      <br><br>
+            <input name="star" formControlName="star" [id]="'halfstar'+num" [value]="num-0.5" type="radio" />
+            <label class="half" [for]="'halfstar'+num"></label>
+        </ng-container>
+        <div class="alert" *ngIf="!reviewForm.controls['star'].valid && reviewForm.controls['star'].touched">Please Specify a rating for the user</div>
+        <div class="clear-fix"></div>
+        <br><br>
+        <p>Review:</p>
+        <textarea class="form-control" formControlName="review" cols="30" rows="10"></textarea>
+        <br><br>
 
-      <button type="submit" class="btn btn-primary form-control" [disabled]='!reviewForm.valid'>Submit</button>
-  </div>
+        <button type="submit" class="btn btn-primary form-control" [disabled]='!reviewForm.valid'>Submit</button>
+    </div>
 </form>
+<h3>Reviews</h3>
+<app-review-card></app-review-card>

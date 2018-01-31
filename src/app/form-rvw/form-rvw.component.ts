@@ -6,41 +6,42 @@ import { RatingServiceService } from '../services/rating-service.service';
 import { print } from 'util';
 
 @Component({
- selector: 'app-form-rvw',
- templateUrl: './form-rvw.component.html',
- styleUrls: ['./form-rvw.component.css']
+  selector: 'app-form-rvw',
+  templateUrl: './form-rvw.component.html',
+  styleUrls: ['./form-rvw.component.css']
 })
 export class FormRvwComponent implements OnInit {
- myForm: any;
- rating: number;
- reviewForm: FormGroup;
- constructor(
-   private fb: FormBuilder,
-   private afAuth: AuthService,
-   private reviewService: ReviewTestimonialService,
-   private ratingServ:RatingServiceService) {
-   this.reviewForm = fb.group({
-     'review': [null, Validators.compose([Validators.required, Validators.maxLength(120)])],
-     'star': [null, Validators.required]
-   })
-   console.log('print')
-
- }
+  myForm: any;
+  rating: number;
+  reviewForm: FormGroup;
+  view:boolean=true;
+  constructor(
+    private fb: FormBuilder,
+    private afAuth: AuthService,
+    private reviewService: ReviewTestimonialService,
+    private ratingServ: RatingServiceService) {
+    this.reviewForm = fb.group({
+      'review': [null, Validators.compose([Validators.required, Validators.maxLength(120)])],
+      'star': [null, Validators.required]
+    })
 
 
+  }
 
 
- ngOnInit() {
-  this.ratingServ.get_AverageRating("Richard")
- }
 
- addReview(post) {
-   console.log(post)
-   setTimeout(() => {
-     this.reviewService.create_review(this.afAuth.currentUserUID(),"Richard", post.review, post.star)
-     alert('Review Posted')
-   }, 1500);
-   this.reviewForm.reset()
- }
+
+  ngOnInit() {
+    this.ratingServ.get_AverageRating("Richard")
+  }
+
+  addReview(post) {
+    console.log(post)
+    setTimeout(() => {
+      this.reviewService.create_review(this.afAuth.currentUserUID(), "Richard", post.review, post.star)
+      this.view =false;
+    }, 1500);
+    this.reviewForm.reset()
+  }
 
 }

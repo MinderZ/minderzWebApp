@@ -48,8 +48,8 @@ export class ReviewTestimonialService {
   }
 
 
-  get_User_reviews(userId){
-    return this.afs.collection('reviews', ref => ref.where('userId' ,'==' , userId)).valueChanges()
+  get_User_reviews(userId: string){
+    return this.afs.collection('reviews', ref => ref.where('reviewdUser' ,'==' , userId)).valueChanges()
   }
 
 
