@@ -67,7 +67,7 @@ const routes: Routes = [
   {
     path:'petProf',
     component: PetProfileComponent
-  }
+  },
     path: 'registration',
     component: RegisterComponent,
   },
