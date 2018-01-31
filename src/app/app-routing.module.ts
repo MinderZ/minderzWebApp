@@ -68,6 +68,7 @@ const routes: Routes = [
     path:'petProf',
     component: PetProfileComponent
   },
+  {
     path: 'registration',
     component: RegisterComponent,
   },
@@ -75,7 +76,10 @@ const routes: Routes = [
     path: 'review',
     component: FormRvwComponent,
   },
-  { path: '**', component: FileNotFoundComponent }
+  { 
+    path: '**', 
+    component: FileNotFoundComponent 
+  }
 
   // children: [
   //   { path: ' ',
