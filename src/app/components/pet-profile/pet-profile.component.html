@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card" style="width: 20rem;">
+        <input type="checkbox" id="pure-toggle" hidden/>
+        <div id="card-user" class="pure-toggle" for="pure-toggle">
+          <div class="header"> </div>
+          <div class="avatar">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfunOH02_Jz728EfvQhGMwkkYRrZQdOG9OeA9kyakFES4r2kNJ" alt="..."
+            />
+          </div>
+          <div class="text">
+            <div class="card-block">
+              <h3 class="card-title">Card title</h3>
+              <p class="card-text">Decription of pet.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <input [(ngModel)]="petName" id="pet" [readonly]="!editing" /> </li>
+              <li class="list-group-item">
+                <input [(ngModel)]="petType" id="pet" [readonly]="!editing" /> </li>
+              <li class="list-group-item">
+                <input [(ngModel)]="age" id="pet" [readonly]="!editing" /> </li>
+            </ul>
+            <div class="card-block">
+              <a (click)="edit()">{{editing}} Edit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="card" style="width: 20rem;">
+        <input type="checkbox" id="pure-toggle" hidden/>
+        <div id="card-user" class="pure-toggle" for="pure-toggle">
+          <div class="header">
+          </div>
+          <div class="avatar">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfunOH02_Jz728EfvQhGMwkkYRrZQdOG9OeA9kyakFES4r2kNJ" alt="..."
+            />
+          </div>
+          <div class="text">
+            <div class="card-block">
+              <h3 class="card-title">Card title</h3>
+              <p class="card-text">Decription of pet.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <input [(ngModel)]="petName" id="pet" [readonly]="!editing" /> </li>
+              <li class="list-group-item">
+                <input [(ngModel)]="petType" id="pet" [readonly]="!editing" /> </li>
+              <li class="list-group-item">
+                <input [(ngModel)]="age" id="pet" [readonly]="!editing" /> </li>
+            </ul>
+            <div class="card-block">
+              <a (click)="edit()">{{editing}} Edit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card" style="width: 20rem;">
+        <input type="checkbox" id="pure-toggle" hidden/>
+        <div id="card-user" class="pure-toggle" for="pure-toggle">
+          <div class="header">
+          </div>
+          <div class="avatar">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfunOH02_Jz728EfvQhGMwkkYRrZQdOG9OeA9kyakFES4r2kNJ" alt="..."
+            />
+          </div>
+          <div class="text">
+            <div class="card-block">
+              <h3 class="card-title">Card title</h3>
+              <p class="card-text">Decription of pet.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <input [(ngModel)]="petName" id="pet" [readonly]="!editing" /> </li>
+              <li class="list-group-item">
+                <input [(ngModel)]="petType" id="pet" [readonly]="!editing" /> </li>
+              <li class="list-group-item">
+                <input [(ngModel)]="age" id="pet" [readonly]="!editing" /> </li>
+            </ul>
+            <div class="card-block">
+              <a (click)="edit()">{{editing}} Edit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

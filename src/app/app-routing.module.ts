@@ -1,3 +1,4 @@
+import { PetProfileComponent } from './components/pet-profile/pet-profile.component';
 import { FormRvwComponent } from './form-rvw/form-rvw.component';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -31,6 +32,10 @@ const routes: Routes = [
     component: SignInComponent
   },
   {
+    path: 'petProfile',
+    component: PetProfileComponent
+  },
+  {
     path: 'profile',
     component: MiniDashboardComponent,
     canActivate: [AuthGuard]
@@ -60,6 +65,10 @@ const routes: Routes = [
     component: SitterListPageComponent
   },
   {
+    path:'petProf',
+    component: PetProfileComponent
+  },
+  {
     path: 'registration',
     component: RegisterComponent,
   },
@@ -67,9 +76,10 @@ const routes: Routes = [
     path: 'review',
     component: FormRvwComponent,
   },
-  { path: '**', component: FileNotFoundComponent }
-
-
+  { 
+    path: '**', 
+    component: FileNotFoundComponent 
+  }
 
   // children: [
   //   { path: ' ',
