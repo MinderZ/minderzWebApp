@@ -114,7 +114,7 @@ export const firestoreConfig = {
       apiKey: 'AIzaSyCbt0jWTVPaN546r8hq4LFGBN2F7NrMmq0',
       libraries: ['places']
     })
-  ],
+  ], 
   providers: [
     UserService,
     CacheService,

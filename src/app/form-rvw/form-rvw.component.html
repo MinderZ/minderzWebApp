@@ -1,4 +1,4 @@
-Form<form [formGroup]="reviewForm" (ngSubmit)="addReview(reviewForm.value)">
+<form [formGroup]="reviewForm" (ngSubmit)="addReview(reviewForm.value)">
   <div class="rating form-group"> <br> Submit your review <br><br> Rating:
 
       <ng-container *ngFor="let num of [5, 4, 3, 2, 1]">
