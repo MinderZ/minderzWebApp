@@ -1,0 +1,361 @@
+<div class="section" *ngIf="hide">
+
+  <div class="text-center Pink">
+
+    <h1 class="">Why you'll love working with Minderz!</h1>
+  </div>
+
+
+  <div class="row text-centder">
+    <div class=" col-md-2">
+    </div>
+    <div class="col-md-4 ">
+      <p class="text-muted">
+        <span class="">
+          <i class="fa fa-check-circle-o fa-5x Pink" aria-hidden="true"></i>
+        </span>Freedom to choose your schedule, services, and rates. </p>
+
+
+      <br>
+      <h4 class="text-musted">
+        <span class="Pink">
+          <i class="fa fa-check-circle-o fa-5x" aria-hidden="true"></i>
+        </span> Secure payments.</h4>
+    </div>
+
+    <div class=" col-md-4">
+
+      <h4 class="text-musted">
+        <span class="Pink">
+          <i class="fa fa-check-circle-o fa-5x" aria-hidden="true"></i>
+        </span>You & booked-in pets are covered by insurances.</h4>
+      <br>
+      <h4 class="text-musted">
+        <span class="Pink">
+          <i class="fa fa-check-circle-o fa-5x" aria-hidden="true"></i>
+        </span> Customer care support.
+      </h4>
+    </div>
+
+    <div class=" col-md-1">
+    </div>
+
+  </div>
+  <br>
+
+
+  <section>
+
+    <div class="howitworks">
+      <h1 class="Pink text-center">How it works </h1>
+      <p class="text-center text-muted">Only the best sitters and dog walkers get listed on Minderz. If you have personal or professional experience watching
+        pets or walking dogs, you could be a great fit.</p>
+      <br>
+
+      <div class="row rowfix">
+        <div class="col-md-5 col-sm-5">
+            <p class="details">
+              <img src="../../../assets/img/resume.png" class="logoImg" alt="formLogo"><h3> Set up your profile.
+              </h3> Tell us what makes you a standout sitter and include details of your pet sitting or dog walking experience.
+            </p>
+   </div>
+
+        <div class="col-md-5 col-sm-5">
+            <p class="details">
+                <img src="../../../assets/img/calendar.png" class="logoImg" alt="calenderLogo"><h3> Organise your Calendar.
+                </h3>Choose your services, rates, and block out the days you're unavailable, eg. going on holiday.
+              </p>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+  <br>
+      <div class="row rowfix">
+        <div class="col-md-5 col-sm-5">
+   <p class="details">
+                <img src="../../../assets/img/image.png" class="logoImg" alt="imagelogo"><h3> Add Photos
+                </h3> Adding photos that portray you as an animal lover with a safe home. Having a clear professional profile image is key as this
+                will display as a thumbnail across the site.
+              </p>
+        </div>
+
+
+
+
+        <div class="col-md-5 col-sm-5">
+          <p class="details">
+
+            <img src="../../../assets/img/coin.png" class="logoImg" alt="coinlogo" ><h3> Respond to jobs & enquiries!
+                       </h3>  Pet Owners will search their local area for Sitters and inquire with you directly.
+                     </p>
+               </div>
+
+      </div>
+
+  <div class="text-center">
+    <button type="button" *ngIf="hide" class="text-center btn btn-md btn-primary mt-40" (click)="step1 = true; from = true; hide = false"> Get started</button>
+  </div>
+
+    </div>
+  </section>
+</div>
+
+
+<form class="form from" *ngIf="from" >
+
+
+
+  <div class="line col-md-12">
+    <div class="col-md-4 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Have you ever volunteered at an animal rescue
+        organization or taken care of pets?</label>
+    </div>
+    <div class="col-md-8">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="havebeenaVolunteerselected  ? 'selected' : 'unselected'" (click)="havebeenaVolunteer(true); validate();"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!havebeenaVolunteerselected  ? 'selected' : 'unselected'" (click)="havebeenaVolunteer(false); validate();"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="line col-md-12">
+    <div class="col-md-4 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Have you had pets of your own?</label>
+    </div>
+    <div class="col-md-8">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="hadPetb4selected ? 'selected' : 'unselected'" (click)="hadPetb4(true); validate();"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!hadPetb4selected  ? 'selected' : 'unselected'" (click)="hadPetb4(false); validate();"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="line col-md-12">
+    <div class="col-md-4 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Do you currently have a pet?</label>
+    </div>
+    <div class="col-md-8">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="HavePetsCurrentlyselected ? 'selected' : 'unselected'" (click)="HavePetsCurrently(true); validate();"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!HavePetsCurrentlyselected ? 'selected' : 'unselected'" (click)="HavePetsCurrently(false); validate();"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="line col-md-12">
+    <div class="col-md-4 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Do you feel competent to look after baby animals?</label>
+    </div>
+    <div class="col-md-8">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="isCompetentToAnimalsselected  ? 'selected' : 'unselected'" (click)="isCompetentToAnimals(true); validate();"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!isCompetentToAnimalsselected ? 'selected' : 'unselected'" (click)="isCompetentToAnimals(false); validate();"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="line col-md-12">
+    <div class="col-md-4 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Can you provide two current references with phone
+        numbers?</label>
+    </div>
+    <div class="col-md-8">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="HaveRefNumberselected ? 'selected' : 'unselected'" (click)="HaveRefNumber(true); validate();"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!HaveRefNumberselected ? 'selected' : 'unselected'" (click)="HaveRefNumber(false); validate();"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="line col-md-12">
+    <div class="col-md-4 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Do you have a clear criminal history? :</label>
+    </div>
+    <div class="col-md-8">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="HasacriminalRecordselected ? 'selected' : 'unselected'" (click)="HasacriminalRecord(true); validate();"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!HasacriminalRecordselected  ? 'selected' : 'unselected'" (click)="HasacriminalRecord(false); validate(); "></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="line col-md-12">
+    <div class="col-md-4 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Would you agree to a background check?</label>
+    </div>
+    <div class="col-md-8">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="agreeingToBackgroundCheckselected ? 'selected' : 'unselected'" (click)="agreeingToBackgroundCheck(true); validate();"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!agreeingToBackgroundCheckselected ? 'selected' : 'unselected'" (click)="agreeingToBackgroundCheck(false); validate();" required></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="line col-md-12">
+      <div class="col-md-4 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">How many years of experience do you have with pet care</label>
+      </div>
+      <div class="col-md-8">
+
+        <div class="col-md-2 col-sm-12 display-flex">
+          <div class="radio" [ngClass]="agreeingToBackgroundCheckselected ? 'selected' : 'unselected'" (click)="experience(true);"></div>
+          <label class="text-line-middle radio-label">None</label>
+        </div>
+
+        <div class="col-md-2 col-sm-12 display-flex">
+          <div class="radio" [ngClass]="!experienceselected ? 'selected' : 'unselected'" (click)="experience(false);" required></div>
+          <label class="text-line-middle radio-label">1-2 Years</label>
+        </div>
+
+        <div class="col-md-2 col-sm-12 display-flex">
+          <div class="radio" [ngClass]="!experienceselected ? 'selected' : 'unselected'" (click)="experience(false);" required></div>
+          <label class="text-line-middle radio-label">3-5 Years</label>
+        </div>
+
+        <div class="col-md-2 col-sm-12 display-flex">
+          <div class="radio" [ngClass]="!experienceselected ? 'selected' : 'unselected'" (click)="experience(false);" required></div>
+          <label class="text-line-middle radio-label">5+ Years</label>
+        </div>
+
+      </div>
+    </div> -->
+
+
+
+  <!-- <div class="col-md-4 col-sm-12 height-46 display-flex">
+    <label class="text-line-middle">How many years of experience do you have with pet care ?</label>
+  </div> -->
+
+
+<!--
+  <div class="line col-md-12" id="pet-type-reference">
+    <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
+      <div class="checkbox" (click)="experience()">
+        <i [ngClass]="petMap['cats'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+      </div>
+      <label class="text-line-middle checkbox-label">None</label>
+    </div>
+    <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
+      <div class="checkbox" (click)="experience()">
+        <i [ngClass]="petMap['cats'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+      </div>
+      <label class="text-line-middle checkbox-label">1-2 Years</label>
+    </div>
+    <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
+      <div class="checkbox" (click)="experience()">
+        <i [ngClass]="petMap['cats'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+      </div>
+      <label class="text-line-middle checkbox-label">3-5 Years</label>
+    </div>
+    <div class="checkbox-container display-flex col-md-2 col-sm-2 col-xs-12">
+      <div class="checkbox" (click)="experience()">
+        <i [ngClass]="petMap['cats'] ? 'checked' : 'unchecked'" class="fa fa-check"></i>
+      </div>
+      <label class="text-line-middle checkbox-label">5+ Years</label>
+    </div>
+  </div> -->
+
+
+
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label">How many years of experience do you have with pet care ?</label>
+  <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+      <label class="checkbox-inline">
+        <input type="checkbox" value="None">None</label>
+      <label class="checkbox-inline">
+        <input type="checkbox" value="1-2 Years">1-2 Years</label>
+      <label class="checkbox-inline">
+        <input type="checkbox" value="3-5 Years">3-5 Years</label>
+      <label class="checkbox-inline">
+        <input type="checkbox" value="5+ Years">5+ Years</label>
+    </div>
+  </div>
+</div> -->
+
+<button class="btn btn-lg btn-primary" [disabled]="(validated)"(click)="newsitter() " type="submit">Begin
+</button>
+
+
+</form>
+

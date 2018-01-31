@@ -1,0 +1,63 @@
+<div class="row card">
+  <div class="col-md-4 p-0">
+    <img class="sitter-profile-pic" src="{{petSitter.profilePicture}}" alt="Profile Picture">
+  </div>
+
+
+  <div class="col-md-8">
+
+    <div class="row" style="margin-left: 15px">
+      <div class="col-md-6 p-0">
+        <h2 class="large">{{petSitter.fullName}}</h2>
+        <p class="xsmall">
+          <i class="fa fa-map-marker" aria-hidden="true"></i> {{petSitter.location}}</p>
+      </div>
+
+      <div *ngIf="jobFilter == 'dog walking'" class="col-md-6">
+        <h2 class="large">R{{petSitter.serviceProvider.dogWalking.pricePerWalk}}</h2>
+        <p class="medium">Per Walk</p>
+      </div>
+      <div *ngIf="jobFilter == 'pet sitting'" class="col-md-6">
+        <h2 class="large">R{{petSitter.serviceProvider.petSitting.pricePerPet}}</h2>
+        <p class="medium">Per Pet</p>
+      </div>
+      <div *ngIf="jobFilter == 'house sitting'" class="col-md-6">
+        <h2 class="large">R{{petSitter.serviceProvider.houseSitting.pricePerDay}}</h2>
+        <p class="medium">Per Day</p>
+      </div>
+      <div *ngIf="jobFilter == 'drop in visit'" class="col-md-6">
+        <h2 class="large">R{{petSitter.serviceProvider.dropInVist.pricePerVisit}}</h2>
+        <p class="medium">Per Visit</p>
+      </div>
+    </div>
+
+    <div class="row p-0" style="margin-right:20px; margin-left: 15px">
+      <div style="display: flex">
+        <div class="stars">
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+        </div>
+        <div class="medium">{{petSitter.rating}}</div>
+        <div class="xsmall reviews">
+          <a href="">{{petSitter.reviews}} Reviews</a>
+        </div>
+      </div>
+
+      <p class="small">
+        <strong>About</strong>
+      </p>
+      <p class="xsmall">{{petSitter.serviceProvider.aboutMe|summary:100}}
+        <a style="cursor: pointer">Read more</a>
+      </p>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,152 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="profile-picture">Upload Profile Picture:</label>
+      </div>
+      <div class="col-md-10">
+        <input class="image-input form-control" (change)="profileUpload($event)" id="profile-picture" type="file">
+
+        <div class="button-cover display-flex">
+          <i class="margin-auto fa fa-plus-circle"></i>
+        </div>
+
+        <div [style.opacity]="profilePicUrl!==undefined ? '1' : '0'" class="image-preview">
+          <img src="{{profilePicUrl}}" alt="image preview...">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="age">Firstname:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'firstname' class="form-control" id="firstname" placeholder="Firstname" type="text">
+      </div>
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="age">Lastname:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'lastname' class="form-control" id="lastname" placeholder="Lastname" type="text">
+      </div>
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="age">Your Age:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'age' class="form-control" id="age" placeholder="Your Age" type="text">
+      </div>
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="gender">Your Gender:</label>
+      </div>
+      <div class="col-md-10">
+  
+        <!-- Yes -->
+        <div class="col-md-2 col-sm-12 display-flex">
+          <div class="radio" [ngClass]="gender == 'male' && !genderPristine ? 'selected' : 'unselected'" (click)="setGender('male'); genderPristine=false"></div>
+          <label class="text-line-middle radio-label">Male</label>
+        </div>
+
+        <!-- No -->
+        <div class="col-md-2 col-sm-12 display-flex">
+          <div class="radio" [ngClass]="gender == 'female' && !genderPristine ? 'selected' : 'unselected'" (click)="setGender('female'); genderPristine=false"></div>
+          <label class="text-line-middle radio-label">Female</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="phoneNr">Your Phone Number:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'cellphoneNum' class="form-control" id="phoneNr" placeholder="Your Phone Number" type="text">
+      </div>
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="idNr">Your SA ID Number:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'idNum' class="form-control" id="idNr" placeholder="Your SA ID Number" type="text">
+      </div>
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="copy-of-id">Upload Copy Of ID:</label>
+      </div>
+      <div class="col-md-10">
+
+        <input class="image-input form-control" (change)="idCopyUpload($event)" id="profile-picture" type="file">
+
+        <div class="button-cover display-flex">
+          <i class="margin-auto fa fa-plus-circle"></i>
+        </div>
+
+        <div [style.opacity]="idCopyUrl!==undefined ? '1' : '0'" class="image-preview">
+          <img src="{{idCopyUrl}}" alt="image preview...">
+        </div>
+      </div>
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="consent-form">Upload Signed Consent Form:</label>
+      </div>
+      <div class="col-md-10">
+        <input class="image-input form-control" (change)="consentFormUpload($event)" id="profile-picture" type="file">
+
+        <div class="button-cover display-flex">
+          <i class="margin-auto fa fa-plus-circle"></i>
+        </div>
+
+        <div [style.opacity]="consentFormUrl!==undefined ? '1' : '0'" class="image-preview">
+          <img src="{{consentFormUrl}}" alt="image preview...">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="emergency-contact-person">Emergency Contact Name:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'emergencyContactName' class="form-control" id="emergency-contact-person" placeholder="Emergency Contact Name" type="text">
+      </div>
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="emergency-phoneNr">Emergency Contact Number:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'emergencyContactNr' class="form-control" id="emergency-phoneNr" placeholder="Emergency Contact Number" type="text">
+      </div>
+    </div>
+
+    <!--Navigate-->
+    <div class="col-md-12 col-sm-12 navigate">
+      <button class="back btn btn-default" (click)="registerService.back()">
+        <i class="fa fa-arrow-left"></i>Back</button>
+      <button class="next btn btn-primary" (click)="submit()">Submit
+        <i class="fa fa-arrow-right"></i>
+      </button>
+    </div>
+
+  </div>
+</div>

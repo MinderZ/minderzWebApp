@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="intro-image">
+
+      <div id="display">
+        <div class="card">
+
+          <!--Heading-->
+          <div class="col-md-12">
+            <h1 id="cardHeader"> Find trusted care for your fur-kid</h1>
+          </div>
+
+          <!--Sub heading-->
+          <div class="col-md-12 spacing">
+            <h2 id="cardSubHeader">Providing vetted and trusted pet care 24/7</h2>
+          </div>
+
+          <!--Start service-->
+          <div class="col-md-12 form-group">
+            <select [(ngModel)] ="serviceSearch" name="service" class="form-control selectpicker">
+                <option *ngFor="let item of servicesProvided" (click)="sendParam(item)" >{{item}}</option>
+              <!-- <option (click)="sendParam('House Sitting')" value="House Sitting">House Sitting</option>
+              <option value="Pet Boarding">Pet Boarding</option>
+              <option value="Drop-in Visit">Drop-in Visit</option>
+              <option value="Dog Walk">Dog Walk</option> -->
+            </select>
+          </div>
+          <!--End service-->
+
+          <div class="col-md-12 form-group">
+            <input type="text" class="form-control" autocorrect="off" autocapitalize="off" spellcheck="off" #address placeholder="Your location"
+              id="location">
+          </div>
+
+          <div class="col-md-6 form-group">
+            <input type="text" class="form-control" onfocus="(this.type='date')" placeholder="Start Date" id="startDate">
+          </div>
+
+          <div class="col-md-6 form-group">
+            <input type="text" class="form-control" onfocus="(this.type='date')" placeholder="End Date" id="endDate">
+          </div>
+
+          <div id="navigate">
+            <button id="submit" class="btn btn-primary" (click)="search()">Search</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

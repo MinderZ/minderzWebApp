@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row">
+        <app-pet-service-filter></app-pet-service-filter>
+    </div>
+    <div class="row " *ngIf="filter.filteredList!=undefined">
+        <div class="col-md-6 p-0 list">
+            <div *ngFor="let sitter of filter.filteredList">
+                <app-sitter-profile-card [petSitter]='sitter' (click)="sitterInfo(sitter)" class="cards"></app-sitter-profile-card>
+            </div>
+        </div>
+        <div class="col-md-6 map">
+            <app-google-map [locations]="filter.filteredList"></app-google-map>
+        </div>
+    </div>
+</div>

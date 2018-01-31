@@ -1,0 +1,187 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!--Start house type-->
+    <div class="line col-md-12" id="house-type">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">House Type:</label>
+      </div>
+
+      <div class="col-md-10 col-sm-12">
+        <select [(ngModel)]='houseType' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+          <option *ngFor='let option of houseTypeOption'>{{option}}</option>
+        </select>
+      </div>
+    </div>
+    <!--End house type-->
+
+    <!--Start children-->
+    <div class="line col-md-12" id="children">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">Children:</label>
+      </div>
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="children && !childrenPristine ? 'selected' : 'unselected'" (click)="setChildren(true);"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!children && !childrenPristine ? 'selected' : 'unselected'" (click)="setChildren(false)"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+    <!--End cheldren-->
+
+    <!--Experience-->
+    <div class="line col-md-12" id="experience">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">Experience:</label>
+      </div>
+
+      <div class="col-md-10 col-sm-12">
+        <select [(ngModel)]='experience' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+          <option *ngFor='let option of experienceOption'>{{option}}</option>
+        </select>
+      </div>
+    </div>
+    <!--End house type-->
+
+    <!--Start about you-->
+    <div class="line col-md-12" id="about-me">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">About me:</label>
+      </div>
+      <div class="col-md-10 col-sm-12">
+        <textarea id="about-me" [(ngModel)]='aboutMe' class="form-control"></textarea>
+      </div>
+    </div>
+    <!--End about you-->
+
+    <!--Start volunteer-->
+    <div class="line col-md-12" id="volunteer">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">Done volunteer work with pets:</label>
+      </div>
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="volunteer && !volunteerPristine ? 'selected' : 'unselected'" (click)="setVolunteer(true); volunteerPristine=false; validate()"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!volunteer && !volunteerPristine ? 'selected' : 'unselected'" (click)="setVolunteer(false); volunteerPristine=false; validate()"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+
+    </div>
+    <!--End volunteer-->
+
+    <!--Start own pet-->
+    <div class="line col-md-12" id="own-pet">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label>Currently own any pets:</label>
+      </div>
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="ownPets && !ownPetsPristine ? 'selected' : 'unselected'" (click)="setOwnsPets(true); ownPetsPristine=false; validate()"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!ownPets && !ownPetsPristine ? 'selected' : 'unselected'" (click)="setOwnsPets(false); ownPetsPristine=false; validate()"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+
+    </div>
+    <!--End own pet-->
+
+    <!--Start pet history-->
+    <div class="line col-md-12" id="pet-history" [style.display]="!ownPets && !ownPetsPristine ? 'block' : 'none'">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">Has owned pets:</label>
+      </div>
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="ownedPets && !ownedPetsPristine ? 'selected' : 'unselected'" (click)="setHasOwnedPets(true); ownedPetsPristine=false; validate()"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="!ownedPets && !ownedPetsPristine ? 'selected' : 'unselected'" (click)="setHasOwnedPets(false); ownedPetsPristine=false; validate()"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+
+    </div>
+    <!--End pet history-->
+
+    <!--Start add references-->
+    <div class="line  col-md-12" id="reference">
+
+      <div class="padded-line col-md-12 col-sm-12">
+        <div class="display-grid" id="reference-list" *ngFor="let reference of registerService.sitter.references; let i = index "
+          [attr.data-index]="i">
+          <label>Reference {{i+1}}:</label>
+          <label>Reference name: {{reference.referenceName}}</label>
+          <label>Phone: {{reference.referencePhone}}</label>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-sm-12 navigate">
+        <button class="next btn btn-primary" id="add-reference" (click)="creatingReference = !creatingReference" [style.display]="creatingReference ? 'none' : 'block'">
+          Add reference
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+
+      <div [style.display]="creatingReference ? 'block' : 'none'">
+        <div class="line col-md-12">
+          <div class="col-md-2 col-sm-12 height-46 display-flex">
+            <label class="text-line-middle">Reference name:</label>
+          </div>
+          <div class="col-md-10 col-sm-12">
+            <input [style.border-color]="validReferenceName? '' : '#b91010'" id="reference-name" class="form-control" type="text" [(ngModel)]="referenceName"
+            />
+          </div>
+        </div>
+
+        <div class="line col-md-12">
+          <div class="col-md-2 col-sm-12 height-46 display-flex">
+            <label class="text-line-middle">Reference phone:</label>
+          </div>
+          <div class="col-md-10 col-sm-12">
+            <input [style.border-color]="validReferencePhone? '' : '#b91010'" id="reference-phone" class="form-control" type="text" [(ngModel)]="referencePhone"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 navigate">
+          <button class="cancel btn btn-primary" (click)="creatingReference = !creatingReference">Cancel
+            <i class="fa fa-ban"></i>
+          </button>
+          <button class="next btn btn-primary" (click)="addReference()">Add
+            <i class="fa fa-check"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--End add references-->
+
+    <!--Navigate-->
+    <div class="col-md-12 col-sm-12 navigate">
+      <button class="back btn btn-default" (click)="registerService.back()">
+        <i class="fa fa-arrow-left"></i>Back</button>
+      <button class="next btn btn-primary" (click)="submit()">Submit
+        <i class="fa fa-check"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
