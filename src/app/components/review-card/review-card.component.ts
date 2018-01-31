@@ -12,19 +12,18 @@ export class ReviewCardComponent implements OnInit {
   reviews:any;
   constructor(
     private dataRecycle:DataRecycleService,
-    private reviewService:ReviewTestimonialService) { 
+    private reviewService:ReviewTestimonialService) {
 
-  
+
     }
 
   ngOnInit() {
-    this.reviewService.get_User_reviews("Richard").subscribe(res =>{
-    console.log(res)
+    this.reviewService.get_User_reviews("").subscribe(res =>{
       this.reviews = res;
-    
+
     })
   }
 
- 
+
 
 }
