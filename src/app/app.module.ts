@@ -93,7 +93,7 @@ export const firestoreConfig = {
    FormRvwComponent,
     BeforeAseviceProviderComponent,
     SummaryPipe,
-    PetProfileComponent
+    PetProfileComponent,
     Step1LocationComponent,
     Step2PersonalDetailsComponent,
     Step3SitterPreferencesComponent,
