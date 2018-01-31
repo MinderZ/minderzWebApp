@@ -32,7 +32,7 @@ export class AuthService implements OnInit {
  ngOnInit() {
 
 }
-  
+
 constructor(
     public afAuth: AngularFireAuth,
     public router: Router,
@@ -50,7 +50,7 @@ constructor(
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then(success => {
-        this.router.navigate(['/registration'])
+        this.router.navigate(['/registration']);
       })
       .catch(error => {
         if (error.message === 'The email address is already in use by another account.') {
@@ -65,7 +65,7 @@ constructor(
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
       .then((user) => {
-        this.router.navigate(['/home'])
+        this.router.navigate(['/home']);
         this.registerService.step = 3;
       })
       .catch(error => this.handleError(error));
@@ -75,7 +75,7 @@ constructor(
       this.afAuth.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(() => {
-        this.router.navigate(['/home'])
+        this.router.navigate(['/home']);
       });
   }
 
@@ -83,7 +83,7 @@ constructor(
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then(() => {
-        this.router.navigate(['/home'])
+        this.router.navigate(['/home']);
       });
   }
 
@@ -91,7 +91,7 @@ constructor(
     this.afAuth.auth
       .signInWithPopup(new firebase.auth.TwitterAuthProvider())
       .then(() => {
-        this.router.navigate(['/home'])
+        this.router.navigate(['/home']);
       });
   }
 
@@ -120,10 +120,9 @@ constructor(
   }
 
   currentUserUID() {
-    
+
     return this.userUID = firebase.auth().currentUser.uid;
   }
-
 //   initialiseAUser() {
 //       const userProfile = this.afs.collection('users').doc('' + this.currentUserUID());
 //     this.User.uid =   this.currentUserUID();

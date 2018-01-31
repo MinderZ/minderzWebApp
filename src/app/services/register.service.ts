@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { SitterProfileObject } from "../model/sitterProfileObject.model";
 import { SitterReferenceObject } from "../model/sitterReferenceObject.model";
+import { Questions } from '../model/question.model';
 
 @Injectable()
 export class RegisterService {
@@ -22,17 +23,17 @@ export class RegisterService {
             petsPerWalk: 0,
             walksPerDay: 0,
         },
-    
+
         petSitting: {
             pricePerPet: 0,
             petsPerDay: 0,
-    
+
         },
-    
+
         houseSitting: {
             pricePerDay: 0,
         },
-    
+
         dropInVist:{
             pricePerVisit: 0,
             visitsPerDay: 0,
@@ -49,6 +50,8 @@ export class RegisterService {
         location: "",
         emergencyContactName: "",
         emergencyContactNr: "",
+        SitterQuestionair: new Array<Questions>(),
+
     };
   }
 

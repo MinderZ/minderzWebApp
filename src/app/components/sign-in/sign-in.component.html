@@ -18,7 +18,9 @@
 
   <button class="btn btn-lg btn-primary btn-block mt-5 custom" [disabled]="!userForm.valid" type="submit" (click)='login()'>Sign in</button>
   <div class="row">
-    <hr>
+  <div class="break-line text-muted"><hr>
+    <div class="Or">or</div>
+  </div>
     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 ">
       <button class="btn btn-lg btn-primary btn-block twitter" type="button" (click)="loginWithTwitter()">
         <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</button>
@@ -40,12 +42,10 @@
 
   <h3>New User Signup</h3>
   <p class="formtoggler" (click)="toggleForm()">Already Registered?</p>
-  <!-- <label for="fullnames" class="sr-only">Fullname  & Surname</label> -->
-  <!-- <input type="text" id="fullnames"  name="fullnames"  class="form-control"  formGroupName="fullnames" formControlName="fullnames" placeholder="Jane Doe" required  autofocus> -->
   <br>
   <label for="inputEmail" class="sr-only">Email address</label>
   <input type="email" id="inputEmail" name="email" class="form-control" formControlName="email" placeholder="Email address"
-    required>
+    required autofocus>
   <div *ngIf="formErrors.email" class="alert alert-danger">{{ formErrors.email }}</div>
 
   <label for="inputPassword" class="sr-only">Password</label>
@@ -62,4 +62,3 @@
 
 </form>
 <div id="snackbar">Account Created Successfully </div>
-<app-footer id="footer"></app-footer>

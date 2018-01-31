@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+// ocation
 
 @Component({
   selector: 'app-file-not-found',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FileNotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
   }
 
+  back() {
+this.location.back();
+}
 }
