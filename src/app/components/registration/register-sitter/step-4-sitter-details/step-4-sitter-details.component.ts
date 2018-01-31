@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-step-4-sitter-details',
   templateUrl: './step-4-sitter-details.component.html',
-  styleUrls: ['./step-4-sitter-details.component.css','../../register.component.css']
+  styleUrls: ['./step-4-sitter-details.component.css', '../../register.component.css']
 })
 export class Step4SitterDetailsComponent implements OnInit {
 
@@ -48,7 +48,7 @@ export class Step4SitterDetailsComponent implements OnInit {
   //Valid form
   valid = false;
 
-  constructor(private router:Router, private dataRecycle: DataRecycleService, protected registerService: RegisterService, private clientRegisterService: ClientRegisterService ) { }
+  constructor(private router: Router, private dataRecycle: DataRecycleService, protected registerService: RegisterService, private clientRegisterService: ClientRegisterService) { }
 
   ngOnInit() {
   }
@@ -137,6 +137,7 @@ export class Step4SitterDetailsComponent implements OnInit {
     this.clientRegisterService.client.isServiceProvider = true;
     this.clientRegisterService.client.serviceProvider = this.registerService.sitter;
 
+    this.clientRegisterService.step = 1;
 
     console.table(this.clientRegisterService.client);
     this.dataRecycle.registerUser(this.clientRegisterService.client);

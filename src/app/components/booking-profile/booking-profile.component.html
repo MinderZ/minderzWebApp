@@ -61,11 +61,11 @@
         <!-- <p class="line-spacing-20">{{aboutMe}}</p> -->
         <input id="about-me" class="line-spacing-20" [(ngModel)]="this.client.serviceProvider.aboutMe" [readonly]="!editing" />
 
-        <h4 class="line-spacing-20">Languages</h4>
-        <h4 class="value line-spacing-20" *ngFor="let language of languages">{{language}}</h4>
-
         <!-- Start editing language -->
-        <div [style.min-height]="editing ? '34.4px' : '0px'" id="add-language" class="display-flex">
+        <h4 id="services-header" class="line-spacing-20">Services</h4>
+        <!-- <h4 class="value line-spacing-20" *ngFor="let language of languages">{{language}}</h4> -->
+
+        <!-- <div [style.min-height]="editing ? '34.4px' : '0px'" id="add-language" class="display-flex">
           <a class="add" [style.display]="editing && !addingLanguage ? 'block' : 'none'" (click)="addLanguage()">Add
             <i class="fa fa-plus"></i>
           </a>
@@ -78,14 +78,40 @@
           </div>
           <a class="cancel" [style.display]="editing && addingLanguage ? 'block' : 'none'" (click)="addLanguage()">
             <i class="fa fa-chevron-left"></i>Cancel</a>
-        </div>
+        </div> -->
         <!-- End editing language -->
 
+        <div id="services">
+          <div *ngIf="dogWalking" id="dog-walking">
+            <h4>Dog Walking</h4>
+            <h4>Price per walk: R{{pricePerWalk}}</h4>
+            <h4>Walks per day: {{walksPerDay}}</h4>
+            <h4>Pets per walk: {{petsPerWalk}}</h4>
+          </div>
 
-        <h4 class="line-spacing-20">Skills</h4>
-        <h4 class="value line-spacing-20" *ngFor="let skill of skills">{{skill}}</h4>
+          <div *ngIf="petSitting" id="pet-sitting">
+            <h4>Pet Sitting</h4>
+            <h4>Price per day: R{{pricePerPet}}</h4>
+            <h4>Pets per day: {{petsPerDay}}</h4>
+          </div>
+
+          <div *ngIf="houseSitting" id="house-sitting">
+            <h4>House Sitting</h4>
+            <h4>Price per day: R{{pricePerDay}}</h4>
+          </div>
+
+          <div *ngIf="dropIn" id="drop-in">
+            <h4>Drop in visits</h4>
+            <h4>Price per visit: R{{pricePerVisit}}</h4>
+            <h4>Visits per day: {{visitsPerDay}}</h4>
+          </div>
+        </div>
+
 
         <!-- Start editing skill -->
+        <!-- <h4 class="line-spacing-20">Skills</h4>
+        <h4 class="value line-spacing-20" *ngFor="let skill of skills">{{skill}}</h4>
+
         <div [style.min-height]="editing ? '34.4px' : '0px'" id="add-skill" class="display-flex">
           <a class="add" [style.display]="editing && !addingSkill ? 'block' : 'none'" (click)="addSkill()">Add
             <i class="fa fa-plus"></i>
@@ -98,7 +124,7 @@
           </div>
           <a class="cancel" [style.display]="editing && addingSkill ? 'block' : 'none'" (click)="addSkill()">
             <i class="fa fa-chevron-left"></i>Cancel</a>
-        </div>
+        </div> -->
         <!-- Start editing skill -->
 
       </div>
@@ -118,9 +144,12 @@
 
     </div>
 
-    <a *ngIf="editable" (click)="edit()">{{editing}}</a>
-    <a *ngIf="editing" (click)="editCommit()">Submit</a>
-    <a *ngIf="editing" (click)="cancelEdit()">Cancel</a>
+    <button *ngIf="editable" class="edit btn btn-primary" (click)="edit()">Edit</button>
+    <button *ngIf="editing" class="edit btn btn-primary" (click)="editCommit()">Submit</button>
+    <button *ngIf="editing" class="edit btn btn-primary" (click)="cancelEdit()">Cancel</button>
+    <!-- <a *ngIf="editable" (click)="edit()">{{editing}}</a> -->
+    <!-- <a *ngIf="editing" (click)="editCommit()">Submit</a>
+    <a *ngIf="editing" (click)="cancelEdit()">Cancel</a> -->
 
   </div>
 </div>
