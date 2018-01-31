@@ -1,0 +1,31 @@
+<div [formGroup]="locationForm" class="container-fluid">
+  <div class="row">
+
+    <!--Start adress-->
+    <div class="line col-md-12" id="adress">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="address">Your Address:</label>
+      </div>
+
+      <div class="col-md-10">
+        <input id="address" type="text" #googleAddress autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control"
+          placeholder="Your address" formControlName="address" aria-describedby="basic-addon1">
+        <div *ngIf="address.touched && address.invalid">
+          <div *ngIf="address.errors.required">
+            Address is a
+            <strong>required</strong> field.
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End adress-->
+
+    <!--Navigate-->
+    <div class="col-md-12 col-sm-12 navigate">
+      <button class="next btn btn-primary" (click)="next()">Next
+        <i class="fa fa-arrow-right"></i>
+      </button>
+    </div>
+
+  </div>
+</div>

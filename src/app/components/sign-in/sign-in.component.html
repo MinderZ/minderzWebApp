@@ -1,8 +1,8 @@
 <form class="form-signin" [formGroup]="userForm" *ngIf="!newUser" (ngSubmit)="login()">
   <h3 class="form-signin-heading">Please sign in</h3>
-  <p class="formtoggler"  (click)="toggleForm()">New User?</p>
+  <p class="formtoggler" (click)="toggleForm()">New User?</p>
 
-  <div *ngIf="formErrors.email" class="alert alert-danger">{{ formErrors.email }}  </div>
+  <div *ngIf="formErrors.email" class="alert alert-danger">{{ formErrors.email }} </div>
 
   <label for="inputEmail" class="sr-only">Email address</label>
   <input type="email" id="inputEmail" name="email" class="form-control" formControlName="email" placeholder="Email address"
@@ -12,13 +12,15 @@
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="inputPassword" name="password" formControlName="password" class="form-control" placeholder="Password"
     required>
-  <div *ngIf="formErrors.password" class="alert alert-danger">    {{ formErrors.password }}  </div>
+  <div *ngIf="formErrors.password" class="alert alert-danger"> {{ formErrors.password }} </div>
 
 
 
-  <button class="btn btn-lg btn-primary btn-block mt-5 custom" [disabled]="!userForm.valid" type="submit">Sign in</button>
+  <button class="btn btn-lg btn-primary btn-block mt-5 custom" [disabled]="!userForm.valid" type="submit" (click)='login()'>Sign in</button>
   <div class="row">
-    <hr>
+  <div class="break-line text-muted"><hr>
+    <div class="Or">or</div>
+  </div>
     <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 ">
       <button class="btn btn-lg btn-primary btn-block twitter" type="button" (click)="loginWithTwitter()">
         <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</button>
@@ -40,12 +42,10 @@
 
   <h3>New User Signup</h3>
   <p class="formtoggler" (click)="toggleForm()">Already Registered?</p>
-  <!-- <label for="fullnames" class="sr-only">Fullname  & Surname</label> -->
-  <!-- <input type="text" id="fullnames"  name="fullnames"  class="form-control"  formGroupName="fullnames" formControlName="fullnames" placeholder="Jane Doe" required  autofocus> -->
   <br>
   <label for="inputEmail" class="sr-only">Email address</label>
   <input type="email" id="inputEmail" name="email" class="form-control" formControlName="email" placeholder="Email address"
-    required>
+    required autofocus>
   <div *ngIf="formErrors.email" class="alert alert-danger">{{ formErrors.email }}</div>
 
   <label for="inputPassword" class="sr-only">Password</label>
@@ -58,8 +58,7 @@
   </div>
 
 
-  <button type="submit" onclick="myFunction()"  class="btn btn-lg btn-primary btn-block mt-5 custom" [disabled]="!userForm.valid">Register</button>
+  <button type="submit" onclick="navigate()" class="btn btn-lg btn-primary btn-block mt-5 custom" [disabled]="!userForm.valid">Register</button>
 
 </form>
 <div id="snackbar">Account Created Successfully </div>
-<app-footer></app-footer>

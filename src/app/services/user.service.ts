@@ -18,21 +18,21 @@ private auth: AuthService,
 // create user profile
 createProfile(profile, userType) {
 if (userType) {
-  this.recycle.create(profile, this.serviceProviderRoute);
+  // this.recycle.create(profile, this.serviceProviderRoute);
 } else {
-  this.recycle.create(profile, this.clientRoute);
+  // this.recycle.create(profile, this.clientRoute);
 }
 
 }
 
 // create service provider preferences profile from the above personal data
 createServiceProviderProfile(sitter) {
-this.recycle.create(sitter, this.serviceProvitionInforRoute);
+// this.recycle.create(sitter, this.serviceProvitionInforRoute);
 }
 
 // create service provider pets into the above profile
 createServiceProviderPets(pet) {
-  this.recycle.create(pet, this.serviceProviderPetsRoute);
+  // this.recycle.create(pet, this.serviceProviderPetsRoute);
 }
 
 
