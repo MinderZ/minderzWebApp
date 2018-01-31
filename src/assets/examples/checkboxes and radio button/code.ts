@@ -16,4 +16,5 @@ export class CodeComponent {
     select() {
         this.selected = !this.selected;
     }
+
 }
