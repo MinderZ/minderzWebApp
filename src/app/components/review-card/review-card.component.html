@@ -1,4 +1,5 @@
-<div class="container" *ngIf="reviews?.length > 0;else noReviews">
+<div class="container-fluid reviews">
+<div  *ngIf="reviews?.length > 0;else noReviews">
     <div class="row" *ngFor="let review of reviews">
         <blockquote>
             {{review.description}}
@@ -6,8 +7,8 @@
     </div>
 
 </div>
-
 <ng-template #noReviews>
     <hr>
     <h3>There are no reviews</h3>
 </ng-template>
+</div>
