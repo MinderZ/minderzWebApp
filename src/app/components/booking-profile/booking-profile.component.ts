@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { DataRecycleService } from '../../services/data-recycle.service';
 import { CacheService } from '../../services/cache.service';
 import { Client } from '../../model/client';
+import { forEach } from '@angular/router/src/utils/collection';
+import { FilterService } from '../../services/filter.service';
 
 @Component({
     selector: 'app-booking-profile',
@@ -38,6 +40,27 @@ export class BookingProfileComponent {
     addingLanguage = false;
     addingSkill = false;
 
+    //Dog walking
+    dogWalking = false;
+    petsPerWalk = 0;
+    pricePerWalk = 0;
+    walksPerDay = 0;
+
+    //Pet Sitting
+    petSitting = false;
+    petsPerDay = 0;
+    pricePerPet = 0;
+
+    //House Sitting
+    houseSitting = false;
+    pricePerDay = 0;
+
+    //Drop In
+    dropIn = false;
+    pricePerVisit = 0;
+    visitsPerDay = 0;
+
+
     constructor(
         private dataRecycleService: DataRecycleService,
         private cacheService: CacheService, ) {
@@ -62,6 +85,9 @@ export class BookingProfileComponent {
         // this.aboutMe = this.client.serviceProvider.aboutMe;
         this.languages.push('English');
         this.skills.push('Walking');
+
+        this.filterServices();
+
     }
 
     edit() {
@@ -101,12 +127,40 @@ export class BookingProfileComponent {
 
     editCommit() {
         this.dataRecycleService.registerUser(this.client);
+        this.editing = false;
     }
 
     cancelEdit() {
         this.client = this.uneditedProfile;
+        this.editing = false;
     }
 
+    filterServices() {
+        console.log('Filter');
+        // for (let i = 0; i < this.client.serviceProvider.serviceMap.length; i++) {
+        //     console.log('Test: ' + this.client.serviceProvider.serviceMap['DogWalking']);
+        if (this.client.serviceProvider.serviceMap['Dog Walking']) {
+            this.dogWalking = true;
+            this.pricePerWalk = this.client.serviceProvider.dogWalking.pricePerWalk;
+            this.petsPerWalk = this.client.serviceProvider.dogWalking.petsPerWalk;
+            this.walksPerDay = this.client.serviceProvider.dogWalking.walksPerDay;
+        } else if (this.client.serviceProvider.serviceMap['Pet Sitting']) {
+            this.petSitting = true;
+            this.petsPerDay = this.client.serviceProvider.petSitting.petsPerDay;
+            this.pricePerPet = this.client.serviceProvider.petSitting.pricePerPet;
+        } else if (this.client.serviceProvider.serviceMap['House Sitting']) {
+            this.houseSitting = true;
+            this.pricePerDay = this.client.serviceProvider.houseSitting.pricePerDay;
+        } else if (this.client.serviceProvider.serviceMap['Drop in Visits']) {
+            this.dropIn = true;
+            this.visitsPerDay = this.client.serviceProvider.dropInVist.visitsPerDay;;
+            this.pricePerVisit = this.client.serviceProvider.dropInVist.pricePerVisit;
+        } else {
+            return;
+        }
+        // }
+
+    }
 
 
 }

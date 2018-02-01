@@ -1,8 +1,10 @@
+
+import { PetProfileComponent } from './components/pet-profile/pet-profile.component';
+import { AgmCoreModule } from "@agm/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule, FormGroup } from "@angular/forms";
 import { FormRvwComponent } from './form-rvw/form-rvw.component';
-import { AgmCoreModule } from '@agm/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 // import {FormsModule}
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from 'angularfire2';
@@ -92,6 +94,7 @@ export const firestoreConfig = {
    FormRvwComponent,
     BeforeAseviceProviderComponent,
     SummaryPipe,
+    PetProfileComponent,
     Step1LocationComponent,
     Step2PersonalDetailsComponent,
     Step3SitterPreferencesComponent,
