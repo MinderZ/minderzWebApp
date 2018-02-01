@@ -86,7 +86,12 @@ export class BookingProfileComponent {
         this.languages.push('English');
         this.skills.push('Walking');
 
-        this.filterServices();
+
+        if (this.cacheService.currentSitter.isServiceProvider) {
+            if (this.client.serviceProvider.serviceMap !== undefined) {
+                this.filterServices();
+            }
+        }
 
     }
 
@@ -94,36 +99,36 @@ export class BookingProfileComponent {
         this.editing = !this.editing;
     }
 
-    addLanguage() {
-        this.addingLanguage = !this.addingLanguage;
-    }
+    // addLanguage() {
+    //     this.addingLanguage = !this.addingLanguage;
+    // }
 
-    addSkill() {
-        this.addingSkill = !this.addingSkill;
-    }
+    // addSkill() {
+    //     this.addingSkill = !this.addingSkill;
+    // }
 
-    pushLanguage() {
-        if (this.newLanguage !== undefined) {
-            this.languages.push(this.newLanguage);
-            this.addLanguage();
-            this.newLanguage = '';
-        } else {
-            this.addLanguage();
-            this.newLanguage = '';
-        }
-    }
+    // pushLanguage() {
+    //     if (this.newLanguage !== undefined) {
+    //         this.languages.push(this.newLanguage);
+    //         this.addLanguage();
+    //         this.newLanguage = '';
+    //     } else {
+    //         this.addLanguage();
+    //         this.newLanguage = '';
+    //     }
+    // }
 
-    pushSkill() {
-        if (this.newSkill !== undefined) {
-            this.languages.push(this.newSkill)
-            this.addSkill();
-            this.newSkill = '';
-        } else {
-            this.addSkill();
-            this.newSkill = '';
-        }
+    // pushSkill() {
+    //     if (this.newSkill !== undefined) {
+    //         this.languages.push(this.newSkill)
+    //         this.addSkill();
+    //         this.newSkill = '';
+    //     } else {
+    //         this.addSkill();
+    //         this.newSkill = '';
+    //     }
 
-    }
+    // }
 
     editCommit() {
         this.dataRecycleService.registerUser(this.client);
