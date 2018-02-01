@@ -1,3 +1,4 @@
+import { Client } from './../../model/client';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -6,18 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./google-map.component.css']
 })
 export class GoogleMapComponent implements OnInit {
-  @Input() locations:Locations[];
+  @Input() locations:Client[];
 
   constructor() { }
 
   ngOnInit() {
   }
 
-}
-
-export interface Locations{
-  name:string;
-  price:number;
-  lat:number;
-  lng:number;
 }

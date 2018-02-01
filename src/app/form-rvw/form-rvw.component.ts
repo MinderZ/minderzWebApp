@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from '../services/auth-service.service';
+import { ReviewTestimonialService } from '../services/review-testimonial.service';
+import { RatingServiceService } from '../services/rating-service.service';
+import { print } from 'util';
 
 @Component({
   selector: 'app-form-rvw',
@@ -8,26 +13,35 @@ import { Component, OnInit } from '@angular/core';
 export class FormRvwComponent implements OnInit {
   myForm: any;
   rating: number;
-  constructor() { 
-    this.rating =0;
-    }
+  reviewForm: FormGroup;
+  view:boolean=true;
+  constructor(
+    private fb: FormBuilder,
+    private afAuth: AuthService,
+    private reviewService: ReviewTestimonialService,
+    private ratingServ: RatingServiceService) {
+    this.reviewForm = fb.group({
+      'review': [null, Validators.compose([Validators.required, Validators.maxLength(120)])],
+      'star': [null, Validators.required]
+    })
 
-    onSubmit() {
-      if (this.myForm.valid) {  
-        console.log("Form Submitted!");
-        // This resets the form back to it's initial state  
-        this.myForm.reset();
-      }
-    }
+
+  }
+
+
+
 
   ngOnInit() {
-   
-  }
-  setRating(rating:number):void{
-    this.rating = rating;
-    console.log(this.rating);
-    return;
+    this.ratingServ.get_AverageRating("Richard")
   }
 
+  addReview(post) {
+    console.log(post)
+    setTimeout(() => {
+      this.reviewService.create_review(this.afAuth.currentUserUID(), "Richard", post.review, post.star)
+      this.view =false;
+    }, 1500);
+    this.reviewForm.reset()
+  }
 
 }

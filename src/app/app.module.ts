@@ -1,8 +1,8 @@
 import { FormRvwComponent } from './form-rvw/form-rvw.component';
-import { AgmCoreModule } from "@agm/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { AgmCoreModule } from '@agm/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 // import {FormsModule}
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from 'angularfire2';
@@ -18,8 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
-import {AngularFireDatabaseModule,AngularFireDatabase} from "angularfire2/database";
-import { AngularFireAuth, AngularFireAuthModule } from "angularfire2/auth";
+import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth-service.service';
 import { CacheService } from './services/cache.service';
@@ -39,22 +39,27 @@ import { PetServiceFilterComponent } from './components/pet-service-filter/pet-s
 import { HomePageFilterComponent } from './components/pet-service-filter/home-page-filter/home-page-filter.component';
 import { SitterListingsFilterComponent } from './components/pet-service-filter/sitter-listings-filter/sitter-listings-filter.component';
 import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
-import { TestimonialFormComponent } from "./components/testimonial-form/testimonial-form.component";
+import { TestimonialFormComponent } from './components/testimonial-form/testimonial-form.component';
 import { NotificationService } from './services/notification.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { SummaryPipe } from './pipes/summary.pipe';
-import { ValidationService } from "./services/validation.service";
-import { Step1LocationComponent } from "./components/registration/register-client/step-1-location/step-1-location.component";
-import { Step2PersonalDetailsComponent } from "./components/registration/register-client/step-2-personal-details/step-2-personal-details.component";
-import { Step3SitterPreferencesComponent } from "./components/registration/register-sitter/step-3-sitter-preferences/step-3-sitter-preferences.component";
-import { Step4SitterDetailsComponent } from "./components/registration/register-sitter/step-4-sitter-details/step-4-sitter-details.component";
-import { ClientRegisterService } from "./services/client-register.service";
-import { RegisterService } from "./services/register.service";
-import { RegisterComponent } from "./components/registration/register.component";
+import { ValidationService } from './services/validation.service';
+import { Step1LocationComponent } from './components/registration/register-client/step-1-location/step-1-location.component';
+// tslint:disable-next-line:max-line-length
+import { Step2PersonalDetailsComponent } from './components/registration/register-client/step-2-personal-details/step-2-personal-details.component';
+import { Step3SitterPreferencesComponent } from './components/registration/register-sitter/step-3-sitter-preferences/step-3-sitter-preferences.component';
+// tslint:disable-next-line:max-line-length
+import { Step4SitterDetailsComponent } from './components/registration/register-sitter/step-4-sitter-details/step-4-sitter-details.component';
+import { ClientRegisterService } from './services/client-register.service';
+import { RegisterService } from './services/register.service';
+import { RegisterComponent } from './components/registration/register.component';
 import { FileNotFoundComponent } from './components/file-not-found/file-not-found.component';
-import { ReviewTestimonialService } from "./services/review-testimonial.service";
-import { RatingServiceService } from "./services/rating-service.service";
+import { ReviewTestimonialService } from './services/review-testimonial.service';
+import { RatingServiceService } from './services/rating-service.service';
+import { FilterService } from './services/filter.service';
+import { Questions } from './model/question.model';
+import { ReviewCardComponent } from './components/review-card/review-card.component';
 
 export const firestoreConfig = {
   apiKey: 'AIzaSyAu4jOsrSNvK-zWKatp0i_GTjoLhrFevr4',
@@ -84,6 +89,7 @@ export const firestoreConfig = {
     HomePageFilterComponent,
     SitterListingsFilterComponent,
    TestimonialFormComponent,
+   FormRvwComponent,
     BeforeAseviceProviderComponent,
     SummaryPipe,
     Step1LocationComponent,
@@ -91,7 +97,8 @@ export const firestoreConfig = {
     Step3SitterPreferencesComponent,
     Step4SitterDetailsComponent,
     RegisterComponent,
-    FileNotFoundComponent
+    FileNotFoundComponent,
+    ReviewCardComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),
@@ -100,7 +107,7 @@ export const firestoreConfig = {
     BrowserModule,
     CustomFormsModule,
     FormsModule,
-    ReactiveFormsModule,ReactiveFormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCbt0jWTVPaN546r8hq4LFGBN2F7NrMmq0',
@@ -120,9 +127,11 @@ export const firestoreConfig = {
     ReviewTestimonialService,
     RatingServiceService,
     RegisterService,
+    Questions,
     ClientRegisterService,
     ValidationService,
-    AngularFireDatabase
+    AngularFireDatabase,
+    FilterService
   ],
   bootstrap: [AppComponent]
 })

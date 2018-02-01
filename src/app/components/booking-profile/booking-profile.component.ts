@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { DataRecycleService } from '../../services/data-recycle.service';
+import { CacheService } from '../../services/cache.service';
+import { Client } from '../../model/client';
 
 @Component({
     selector: 'app-booking-profile',
@@ -8,8 +11,16 @@ import { Component } from '@angular/core';
 
 export class BookingProfileComponent {
 
+    client: Client;
+    uneditedProfile: Client;
+
+
+    sitterID: string;
+    userID: string;
+    editable = false;
     editing = false;
 
+    profilePic: any;
     fullname: string;
     rating: number;
     reviews: number;
@@ -27,15 +38,28 @@ export class BookingProfileComponent {
     addingLanguage = false;
     addingSkill = false;
 
-    constructor() {
-        this.fullname = "Test"
-        this.rating = 4.0;
-        this.reviews = 10;
-        this.jobsComplete = 15;
-        this.accountCreated = new Date;
-        this.jobs = 15;
-        this.cancellations = 2;
-        this.aboutMe = "I am a sitter";
+    constructor(
+        private dataRecycleService: DataRecycleService,
+        private cacheService: CacheService, ) {
+
+        if (this.cacheService.myProfile) {
+            this.client = this.cacheService.currentSitter;
+            this.uneditedProfile = this.client;
+            this.editable = true;
+        } else {
+            this.client = this.cacheService.selectedSitter;
+            this.editable = false;
+        }
+
+        // this.profilePic = this.client.profilePicture;
+        // this.fullname = this.client.firstName + " " + this.client.lastName;
+        this.rating = 4; //Unlinked
+        this.reviews = 10; //Unlinked
+        this.jobsComplete = 15; //Unlinked
+        this.accountCreated = new Date; //Unlinked
+        this.jobs = 15; //Unlinked
+        this.cancellations = 2; //Unlinked
+        // this.aboutMe = this.client.serviceProvider.aboutMe;
         this.languages.push('English');
         this.skills.push('Walking');
     }
@@ -74,4 +98,15 @@ export class BookingProfileComponent {
         }
 
     }
+
+    editCommit() {
+        this.dataRecycleService.registerUser(this.client);
+    }
+
+    cancelEdit() {
+        this.client = this.uneditedProfile;
+    }
+
+
+
 }

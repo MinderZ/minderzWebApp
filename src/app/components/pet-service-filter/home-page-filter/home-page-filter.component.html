@@ -18,11 +18,12 @@
 
           <!--Start service-->
           <div class="col-md-12 form-group">
-            <select name="service" class="form-control selectpicker">
-              <option>House Sitting</option>
-              <option>Pet Boarding</option>
-              <option>Drop-in Visit</option>
-              <option>Dog Walk</option>
+            <select [(ngModel)] ="serviceSearch" name="service" class="form-control selectpicker">
+                <option *ngFor="let item of servicesProvided" (click)="sendParam(item)" >{{item}}</option>
+              <!-- <option (click)="sendParam('House Sitting')" value="House Sitting">House Sitting</option>
+              <option value="Pet Boarding">Pet Boarding</option>
+              <option value="Drop-in Visit">Drop-in Visit</option>
+              <option value="Dog Walk">Dog Walk</option> -->
             </select>
           </div>
           <!--End service-->
@@ -41,7 +42,7 @@
           </div>
 
           <div id="navigate">
-            <button id="submit" class="btn btn-primary" (click)="search()">Next</button>
+            <button id="submit" class="btn btn-primary" (click)="search()">Search</button>
           </div>
 
         </div>

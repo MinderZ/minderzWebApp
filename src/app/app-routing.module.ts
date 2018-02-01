@@ -1,3 +1,4 @@
+import { ReviewCardComponent } from './components/review-card/review-card.component';
 import { FormRvwComponent } from './form-rvw/form-rvw.component';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -62,6 +63,14 @@ const routes: Routes = [
   {
     path: 'registration',
     component: RegisterComponent,
+  },
+  {
+    path: 'review',
+    component: FormRvwComponent,
+  },
+  {
+    path: 'card',
+    component: ReviewCardComponent,
   },
   { path: '**', component: FileNotFoundComponent }
 
