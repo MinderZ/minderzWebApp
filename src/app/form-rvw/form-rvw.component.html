@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <form [formGroup]="reviewForm" (ngSubmit)="addReview(reviewForm.value)">
   <div class="rating form-group"> <br> Submit your review <br><br> Rating:
 
@@ -13,11 +14,12 @@
         <div class="clear-fix"></div>
         <br><br>
         <p>Review:</p>
-        <textarea class="form-control" formControlName="review" cols="30" rows="10"></textarea>
+        <textarea class="form-control" formControlName="review" cols="60" rows="10"></textarea>
         <br><br>
 
         <button type="submit" class="btn btn-primary form-control" [disabled]='!reviewForm.valid'>Submit</button>
     </div>
 </form>
+</div>
 <h3>Reviews</h3>
 <app-review-card></app-review-card>

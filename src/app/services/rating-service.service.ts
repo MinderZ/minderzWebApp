@@ -19,7 +19,7 @@ export class RatingServiceService {
 
   get_AverageRating(user:string){
     return this.get_UserStars(user).map( arr =>{
-       const ratings = arr.map( res => res.value)
+       const ratings = arr.map( (res,index) => res[index].value)
        return ratings.length ?ratings.reduce((total,val)=> total +val)/ratings.length :0
      })
    }

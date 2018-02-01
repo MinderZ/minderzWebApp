@@ -9,6 +9,9 @@ blockquote {
     background: #f0f0f0;
     font-style: italic;
     position: relative;
+    left:5%;
+    height: 10%;
+    width: fit-content;
     border-radius: 6px;
     overflow: hidden;
     -webkit-box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.08);
