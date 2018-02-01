@@ -149,19 +149,20 @@ export class BookingProfileComponent {
             this.pricePerWalk = this.client.serviceProvider.dogWalking.pricePerWalk;
             this.petsPerWalk = this.client.serviceProvider.dogWalking.petsPerWalk;
             this.walksPerDay = this.client.serviceProvider.dogWalking.walksPerDay;
-        } else if (this.client.serviceProvider.serviceMap['Pet Sitting']) {
+        }
+        if (this.client.serviceProvider.serviceMap['Pet Sitting']) {
             this.petSitting = true;
             this.petsPerDay = this.client.serviceProvider.petSitting.petsPerDay;
             this.pricePerPet = this.client.serviceProvider.petSitting.pricePerPet;
-        } else if (this.client.serviceProvider.serviceMap['House Sitting']) {
+        }
+        if (this.client.serviceProvider.serviceMap['House Sitting']) {
             this.houseSitting = true;
             this.pricePerDay = this.client.serviceProvider.houseSitting.pricePerDay;
-        } else if (this.client.serviceProvider.serviceMap['Drop in Visits']) {
+        }
+        if (this.client.serviceProvider.serviceMap['Drop in Visits']) {
             this.dropIn = true;
             this.visitsPerDay = this.client.serviceProvider.dropInVist.visitsPerDay;;
             this.pricePerVisit = this.client.serviceProvider.dropInVist.pricePerVisit;
-        } else {
-            return;
         }
         // }
 
