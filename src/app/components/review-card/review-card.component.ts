@@ -18,7 +18,7 @@ export class ReviewCardComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.reviewService.get_User_reviews("").subscribe(res =>{
+    this.reviewService.get_User_reviews("Richard").subscribe(res =>{
       this.reviews = res;
 
     })
