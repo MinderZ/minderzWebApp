@@ -1,9 +1,18 @@
 .navbar .navbar-nav>li>a {
   color: #666363;
   /* line-height: 100px; */
-  margin-top: 14px;
+  margin-top: auto;
+  margin-bottom: auto;
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 18px;
+}
+
+.navbar-nav {
+  height: 60px
+}
+
+.navbar .navbar-nav>li {
+  height: 60px;
+  display: flex;
 }
 
 .navbar-toggle:hover {
