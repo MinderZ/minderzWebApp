@@ -25,6 +25,7 @@ constructor(
   }
 
   sitterInfo(sitter: Client) {
+    this.cache.myProfile = false;
     this.cache.selectedSitter = sitter;
     this.route.navigate(['bookingprofile']);
   }

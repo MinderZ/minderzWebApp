@@ -69,9 +69,21 @@ export class BookingProfileComponent {
             this.client = this.cacheService.currentSitter;
             this.uneditedProfile = this.client;
             this.editable = true;
+
+            if (this.cacheService.currentSitter.isServiceProvider) {
+                if (this.client.serviceProvider.serviceMap !== undefined) {
+                    this.filterServices();
+                }
+            }
         } else {
             this.client = this.cacheService.selectedSitter;
             this.editable = false;
+
+            if (this.cacheService.selectedSitter.isServiceProvider) {
+                if (this.client.serviceProvider.serviceMap !== undefined) {
+                    this.filterServices();
+                }
+            }
         }
 
         // this.profilePic = this.client.profilePicture;
@@ -87,11 +99,11 @@ export class BookingProfileComponent {
         this.skills.push('Walking');
 
 
-        if (this.cacheService.currentSitter.isServiceProvider) {
-            if (this.client.serviceProvider.serviceMap !== undefined) {
-                this.filterServices();
-            }
-        }
+        // if (this.cacheService.currentSitter.isServiceProvider) {
+        //     if (this.client.serviceProvider.serviceMap !== undefined) {
+        //         this.filterServices();
+        //     }
+        // }
 
     }
 
