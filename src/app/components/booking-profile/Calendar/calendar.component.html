@@ -29,7 +29,7 @@
             </div> 
      
             <div class="calendar-grid"> 
-                <div class="day" *ngFor="let date of getSelectedCalendar()"   (click) = 'select(date)' [style.background-color]="date.isToday?'red':date.isSelected?'#337ab7': !date.isEmpty?'#fff': '#f3f3f3'  "> 
+                <div class="day" *ngFor="let date of getSelectedCalendar()"   (click) = 'select(date)' [style.background-color]="date.isToday?'Pink':date.isSelected?'#337ab7': !date.isEmpty?'#fff': '#f3f3f3'  "> 
                     <p *ngIf="date.isEmpty == false">{{date.date + 1}}</p> 
                 </div> 
             </div> 

@@ -65,11 +65,18 @@ export class BookingProfileComponent {
         private dataRecycleService: DataRecycleService,
         private cacheService: CacheService, ) {
 
+
+// if this is my profile
+// set client to current sitter which is true since its my profile
+// allow editing
+// make a second copy of my profile before edit PermissionRequestedEvent
         if (this.cacheService.myProfile) {
             this.client = this.cacheService.currentSitter;
             this.uneditedProfile = this.client;
             this.editable = true;
 
+// if i am a service provider and a map of my service provision is not undefined
+// call FilterService method
             if (this.cacheService.currentSitter.isServiceProvider) {
                 if (this.client.serviceProvider.serviceMap !== undefined) {
                     this.filterServices();

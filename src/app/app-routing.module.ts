@@ -1,5 +1,5 @@
 import { PetProfileComponent } from './components/pet-profile/pet-profile.component';
-import { FormRvwComponent } from './form-rvw/form-rvw.component';
+import { FormRvwComponent } from './components/form-rvw/form-rvw.component';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';

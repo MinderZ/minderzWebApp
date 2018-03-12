@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { AuthService } from '../services/auth-service.service';
-import { ReviewTestimonialService } from '../services/review-testimonial.service';
-import { RatingServiceService } from '../services/rating-service.service';
+import { AuthService } from '../../services/auth-service.service';
+import { ReviewTestimonialService } from '../../services/review-testimonial.service';
+import { RatingServiceService } from '../../services/rating-service.service';
 import { print } from 'util';
 
 @Component({

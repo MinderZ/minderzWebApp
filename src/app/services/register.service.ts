@@ -11,6 +11,7 @@ export class RegisterService {
 
   constructor() {
     this.sitter = {
+        SitterQuestionair: new Array<Questions>(),
         aboutMe: "",
         jobRadius: 0,
         age: 0,
@@ -50,7 +51,6 @@ export class RegisterService {
         location: "",
         emergencyContactName: "",
         emergencyContactNr: "",
-        SitterQuestionair: new Array<Questions>(),
 
     };
   }

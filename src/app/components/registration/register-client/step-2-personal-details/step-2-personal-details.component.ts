@@ -5,7 +5,7 @@ import { ClientRegisterService } from '../../../../services/client-register.serv
 import { RegisterService } from '../../../../services/register.service';
 import { Router } from '@angular/router';
 import { DataRecycleService } from '../../../../services/data-recycle.service';
-
+import { UploadFilesService } from '../../../../services/upload-files.service';
 
 
 @Component({
@@ -32,30 +32,50 @@ export class Step2PersonalDetailsComponent implements OnInit {
   profilePicture: UploadFiles;
   consentForm: UploadFiles;
   idCopy: UploadFiles;
+  delectedFiles: FileList | null;
   gender: string;
 
 
   genderPristine = false;
 
-  constructor(private dataRecycleService: DataRecycleService, private router: Router, fb: FormBuilder, protected clientRegisterService: ClientRegisterService, private registerService: RegisterService) {
+  constructor(
+    private dataRecycleService: DataRecycleService,
+    private router: Router, 
+    fb: FormBuilder,
+    protected clientRegisterService: ClientRegisterService,
+    private uploader: UploadFilesService,
+    private registerService: RegisterService)   {  }
 
 
-  }
 
-  profileUpload(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      let file = event.target.files[0];
-      this.profilePicture = new UploadFiles(file);
-      this.filePreview(event, 'profile-pic');
+// profileDetect($event: Event) {
+//       this.delectedFiles = ($event.target as HTMLInputElement).files;
+//   }
+
+
+  profileDetect(event: any) {
+   const file = (event.target as HTMLInputElement).files
+    if (file && file.length === 1) {
+    this.profilePicture = new UploadFiles(file.item(0));
+        this.filePreview(event, 'profile-pic');
+        // push profile
+     this.uploader.pushUpload(this.profilePicture);
+       } else {
+      console.error('No profile photo found!');
     }
 
   }
 
+
   idCopyUpload(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      let file = event.target.files[0];
-      this.idCopy = new UploadFiles(file);
-      this.filePreview(event, 'copy-of-ID');
+   const file = (event.target as HTMLInputElement).files
+    if (file && file.length === 1) {
+    this.idCopy = new UploadFiles(file.item(0));
+    this.filePreview(event, 'copy-of-ID');
+        // push profile
+     this.uploader.pushUpload(this.idCopy);
+       } else {
+      console.error('No ID Copy found!');
     }
 
   }
