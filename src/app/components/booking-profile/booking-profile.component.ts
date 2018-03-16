@@ -16,7 +16,7 @@ export class BookingProfileComponent {
     client: Client;
     uneditedProfile: Client;
 
-
+ 
     sitterID: string;
     userID: string;
     editable = false;
@@ -71,7 +71,14 @@ export class BookingProfileComponent {
 // allow editing
 // make a second copy of my profile before edit PermissionRequestedEvent
         if (this.cacheService.myProfile) {
-            this.client = this.cacheService.currentSitter;
+            if (this.cacheService.currentSitter === null || this.cacheService.currentSitter === undefined ) {
+                 this.dataRecycleService.getCurrentUser().subscribe(response =>{
+                 this.cacheService.currentSitter = response as Client;
+                 this.client = response as Client;
+                                                                         })
+            }
+            
+
             this.uneditedProfile = this.client;
             this.editable = true;
 

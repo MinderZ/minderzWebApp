@@ -50,6 +50,7 @@ constructor(
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then(success => {
+        this.cache.myProfile = true;
         this.router.navigate(['/registration']);
       })
       .catch(error => {

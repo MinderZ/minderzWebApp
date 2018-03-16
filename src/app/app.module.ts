@@ -31,6 +31,7 @@ import { ReviewTestimonialService } from './services/review-testimonial.service'
 import { FilterService } from './services/filter.service';
 import { RatingServiceService } from './services/rating-service.service';
 import { AuthGuard } from './services/auth-guard.service';
+import { UploadFilesService } from './services/upload-files.service';
 
 
 // All app components
@@ -141,6 +142,7 @@ export const firestoreConfig = {
     UserPetObject,
     NotificationService,
     ReviewTestimonialService,
+    UploadFilesService,
     RatingServiceService,
     RegisterService,
     Questions,
