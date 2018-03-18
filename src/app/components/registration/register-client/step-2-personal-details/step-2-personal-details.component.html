@@ -17,7 +17,7 @@
         </div>
 <div *ngIf="profilePicture">
   <progress class="progress is-success" min=1 max=100 value="{{ profilePicture?.progress }}"></progress>
-  Progress: {{profilePicture?.name}} | {{profilePicture?.progress | number}}% Complete
+  <p>Progress: {{profilePicture?.name}} | {{profilePicture?.progress | number}}% Complete</p>
 </div>
       </div>
 
@@ -86,8 +86,8 @@
         <label class="text-line-middle" for="idNr">Your SA ID Number:</label>
       </div>
       <div class="col-md-10">
-        <input [(ngModel)] = 'idNum'  name="identityNumber" formControlName="identityNumber"class="form-control" id="idNr" placeholder="Your SA ID Number" class="form-control" type="text" required>
-  <div *ngIf="formErrors.identityNumber" class="alert alert-danger">{{ formErrors.identityNumber }} </div>
+        <input [(ngModel)] = 'idNum'    class="form-control" id="idNr" placeholder="Your SA ID Number"  type="text" required>
+  <!-- <div *ngIf="formErrors.identityNumber" class="alert alert-danger">{{ formErrors.identityNumber }} </div> -->
       </div>
     </div>
 
@@ -108,7 +108,7 @@
         </div>
 <div *ngIf="idCopy">
   <progress class="progress is-success" min=1 max=100 value="{{ idCopy?.progress }}"></progress>
-  Progress: {{idCopy?.name}} | {{idCopy?.progress | number}}% Complete
+ <p>   Progress: {{idCopy?.name}} | {{idCopy?.progress | number}}% Complete</p>
 </div>
       </div>
     </div>
@@ -129,7 +129,7 @@
         </div>
 <div *ngIf="consentForm">
   <progress class="progress is-success" min=1 max=100 value="{{ consentForm?.progress }}"></progress>
-  Progress: {{consentForm?.name}} | {{consentForm?.progress | number}}% Complete
+ <p> Progress: {{consentForm?.name}} | {{consentForm?.progress | number}}% Complete</p>
 </div>
       </div>
 

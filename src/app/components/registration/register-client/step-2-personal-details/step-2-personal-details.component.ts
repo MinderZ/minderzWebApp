@@ -8,8 +8,8 @@ import { DataRecycleService } from '../../../../services/data-recycle.service';
 import { UploadFilesService } from '../../../../services/upload-files.service';
 
 
-type UserField = 'identityNumber';
-type FormErrors = {[u in UserField]: string };
+// type UserField = 'identityNumber';
+// type FormErrors = {[u in UserField]: string };
 
 @Component({
   selector: 'app-step-2-personal-details',
@@ -17,16 +17,16 @@ type FormErrors = {[u in UserField]: string };
   styleUrls: ['./step-2-personal-details.component.css', '../../register.component.css']
 })
 export class Step2PersonalDetailsComponent implements OnInit {
- userForm: FormGroup;
- formErrors: FormErrors = {identityNumber:''};
- validationMessages = {
-    identityNumber: {
-                required: "Identity number is required.",
-                pattern: "ID Number must be a valid 13 digit South African Identity number.",
-                minlength: "Invalid ID Number.",
-                maxlength: "Invalid ID Number, Can only be valid has 13 characters."
-        }
-  };
+//  userForm: FormGroup;
+//  formErrors: FormErrors = {identityNumber:''};
+//  validationMessages = {
+//     identityNumber: {
+//                 required: "Identity number is required.",
+//                 pattern: "ID Number must be a valid 13 digit South African Identity number.",
+//                 minlength: "Invalid ID Number.",
+//                 maxlength: "Invalid ID Number, Can only be valid has 13 characters."
+//         }
+//   };
 
   profilePicUrl: any;
 
@@ -98,7 +98,7 @@ export class Step2PersonalDetailsComponent implements OnInit {
  const file = (event.target as HTMLInputElement).files
     if (file && file.length === 1) {
     this.consentForm = new UploadFiles(file.item(0));
-    this.filePreview(event, 'copy-of-ID');
+    this.filePreview(event, 'consent-form');
         // push profile
      this.uploader.pushUpload(this.consentForm, 'Consent-forms');
        } else {
@@ -164,50 +164,51 @@ export class Step2PersonalDetailsComponent implements OnInit {
 
 
 
-buildForm() {
-    this.userForm = this.fb.group({
-            identityNumber: [
-        "",
-        [
-          Validators.pattern("^([0-9]){2}([0-1][0-9])([0-3][0-9])([0-9]){4}([0-1])([0-9]){2}?$"),
-          Validators.minLength(13)
-        // Validators.maxLength()
-        ]
-      ]
-    });
+// buildForm() {
+//     this.userForm = this.fb.group({
+//             identityNumber: [
+//         "",
+//         [
+//           Validators.pattern("^([0-9]){2}([0-1][0-9])([0-3][0-9])([0-9]){4}([0-1])([0-9]){2}?$"),
+//           Validators.minLength(13)
+//         // Validators.maxLength()
+//         ]
+//       ]
+//     });
 
-    this.userForm.valueChanges.subscribe(data => this.onValueChanged(data));
-    this.onValueChanged(); // reset validation messages
-  }
+//     this.userForm.valueChanges.subscribe(data => this.onValueChanged(data));
+//     this.onValueChanged(); 
+//     // reset validation messages
+//   }
  
 
   // Updates validation state on form changes.
-  onValueChanged(data?: any) {
-    if (!this.userForm) {
-      return;
-    }
-    const form = this.userForm;
-    for (const field in this.formErrors) {
-      if (
-        Object.prototype.hasOwnProperty.call(this.formErrors, field) &&
-        (field === "email" || field === "identityNumber")
-      ) {
-        // clear previous error message (if any)
-        this.formErrors[field] = "";
-        const control = form.get(field);
-        if (control && control.dirty && !control.valid) {
-          const messages = this.validationMessages[field];
-          if (control.errors) {
-            for (const key in control.errors) {
-              if (Object.prototype.hasOwnProperty.call(control.errors, key)) {
-                this.formErrors[field] += `${
-                  (messages as { [key: string]: string })[key]
-                  } `;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+//   onValueChanged(data?: any) {
+//     if (!this.userForm) {
+//       return;
+//     }
+//     const form = this.userForm;
+//     for (const field in this.formErrors) {
+//       if (
+//         Object.prototype.hasOwnProperty.call(this.formErrors, field) &&
+//         (field === "email" || field === "identityNumber")
+//       ) {
+//         // clear previous error message (if any)
+//         this.formErrors[field] = "";
+//         const control = form.get(field);
+//         if (control && control.dirty && !control.valid) {
+//           const messages = this.validationMessages[field];
+//           if (control.errors) {
+//             for (const key in control.errors) {
+//               if (Object.prototype.hasOwnProperty.call(control.errors, key)) {
+//                 this.formErrors[field] += `${
+//                   (messages as { [key: string]: string })[key]
+//                   } `;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
 }
