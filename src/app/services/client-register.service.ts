@@ -6,18 +6,18 @@ export class ClientRegisterService {
   step: number = 1;
   formName: string = "Location";
   client: Client;
-
+ // https://i.redd.it/bmkgfea4tvc01.png
   constructor() {
     this.client = {
       fullName: "",
       location: "",
-      profilePicture: "https://i.redd.it/bmkgfea4tvc01.png",
+      profilePicture: "",
       age: 0,
       gender: "",
       cellphoneNumber: "",
       id: "",
-      copyOfId: "https://i.redd.it/bmkgfea4tvc01.png",
-      consentForm: "https://i.redd.it/bmkgfea4tvc01.png",
+      copyOfId: "",
+      consentForm: "",
       emergencyContactName: "",
       emergencyContactNr: "",
       coordinates: {

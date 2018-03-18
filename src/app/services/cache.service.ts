@@ -8,7 +8,9 @@ export class CacheService {
   myProfile = false;
 
   public navigator = '';
+  // most probably the search modal that dumps the this selected sitter
   selectedSitter: Client;
+  // theres a component that dumps the current sitter details 
   currentSitter: Client;
 
   //ADD THIS IN CACHE SERVICE
@@ -16,3 +18,4 @@ export class CacheService {
   constructor() { }
 
 }
+ 

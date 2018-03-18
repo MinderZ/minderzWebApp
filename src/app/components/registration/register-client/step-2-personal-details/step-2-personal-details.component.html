@@ -6,7 +6,7 @@
         <label class="text-line-middle" for="profile-picture">Upload Profile Picture:</label>
       </div>
       <div class="col-md-10">
-        <input class="image-input form-control" (change)="profileUpload($event)" id="profile-picture" type="file">
+        <input class="image-input form-control" (change)="profileDetect($event)" id="profile-picture" type="file">
 
         <div class="button-cover display-flex">
           <i class="margin-auto fa fa-plus-circle"></i>
@@ -15,7 +15,12 @@
         <div [style.opacity]="profilePicUrl!==undefined ? '1' : '0'" class="image-preview">
           <img src="{{profilePicUrl}}" alt="image preview...">
         </div>
+<div *ngIf="profilePicture">
+  <progress class="progress is-success" min=1 max=100 value="{{ profilePicture?.progress }}"></progress>
+  <p>Progress: {{profilePicture?.name}} | {{profilePicture?.progress | number}}% Complete</p>
+</div>
       </div>
+
 
     </div>
 
@@ -54,7 +59,8 @@
   
         <!-- Yes -->
         <div class="col-md-2 col-sm-12 display-flex">
-          <div class="radio" [ngClass]="gender == 'male' && !genderPristine ? 'selected' : 'unselected'" (click)="setGender('male'); genderPristine=false"></div>
+          <div class="radio" [ngClass]="gender == 'male' && !genderPristine ? 'selected' : 'unselected'" (click)="setGender('male'); genderPristine=false">
+          </div>
           <label class="text-line-middle radio-label">Male</label>
         </div>
 
@@ -80,7 +86,8 @@
         <label class="text-line-middle" for="idNr">Your SA ID Number:</label>
       </div>
       <div class="col-md-10">
-        <input [(ngModel)] = 'idNum' class="form-control" id="idNr" placeholder="Your SA ID Number" type="text">
+        <input [(ngModel)] = 'idNum'    class="form-control" id="idNr" placeholder="Your SA ID Number"  type="text" required>
+  <!-- <div *ngIf="formErrors.identityNumber" class="alert alert-danger">{{ formErrors.identityNumber }} </div> -->
       </div>
     </div>
 
@@ -97,8 +104,12 @@
         </div>
 
         <div [style.opacity]="idCopyUrl!==undefined ? '1' : '0'" class="image-preview">
-          <img src="{{idCopyUrl}}" alt="image preview...">
+          <img src="{{idCopyUrl}}" alt="ID Copy preview...">
         </div>
+<div *ngIf="idCopy">
+  <progress class="progress is-success" min=1 max=100 value="{{ idCopy?.progress }}"></progress>
+ <p>   Progress: {{idCopy?.name}} | {{idCopy?.progress | number}}% Complete</p>
+</div>
       </div>
     </div>
 
@@ -114,9 +125,12 @@
         </div>
 
         <div [style.opacity]="consentFormUrl!==undefined ? '1' : '0'" class="image-preview">
-          <img src="{{consentFormUrl}}" alt="image preview...">
+          <img src="{{consentFormUrl}}" alt="Form preview...">
         </div>
-
+<div *ngIf="consentForm">
+  <progress class="progress is-success" min=1 max=100 value="{{ consentForm?.progress }}"></progress>
+ <p> Progress: {{consentForm?.name}} | {{consentForm?.progress | number}}% Complete</p>
+</div>
       </div>
 
     </div>

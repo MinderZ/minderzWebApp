@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 export class DataRecycleService {
 
   client: Client;
-  collectionRef = this.afs.collection("users");
+  userCollectionRef = this.afs.collection("users");
   username: string;
 
   users: Array<Client>;
@@ -31,14 +31,14 @@ export class DataRecycleService {
     this.username = email;
   }
 
-  create(input, route) {
-    return this.db.list(route).push(input);
-  }
+  // create(input, route) {
+  //   return this.db.list(route).push(input);
+  // }
 
 
   registerUser(client: Client) {
     this.client = client;
-    this.collectionRef
+    this.userCollectionRef
       .doc(this.auth.afAuth.auth.currentUser.uid)
       .set(Object.assign({}, client))
       .then(function (docRef) {
@@ -50,7 +50,7 @@ export class DataRecycleService {
   }
 
   getCurrentUser() {
-    return this.collectionRef.doc(this.auth.afAuth.auth.currentUser.uid).valueChanges();
+    return this.userCollectionRef.doc(this.auth.afAuth.auth.currentUser.uid).valueChanges();
   }
 
   //this.afs.collection('users', ref => ref.where('isServiceProvider', '==', true))
