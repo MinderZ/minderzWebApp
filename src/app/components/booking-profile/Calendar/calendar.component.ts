@@ -31,7 +31,7 @@ export class CalendarComponent {
     this.switchCalendar("DogWalking");
     this.setMonth(0);
 
-    console.log(this.serviceMap);
+    // console.log(this.serviceMap);
   }
 
   generateCalendar(): Array<CalendarDate> {
@@ -110,7 +110,7 @@ export class CalendarComponent {
   }
 
   getSelectedCalendar(){
-      console.log(this.selectedCalendar);
+      // console.log(this.selectedCalendar);
     return this.selectedCalendar;
   }
 
@@ -121,7 +121,7 @@ export class CalendarComponent {
   switchCalendar(calendarName: string) {
     this.calendarToUse = calendarName;
     this.selectedCalendar = this.serviceMap[calendarName][Number(this.displayDate.format(('MM'))) - 1];
-    console.log('Map', this.serviceMap);
+    // console.log('Map', this.serviceMap);
 
   }
 

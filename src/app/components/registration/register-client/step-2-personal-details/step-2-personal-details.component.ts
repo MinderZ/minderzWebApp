@@ -154,7 +154,7 @@ export class Step2PersonalDetailsComponent implements OnInit {
     this.clientRegisterService.client.id = this.idNum;
     this.clientRegisterService.client.emergencyContactName = this.emergencyContactName;
     this.clientRegisterService.client.emergencyContactNr = this.emergencyContactNr;
-
+    this.clientRegisterService.client.isServiceProvider = false;
     console.table(this.clientRegisterService.client);
 
     this.dataRecycleService.registerUser(this.clientRegisterService.client);

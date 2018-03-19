@@ -14,7 +14,7 @@ export class CacheService {
   currentSitter: Client;
 
   //ADD THIS IN CACHE SERVICE
-  private currentUser = 'Athandile';
+  private currentUser = 'Athan';
   constructor() { }
 
 }

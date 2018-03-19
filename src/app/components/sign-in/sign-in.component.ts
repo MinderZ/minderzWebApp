@@ -72,7 +72,8 @@ export class SignInComponent implements OnInit {
     ).then(success => {
      this.dataRecycleService.getCurrentUser().subscribe(response =>{
       this.cacheService.currentSitter = response as Client;
-     })
+          }) 
+    //  console.log(this.cacheService.currentSitter);
      this.home()
     });
   }

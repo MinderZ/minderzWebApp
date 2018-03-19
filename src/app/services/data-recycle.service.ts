@@ -43,7 +43,8 @@ export class DataRecycleService {
       .set(Object.assign({}, client))
       .then(function (docRef) {
         console.log("Client registered!");
-      })
+        this.cacheService.currentSitter =  this.getCurrentUser() 
+             })
       .catch(function (error) {
         console.error("Error adding document: ", error);
       });
