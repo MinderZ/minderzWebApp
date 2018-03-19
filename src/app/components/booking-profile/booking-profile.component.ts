@@ -77,7 +77,7 @@ export class BookingProfileComponent {
                 })
             }
              this.client =  this.cacheService.currentSitter;
-                 console.log(this.client.pr);
+                 console.log('Sopposeed profile that does not have the profile picture', this.client.profilePicture);
 
             this.uneditedProfile = this.client;
             this.editable = true;
