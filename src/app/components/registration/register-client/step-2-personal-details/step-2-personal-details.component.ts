@@ -6,6 +6,8 @@ import { RegisterService } from '../../../../services/register.service';
 import { Router } from '@angular/router';
 import { DataRecycleService } from '../../../../services/data-recycle.service';
 import { UploadFilesService } from '../../../../services/upload-files.service';
+import { CacheService } from "../../../../services/cache.service";
+import { Client } from "../../../../model/client";
 
 
 // type UserField = 'identityNumber';
@@ -57,6 +59,7 @@ export class Step2PersonalDetailsComponent implements OnInit {
     private router: Router, 
     private fb: FormBuilder,
     protected clientRegisterService: ClientRegisterService,
+    private cacheService: CacheService,
     private uploader: UploadFilesService,
     private registerService: RegisterService)   {  }
 
@@ -159,6 +162,9 @@ export class Step2PersonalDetailsComponent implements OnInit {
 
     this.dataRecycleService.registerUser(this.clientRegisterService.client);
     this.registerService.next();
+    this.dataRecycleService.getCurrentUser().subscribe(response =>{
+      this.cacheService.currentSitter = response as Client;
+          }) 
     this.router.navigate(['home']);
   }
 

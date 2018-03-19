@@ -25,9 +25,11 @@ this.TestimonialServ.get_Testimonials().subscribe( data =>{
     // console.log(this.auth.currentUserUID());
   })
   
+ if(!this.auth.isLoggedIn){
   this.dataRecycleService.getCurrentUser().subscribe(data => {
     console.log(data);
  });
+}
 }
 
   ngOnInit() {

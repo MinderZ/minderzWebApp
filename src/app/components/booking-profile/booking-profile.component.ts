@@ -16,13 +16,13 @@ export class BookingProfileComponent {
     client: Client;
     uneditedProfile: Client;
 
- 
+  
     sitterID: string;
     userID: string;
     editable = false;
     editing = false;
 
-    profilePic: any;
+    profilePicture: any;
     fullname: string;
     rating: number;
     reviews: number;
@@ -77,7 +77,7 @@ export class BookingProfileComponent {
                 })
             }
              this.client =  this.cacheService.currentSitter;
-                 console.log(this.client);
+                 console.log(this.client.pr);
 
             this.uneditedProfile = this.client;
             this.editable = true;

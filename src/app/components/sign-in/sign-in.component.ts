@@ -18,7 +18,6 @@ type FormErrors = {[u in UserFields]: string };
 })
 export class SignInComponent implements OnInit {
   userForm: FormGroup;
-
   newUser = true; // to toggle login or signup form
   formErrors: FormErrors = {
     email: "",

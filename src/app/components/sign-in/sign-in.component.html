@@ -1,6 +1,6 @@
 <form class="form-signin" [formGroup]="userForm" *ngIf="!newUser" (ngSubmit)="login()">
   <h3 class="form-signin-heading">Please sign in</h3>
-  <p class=" btn btn-block btn-md formtoggler" (click)="toggleForm()">New User?</p>
+  <p class=" btn btn-block btn-bg-dark btn-md formtoggler" (click)="toggleForm()">New User?</p>
 
   <div *ngIf="formErrors.email" class="alert alert-danger">{{ formErrors.email }} </div>
 
