@@ -42,8 +42,8 @@ export class DataRecycleService {
       .doc(this.auth.afAuth.auth.currentUser.uid)
       .set(Object.assign({}, client))
       .then(function (docRef) {
-        console.log("Client registered!");
-      })
+               console.log("Client registered!");
+              })
       .catch(function (error) {
         console.error("Error adding document: ", error);
       });

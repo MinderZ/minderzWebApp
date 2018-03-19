@@ -11,10 +11,10 @@ export class CacheService {
   // most probably the search modal that dumps the this selected sitter
   selectedSitter: Client;
   // theres a component that dumps the current sitter details 
-  currentSitter: Client;
+  currentSitter:Client;
 
   //ADD THIS IN CACHE SERVICE
-  private currentUser = 'Athandile';
+  private currentUser = 'Athan';
   constructor() { }
 
 }

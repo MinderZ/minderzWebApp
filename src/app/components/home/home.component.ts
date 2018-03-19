@@ -18,12 +18,18 @@ export class HomeComponent implements OnInit {
     private dataRecycleService: DataRecycleService
   ) {
 
-   if( this.auth.isLoggedIn){ this.TestimonialServ.get_Testimonials().subscribe( data =>{
+this.TestimonialServ.get_Testimonials().subscribe( data =>{
     console.log(data);
     this.testimonials = data;
     // console.log(this.auth.getcurrentUser());
     // console.log(this.auth.currentUserUID());
-  })}
+  })
+  
+ if(!this.auth.isLoggedIn()){
+  this.dataRecycleService.getCurrentUser().subscribe(data => {
+    console.log(data);
+ });
+}
 }
 
   ngOnInit() {

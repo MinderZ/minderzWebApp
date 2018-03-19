@@ -66,6 +66,7 @@ constructor(
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
       .then((user) => {
+        this.cache.myProfile = true;
         this.router.navigate(['/home']);
         this.registerService.step = 3;
       })

@@ -16,13 +16,13 @@ export class BookingProfileComponent {
     client: Client;
     uneditedProfile: Client;
 
- 
+  
     sitterID: string;
     userID: string;
     editable = false;
     editing = false;
 
-    profilePic: any;
+    profilePicture: any;
     fullname: string;
     rating: number;
     reviews: number;
@@ -74,10 +74,10 @@ export class BookingProfileComponent {
             if (this.cacheService.currentSitter === null || this.cacheService.currentSitter === undefined ) {
                  this.dataRecycleService.getCurrentUser().subscribe(response =>{
                  this.cacheService.currentSitter = response as Client;
-                 this.client = response as Client;
-                                                                         })
+                })
             }
-            
+             this.client =  this.cacheService.currentSitter;
+                 console.log('Sopposeed profile that does not have the profile picture', this.client.profilePicture);
 
             this.uneditedProfile = this.client;
             this.editable = true;
@@ -88,6 +88,8 @@ export class BookingProfileComponent {
                 if (this.client.serviceProvider.serviceMap !== undefined) {
                     this.filterServices();
                 }
+            } else{
+                alert('Something went horribly wrong to be getting this, please log off and on again, if error persists contact admin ASAP');
             }
         } else {
             this.client = this.cacheService.selectedSitter;
