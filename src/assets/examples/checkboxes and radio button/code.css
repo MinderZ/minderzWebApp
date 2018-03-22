@@ -1,0 +1,28 @@
+/* Checkbox */
+
+.checkbox {
+  border: 1px solid #000000;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: flex;
+}
+
+.checkbox i {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+ 
+
+/* Radio Button */
+
+.radio {
+  border: 1px solid #DDDDDD;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+}
+
+input:focus {
+  outline-color: rgb(250, 0, 0);
+}

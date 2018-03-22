@@ -4,9 +4,11 @@ import { DataRecycleService } from './data-recycle.service';
 
 @Injectable()
 export class UserService {
-profileroute = '/users/' + this.auth.currentUserUID() + '/profile';
-petroute = '/users/' + this.auth.currentUserUID() + '/pets';
-sitteroute = '/users/' + this.auth.currentUserUID() + '/profile';
+serviceProviderRoute = 'users/' + 'serviceProviders/' + this.auth.currentUserUID() + '/personalDetails';
+serviceProvitionInforRoute = 'users/' + 'serviceProviders/' + this.auth.currentUserUID() + '/serviceProvitionInfor';
+serviceProviderPetsRoute = 'users/' + 'serviceProviders/' + this.auth.currentUserUID() + '/serviceProviderPets';
+clientRoute = 'users/' + 'clients' + this.auth.currentUserUID() + '/personalDetails';
+
 
 constructor(
 private recycle: DataRecycleService,
@@ -14,22 +16,29 @@ private auth: AuthService,
 ) {}
 
 // create user profile
-createProfile(profile) {
-this.recycle.create(profile, this.profileroute);
+createProfile(profile, userType) {
+if (userType) {
+  // this.recycle.create(profile, this.serviceProviderRoute);
+} else {
+  // this.recycle.create(profile, this.clientRoute);
 }
 
-// create sitter profile from the user profile above
-createSitterProfile(sitter) {
-this.recycle.create(sitter, this.sitteroute);
 }
 
-createPetProfile(pet) {
-  this.recycle.create(pet, this.petroute);
+// create service provider preferences profile from the above personal data
+createServiceProviderProfile(sitter) {
+// this.recycle.create(sitter, this.serviceProvitionInforRoute);
+}
+
+// create service provider pets into the above profile
+createServiceProviderPets(pet) {
+  // this.recycle.create(pet, this.serviceProviderPetsRoute);
 }
 
 
 
 getProfile() {
+
 }
 
 }

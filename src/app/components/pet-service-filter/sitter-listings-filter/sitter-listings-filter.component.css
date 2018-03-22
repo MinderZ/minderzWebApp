@@ -1,0 +1,26 @@
+.background {
+    padding: 30px 15px;
+    color: #8c8c8c;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    width: 1143px;
+    height: 100px;
+    margin-left: 200px;
+    border-radius: 5px;
+    margin-top: 20px
+}
+
+.btn-search-pink {
+    background-color: #ff7f75;
+    color: #fff;
+    width: 60px;
+    float: right;
+}
+
+.btn-search-pink:hover {
+    background-color: #ff7e75be;
+}
+
+.form-control {
+    height: 42px;
+}

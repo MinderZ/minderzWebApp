@@ -1,0 +1,290 @@
+    #profile {
+      padding: 0px;
+    }
+
+    .value {
+      color: #337ab7;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0px;
+    }
+
+    #fullname {
+      font-size: 24px;
+      border: none;
+    }
+
+    #fullname:hover {
+      cursor: default;
+    }
+
+    #about-me {
+      font-size: 18px;
+      background: none;
+      border: none;
+    }
+
+    #about-me:hover {
+      cursor: default;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    #job-history h3 {
+      padding-left: 0px;
+    }
+
+    h4 {
+      color: rgb(199, 196, 196);
+      font-size: 13px;
+      margin: 0px;
+    }
+
+    label {
+      color: rgb(182, 179, 179);
+      font-size: 13px;
+    }
+
+    #profile-pic-panel {
+      padding: 0px 0px 20px 0px;
+    }
+
+    #profile-pic {
+      min-width: 200px;
+      min-height: 200px;
+      border: 1px solid #dddddd;
+      border-radius: 100%;
+    }
+
+    .display-flex {
+      display: flex;
+    }
+
+    #about-panel {
+      background: #f3f3f3;
+      border-top: 1.5px solid#dddddd;
+      padding: 0 30px 30px 30px;
+    }
+
+    #main-display {
+      padding: 0px 200px;
+    }
+
+    #display-box {
+      padding-top: 40px;
+      border-top: 1.5px solid#dddddd;
+      border-bottom: 1.5px solid#dddddd;
+      margin-top: 20px;
+    }
+
+    #overview-panel,
+    #about-panel {
+      width: 100%;
+    }
+
+    #rating,
+    #reviews,
+    #account-details,
+    #stars,
+    #rating-number,
+    #rating-panel,
+    #job-history {
+      padding: 0px;
+    }
+
+    #add-language {
+      min-height: 34.4px;
+      display: flex;
+    }
+
+    #add-skill {
+      min-height: 34.4px;
+      display: flex;
+    }
+
+    #add-language a {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    #add-skill a {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    #add-language-button {
+      background: #337ab7;
+      color: #FFFFFF;
+    }
+
+    #add-skill-button {
+      background: #337ab7;
+      color: #FFFFFF;
+    }
+
+    #add-language-button:hover {
+      background: #2f6fa7;
+      cursor: pointer;
+    }
+
+    #add-skill-button:hover {
+      background: #2f6fa7;
+      cursor: pointer;
+    }
+
+    .cancel {
+      padding-left: 10px;
+    }
+
+    .add,
+    .cancel {
+      text-decoration: none;
+    }
+
+    .add:hover,
+    .cancel:hover {
+      cursor: pointer;
+    }
+
+    .form-control {
+      max-width: 150px;
+    }
+
+    .input-group-addon {
+      width: 0px;
+    }
+
+    .cancel i {
+      padding-right: 5px
+    }
+
+    .add i {
+      padding-left: 5px;
+    }
+
+    #services-header {
+      text-decoration: underline;
+      color: #000000;
+      font-size: 16px;
+    }
+
+    #services h4 {
+      color: #000000;
+    }
+
+    #rating-number {
+      padding: 0px 10px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    #stars {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .edit {
+      box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.06), 2px 3px 0 rgba(0, 0, 0, 0.05);
+      border: none;
+      background: #008cff;
+    }
+
+    .line-spacing-5 {
+      margin: 5px 0px;
+    }
+
+    .line-spacing-10 {
+      margin: 10px 0px;
+    }
+
+    .line-spacing-20 {
+      margin: 20px 0px;
+    }
+
+    .seperate-text-40 {
+      padding-right: 40px;
+    }
+
+    @media(max-width:1460px) {
+      #reviews {
+        text-align: center;
+      }
+    }
+
+    @media (max-width:1430px) {
+      #job-history h3 {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width:1330px) {
+      #job-history h3 {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 1160px) {
+      #main-display {
+        padding: 100px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      #reviews {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 992px) {
+      #job-history h3 {
+        padding: 5px 0px;
+      }
+      #rating-number {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 840px) {
+      #main-display {
+        padding: 50px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #account-details {
+        margin: 0px;
+      }
+      #rating-panel {
+        margin-bottom: 0px;
+      }
+      #overview-panel {
+        height: 470px;
+      }
+    }
+
+    @media (max-width: 406px) {
+      #add-skill,
+      #add-language {
+        display: block
+      }
+      .cancel {
+        padding: 10px 0px;
+      }
+    }
+
+    /* @media (max-width: 560px) {
+    #rating-number {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 560px) {
+    #rating-number {
+      text-align: right;
+    }
+  } */

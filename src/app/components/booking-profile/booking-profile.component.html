@@ -1,38 +1,157 @@
 <!--Start booking profile-->
-<div class="container-fluid">
-  <div class="row">
-    <h1 id="fullname">none</h1>
+<div class="container-fluid" id="main-display">
+  <div class="row" id="display-box">
+    <div class="col-md-8 col-sm-12" id="profile">
 
-    <!--Start rating-->
-    <div id="rating">
-      <!--Start rating stars-->
-      <span>
-        <i class="fa" [class]="rating > 0.5 ? 'fa-star' : rating > 0 ? 'fa-star-half-o' : 'fa-star-0'"></i>
-        <i class="fa" [class]="rating > 1.5 ? 'fa-star' : rating > 1 ? 'fa-star-half-o' : 'fa-star-0'"></i>
-        <i class="fa" [class]="rating > 2.5 ? 'fa-star' : rating > 2 ? 'fa-star-half-o' : 'fa-star-0'"></i>
-        <i class="fa" [class]="rating > 3.5 ? 'fa-star' : rating > 3 ? 'fa-star-half-o' : 'fa-star-0'"></i>
-        <i class="fa" [class]="rating > 4.5 ? 'fa-star' : rating > 4 ? 'fa-star-half-o' : 'fa-star-0'"></i>
-        <!--End rating stars-->
-      </span>
+      <!--Start overview-->
+      <div class="col-md-12" id="overview-panel">
+        <div class="col-lg-4 col-md-5 col-sm-12" id="profile-pic-panel">
+          <img  alt="My profile picture" id="profile-pic" src="{{this.client.profilePicture}}" />
+        </div>
+
+        <div class="col-lg-7 col-md-7 col-sm-12" id="info">
+          <input [(ngModel)]="this.client.fullName" class="line-spacing-5" id="fullname" [readonly]="!editing" />
+
+          <!--Start rating-->
+          <div class="line-spacing-5 col-md-12 col-sm-12 col-xs-12" id="rating-panel">
+            <!--Start rating stars-->
+ 
+            <div class="col-md-3 col-sm-12 col-xs-12 display-flex" id="rating">
+              <span id="stars" class="value display-flex">
+                <i [class]="rating > 0.5 ? 'fa fa-star' : rating > 0 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+                <i [class]="rating > 1.5 ? 'fa fa-star' : rating > 1 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+                <i [class]="rating > 2.5 ? 'fa fa-star' : rating > 2 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+                <i [class]="rating > 3.5 ? 'fa fa-star' : rating > 3 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+                <i [class]="rating > 4.5 ? 'fa fa-star' : rating > 4 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+                <!--End rating stars-->
+              </span>
+              <h3 id="rating-number" class="value">{{rating}}</h3>
+            </div>
+
+            <div class="col-md-9 col-sm-12 col-xs-12" id="reviews">
+              <label>Based on {{reviews}} reviews</label>
+            </div>
+          </div>
+
+
+          <!--End rating-->
+
+          <div class="line-spacing-5 col-md-12 col-sm-12 col-xs-12" id="account-details">
+            <h4>Member since {{accountCreated}}, {{jobsComplete}} complete</h4>
+          </div>
+
+          <!--Start job history-->
+          <div class="line-spacing-5 col-md-12 col-sm-12 col-xs-12" id="job-history">
+
+            <h3 class="col-lg-2 col-md-6 col-sm-6 col-xs-12">Jobs</h3>
+            <h3 class="value col-lg-3 col-md-6 col-sm-6 col-xs-12"> {{jobs}}</h3>
+
+            <h3 class="col-lg-4 col-md-6 col-sm-6 col-xs-12">Cancellations</h3>
+            <h3 class="value col-lg-3 col-md-6 col-sm-6 col-xs-12"> {{cancellations}}</h3>
+
+          </div>
+          <!--End job history-->
+        </div>
+      </div>
+      <!--End overview-->
+
+      <!--Start about-->
+      <div class="col-md-12 col-sm-12" id="about-panel">
+        <h2 class="line-spacing-20">About me</h2>
+        <!-- <p class="line-spacing-20">{{aboutMe}}</p> -->
+        <input id="about-me" class="line-spacing-20" [(ngModel)]="this.client.serviceProvider.aboutMe" [readonly]="!editing" />
+
+        <!-- Start editing language -->
+        <h4 id="services-header" class="line-spacing-20">Services</h4>
+        <!-- <h4 class="value line-spacing-20" *ngFor="let language of languages">{{language}}</h4> -->
+
+        <!-- <div [style.min-height]="editing ? '34.4px' : '0px'" id="add-language" class="display-flex">
+          <a class="add" [style.display]="editing && !addingLanguage ? 'block' : 'none'" (click)="addLanguage()">Add
+            <i class="fa fa-plus"></i>
+          </a>
+          <div class="input-group">
+            <input class="form-control" [style.display]="editing && addingLanguage ? 'block' : 'none'" [(ngModel)]="newLanguage" />
+            <div id="add-language-button" class="input-group-addon" [style.display]="editing && addingLanguage ? 'table-cell' : 'none'"
+              (click)="pushLanguage()">
+              <i class="fa fa-check"></i>
+            </div>
+          </div>
+          <a class="cancel" [style.display]="editing && addingLanguage ? 'block' : 'none'" (click)="addLanguage()">
+            <i class="fa fa-chevron-left"></i>Cancel</a>
+        </div> -->
+        <!-- End editing language -->
+
+        <div id="services">
+          <div *ngIf="dogWalking" id="dog-walking">
+            <h4>Dog Walking</h4>
+            <h4>Price per walk: R{{pricePerWalk}}</h4>
+            <h4>Walks per day: {{walksPerDay}}</h4>
+            <h4>Pets per walk: {{petsPerWalk}}</h4>
+          </div>
+
+          <div *ngIf="petSitting" id="pet-sitting">
+            <h4>Pet Sitting</h4>
+            <h4>Price per day: R{{pricePerPet}}</h4>
+            <h4>Pets per day: {{petsPerDay}}</h4>
+          </div>
+
+          <div *ngIf="houseSitting" id="house-sitting">
+            <h4>House Sitting</h4>
+            <h4>Price per day: R{{pricePerDay}}</h4>
+          </div>
+
+          <div *ngIf="dropIn" id="drop-in">
+            <h4>Drop in visits</h4>
+            <h4>Price per visit: R{{pricePerVisit}}</h4>
+            <h4>Visits per day: {{visitsPerDay}}</h4>
+          </div>
+        </div>
+
+
+        <!-- Start editing skill -->
+        <!-- <h4 class="line-spacing-20">Skills</h4>
+        <h4 class="value line-spacing-20" *ngFor="let skill of skills">{{skill}}</h4>
+
+        <div [style.min-height]="editing ? '34.4px' : '0px'" id="add-skill" class="display-flex">
+          <a class="add" [style.display]="editing && !addingSkill ? 'block' : 'none'" (click)="addSkill()">Add
+            <i class="fa fa-plus"></i>
+          </a>
+          <div class="input-group">
+            <input class="form-control" [style.display]="editing && addingSkill ? 'block' : 'none'" [(ngModel)]="newSkill" />
+            <div id="add-skill-button" class="input-group-addon" [style.display]="editing && addingSkill ? 'block' : 'none'" (click)="pushSkill()">
+              <i class="fa fa-check"></i>
+            </div>
+          </div>
+          <a class="cancel" [style.display]="editing && addingSkill ? 'block' : 'none'" (click)="addSkill()">
+            <i class="fa fa-chevron-left"></i>Cancel</a>
+        </div> -->
+        <!-- Start editing skill -->
+
+      </div>
+      <!--End about-->
+
     </div>
 
-    <div id="reviews">
-      <h2>Based on (reviews) reviews</h2>
-    </div>
-    <!--End rating-->
-
-    <div id="account-details">
-      <h4>Member since (display date), (amount of jobs) complete</h4>
+    <div class="col-md-4 col-sm-12" id="calender">
+      <app-calendar></app-calendar>
     </div>
 
-    <div id="job-history">
-      <h3>Jobs</h3>
-      <h3> (amount)</h3>
-      <h3>Cancelleations</h3>
-      <h3> (amount)</h3>
+    <div class="col-md-8 col-sm-12" id="pet-list">
+
     </div>
+
+    <div class="col-md-4 col-sm-12" id="map">
+
+    </div>
+
+    <button *ngIf="editable" class="edit btn btn-primary" (click)="edit()">Edit</button>
+    <button *ngIf="editing" class="edit btn btn-primary" (click)="editCommit()">Submit</button>
+    <button *ngIf="editing" class="edit btn btn-primary" (click)="cancelEdit()">Cancel</button>
+    <!-- <a *ngIf="editable" (click)="edit()">{{editing}}</a> -->
+    <!-- <a *ngIf="editing" (click)="editCommit()">Submit</a>
+    <a *ngIf="editing" (click)="cancelEdit()">Cancel</a> -->
 
   </div>
-
 </div>
 <!--End booking profile-->
+<app-form-rvw></app-form-rvw>

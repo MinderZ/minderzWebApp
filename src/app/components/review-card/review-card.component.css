@@ -1,0 +1,51 @@
+blockquote {
+    padding: 26px 26px 26px 70px;
+    display: flex;
+    margin-left: 0;
+    margin-top: 5%;
+    min-width: 5%;
+    font-size: 14px;
+    border-left: 4px solid #a6ce39;
+    background: #f0f0f0;
+    font-style: italic;
+    position: relative;
+    left:5%;
+    height: 10%;
+    width: fit-content;
+    border-radius: 6px;
+    overflow: hidden;
+    -webkit-box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #008cff;
+    white-space: nowrap;
+}
+
+blockquote .content {
+    font-size: 34px;
+    font-weight: normal;
+    display: block !important;
+    margin-top: 14%;
+    padding-bottom: 30px;
+}
+
+#noReview {
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+blockquote:before {
+    display: block;
+    position: absolute;
+    left: 24px;
+    top: 0.5%;
+    content: "\201C";
+    font-size: 70px;
+    color: #008cff;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    content: '\201C';
+    font-family: 'FontAwesome';
+    -webkit-font-smoothing: antialiase;
+}

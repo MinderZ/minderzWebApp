@@ -1,23 +1,75 @@
-.navbar .navbar-nav > li > a {
+.navbar .navbar-nav>li>a {
   color: #666363;
-  line-height: 30px
+  /* line-height: 100px; */
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-.navbar :hover {
-  color: #ff978f;
+.navbar-nav {
+  height: 60px
+}
+
+.navbar .navbar-nav>li {
+  height: 60px;
+  display: flex;
+}
+
+.navbar-toggle:hover {
+  background: #ffffff;
+}
+
+.navbar-toggle:focus {
+  background: #ffffff;
+}
+
+.navbar-toggle:hover span {
+  background-color: #ff978f !important;
 }
 
 .bSitter {
   border-radius: 5px;
   /* size: 14px; */
-  height:15px !important;
+  height: 15px !important;
   background-color: #008cff;
   transition: 0.3s;
   color: #fff;
   text-transform: uppercase;
 }
 
-.appnav{
-background-color:#fff;
-/* color:#666363; */
+.appnav {
+  background-color: #fff;
+  /* color:#666363; */
+}
+
+.navbar-brand {
+  padding: 0;
+  min-height: 60px;
+  display: flex;
+}
+
+.navbar-header {
+  /* display: flex; */
+  min-height: 60px;
+}
+
+#main-container {
+  min-height: 60px;
+}
+
+#logo {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.icon-bar {
+  background-color: #008cff !important;
+}
+
+#right-content {
+  margin-top: 0;
+}
+
+#left-content {
+  margin-bottom: 0;
 }
