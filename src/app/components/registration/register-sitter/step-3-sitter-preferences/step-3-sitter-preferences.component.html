@@ -123,7 +123,7 @@
         </div>
 
         <div class="col-md-10">
-          <input class="form-control" type="text">
+          <input class="form-control"  [ngModel] = 'dogWalking.pricePerWalk' type="text">
         </div>
       </div>
 
@@ -159,7 +159,7 @@
           <label class="text-line-middle">Price per pet</label>
         </div>
         <div class="col-md-10">
-          <input class="form-control" type="text">
+          <input class="form-control" [ngModel] = 'petSitting.pricePerPet' type="text">
         </div>
       </div>
       <div class="line col-md-12" id="pets-per-day">
@@ -186,7 +186,7 @@
           <label class="text-line-middle">Price per walk:</label>
         </div>
         <div class="col-md-10">
-          <input class="form-control" type="text">
+          <input class="form-control"  [ngModel] = 'houseSitting.pricePerDay'  type="text">
         </div>
       </div>
     </div>
@@ -200,7 +200,7 @@
           <label class="text-line-middle">Price per visit:</label>
         </div>
         <div class="col-md-10">
-          <input class="form-control" type="text">
+          <input class="form-control" [ngModel] = 'dropInVist.pricePerVisit' type="text">
         </div>
       </div>
 
