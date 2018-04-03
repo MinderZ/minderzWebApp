@@ -1,0 +1,101 @@
+ 
+<div class="container-fluid">
+  <div class="row">
+
+
+ <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="age">Type of Pet:</label>
+      </div>
+
+      <div class="col-md-10">
+       <select [(ngModel)] = 'pettype' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <option *ngFor = 'let option of typesOfPets'>{{option}}</option>
+       </select>
+      </div>      
+  </div>
+
+
+ <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="age">Your Pet's Name:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'petname' class="form-control" id="petname" placeholder="Your Pet name" type="text">
+      </div>
+  </div>
+
+
+
+   <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="gender">Your Pet Gender:</label>
+      </div>
+
+      <div class="col-md-10">
+  
+        <!-- Yes -->
+        <div class="col-md-2 col-sm-12 display-flex">
+          <div class="radio" [ngClass]="gender == 'male' && !genderPristine ? 'selected' : 'unselected'" (click)="setGender('male'); genderPristine=false">
+          </div>
+          <label class="text-line-middle radio-label">Male</label>
+        </div>
+
+        <!-- No -->
+        <div class="col-md-2 col-sm-12 display-flex">
+          <div class="radio" [ngClass]="gender == 'female' && !genderPristine ? 'selected' : 'unselected'" (click)="setGender('female'); genderPristine=false"></div>
+          <label class="text-line-middle radio-label">Female</label>
+        </div>
+        
+      </div>
+
+    </div>
+    <!-- </div> -->
+
+
+<div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="age">Your Pet's Breed:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'breed' class="form-control" id="breed" placeholder="pet breed" type="text">
+      </div>
+</div>
+
+
+<div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="age">How often do you treat for flees?</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'fleeTreatment' class="form-control" id="fleeTreatment" placeholder="Flee Treatment" type="text">
+      </div>
+</div>
+
+
+<div class="line col-md-12" id="job-distance-radius">
+
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle">Fine to stay with children</label>
+      </div>
+
+      <div class="col-md-10">
+       <select [(ngModel)] = 'SWChildren' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <option *ngFor = 'let stay of stayWithChildren'>{{stay}}</option>
+       </select>
+      </div>
+</div>
+
+ 
+
+ <div class="col-md-12 col-sm-12 navigate">
+      <button class="back btn btn-default" (click)="registerService.back()">
+        <i class="fa fa-arrow-left"></i>Back</button>
+      <button class="next btn btn-primary" (click)="next()">
+        Next
+        <i class="fa fa-arrow-right"></i>
+      </button>
+    </div>
+
+</div>
+</div>

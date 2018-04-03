@@ -1,0 +1,72 @@
+ <div class="container-fluid">
+  <div class="row">
+
+<div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="profile-picture">Upload a picture of your pet:</label>
+      </div>
+      <div class="col-md-10">
+        <input class="image-input form-control" (change)="PetUpload($event)" id="Pet-picture" type="file">
+
+        <div class="button-cover display-flex">
+          <i class="margin-auto fa fa-plus-circle"></i>
+        </div>
+
+        <div [style.opacity]="petPicUrl!==undefined ? '1' : '0'" class="image-preview">
+          <img src="{{petPicUrl}}" alt="image preview...">
+        </div>
+	<div *ngIf="petPicture">
+  <progress class="progress is-success" min=1 max=100 value="{{ petPicture?.progress }}"></progress>
+  <p>Progress: {{petPicture?.name}} | {{petPicture?.progress | number}}% Complete</p>
+	</div>
+    </div>
+
+    <div class="alert alert-info " role="alert">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        If you don't have a photo on hand, please upload a generic picture of their breed. NOTE: We ask for your pet's photo in the
+        event they escape, so they can be identified.
+    </div>
+</div>
+
+ <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="emergency-contact-person">Emergency Contact Name:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'emergencyContactName' class="form-control" id="emergency-contact-person" placeholder="Emergency Contact Name" type="text">
+      </div>
+    </div>
+
+    <div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="emergency-phoneNr">Emergency Contact Number:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'emergencyContactNr' class="form-control" id="emergency-phoneNr" placeholder="Emergency Contact Number" type="text">
+      </div>
+    </div>
+
+
+
+<div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="age">Emergency Vet Spend Limit:</label>
+      </div>
+      <div class="col-md-10">
+        <input [(ngModel)] = 'EmergencyVetSpendLimit' class="form-control" id="EmergencyVetSpendLimit" placeholder="Emergency Vet Spend Limit" type="text">
+      </div>
+</div>
+
+ 
+
+ <div class="col-md-12 col-sm-12 navigate">
+      <button class="back btn btn-default" (click)="registerService.back()">
+        <i class="fa fa-arrow-left"></i>Back</button>
+      <button class="next btn btn-primary" (click)="next()">
+        Next
+        <i class="fa fa-arrow-right"></i>
+      </button>
+    </div>
+
+</div>
+</div>

@@ -47,7 +47,7 @@ export class Step3SitterPreferencesComponent implements OnInit {
 
   constructor(protected registerService: RegisterService) {
 
-    console.log('pets per walk',this.dogWalking.petsPerWalk);
+    // console.log('pets per walk',this.dogWalking.petsPerWalk);
   }
 
   ngOnInit() { }
@@ -66,7 +66,6 @@ export class Step3SitterPreferencesComponent implements OnInit {
   }
 
   next(){
-
     this.registerService.sitter.jobRadius = this.jobDistanceRadius;
     this.registerService.sitter.dogWalking = this.dogWalking;
     this.registerService.sitter.petSitting = this.petSitting;
@@ -76,7 +75,7 @@ export class Step3SitterPreferencesComponent implements OnInit {
     this.registerService.sitter.serviceMap = this.serviceMap;
 
     console.table(this.registerService.sitter);
-    this.registerService.next()
+    // this.registerService.next()
 
   }
 }

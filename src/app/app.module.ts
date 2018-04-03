@@ -10,14 +10,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { CustomFormsModule } from 'ng2-validation';
 import { AngularFireModule } from 'angularfire2';
 
-
-// import {FormsModule}
-// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-// import { BookServiceComponent } from './components/book-service/book-service.component';
-// import { ClientRegComponent } from './components/client-reg/client-reg.component';
-
-
-
+ 
 // All app services
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth-service.service';
@@ -32,6 +25,7 @@ import { FilterService } from './services/filter.service';
 import { RatingServiceService } from './services/rating-service.service';
 import { AuthGuard } from './services/auth-guard.service';
 import { UploadFilesService } from './services/upload-files.service';
+import { RegisterPetService } from './services/register-pet.service';
 
 
 // All app components
@@ -65,12 +59,16 @@ import { Step4SitterDetailsComponent } from './components/registration/register-
 import { RegisterComponent } from './components/registration/register.component';
 import { FileNotFoundComponent } from './components/file-not-found/file-not-found.component';
 import { ReviewCardComponent } from './components/review-card/review-card.component';
+import { Step1DetailsComponent } from './components/pet-registration/step-1-details/step-1-details.component';
+import { Step2PreferenceComponent } from './components/pet-registration/step-2-preference/step-2-preference.component';
+import { PetRegistrationComponent } from './components/pet-registration/pet-registration.component';
 
 // All app models
 import { UserProfileObjet } from './model/userProfileObj.model';
 import { SitterProfileObject } from './model/sitterProfileObject.model';
 import { UserPetObject } from './model/userPetObject.modal';
 import { Questions } from './model/question.model';
+import { Pet } from './model/pet';
 
 // All app pipes
 import { SummaryPipe } from './pipes/summary.pipe';
@@ -115,7 +113,10 @@ export const firestoreConfig = {
     Step4SitterDetailsComponent,
     RegisterComponent,
     FileNotFoundComponent,
-    ReviewCardComponent
+    ReviewCardComponent,
+    PetRegistrationComponent,
+    Step1DetailsComponent,
+    Step2PreferenceComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),
