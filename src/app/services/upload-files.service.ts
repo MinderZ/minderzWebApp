@@ -38,10 +38,12 @@ export class UploadFilesService {
       () => {
         //upload success
          if (uploadTask.snapshot.downloadURL){
-        upload.url = uploadTask.snapshot.downloadURL;
-        upload.name = upload.file.name;
-        this.saveFileData(upload, `${basepath}/${this.auth.getcurrentUser().uid}`);
-        return;
+        // upload.url = uploadTask.snapshot.downloadURL;
+        // upload.name = upload.file.name;
+        // this.saveFileData(upload, `${basepath}/${this.auth.getcurrentUser().uid}`);
+        // return;
+          console.error('File uploaded');
+
       } else {
           console.error('No download URL!');
         }
@@ -71,14 +73,14 @@ export class UploadFilesService {
 
 // theres a posibitlity that you wont be able to get this person image since you are not him/her
 // tricky part start when you  pulling all registered users in the system with this implementation
-getUploads( basepath ) {
-    this.uploads = this.db.list(`${basepath}/${this.auth.getcurrentUser().uid}`).snapshotChanges().map((actions) => {
-      return actions.map((a) => {
-        const data = a.payload.val();
-        const $key = a.payload.key;
-        return { $key, ...data };
-      });
-    });
-    return this.uploads;
-  }
+// getUploads( basepath ) {
+//     this.uploads = this.db.list(`${basepath}/${this.auth.getcurrentUser().uid}`).snapshotChanges().map((actions) => {
+//       return actions.map((a) => {
+//         const data = a.payload.val();
+//         const $key = a.payload.key;
+//         return { $key, ...data };
+//       });
+//     });
+//     return this.uploads;
+//   }
 }

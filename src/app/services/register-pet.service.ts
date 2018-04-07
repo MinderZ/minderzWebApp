@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Pet} from '../model/pet';
+import { CacheService } from '../services/cache.service';
+import { SitterReferenceObject } from "../model/sitterReferenceObject.model";
+
 @Injectable()
 export class RegisterPetService {
 	 step: number = 1;
@@ -7,21 +10,20 @@ export class RegisterPetService {
 Pet: Pet;
 
 
-constructor() { 
+constructor( private cacheService: CacheService,) { 
  this.Pet = {
 petName: "",
-ownerName: "",
-OwnerPicture:"",
+ownerName: 'owner name',
+OwnerPicture: 'owner picture',
+// this.cacheService.currentSitter.fullName,
+// this.cacheService.currentSitter.profilePicture,
 petPicture : "",
 petBreed :"",
+references: new Array<SitterReferenceObject>(),
 emegergencyVetSpendLimimt : "",
-emergencyContactName :"",
-emergencyContactNr : 0,
 pettype : "",
 gender : "",
 fleeTreatment : 0,
-SWChildren : "",
-typeOfPet : "",
 stayWithChildren : "" ,
 }
 

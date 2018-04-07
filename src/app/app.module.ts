@@ -147,6 +147,7 @@ export const firestoreConfig = {
     RatingServiceService,
     RegisterService,
     Questions,
+    RegisterPetService,
     ClientRegisterService,
     ValidationService,
     AngularFireDatabase,

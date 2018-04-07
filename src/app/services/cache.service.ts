@@ -1,6 +1,7 @@
 import { Client } from './../model/client';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Pet} from '../model/pet';
 
 @Injectable()
 export class CacheService {
@@ -14,7 +15,9 @@ export class CacheService {
   currentSitter:Client;
 
   //ADD THIS IN CACHE SERVICE
-  private currentUser = 'Athan';
+  // private currentUser = 'Athan';
+  currentUserPets : Pet
+
   constructor() { }
 
 }

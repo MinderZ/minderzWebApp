@@ -5,13 +5,10 @@ OwnerPicture:any;
 
 petPicture:any;
 petBreed:string;
+references?: Array<SitterReferenceObject>
 emegergencyVetSpendLimimt: string;
-emergencyContactName: string;
-emergencyContactNr:number;
  pettype: string; 
  gender: any;
  fleeTreatment: number;
- SWChildren: string;
- typeOfPet: string;
  stayWithChildren: string;
 }

@@ -18,7 +18,7 @@
 
  <div class="line col-md-12">
       <div class="col-md-2 col-sm-12 height-46 display-flex">
-        <label class="text-line-middle" for="age">Your Pet's Name:</label>
+        <label class="text-line-middle" for="petname">Your Pet's Name:</label>
       </div>
       <div class="col-md-10">
         <input [(ngModel)] = 'petname' class="form-control" id="petname" placeholder="Your Pet name" type="text">
@@ -49,8 +49,7 @@
         
       </div>
 
-    </div>
-    <!-- </div> -->
+    </div> 
 
 
 <div class="line col-md-12">
@@ -68,7 +67,7 @@
         <label class="text-line-middle" for="age">How often do you treat for flees?</label>
       </div>
       <div class="col-md-10">
-        <input [(ngModel)] = 'fleeTreatment' class="form-control" id="fleeTreatment" placeholder="Flee Treatment" type="text">
+        <input [(ngModel)] = 'fleeTreatment' class="form-control" id="fleeTreatment" placeholder="e.g 3 times a week" type="text">
       </div>
 </div>
 
@@ -89,13 +88,12 @@
  
 
  <div class="col-md-12 col-sm-12 navigate">
-      <button class="back btn btn-default" (click)="registerService.back()">
-        <i class="fa fa-arrow-left"></i>Back</button>
-      <button class="next btn btn-primary" (click)="next()">
+      <button class="back btn btn-danger" (click)="cancel()">
+        <i class="fa fa-times"></i> Cancel</button>
+      <button class="next btn btn-primary"  (click)="next()">
         Next
         <i class="fa fa-arrow-right"></i>
       </button>
-    </div>
-
+    </div> 
 </div>
 </div>
