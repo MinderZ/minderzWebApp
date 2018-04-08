@@ -1,6 +1,7 @@
 import { Questions } from '../../../model/question.model';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from '../../../services/register.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./questions.component.css','../../registration/register.component.css'],
 })
 export class QuestionsComponent implements OnInit {
-
+questionair:Questions
   validated = false;
 
 
@@ -22,74 +23,84 @@ export class QuestionsComponent implements OnInit {
   agreeingToBackgroundCheckselected;
   experienceselected;
 
+  havebeenaVolunteer1;
+  hadPetb41;
+  HavePetsCurrently1;
+  isCompetentToAnimals1;
+  HaveRefNumber1;
+  HasacriminalRecord1;
+  agreeingToBackgroundCheck1;
+  experience1;
+
 
   constructor(
-public router: Router,
-private question: Questions
-  	) { }
+private router: Router,
+private registerService: RegisterService,
+  	) {	}
 
   ngOnInit() {
   }
 
 
   	havebeenaVolunteer(input) {
-      this.havebeenaVolunteerselected = input;
+      this.havebeenaVolunteer1 = input;
  	}
 
     hadPetb4( input) {
-    this.hadPetb4selected = input;
+    this.hadPetb41 = input;
     }
 
     HavePetsCurrently( input) {
-    this.HavePetsCurrentlyselected = input;
+    this.HavePetsCurrently1 = input;
     }
 
     isCompetentToAnimals( input) {
-    this.isCompetentToAnimalsselected = input;
+    this.isCompetentToAnimals1 = input;
     }
 
     HaveRefNumber( input) {
-    this.HaveRefNumberselected = input;
+    this.HaveRefNumber1 = input;
     }
 
     HasacriminalRecord( input) {
-    this.HasacriminalRecordselected = input;
+    this.HasacriminalRecord1 = input;
     }
 
     agreeingToBackgroundCheck( input) {
-    this.agreeingToBackgroundCheckselected = input;
+    this.agreeingToBackgroundCheck1 = input;
     }
 
     experience( input) {
-          this.experienceselected = input;
+          this.experience1 = input;
     }
 
     ques() {
-    this.question.everVolunteeredpetetCare = this.havebeenaVolunteerselected;
-    this.question.everOwnedPets = this.hadPetb4selected;
-    this.question.isCurrentlyOwningPets = this.HavePetsCurrentlyselected;
-    this.question.competentForpets = this.isCompetentToAnimalsselected;
-    this.question.havetwoRefToCall = this.HaveRefNumberselected;
-    this.question.haveACriminalRecord = this.HasacriminalRecordselected;
-    this.question.agreeingForBackgroundCheck = this.agreeingToBackgroundCheckselected;
-    this.question.yearsInEperience = this.havebeenaVolunteerselected;
-    console.table(this.question);
+    this.questionair.everVolunteeredpetetCare = this.havebeenaVolunteer1;
+    this.questionair.everOwnedPets = this.hadPetb41;
+    this.questionair.isCurrentlyOwningPets = this.HavePetsCurrently1;
+    this.questionair.competentForpets = this.isCompetentToAnimals1;
+    this.questionair.havetwoRefToCall = this.HaveRefNumber1;
+    this.questionair.haveACriminalRecord = this.HasacriminalRecord1;
+    this.questionair.agreeingForBackgroundCheck = this.agreeingToBackgroundCheck1;
+    this.questionair.yearsInEperience = this.experience1;
+    console.table(this.questionair);
+    this.registerService.sitter.sitterQuestionair = this.questionair;
   	this.router.navigate(['/registration']);}
 
-  	validate() {
- 	 if (
-    	this.havebeenaVolunteerselected === false ||
-    	this.hadPetb4selected === false ||
-    	this.HavePetsCurrentlyselected === false ||
-    	this.isCompetentToAnimalsselected === false ||
-    	this.HaveRefNumberselected === false ||
-    	this.HasacriminalRecordselected === false ||
-    	this.agreeingToBackgroundCheckselected === false) {
-	this.validated = true;
-    }else {
-	this.validated = false;
-  }
-}
+//   	validate() {
+//  	 if (
+//     	this.havebeenaVolunteerselected === false ||
+//     	this.hadPetb4selected === false ||
+//     	this.HavePetsCurrentlyselected === false ||
+//     	this.isCompetentToAnimalsselected === false ||
+//     	this.HaveRefNumberselected === false ||
+//     	this.HasacriminalRecordselected === false ||
+//     	this.agreeingToBackgroundCheckselected === false) {
+// 	this.validated = true;
+//     }else {
+// 	this.validated = false;
+//   }
+// }
 
 
 }

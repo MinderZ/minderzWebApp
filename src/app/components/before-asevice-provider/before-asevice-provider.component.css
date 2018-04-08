@@ -1,5 +1,5 @@
 .howitworks{
-    margin-top: 108px;
+    /*markgin-top: 108px;*/
 }
 .Pink{
     color: #FF9999;
@@ -13,3 +13,7 @@
  .from{
    margin-top: 80px;
  }
+
+#display {
+  padding: 30px 200px;
+}

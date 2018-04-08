@@ -1,13 +1,7 @@
-<app-promo *ngIf='questionair === 1'></app-promo>
-<app-questions *ngIf='questionair === 2'></app-questions>
-
-
-
-
-
-
-
-
+<div id="display">
+<app-promo *ngIf='cache.questionair === 1'></app-promo>
+<app-questions *ngIf='cache.questionair === 2'></app-questions>
+</div>
 
 
 
@@ -371,9 +365,6 @@
   </div>
 </div> -->
 
-<button class="btn btn-lg btn-primary" [disabled]="(validated)"(click)="newsitter() " type="submit">Begin
-</button>
 
-
-</form>
+<!-- </form> -->
 

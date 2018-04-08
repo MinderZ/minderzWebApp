@@ -5,10 +5,9 @@ import { Pet} from '../model/pet';
 
 @Injectable()
 export class CacheService {
-
+  questionair= 1;
   myProfile = false;
 
-  public navigator = '';
   // most probably the search modal that dumps the this selected sitter
   selectedSitter: Client;
   // theres a component that dumps the current sitter details 

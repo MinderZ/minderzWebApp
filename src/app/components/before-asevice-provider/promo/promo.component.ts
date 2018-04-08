@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CacheService } from '../../../services/cache.service';
+
 
 @Component({
   selector: 'app-promo',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PromoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  	private cache: CacheService ,
+  	) { }
 
   ngOnInit() {
   }
-
+ 
 }

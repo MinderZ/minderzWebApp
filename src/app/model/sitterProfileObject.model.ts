@@ -43,6 +43,6 @@ export class SitterProfileObject {
     location?:string;
     emergencyContactName: string;
     emergencyContactNr: string;
-    SitterQuestionair?: Array<Questions>;
+    sitterQuestionair?: Questions;
 
 }
