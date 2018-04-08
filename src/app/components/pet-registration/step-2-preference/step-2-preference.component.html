@@ -34,10 +34,21 @@
       <div class="col-md-2 col-sm-12 height-46 display-flex">
         <label class="text-line-middle" for="age">Emergency Vet Spend Limit:</label>
       </div>
-      <div class="col-md-10">
-        <input [(ngModel)] = 'EmergencyVetSpendLimit' class="form-control" id="EmergencyVetSpendLimit" placeholder="Emergency Vet Spend Limit" type="text">
+      <div class="col-md-10 input-group">
+        <span class="input-group-addon" id="basic-addon1">R</span>
+        <input [(ngModel)] = 'EmergencyVetSpendLimit' class="form-control" id="EmergencyVetSpendLimit" placeholder="Emergency Vet Spend Limit" aria-describedby="basic-addon1" type="text">
       </div>
 </div>
+
+<!-- <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+</div>
+ -->
+
+
+
+
 
 
 <!--Start add references-->

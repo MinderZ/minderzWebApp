@@ -9,96 +9,98 @@ import { Questions } from '../../model/question.model';
   styleUrls: ['./before-asevice-provider.component.css', '../registration/register.component.css', '../../../assets/styles/mainstyle.css']
 })
 
-export class BeforeAseviceProviderComponent implements OnInit {
-  hide = true;
-  from = false;
-  checked = false;
-  selected = false;
+export class BeforeAseviceProviderComponent{
 
-  havebeenaVolunteerselected= false;
-  hadPetb4selected= false;
-  HavePetsCurrentlyselected= false;
-  isCompetentToAnimalsselected= false;
-  HaveRefNumberselected= false;
-  HasacriminalRecordselected= false;
-  agreeingToBackgroundCheckselected= false;
-  experienceselected= false;
-  validated = true;
-  constructor(
-public router: Router,
-public question: Questions
-  ) {}
+//   hide = true;
+//   from = false;
+//   checked = false;
+//   selected = false;
 
-  ngOnInit() {
-    this.validate();
-  }
+//   havebeenaVolunteerselected= false;
+//   hadPetb4selected= false;
+//   HavePetsCurrentlyselected= false;
+//   isCompetentToAnimalsselected= false;
+//   HaveRefNumberselected= false;
+//   HasacriminalRecordselected= false;
+//   agreeingToBackgroundCheckselected= false;
+//   experienceselected= false;
 
-check() {
-      this.checked = !this.checked;
-  }
+//   validated = true;
+//   constructor(
+// public router: Router,
+// private question: Questions
+//   ) {}
 
-  havebeenaVolunteer(input) {
-      this.havebeenaVolunteerselected = input;
-  }
+//   ngOnInit() {
+//     this.validate();
+//   }
 
-  hadPetb4( input) {
-    this.hadPetb4selected = input;
-    }
+// check() {
+//       this.checked = !this.checked;
+//   }
 
-  HavePetsCurrently( input) {
-    this.HavePetsCurrentlyselected = input;
-    }
+//   havebeenaVolunteer(input) {
+//       this.havebeenaVolunteerselected = input;
+//   }
 
-    isCompetentToAnimals( input) {
-    this.isCompetentToAnimalsselected = input;
-    }
+//   hadPetb4( input) {
+//     this.hadPetb4selected = input;
+//     }
 
-    HaveRefNumber( input) {
-    this.HaveRefNumberselected = input;
-    }
+//   HavePetsCurrently( input) {
+//     this.HavePetsCurrentlyselected = input;
+//     }
 
-    HasacriminalRecord( input) {
-    this.HasacriminalRecordselected = input;
-    }
+//     isCompetentToAnimals( input) {
+//     this.isCompetentToAnimalsselected = input;
+//     }
 
-    agreeingToBackgroundCheck( input) {
-    this.agreeingToBackgroundCheckselected = input;
-    }
+//     HaveRefNumber( input) {
+//     this.HaveRefNumberselected = input;
+//     }
 
-    experience( input) {
-          this.experienceselected = input;
-    }
+//     HasacriminalRecord( input) {
+//     this.HasacriminalRecordselected = input;
+//     }
 
-validate() {
-  if (
-    this.havebeenaVolunteerselected === false ||
-    this.hadPetb4selected === false ||
-    this.HavePetsCurrentlyselected === false ||
-    this.isCompetentToAnimalsselected === false ||
-    this.HaveRefNumberselected === false ||
-    this.HasacriminalRecordselected === false ||
-    this.agreeingToBackgroundCheckselected === false
-  ) {
-this.validated = true;
-  }else {
-this.validated = false;
-  }
-}
+//     agreeingToBackgroundCheck( input) {
+//     this.agreeingToBackgroundCheckselected = input;
+//     }
+
+//     experience( input) {
+//           this.experienceselected = input;
+//     }
+
+// validate() {
+//   if (
+//     this.havebeenaVolunteerselected === false ||
+//     this.hadPetb4selected === false ||
+//     this.HavePetsCurrentlyselected === false ||
+//     this.isCompetentToAnimalsselected === false ||
+//     this.HaveRefNumberselected === false ||
+//     this.HasacriminalRecordselected === false ||
+//     this.agreeingToBackgroundCheckselected === false
+//   ) {
+// this.validated = true;
+//   }else {
+// this.validated = false;
+//   }
+// }
 
 
 
 
-  newsitter() {
-    this.question.everVolunteeredpetetCare = this.havebeenaVolunteerselected;
-    this.question.everOwnedPets = this.hadPetb4selected;
-    this.question.isCurrentlyOwningPets = this.HavePetsCurrentlyselected;
-    this.question.competentForpets = this.isCompetentToAnimalsselected;
-    this.question.havetwoRefToCall = this.HaveRefNumberselected;
-    this.question.haveACriminalRecord = this.HasacriminalRecordselected;
-    this.question.agreeingForBackgroundCheck = this.agreeingToBackgroundCheckselected;
-    this.question.yearsInEperience = this.havebeenaVolunteerselected;
-    console.log(this.question);
+//   newsitter() {
+//     this.question.everVolunteeredpetetCare = this.havebeenaVolunteerselected;
+//     this.question.everOwnedPets = this.hadPetb4selected;
+//     this.question.isCurrentlyOwningPets = this.HavePetsCurrentlyselected;
+//     this.question.competentForpets = this.isCompetentToAnimalsselected;
+//     this.question.havetwoRefToCall = this.HaveRefNumberselected;
+//     this.question.haveACriminalRecord = this.HasacriminalRecordselected;
+//     this.question.agreeingForBackgroundCheck = this.agreeingToBackgroundCheckselected;
+//     this.question.yearsInEperience = this.havebeenaVolunteerselected;
+//     console.log(this.question);
 
-  this.router.navigate(['/registration']);
-}
+//   this.router.navigate(['/registration']);
+// }
 }

@@ -1,3 +1,5 @@
+import { SitterReferenceObject } from "./sitterReferenceObject.model";
+
 export class Pet {
 petName:string;
 ownerName:string;

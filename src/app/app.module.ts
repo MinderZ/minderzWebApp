@@ -72,6 +72,8 @@ import { Pet } from './model/pet';
 
 // All app pipes
 import { SummaryPipe } from './pipes/summary.pipe';
+import { PromoComponent } from './components/before-asevice-provider/promo/promo.component';
+import { QuestionsComponent } from './components/before-asevice-provider/questions/questions.component';
 
 
 
@@ -116,7 +118,9 @@ export const firestoreConfig = {
     ReviewCardComponent,
     PetRegistrationComponent,
     Step1DetailsComponent,
-    Step2PreferenceComponent
+    Step2PreferenceComponent,
+    PromoComponent,
+    QuestionsComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),
