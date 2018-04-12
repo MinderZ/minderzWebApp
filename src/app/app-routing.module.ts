@@ -14,6 +14,7 @@ import { SitterListPageComponent } from './components/sitter-list-page/sitter-li
 import { BeforeAseviceProviderComponent } from './components/before-asevice-provider/before-asevice-provider.component';
 import { FileNotFoundComponent } from './components/file-not-found/file-not-found.component';
 import { RegisterComponent } from './components/registration/register.component';
+import  {PetRegistrationComponent } from './components/pet-registration/pet-registration.component';
 
 
 
@@ -30,25 +31,25 @@ const routes: Routes = [
   {
     path: 'signIn',
     component: SignInComponent
-  },
+  },    
   {
     path: 'petProfile',
     component: PetProfileComponent
   },
-  {
-    path: 'profile',
-    component: MiniDashboardComponent,
-    canActivate: [AuthGuard]
-  },
+  // {
+  //   path: 'profile',
+  //   component: MiniDashboardComponent,
+  //   canActivate: [AuthGuard]
+  // },
   {
     path: 'become',
     component: BeforeAseviceProviderComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'addpet',
-    component: PetReg1Component,
-    canActivate: [AuthGuard]
+    component: PetRegistrationComponent,
+    // canActivate: [AuthGuard]
   },
   {
     path: 'bookingprofile',

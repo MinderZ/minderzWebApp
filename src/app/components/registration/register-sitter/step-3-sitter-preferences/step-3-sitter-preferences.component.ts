@@ -10,6 +10,8 @@ import { RegisterService } from "../../../../services/register.service";
   styleUrls: ["./step-3-sitter-preferences.component.css",'../../register.component.css']
 })
 export class Step3SitterPreferencesComponent implements OnInit {
+  // pricePerWalk;
+  pricePerPet;
 
   petPreferenceOption: string[] = ["small","medium","large"];
   jobDistanceRadiusOption: number[] = [10,20,50];
@@ -24,13 +26,13 @@ export class Step3SitterPreferencesComponent implements OnInit {
   // petMap: Map<string, boolean> = new Map<string, boolean>();
 
   dogWalking= {
-    pricePerWalk:0,
+    pricePerWalk:1,
     petsPerWalk:this.numberOption[0],
     walksPerDay:this.numberOption[0],
   }
 
   petSitting= {
-    pricePerPet:0,
+    pricePerPet:1,
     petsPerDay:this.numberOption[0],
   }
 
@@ -39,13 +41,13 @@ export class Step3SitterPreferencesComponent implements OnInit {
   } 
 
   dropInVist={
-    pricePerVisit:0,
+    pricePerVisit:1,
     visitsPerDay:this.numberOption[0],
   }
 
   constructor(protected registerService: RegisterService) {
 
-    console.log('pets per walk',this.dogWalking.petsPerWalk);
+    // console.log('pets per walk',this.dogWalking.petsPerWalk);
   }
 
   ngOnInit() { }
@@ -64,7 +66,6 @@ export class Step3SitterPreferencesComponent implements OnInit {
   }
 
   next(){
-
     this.registerService.sitter.jobRadius = this.jobDistanceRadius;
     this.registerService.sitter.dogWalking = this.dogWalking;
     this.registerService.sitter.petSitting = this.petSitting;
@@ -74,7 +75,7 @@ export class Step3SitterPreferencesComponent implements OnInit {
     this.registerService.sitter.serviceMap = this.serviceMap;
 
     console.table(this.registerService.sitter);
-    this.registerService.next()
+    // this.registerService.next()
 
   }
 }

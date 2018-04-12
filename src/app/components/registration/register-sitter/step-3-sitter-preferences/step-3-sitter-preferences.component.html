@@ -113,7 +113,7 @@
 
       </div>
     </div>
-
+<!-- stert of dog walking if user want one -->
     <div *ngIf="petMap['dogs'] && serviceMap['Dog Walking']" class="dog-walking">
       <h2 class="heading">Dog Walking</h2>
 
@@ -122,8 +122,9 @@
           <label class="text-line-middle">Price per walk:</label>
         </div>
 
-        <div class="col-md-10">
-          <input class="form-control" type="text">
+        <div class="input-group col-md-10">
+          <span class="input-group-addon" id="basic-addon1">R</span>          
+          <input class="form-control"  [(ngModel)] = 'dogWalking.pricePerWalk' aria-describedby="basic-addon1" type="number">
         </div>
       </div>
 
@@ -132,7 +133,7 @@
           <label class="text-line-middle">Pets Per walk:</label>
         </div>
         <div class="col-md-10">
-          <select [ngModel] = 'dogWalking.petsPerWalk' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <select [(ngModel)] = 'dogWalking.petsPerWalk' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
             <option *ngFor = 'let option of numberOption'>{{option}}</option>
           </select>
         </div>
@@ -144,23 +145,26 @@
         </div>
 
         <div class="col-md-10">
-          <select [ngModel] = 'dogWalking.walksPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <select [(ngModel)] = 'dogWalking.walksPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
             <option *ngFor = 'let option of numberOption'>{{option}}</option>
           </select>
         </div>
       </div>
     </div>
+    <!-- end of dog walking -->
 
-
+<!-- start of pet sitting -->
     <div class="line col-md-12" *ngIf="serviceMap['Pet Sitting']" id="pet-setting ">
       <h2 class="heading">Pet Sitting</h2>
       <div class="line col-md-12" id="price-per-pet">
         <div class="col-md-2 col-sm-12 height-46 display-flex">
           <label class="text-line-middle">Price per pet</label>
         </div>
-        <div class="col-md-10">
-          <input class="form-control" type="text">
+        <div class="col-md-10 input-group">
+        <span class="input-group-addon" id="basic-addon1">R</span>
+        <input class="form-control" [(ngModel)] = 'petSitting.pricePerPet' aria-describedby="basic-addon1" type="number">
         </div>
+
       </div>
       <div class="line col-md-12" id="pets-per-day">
         <div class="col-md-2 col-sm-12 height-46 display-flex">
@@ -168,15 +172,16 @@
         </div>
 
         <div class="col-md-10">
-          <select [ngModel] = 'petSitting.petsPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <select [(ngModel)] = 'petSitting.petsPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
             <option *ngFor = 'let option of numberOption'>{{option}}</option>
           </select>
         </div>
       </div>
     </div>
+<!-- end of pet sitiing -->
 
 
-
+   <!-- start of house sitting  -->
     <div *ngIf="serviceMap['House Sitting']" id="house-sitting">
       <h2 class="heading">House Sitting</h2>
 
@@ -185,13 +190,16 @@
         <div class="col-md-2 col-sm-12 height-46 display-flex">
           <label class="text-line-middle">Price per walk:</label>
         </div>
-        <div class="col-md-10">
-          <input class="form-control" type="text">
+        <div class="col-md-10 input-group">
+         <span class="input-group-addon" id="basic-addon1">R</span>
+         <input class="form-control"  [(ngModel)] = 'houseSitting.pricePerDay'  aria-describedby="basic-addon1"  type="number">
         </div>
       </div>
     </div>
+    <!-- end of house sitting -->
 
 
+<!-- start of drop in visit -->
     <div *ngIf="serviceMap['Drop in Visits']" id="drop-in-vists">
       <h2 class="heading">Drop-in Visits</h2>
 
@@ -199,8 +207,9 @@
         <div class="col-md-2 col-sm-12 height-46 display-flex">
           <label class="text-line-middle">Price per visit:</label>
         </div>
-        <div class="col-md-10">
-          <input class="form-control" type="text">
+        <div class="col-md-10 input-group">
+          <span class="input-group-addon" id="basic-addon1">R</span>          
+          <input class="form-control" [(ngModel)] = 'dropInVist.pricePerVisit'  aria-describedby="basic-addon1" type="number">
         </div>
       </div>
 
@@ -210,12 +219,13 @@
         </div>
 
         <div class="col-md-10">
-          <select [ngModel] = 'dropInVist.visitsPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <select [(ngModel)] = 'dropInVist.visitsPerDay' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
             <option *ngFor = 'let option of numberOption'>{{option}}</option>
           </select>
         </div>
       </div>
     </div>
+<!-- end of dript in visit -->
 
     <!--Navigate-->
     <div class="col-md-12 col-sm-12 navigate">

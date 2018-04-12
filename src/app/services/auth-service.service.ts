@@ -3,6 +3,7 @@ import * as firebase from 'firebase/app';
 import { Injectable, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { ActivatedRoute, Router } from '@angular/router';
+// import { DataRecycleService } from './data-recycle.service';
 import { CacheService } from './cache.service';
 import { NotificationService } from './notification.service';
 import {
@@ -12,7 +13,7 @@ import {
 import { UserProfileObjet } from '../model/userProfileObj.model';
 import { RegisterService } from './register.service';
 // import { User } from 'app/model/user.model';
-
+ 
 
 @Injectable()
 export class AuthService implements OnInit {
@@ -39,6 +40,7 @@ constructor(
     private afs: AngularFirestore,
     private route: ActivatedRoute,
     private cache: CacheService,
+    // private dataRecycleService: DataRecycleService,
     private notify: NotificationService,
     private registerService: RegisterService,
   ) {
@@ -125,11 +127,9 @@ constructor(
 
     return this.userUID = firebase.auth().currentUser.uid;
   }
-//   initialiseAUser() {
-//       const userProfile = this.afs.collection('users').doc('' + this.currentUserUID());
-//     this.User.uid =   this.currentUserUID();
-//     this.User.displayName =   this.getcurrentUser().displayName;
-//      return userProfile.set(this.User);
-//  }
+
+
+
+
 
 }

@@ -1,14 +1,13 @@
 <div class="container-fluid">
   <div class="row">
 
-    <div class="col-md-4">
+<!--<div class="col-md-4" *ngFor="let mypet of this.AllMyPets">
       <div class="card" style="width: 20rem;">
         <input type="checkbox" id="pure-toggle" hidden/>
         <div id="card-user" class="pure-toggle" for="pure-toggle">
           <div class="header"> </div>
           <div class="avatar">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfunOH02_Jz728EfvQhGMwkkYRrZQdOG9OeA9kyakFES4r2kNJ" alt="..."
-            />
+            <img src="{{mypet.petPicture}}" alt="..."/>
           </div>
           <div class="text">
             <div class="card-block">
@@ -17,9 +16,9 @@
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
-                <input [(ngModel)]="petName" id="pet" [readonly]="!editing" /> </li>
+                <input [(ngModel)]="{{mpPet.petname}}" id="pet" [readonly]="!editing" /> </li>
               <li class="list-group-item">
-                <input [(ngModel)]="petType" id="pet" [readonly]="!editing" /> </li>
+                <input [(ngModel)]="{{pettype}}" id="pet" [readonly]="!editing" /> </li>
               <li class="list-group-item">
                 <input [(ngModel)]="age" id="pet" [readonly]="!editing" /> </li>
             </ul>
@@ -29,7 +28,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
     <div class="col-md-4">

@@ -1,0 +1,180 @@
+<div class="container-fluid">
+	<div class="row">
+		
+<h2 class="heading">Lets get to know each other better </h2>
+
+  <div class="line col-md-12">
+    <div class="col-md-5 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Have you ever volunteered at an animal rescue
+        organization or taken care of pets?</label>
+    </div>
+    <div class="col-md-7">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="havebeenaVolunteer1 == true && !havebeenaVolunteerselected  ? 'selected' : 'unselected'" 
+        (click)="havebeenaVolunteer(true); havebeenaVolunteerselected=false; "></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="havebeenaVolunteer1 == false && !havebeenaVolunteerselected  ? 'selected' : 'unselected'" (click)="havebeenaVolunteer(false);  havebeenaVolunteerselected= false; "></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="line col-md-12">
+    <div class="col-md-5 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Have you had pets of your own?</label>
+    </div>
+    <div class="col-md-7">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="hadPetb41 == true && !hadPetb4selected ? 'selected' : 'unselected'" (click)="hadPetb4(true); hadPetb4selected = false; "></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="hadPetb41 == false && !hadPetb4selected  ? 'selected' : 'unselected'" (click)="hadPetb4(false); hadPetb4selected = false; "></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="line col-md-12">
+    <div class="col-md-5 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Do you currently have a pet?</label>
+    </div>
+    <div class="col-md-7">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="HavePetsCurrently1 == true && !HavePetsCurrentlyselected ? 'selected' : 'unselected'" (click)="HavePetsCurrently(true); HavePetsCurrentlyselected= false;"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="HavePetsCurrently1 == false && !HavePetsCurrentlyselected ? 'selected' : 'unselected'" (click)="HavePetsCurrently(false); HavePetsCurrentlyselected= false;"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="line col-md-12">
+    <div class="col-md-5 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Do you feel competent to look after baby animals?</label>
+    </div>
+    <div class="col-md-7">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="isCompetentToAnimals1 == true && !isCompetentToAnimalsselected  ? 'selected' : 'unselected'" (click)="isCompetentToAnimals(true); isCompetentToAnimalsselected= false;"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="isCompetentToAnimals1 == false && !isCompetentToAnimalsselected ? 'selected' : 'unselected'" (click)="isCompetentToAnimals(false); isCompetentToAnimalsselected= false;"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="line col-md-12">
+    <div class="col-md-5 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Can you provide two current references with phone
+        numbers?</label>
+    </div>
+    <div class="col-md-7">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="HaveRefNumber1 == true && !HaveRefNumberselected ? 'selected' : 'unselected'" (click)="HaveRefNumber(true); HaveRefNumberselected= false;"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="HaveRefNumber1 == false && !HaveRefNumberselected ? 'selected' : 'unselected'" (click)="HaveRefNumber(false); HaveRefNumberselected= false;"></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="line col-md-12">
+    <div class="col-md-5 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Do you have a clear criminal history? :</label>
+    </div>
+    <div class="col-md-7">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="HasacriminalRecord1 == true && !HasacriminalRecordselected ? 'selected' : 'unselected'" (click)="HasacriminalRecord(true); HasacriminalRecordselected= false;"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" [ngClass]="HasacriminalRecord1 == false && !HasacriminalRecordselected  ? 'selected' : 'unselected'" (click)="HasacriminalRecord(false); HasacriminalRecordselected= false; "></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="line col-md-12">
+    <div class="col-md-5 col-sm-12 height-46 display-flex">
+      <label class="text-line-middle">Would you agree to a background check?</label>
+    </div>
+    <div class="col-md-7">
+
+      <!-- Yes -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" 
+        [ngClass]="agreeingToBackgroundCheck1 == true && !agreeingToBackgroundCheckselected ? 'selected' : 'unselected'" (click)="agreeingToBackgroundCheck(true); agreeingToBackgroundCheckselected= false;"></div>
+        <label class="text-line-middle radio-label">Yes</label>
+      </div>
+
+      <!-- No -->
+      <div class="col-md-2 col-sm-12 display-flex">
+        <div class="radio" 
+        [ngClass]="agreeingToBackgroundCheck1 == false && 
+        !agreeingToBackgroundCheckselected ? 'selected' : 'unselected'" 
+        (click)="agreeingToBackgroundCheck(false); agreeingToBackgroundCheckselected= false;" required></div>
+        <label class="text-line-middle radio-label">No</label>
+      </div>
+    </div>
+  </div>
+
+   <div class="line col-md-12">
+      <div class="col-md-5 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="age">How many years of experience do you have with pet care</label>
+      </div>
+
+      <div class="col-md-7">
+       <select [(ngModel)] = 'experience1' class="form-control custom-select mb-2 mr-sm-2 mb-sm-0">
+          <option *ngFor = 'let years of expert'>{{years}}</option>
+       </select>
+      </div>      
+  </div>
+
+
+
+	<div class="text-center">
+    <button class="btn btn-md btn-primary" (click)="ques();" type="submit">Next</button>
+ 	</div>
+
+
+	</div>
+</div>

@@ -48,7 +48,11 @@ export class Step4SitterDetailsComponent implements OnInit {
   //Valid form
   valid = false;
 
-  constructor(private router: Router, private dataRecycle: DataRecycleService, protected registerService: RegisterService, private clientRegisterService: ClientRegisterService) { }
+  constructor(
+    private router: Router, 
+    private dataRecycle: DataRecycleService, 
+    protected registerService: RegisterService, 
+    private clientRegisterService: ClientRegisterService) { }
 
   ngOnInit() {
   }

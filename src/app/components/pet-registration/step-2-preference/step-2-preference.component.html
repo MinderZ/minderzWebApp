@@ -1,0 +1,118 @@
+ <div class="container-fluid">
+  <div class="row">
+
+<div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="profile-picture">Upload a picture of your pet:</label>
+      </div>
+      <div class="col-md-10">
+        <input class="image-input form-control" (change)="PetUpload($event)" id="Pet-picture" type="file">
+
+        <div class="button-cover display-flex">
+          <i class="margin-auto fa fa-plus-circle"></i>
+        </div>
+
+        <div [style.opacity]="petPicUrl!==undefined ? '1' : '0'" class="image-preview">
+          <img src="{{petPicUrl}}" alt="image preview...">
+        </div>
+	<div *ngIf="petPicture">
+  <progress class="progress is-success" min=1 max=100 value="{{ petPicture?.progress }}"></progress>
+  <p>Progress: {{petPicture?.name}} | {{petPicture?.progress | number}}% Complete</p>
+	</div>
+    </div>
+
+    <div class="alert alert-info col-md-10" role="alert">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        If you don't have a photo on hand, please upload a generic picture of their breed. NOTE: We ask for your pet's photo in the
+        event they escape, so they can be identified.
+    </div>
+</div>
+
+
+
+<div class="line col-md-12">
+      <div class="col-md-2 col-sm-12 height-46 display-flex">
+        <label class="text-line-middle" for="age">Emergency Vet Spend Limit:</label>
+      </div>
+      <div class="col-md-10 input-group">
+        <span class="input-group-addon" id="basic-addon1">R</span>
+        <input [(ngModel)] = 'EmergencyVetSpendLimit' class="form-control" id="EmergencyVetSpendLimit" placeholder="Emergency Vet Spend Limit" aria-describedby="basic-addon1" type="text">
+      </div>
+</div>
+
+<!-- <div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+</div>
+ -->
+
+
+
+
+
+
+<!--Start add references-->
+    <div class="line  col-md-12" id="reference">
+
+      <div class="padded-line col-md-12 col-sm-12">
+        <div class="display-grid" id="reference-list" *ngFor="let reference of registerService.Pet.references; let i = index "[attr.data-index]="i">
+          <label>Emergency Contact {{i+1}}:</label>
+          <label>Emergency Contact name: {{reference.referenceName}}</label>
+          <label>Emergency Contact Phone: {{reference.referencePhone}}</label>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-sm-12 navigate">
+        <button class="next btn btn-primary" id="add-reference" (click)="creatingReference = !creatingReference" [style.display]="creatingReference ? 'none' : 'block'">
+          Add Emergency Contact
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+
+      <div [style.display]="creatingReference ? 'block' : 'none'">
+        <div class="line col-md-12">
+          <div class="col-md-2 col-sm-12 height-46 display-flex">
+            <label class="text-line-middle">Emergency Contact name:</label>
+          </div>
+          <div class="col-md-10 col-sm-12">
+            <input [style.border-color]="validReferenceName? '' : '#b91010'" id="reference-name" class="form-control" type="text" [(ngModel)]="referenceName"
+            />
+          </div>
+        </div>
+
+        <div class="line col-md-12">
+          <div class="col-md-2 col-sm-12 height-46 display-flex">
+            <label class="text-line-middle">Emergency Contact phone:</label>
+          </div>
+          <div class="col-md-10 col-sm-12">
+            <input [style.border-color]="validReferencePhone? '' : '#b91010'" id="reference-phone" class="form-control" type="text" [(ngModel)]="referencePhone"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 navigate">
+          <button class="cancel btn btn-primary" (click)="creatingReference = !creatingReference">Cancel
+            <i class="fa fa-ban"></i>
+          </button>
+          <button class="next btn btn-primary" (click)="addReference()">Add
+            <i class="fa fa-check"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--End add references-->
+
+
+
+
+ <div class="col-md-12 col-sm-12 navigate">
+      <button class="back btn btn-default" (click)="registerService.back()">
+        <i class="fa fa-arrow-left"></i>Back</button>
+      <button class="next btn btn-primary" (click)="submit()">
+        Submit
+        <i class="fa fa-check"></i>
+      </button>
+    </div>
+
+</div>
+</div>

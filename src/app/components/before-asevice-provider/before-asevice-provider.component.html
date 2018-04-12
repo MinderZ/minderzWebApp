@@ -1,4 +1,27 @@
-<div class="section" *ngIf="hide">
+<div id="display">
+<app-promo *ngIf='cache.questionair === 1'></app-promo>
+<app-questions *ngIf='cache.questionair === 2'></app-questions>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="section" >
 
   <div class="text-center Pink">
 
@@ -119,14 +142,14 @@
     </div>
     <div class="col-md-8">
 
-      <!-- Yes -->
-      <div class="col-md-2 col-sm-12 display-flex">
+ -->      <!-- Yes -->
+<!--       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="havebeenaVolunteerselected  ? 'selected' : 'unselected'" (click)="havebeenaVolunteer(true); validate();"></div>
         <label class="text-line-middle radio-label">Yes</label>
       </div>
-
+ -->
       <!-- No -->
-      <div class="col-md-2 col-sm-12 display-flex">
+<!--       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="!havebeenaVolunteerselected  ? 'selected' : 'unselected'" (click)="havebeenaVolunteer(false); validate();"></div>
         <label class="text-line-middle radio-label">No</label>
       </div>
@@ -142,34 +165,31 @@
     </div>
     <div class="col-md-8">
 
-      <!-- Yes -->
-      <div class="col-md-2 col-sm-12 display-flex">
+ -->      <!-- Yes -->
+<!--       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="hadPetb4selected ? 'selected' : 'unselected'" (click)="hadPetb4(true); validate();"></div>
         <label class="text-line-middle radio-label">Yes</label>
       </div>
 
-      <!-- No -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="!hadPetb4selected  ? 'selected' : 'unselected'" (click)="hadPetb4(false); validate();"></div>
         <label class="text-line-middle radio-label">No</label>
       </div>
     </div>
   </div>
+ -->
 
-
-  <div class="line col-md-12">
+<!--   <div class="line col-md-12">
     <div class="col-md-4 col-sm-12 height-46 display-flex">
       <label class="text-line-middle">Do you currently have a pet?</label>
     </div>
     <div class="col-md-8">
 
-      <!-- Yes -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="HavePetsCurrentlyselected ? 'selected' : 'unselected'" (click)="HavePetsCurrently(true); validate();"></div>
         <label class="text-line-middle radio-label">Yes</label>
       </div>
 
-      <!-- No -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="!HavePetsCurrentlyselected ? 'selected' : 'unselected'" (click)="HavePetsCurrently(false); validate();"></div>
         <label class="text-line-middle radio-label">No</label>
@@ -184,13 +204,11 @@
     </div>
     <div class="col-md-8">
 
-      <!-- Yes -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="isCompetentToAnimalsselected  ? 'selected' : 'unselected'" (click)="isCompetentToAnimals(true); validate();"></div>
         <label class="text-line-middle radio-label">Yes</label>
       </div>
 
-      <!-- No -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="!isCompetentToAnimalsselected ? 'selected' : 'unselected'" (click)="isCompetentToAnimals(false); validate();"></div>
         <label class="text-line-middle radio-label">No</label>
@@ -206,13 +224,11 @@
     </div>
     <div class="col-md-8">
 
-      <!-- Yes -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="HaveRefNumberselected ? 'selected' : 'unselected'" (click)="HaveRefNumber(true); validate();"></div>
         <label class="text-line-middle radio-label">Yes</label>
       </div>
 
-      <!-- No -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="!HaveRefNumberselected ? 'selected' : 'unselected'" (click)="HaveRefNumber(false); validate();"></div>
         <label class="text-line-middle radio-label">No</label>
@@ -227,13 +243,11 @@
     </div>
     <div class="col-md-8">
 
-      <!-- Yes -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="HasacriminalRecordselected ? 'selected' : 'unselected'" (click)="HasacriminalRecord(true); validate();"></div>
         <label class="text-line-middle radio-label">Yes</label>
       </div>
 
-      <!-- No -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="!HasacriminalRecordselected  ? 'selected' : 'unselected'" (click)="HasacriminalRecord(false); validate(); "></div>
         <label class="text-line-middle radio-label">No</label>
@@ -255,20 +269,18 @@
     </div>
     <div class="col-md-8">
 
-      <!-- Yes -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="agreeingToBackgroundCheckselected ? 'selected' : 'unselected'" (click)="agreeingToBackgroundCheck(true); validate();"></div>
         <label class="text-line-middle radio-label">Yes</label>
       </div>
 
-      <!-- No -->
       <div class="col-md-2 col-sm-12 display-flex">
         <div class="radio" [ngClass]="!agreeingToBackgroundCheckselected ? 'selected' : 'unselected'" (click)="agreeingToBackgroundCheck(false); validate();" required></div>
         <label class="text-line-middle radio-label">No</label>
       </div>
     </div>
   </div>
-
+ -->
 
 
   <!-- <div class="line col-md-12">
@@ -353,9 +365,6 @@
   </div>
 </div> -->
 
-<button class="btn btn-lg btn-primary" [disabled]="(validated)"(click)="newsitter() " type="submit">Begin
-</button>
 
-
-</form>
+<!-- </form> -->
 

@@ -7,5 +7,5 @@ export class Questions {
   havetwoRefToCall?: boolean;
   haveACriminalRecord?: boolean;
   agreeingForBackgroundCheck?: boolean;
-  yearsInEperience?: boolean;
+  yearsInEperience?: string;
 }

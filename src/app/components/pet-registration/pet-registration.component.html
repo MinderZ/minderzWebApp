@@ -1,0 +1,13 @@
+<div class="container-fluid">
+
+  <div id="display">
+    <h2 class="heading">Step {{registerService.step}} of 2: {{registerService.formName}}</h2>
+    <div class="steps">
+      <app-step-1-details *ngIf="registerService.step==1"></app-step-1-details>
+      <app-step-2-preference *ngIf="registerService.step==2"></app-step-2-preference>
+    </div>
+  </div>
+
+
+</div>
+

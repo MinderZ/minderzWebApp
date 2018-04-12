@@ -12,6 +12,7 @@ import { FilterService } from '../../services/filter.service';
 })
 
 export class BookingProfileComponent {
+myPets:any  = [this.cacheService.currentUserPets]
 
     client: Client;
     uneditedProfile: Client;
@@ -77,7 +78,6 @@ export class BookingProfileComponent {
                 })
             }
              this.client =  this.cacheService.currentSitter;
-                 console.log('Sopposeed profile that does not have the profile picture', this.client.profilePicture);
 
             this.uneditedProfile = this.client;
             this.editable = true;
@@ -88,9 +88,10 @@ export class BookingProfileComponent {
                 if (this.client.serviceProvider.serviceMap !== undefined) {
                     this.filterServices();
                 }
-            } else{
-                alert('Something went horribly wrong to be getting this, please log off and on again, if error persists contact admin ASAP');
             }
+            //  else{
+            //     alert('Something went horribly wrong to be getting this, please log off and on again, if error persists contact admin ASAP');
+            // }
         } else {
             this.client = this.cacheService.selectedSitter;
             this.editable = false;
