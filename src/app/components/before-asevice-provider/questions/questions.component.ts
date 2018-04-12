@@ -9,19 +9,25 @@ import { RegisterService } from '../../../services/register.service';
   templateUrl: './questions.component.html',
   styleUrls: ['./questions.component.css','../../registration/register.component.css'],
 })
-export class QuestionsComponent implements OnInit {
-questionair:Questions
+export class QuestionsComponent implements OnInit { 
+  expert: string[] =
+[
+"None",
+"1-2 Years",
+"3-5 Years" ,
+"5+ Years" , 
+ ];
   validated = false;
 
 
-  havebeenaVolunteerselected;
-  hadPetb4selected;
-  HavePetsCurrentlyselected;
-  isCompetentToAnimalsselected;
-  HaveRefNumberselected;
-  HasacriminalRecordselected;
-  agreeingToBackgroundCheckselected;
-  experienceselected;
+  havebeenaVolunteerselected = false;
+  hadPetb4selected = false;
+  HavePetsCurrentlyselected = false;
+  isCompetentToAnimalsselected = false;
+  HaveRefNumberselected = false;
+  HasacriminalRecordselected = false;
+  agreeingToBackgroundCheckselected = false;
+  experienceselected =false;
 
   havebeenaVolunteer1;
   hadPetb41;
@@ -30,13 +36,15 @@ questionair:Questions
   HaveRefNumber1;
   HasacriminalRecord1;
   agreeingToBackgroundCheck1;
-  experience1;
+  experience1 = this.expert[0];
+  
 
 
   constructor(
 private router: Router,
 private registerService: RegisterService,
   	) {	}
+   
 
   ngOnInit() {
   }
@@ -48,7 +56,7 @@ private registerService: RegisterService,
 
     hadPetb4( input) {
     this.hadPetb41 = input;
-    }
+    } 
 
     HavePetsCurrently( input) {
     this.HavePetsCurrently1 = input;
@@ -68,23 +76,24 @@ private registerService: RegisterService,
 
     agreeingToBackgroundCheck( input) {
     this.agreeingToBackgroundCheck1 = input;
+    // console.log(this.agreeingToBackgroundCheck1);
     }
 
-    experience( input) {
-          this.experience1 = input;
-    }
+    // experience( input) {
+    //       this.experience1 = input;
+    // }
 
     ques() {
-    this.questionair.everVolunteeredpetetCare = this.havebeenaVolunteer1;
-    this.questionair.everOwnedPets = this.hadPetb41;
-    this.questionair.isCurrentlyOwningPets = this.HavePetsCurrently1;
-    this.questionair.competentForpets = this.isCompetentToAnimals1;
-    this.questionair.havetwoRefToCall = this.HaveRefNumber1;
-    this.questionair.haveACriminalRecord = this.HasacriminalRecord1;
-    this.questionair.agreeingForBackgroundCheck = this.agreeingToBackgroundCheck1;
-    this.questionair.yearsInEperience = this.experience1;
-    console.table(this.questionair);
-    this.registerService.sitter.sitterQuestionair = this.questionair;
+    this.registerService.questionair.everVolunteeredpetetCare = this.havebeenaVolunteer1;
+    this.registerService.questionair.everOwnedPets = this.hadPetb41;
+    this.registerService.questionair.isCurrentlyOwningPets = this.HavePetsCurrently1;
+    this.registerService.questionair.competentForpets = this.isCompetentToAnimals1;
+    this.registerService.questionair.havetwoRefToCall = this.HaveRefNumber1;
+    this.registerService.questionair.haveACriminalRecord = this.HasacriminalRecord1;
+    this.registerService.questionair.agreeingForBackgroundCheck = this.agreeingToBackgroundCheck1;
+    this.registerService.questionair.yearsInEperience = this.experience1;
+    console.table(this.registerService.questionair);
+    this.registerService.sitter.sitterQuestionair = this.registerService.questionair;
   	this.router.navigate(['/registration']);}
 
 //   	validate() {

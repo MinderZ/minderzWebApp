@@ -8,7 +8,7 @@ export class RegisterService {
   step: number = 1;
   formName: string = "Location";
   sitter: SitterProfileObject;
-
+questionair: Questions;
   constructor() {
     this.sitter = {
         sitterQuestionair:null,
@@ -51,9 +51,19 @@ export class RegisterService {
         location: "",
         emergencyContactName: "",
         emergencyContactNr: "",
+            };
 
-
-    };
+            
+ this.questionair = {
+  everVolunteeredpetetCare: null,
+  everOwnedPets: null,
+  isCurrentlyOwningPets: null,
+  competentForpets: null,
+  havetwoRefToCall: null,
+  haveACriminalRecord: null,
+  agreeingForBackgroundCheck: null,
+  yearsInEperience: null,
+            };
   }
 
   getSitterProfileObject() {
