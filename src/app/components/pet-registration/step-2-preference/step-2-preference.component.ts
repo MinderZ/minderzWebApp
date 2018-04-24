@@ -58,7 +58,7 @@ petPicUrl: any;
         // push profile
      this.uploader.pushUpload(this.petPicture, 'Pet-pics');
        } else {
-      console.error('No profile photo found!');
+      console.error('No pet photo found!');
     }
 
   }
@@ -131,6 +131,8 @@ submit(){
 this.registerService.Pet.references = this.references;
 this.registerService.Pet.emegergencyVetSpendLimimt = this.EmergencyVetSpendLimit;
 this.registerService.Pet.petPicture = this.petPicture.url;
+console.log('check for photo url', this.petPicture.url);
+
 console.table(this.registerService.Pet);
 
 this.dataRecycleService.registerPet(this.registerService.Pet);

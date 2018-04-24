@@ -56,22 +56,15 @@ const routes: Routes = [
     component: BookingProfileComponent,
     canActivate: [AuthGuard]
   },
-  {
-    path: 'code',
-    component: CodeComponent
-  },
-
+ 
   {
     path: 'sitter-profile-listings',
     component: SitterListPageComponent
   },
   {
-    path:'petProf',
-    component: PetProfileComponent
-  },
-  {
     path: 'registration',
     component: RegisterComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'review',

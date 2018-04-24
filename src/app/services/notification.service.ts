@@ -12,17 +12,19 @@ export interface Msg {
 
 @Injectable()
 export class NotificationService {
+flag: boolean;
+ msg: Msg;
+  // private _msgSource = new Subject<Msg | null>();
 
-  private _msgSource = new Subject<Msg | null>();
-
-  msg = this._msgSource.asObservable();
+  // msg = this._msgSource.asObservable();
 
   update(content: string, style: 'error' | 'info' | 'success') {
-    const msg: Msg = { content, style };
-    this._msgSource.next(msg);
+   this.msg = { content, style };
+this.flag = true;
+    
   }
 
   clear() {
-    this._msgSource.next(null);
+this.flag = false;
   }
 }

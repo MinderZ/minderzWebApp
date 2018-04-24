@@ -33,7 +33,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { PetProfileComponent } from './components/pet-profile/pet-profile.component';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
+ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormRvwComponent } from './components/form-rvw/form-rvw.component';
 import { MiniDashboardComponent } from './components/mini-dashboard/mini-dashboard.component';
@@ -74,6 +74,7 @@ import { Pet } from './model/pet';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { PromoComponent } from './components/before-asevice-provider/promo/promo.component';
 import { QuestionsComponent } from './components/before-asevice-provider/questions/questions.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 
 
@@ -120,7 +121,8 @@ export const firestoreConfig = {
     Step1DetailsComponent,
     Step2PreferenceComponent,
     PromoComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    NotificationComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firestoreConfig),

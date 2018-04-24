@@ -2,6 +2,7 @@ import { Questions } from '../../../model/question.model';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { RegisterService } from '../../../services/register.service';
+import { CacheService } from '../../../services/cache.service';
 
 
 @Component({
@@ -43,6 +44,7 @@ export class QuestionsComponent implements OnInit {
   constructor(
 private router: Router,
 private registerService: RegisterService,
+private cache: CacheService,
   	) {	}
    
 
@@ -94,6 +96,7 @@ private registerService: RegisterService,
     this.registerService.questionair.yearsInEperience = this.experience1;
     console.table(this.registerService.questionair);
     this.registerService.sitter.sitterQuestionair = this.registerService.questionair;
+    this.cache.questionair = 1;
   	this.router.navigate(['/registration']);}
 
 //   	validate() {

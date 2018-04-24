@@ -84,7 +84,7 @@ myPets:any  = [this.cacheService.currentUserPets]
 
 // if i am a service provider and a map of my service provision is not undefined
 // call FilterService method
-            if (this.cacheService.currentSitter.isServiceProvider) {
+            if (this.cacheService.currentSitter.isServiceProvider === true) {
                 if (this.client.serviceProvider.serviceMap !== undefined) {
                     this.filterServices();
                 }

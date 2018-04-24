@@ -1,8 +1,7 @@
-<div class="loader" *ngIf="this.client"></div>
 
 
 <!--Start booking profile-->
-<div class="container-fluid" id="main-display">
+<div class="container-fluid" *ngIf="this.client" id="main-display">
   <div class="row" id="display-box">
     <div class="col-md-8 col-sm-12" id="profile">
 

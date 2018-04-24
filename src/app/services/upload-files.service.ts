@@ -33,17 +33,17 @@ export class UploadFilesService {
       },
       (error) => {
         //upload failed
-        console.log(error);
+        console.error(error);
       },
       () => {
         //upload success
          if (uploadTask.snapshot.downloadURL){
-        // upload.url = uploadTask.snapshot.downloadURL;
-        // upload.name = upload.file.name;
-        // this.saveFileData(upload, `${basepath}/${this.auth.getcurrentUser().uid}`);
-        // return;
-          console.error('File uploaded');
-
+        upload.url = uploadTask.snapshot.downloadURL;
+        upload.name = upload.file.name;
+        this.saveFileData(upload, `${basepath}/${this.auth.getcurrentUser().uid}`);
+        
+        console.log('File uploaded');
+        return;
       } else {
           console.error('No download URL!');
         }

@@ -1,7 +1,13 @@
-<div class="container-fluid">
-  <div class="row">
 
-<!--<div class="col-md-4" *ngFor="let mypet of this.AllMyPets">
+<div class="loader" *ngIf="AllMyPets" ></div>
+
+
+<div class="container-fluid">
+
+
+  <div class="row"*ngIf="!AllMyPets">
+
+<div class="col-md-4" *ngFor="let mypet of this.AllMyPets" >
       <div class="card" style="width: 20rem;">
         <input type="checkbox" id="pure-toggle" hidden/>
         <div id="card-user" class="pure-toggle" for="pure-toggle">
@@ -11,26 +17,26 @@
           </div>
           <div class="text">
             <div class="card-block">
-              <h3 class="card-title">Card title</h3>
+              <h3 class="card-title">{{mypet.petname}}</h3>
               <p class="card-text">Decription of pet.</p>
             </div>
-            <ul class="list-group list-group-flush">
+            <!-- <ul class="list-group list-group-flush">
               <li class="list-group-item">
-                <input [(ngModel)]="{{mpPet.petname}}" id="pet" [readonly]="!editing" /> </li>
+                <input [(ngModel)]="{{mypet.petname}}" id="pet" [readonly]="!editing" /> </li>
               <li class="list-group-item">
                 <input [(ngModel)]="{{pettype}}" id="pet" [readonly]="!editing" /> </li>
               <li class="list-group-item">
                 <input [(ngModel)]="age" id="pet" [readonly]="!editing" /> </li>
-            </ul>
+            </ul> -->
             <div class="card-block">
               <a (click)="edit()">{{editing}} Edit</a>
             </div>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
-
+<!-- 
     <div class="col-md-4">
       <div class="card" style="width: 20rem;">
         <input type="checkbox" id="pure-toggle" hidden/>
@@ -62,6 +68,8 @@
       </div>
     </div>
 
+
+    
     <div class="col-md-4">
       <div class="card" style="width: 20rem;">
         <input type="checkbox" id="pure-toggle" hidden/>
@@ -92,4 +100,6 @@
         </div>
       </div>
     </div>
+     -->
   </div>
+</div>
