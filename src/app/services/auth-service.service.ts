@@ -55,19 +55,14 @@ constructor(
         this.cache.myProfile = true;
         this.router.navigate(['/registration']);
       })
-      .catch(error => {
-        if (error.message === 'The email address is already in use by another account.') {
-            alert(error.message);
-        } else {
-            console.log(error.message);
-        }
-    });
+      .catch(error => this.handleError(error));
   }
 
   emailLogin(email: string, password: string) {
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
       .then((user) => {
+        this.notify.update('Welcome to Minderz!!!', 'success');        
         this.cache.myProfile = true;
         this.router.navigate(['/home']);
         this.registerService.step = 3;
@@ -80,7 +75,9 @@ constructor(
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(() => {
         this.router.navigate(['/home']);
-      });
+       })
+      .catch(error => this.handleError(error));
+   
   }
 
   loginWithFacebook() {
@@ -88,7 +85,8 @@ constructor(
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then(() => {
         this.router.navigate(['/home']);
-      });
+      })
+      .catch(error => this.handleError(error));
   }
 
   loginWithTwitter() {
@@ -96,7 +94,8 @@ constructor(
       .signInWithPopup(new firebase.auth.TwitterAuthProvider())
       .then(() => {
         this.router.navigate(['/home']);
-      });
+      })
+      .catch(error => this.handleError(error));
   }
 
   // If any error, console log and notifying the user of such
@@ -124,7 +123,6 @@ constructor(
   }
 
   currentUserUID() {
-
     return this.userUID = firebase.auth().currentUser.uid;
   }
 

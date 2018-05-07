@@ -1,36 +1,51 @@
-<div class="container"> 
-        <div class="tab-container"> 
-            <div class="calendar-tab border-left-cal-tab calendar-tab-focused"(click)= 'switchCalendar("DogWalking")' >Dog walking</div> 
-            <div class="calendar-tab" (click)= 'switchCalendar("DropInVist")'>Drop-In Visit</div> 
-            <div class="calendar-tab" (click)= 'switchCalendar("HouseSitting")'>House Sitting</div> 
-            <div class="calendar-tab" (click)= 'switchCalendar("PetBoarding")'>Pet Boarding</div> 
-        </div> 
-        <div class="calendar-nav m-0"> 
-           <div class="month-display-container p-0"> 
-                <div class="month-nav-btn prev-month"><span class="fa fa-caret-left" aria-hidden="true" (click)='prevMonth()' [style.display] = "showPrevArrow?'block':'none'"></span></div> 
-                <div class="month-display"> 
-                    <h2 class="month font-Nunito">{{displayDate.format('MMMM')}}</h2> 
-                    <h5 class="year m-0 font-Nunito">{{displayDate.format('YYYY')}}</h5> 
+<div class="row">
+        <div class="col-md-6"> 
+                <div class="tab-container"> 
+                    <div [ngClass]="isActive === 'walk' ? 'calendar-tab-selected' : 'calendar-tab' " (click)= 'isActive ="walk" ;switchCalendar("DogWalking")' >Dog walking</div> 
+                    <div [ngClass]="isActive === 'visit' ? 'calendar-tab-selected' : 'calendar-tab' "  (click)= 'isActive ="visit" ; switchCalendar("DropInVist")'>Drop-In Visit</div> 
+                    <div [ngClass]="isActive === 'sit' ? 'calendar-tab-selected' : 'calendar-tab' " (click)= 'isActive ="sit" ; switchCalendar("HouseSitting")'>House Sitting</div> 
+                    <div [ngClass]="isActive === 'board' ? 'calendar-tab-selected' : 'calendar-tab' " (click)= 'isActive ="board" ; switchCalendar("PetBoarding")'>Pet Boarding</div> 
+                    
                 </div> 
-                <div class="month-nav-btn next-month"><span class="fa fa-caret-right" aria-hidden="true" (click)='nextMonth()' [style.display] = "showNextArrow?'block':'none'"></span></div> 
-            </div> 
-           
+                <div class="calendar-nav m-0"> 
+                   <div class="month-display-container p-0"> 
+                        <div class="month-nav-btn prev-month"><span class="fa fa-caret-left" aria-hidden="true" (click)='prevMonth()' [style.display] = "showPrevArrow?'block':'none'"></span></div> 
+                        <div class="month-display"> 
+                            <h2 class="month font-Nunito">{{displayDate.format('MMMM')}}</h2> 
+                            <h5 class="year m-0 font-Nunito">{{displayDate.format('YYYY')}}</h5> 
+                        </div> 
+                        <div class="month-nav-btn next-month"><span class="fa fa-caret-right" aria-hidden="true" (click)='nextMonth()' [style.display] = "showNextArrow?'block':'none'"></span></div> 
+                    </div> 
+                   
+                     
+                </div> 
              
-        </div> 
-     
-        <div class="week-display"> 
-                <div class="week-tab">Mon</div> 
-                <div class="week-tab">Tue</div> 
-                <div class="week-tab">Wed</div> 
-                <div class="week-tab">Thu</div> 
-                <div class="week-tab">Fri</div> 
-                <div class="week-tab">Sat</div> 
-                <div class="week-tab">Sun</div> 
-            </div> 
-     
-            <div class="calendar-grid"> 
-                <div class="day" *ngFor="let date of getSelectedCalendar()"   (click) = 'select(date)' [style.background-color]="date.isToday?'red':date.isSelected?'#337ab7': !date.isEmpty?'#fff': '#f3f3f3'  "> 
-                    <p *ngIf="date.isEmpty == false">{{date.date + 1}}</p> 
-                </div> 
-            </div> 
-    </div>
+                <div class="week-display"> 
+                        <div class="week-tab">Mon</div> 
+                        <div class="week-tab">Tue</div> 
+                        <div class="week-tab">Wed</div> 
+                        <div class="week-tab">Thu</div> 
+                        <div class="week-tab">Fri</div> 
+                        <div class="week-tab">Sat</div> 
+                        <div class="week-tab">Sun</div> 
+                    </div> 
+             
+                    <div class="calendar-grid"> 
+                        <div class="day" *ngFor="let date of getSelectedCalendar()"   (click) = 'select(date)' [style.background-color]="date.isToday?'#337ab7':date.isSelected?'pink': !date.isEmpty?'#fff': '#f3f3f3'  "> 
+                            <p *ngIf="date.isEmpty == false">{{date.date + 1}}</p> 
+                        </div> 
+                    </div> 
+            </div>
+            <div class="col-md-6">
+                <button >Book now</button>
+
+                <div class="display">
+<p>Booking Information</p>
+<!-- <br>requeted service: {{}} -->
+<!-- <br>number of days: {{}} -->
+<!-- <br>Amount for service: {{}} -->
+
+
+                </div>
+            </div>
+</div>

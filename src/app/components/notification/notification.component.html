@@ -1,0 +1,9 @@
+<div *ngIf="notify.flag"   [ngClass]="{ 
+    'is-danger': notify.msg.style == 'error',
+    'is-success': notify.msg.style == 'success',
+    'is-info': notify.msg.style == 'info'
+  }">
+    {{ notify.msg.content }}
+  <button class="delete" (click)="notify.clear()">X</button>
+
+</div>

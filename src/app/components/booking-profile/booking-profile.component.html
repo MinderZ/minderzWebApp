@@ -1,12 +1,14 @@
+
+
 <!--Start booking profile-->
-<div class="container-fluid" id="main-display">
+<div class="container-fluid" *ngIf="this.client" id="main-display">
   <div class="row" id="display-box">
     <div class="col-md-8 col-sm-12" id="profile">
 
       <!--Start overview-->
       <div class="col-md-12" id="overview-panel">
         <div class="col-lg-4 col-md-5 col-sm-12" id="profile-pic-panel">
-          <img  alt="My profile picture" id="profile-pic" src="{{this.client.profilePicture}}" />
+          <img  alt="My profile picture" id="profile-pic" src="{{this.client.profilePicture}}"/>
         </div>
 
         <div class="col-lg-7 col-md-7 col-sm-12" id="info">

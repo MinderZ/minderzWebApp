@@ -36,42 +36,35 @@ const routes: Routes = [
     path: 'petProfile',
     component: PetProfileComponent
   },
-  // {
-  //   path: 'profile',
-  //   component: MiniDashboardComponent,
-  //   canActivate: [AuthGuard]
-  // },
+  {
+    path: 'bookingprofile',
+    component: CodeComponent,
+    // canActivate: [AuthGuard]
+  },
   {
     path: 'become',
     component: BeforeAseviceProviderComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'addpet',
     component: PetRegistrationComponent,
-    // canActivate: [AuthGuard]
-  },
-  {
-    path: 'bookingprofile',
-    component: BookingProfileComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'code',
-    component: CodeComponent
+    path: 'identity',
+    component: BookingProfileComponent,
+    canActivate: [AuthGuard]
   },
-
+ 
   {
     path: 'sitter-profile-listings',
     component: SitterListPageComponent
   },
   {
-    path:'petProf',
-    component: PetProfileComponent
-  },
-  {
     path: 'registration',
     component: RegisterComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'review',

@@ -4,10 +4,7 @@
             <div class="form-group">
                 <select  [(ngModel)] ="serviceSearch"  name="service" class="form-control selectpicker">
                         <option *ngFor="let item of servicesProvided" (click)="sendParam(item)" >{{item}}</option>
-          <!-- <option>House Sitting</option>
-          <option>Pet Boarding</option>
-          <option>Drop-in Visit</option>
-          <option>Dog Walk</option> -->
+
         </select>
             </div>
         </div>
