@@ -37,22 +37,22 @@ const routes: Routes = [
     component: PetProfileComponent
   },
   {
-    path: 'code',
+    path: 'bookingprofile',
     component: CodeComponent,
     // canActivate: [AuthGuard]
   },
   {
     path: 'become',
     component: BeforeAseviceProviderComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'addpet',
     component: PetRegistrationComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
-    path: 'bookingprofile',
+    path: 'identity',
     component: BookingProfileComponent,
     canActivate: [AuthGuard]
   },

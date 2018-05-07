@@ -11,7 +11,7 @@ import { DataRecycleService } from '../../services/data-recycle.service';
   styleUrls: ['./pet-profile.component.css']
 })
 export class PetProfileComponent implements OnInit {
-AllMyPets: Array<Pet>;
+AllMyPets: Pet;
   
   editing = false;
  
@@ -22,10 +22,11 @@ AllMyPets: Array<Pet>;
 if (this.cacheService.currentUserPets === null || this.cacheService.currentUserPets === undefined) { 
   this.dataRecycleService.getUserPets().subscribe(response =>{
       this.cacheService.currentUserPets = response as Pet; 
-      this.AllMyPets = [response as Pet];
+      this.AllMyPets = response as Pet;
+      console.log(this.AllMyPets);
     }) 
 } else {
-  this.AllMyPets = [this.cacheService.currentUserPets];
+  this.AllMyPets= this.cacheService.currentUserPets;
 }
 
 
