@@ -1,11 +1,188 @@
-<!--Checkbox-->
-<div class="checkbox" (click)="check()">
-  <i [style.display]="checked ? 'block' : 'none'" class="fa fa-check"></i>
+<div class="container">
+  <div class="row">
+
+ <!--Start overview-->
+ <div class="col-md-12" id="overview-panel">
+  <div class="col-lg-3 col-md-3 col-sm-2" id="profile-pic-panel">
+    <img  alt="My profile picture" id="profile-pic" src="./../../../img/avatar.png"/>
+  </div>
+
+  <div class="col-lg-7 col-md-5 col-sm-12" id="info">
+    <label class="line-spacing-2" id="fullname">John Doe</label>
+
+    <!--Start rating-->
+    <div class="line-spacinkjg-2 col-md-12 col-sm-12 col-xs-12" id="rating-panel">
+      <!--Start rating stars-->
+
+      <div class="col-md-12 col-sm-12 col-xs-12 display-flex" id="rating">
+        <span id="stars" class="value display-flex">
+          <i [class]="rating > 0.5 ? 'fa fa-star' : rating > 0 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+          <i [class]="rating > 1.5 ? 'fa fa-star' : rating > 1 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+          <i [class]="rating > 2.5 ? 'fa fa-star' : rating > 2 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+          <i [class]="rating > 3.5 ? 'fa fa-star' : rating > 3 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+          <i [class]="rating > 4.5 ? 'fa fa-star' : rating > 4 ? 'fa fa-star-half-o' : 'fa fa-star-o'"></i>
+          <!--End rating stars-->
+        </span>
+        <h3 id="rating-number" class="value">{{rating}}</h3>
+      </div>
+      
+    </div>
+<!-- about -->
+<div class="about col-md-l5">
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias consequatur tempore dignissimos voluptates cum pariatur delectus sint in modi ex autem enim ipsam maiores veritatis, voluptatibus accusantium nobis harum dolore? 
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum delectus ducimus amet ipsum quam cupiditate error voluptatum laudantium adipisci, deserunt voluptas non at sed earum alias vero doloribus officiis. Odio?</p>
+</div>
+    
+  </div>
+</div>
+<!--End overview-->
+<!-- mini dash-->
+<div class="dash col-md-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Mini Information</h3>
+        </div>
+    
+        <div class="panel-body">
+        
+         <div class="col-lg-2 dash-widget" >
+            <div class="label-primary" style="padding: 5px; border-radius: 6px;">
+                <button class="btn btn-primary btn-lg btn-block disabled" role="button" style="padding: 2px;">
+                    <div class="fa fa-clock-o fa-3x"></div>
+                    <div class="icon-label">Pending Jobs</div>
+                </button> 
+                <button class="btn btn-inverse btn-block" style="height: 40px;">
+                    12
+                </button>
+            </div>
+        </div>
+        
+          <div class="col-lg-2 dash-widget">
+              <div class="label-primary" style="padding: 5px; border-radius: 6px;">
+                <button class="btn btn-primary btn-lg btn-block disabled" role="button" style="padding: 2px;">
+                <div class="fa fa-desktop fa-3x"></div>
+                <div class="icon-label">
+                 Cancelled Jobs
+                </div></button> <button class="btn btn-inverse btn-block" style="height: 40px;">22</button>
+              </div>
+            </div>
+        
+     
+        
+            <div class="col-lg-2 dash-widget">
+              <div class="label-primary" style="padding: 5px; border-radius: 6px;">
+                <button class="btn btn-primary btn-lg btn-block disabled" role="button" style="padding: 2px;">
+                <div class="fa fa-shopping-cart fa-3x"></div>
+                <div class="icon-label">
+                  My pets
+                </div></button> <button class="btn btn-inverse btn-block" style="height: 40px;">3</button>
+              </div>
+            </div>
+            
+           
+      
+            
+            <div class="col-lg-2 dash-widget">
+              <div class="label-primary" style="padding: 5px; border-radius: 6px;">
+                <button class="btn btn-primary btn-lg btn-block disabled" role="button" style="padding: 2px;">
+                <div class="fa fa-print fa-3x"></div>
+                <div class="icon-label">
+                 My Request
+                </div></button> <button class="btn btn-inverse btn-block" style="height: 40px;">0</button>
+              </div>
+            </div>
+            
+            <div class="col-lg-2 dash-widget">
+              <div class="label-primary" style="padding: 5px; border-radius: 6px;">
+                <button class="btn btn-primary btn-lg btn-block disabled" role="button" style="padding: 2px;">
+                <div class="fa fa-suitcase fa-3x"></div>
+                <div class="icon-label">
+                 Jobs Done
+                </div></button> <button class="btn btn-inverse btn-block" style="height: 40px;">23</button>
+              </div>
+            </div>
+            
+            <div class="col-lg-2 dash-widget">
+              <div class="label-primary" style="padding: 5px; border-radius: 6px;">
+                <button class="btn btn-primary btn-lg btn-block disabled" role="button" style="padding: 2px;">
+                <div class="fa fa-user fa-3x"></div>
+                <div class="icon-label">
+                 Contact
+                </div></button> <button class="btn btn-inverse btn-block" style="height: 40px;">Name Name</button>
+              </div>
+            </div>
+      </div>
+    </div>
+    <!-- end of mini dash -->
+    
 </div>
 
-<!--Radio button-->
-<div class="radio" [style.background]="selected ? 'rgb(0, 0, 255)' : '#FFFFFF'" (click)="select()"></div>
+<!-- tabs -->
+<div class="more col-md-12">
 
-<!--Input-->
-<input type="text" placeholder="Test..." />
-  
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" id="calender-tab" data-toggle="tab" href="#calender" role="tab" aria-controls="calender" aria-selected="false">Calender</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pet-tab" data-toggle="tab" href="#pet" role="tab" aria-controls="pet" aria-selected="false">Pets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="rep-tab" data-toggle="tab" href="#rep" role="tab" aria-controls="rep" aria-selected="false">Reputation</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="request-tab" data-toggle="tab" href="#request" role="tab" aria-controls="request" aria-selected="false">Job Request</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="requests-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="requests" aria-selected="false">Job </a>
+            </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+    
+        <div class="tab-pane fade" id="calender" role="tabpanel" aria-labelledby="calender-tab"> 
+          <app-calendar></app-calendar></div>
+        <div class="tab-pane fade" id="pet" role="tabpanel" aria-labelledby="pet-tab"> 
+          <app-pet-profile></app-pet-profile></div>
+        <div class="tab-pane fade" id="rep" role="tabpanel" aria-labelledby="rep-tab"> 
+          <app-review-card></app-review-card> </div>
+          <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab">
+              <div class="loader"></div>
+             </div>
+             <div class="tab-pane fade" id="requests" role="tabpanel" aria-labelledby="requests-tab">
+    <div class="columns">
+        <ul class="price">
+          <li class="header">Pet Sitting</li>
+          <li class="grey">R120 / Sit</li>
+        
+        </ul>
+      </div>
+      
+      <div class="columns">
+        <ul class="price">
+          <li class="header primary" >House Sitting</li>
+          <li class="grey">R100 / Sit</li>
+      
+        </ul>
+      </div>
+      
+      <div class="columns">
+          <ul class="price">
+            <li class="header">Dog Walking</li>
+            <li class="grey">R120 / Walk</li>
+          </ul>
+        </div>
+    
+        <div class="columns">
+            <ul class="price">
+              <li class="header">Drop in Visit</li>
+              <li class="grey">R120 / Visit</li>
+            </ul>
+          </div>
+               </div>
+      </div>
+    
+</div>
+
+
+  </div>
+</div>

@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class CodeComponent {
     checked = true;
     selected = true;
+    rating = 3.5;
+
+    constructor(){}
 
     check() {
         this.checked = !this.checked;

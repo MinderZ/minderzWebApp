@@ -36,11 +36,11 @@ const routes: Routes = [
     path: 'petProfile',
     component: PetProfileComponent
   },
-  // {
-  //   path: 'profile',
-  //   component: MiniDashboardComponent,
-  //   canActivate: [AuthGuard]
-  // },
+  {
+    path: 'code',
+    component: CodeComponent,
+    // canActivate: [AuthGuard]
+  },
   {
     path: 'become',
     component: BeforeAseviceProviderComponent,
